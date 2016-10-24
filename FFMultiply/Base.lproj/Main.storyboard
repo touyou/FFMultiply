@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6gk-O8-QVh">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="DSEG7ClassicMini-Bold.ttf">
+            <string>DSEG7ClassicMini-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FFMultiply" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <segue destination="6gk-O8-QVh" kind="presentation" id="emh-Hn-mdV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="aOh-ZS-7rW">
+            <objects>
+                <viewController id="6gk-O8-QVh" customClass="GameViewController" customModule="FFMultiply" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="23F-qZ-LYo"/>
+                        <viewControllerLayoutGuide type="bottom" id="tGs-6I-KBP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qyj-uT-jih">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="A6D-fv-CXw">
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iwc-Vo-af6">
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXs-x3-oN1"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0S-zw-ZeG">
+                                                <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="txS-3d-Pfc">
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zg0-h9-78v">
+                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                        <state key="normal" title="&lt;&lt;DELETE">
+                                                            <color key="titleColor" red="0.40000000000000002" green="0.85097999999999996" blue="0.93725499999999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tapDelete" destination="6gk-O8-QVh" eventType="touchUpInside" id="rTX-Kh-gRy"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sU6-bL-STD">
+                                                        <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
+                                                        <color key="textColor" red="1" green="0.42738716469999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1c-xN-pyi">
+                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <state key="normal" title="DONE">
+                                                            <color key="titleColor" red="0.388235" green="0.65882399999999997" blue="0.270588" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tapDone" destination="6gk-O8-QVh" eventType="touchUpInside" id="S7S-GJ-wAZ"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="sU6-bL-STD" firstAttribute="width" secondItem="O1c-xN-pyi" secondAttribute="width" id="KBO-pL-Q1r"/>
+                                                    <constraint firstAttribute="height" constant="50" id="Rei-Qh-R1c"/>
+                                                    <constraint firstItem="Zg0-h9-78v" firstAttribute="width" secondItem="sU6-bL-STD" secondAttribute="width" id="UQv-dp-9TJ"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="k0S-zw-ZeG" firstAttribute="height" secondItem="txS-3d-Pfc" secondAttribute="height" id="g8p-AY-usj"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JgQ-Rt-duG">
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zus-eK-GZz">
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ipg-32-fGv">
+                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
+                                                        <state key="normal" title="0">
+                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="EZd-kb-PZa"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXx-o0-3pt">
+                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
+                                                        <state key="normal" title="4">
+                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="6aq-6J-moh"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Sg-zU-PaM">
+                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
+                                                        <state key="normal" title="8">
+                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="K4y-o2-DNz"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gip-WC-6Ux">
+                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
+                                                        <state key="normal" title="C">
+                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="n7Z-Ij-Fve"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="cXx-o0-3pt" firstAttribute="height" secondItem="2Sg-zU-PaM" secondAttribute="height" id="ZGU-Mg-bz3"/>
+                                                    <constraint firstItem="2Sg-zU-PaM" firstAttribute="height" secondItem="Gip-WC-6Ux" secondAttribute="height" id="a5R-xA-O28"/>
+                                                    <constraint firstItem="Ipg-32-fGv" firstAttribute="height" secondItem="cXx-o0-3pt" secondAttribute="height" id="wnX-O5-QCb"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bX9-d3-yEq">
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqU-Yp-9vJ">
+                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
+                                                        <state key="normal" title="1">
+                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="piT-F6-rYB"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NqU-P5-XyN">
+                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
+                                                        <state key="normal" title="5">
+                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="PUX-Ca-WAP"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Nz-tb-EkC">
+                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
+                                                        <state key="normal" title="9">
+                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="ZFp-Ip-wDS"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSg-A7-mqC">
+                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
+                                                        <state key="normal" title="D">
+                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="91v-16-jlc"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="fqU-Yp-9vJ" firstAttribute="height" secondItem="NqU-P5-XyN" secondAttribute="height" id="JCm-XV-bqM"/>
+                                                    <constraint firstItem="NqU-P5-XyN" firstAttribute="height" secondItem="2Nz-tb-EkC" secondAttribute="height" id="dDh-Wa-hW4"/>
+                                                    <constraint firstItem="2Nz-tb-EkC" firstAttribute="height" secondItem="PSg-A7-mqC" secondAttribute="height" id="nTo-eF-K4K"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="23q-bt-p4K">
+                                                <subviews>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wc5-3I-Hb6">
+                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
+                                                        <state key="normal" title="2">
+                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="d1D-kp-cJN"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kye-4t-OiP">
+                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
+                                                        <state key="normal" title="6">
+                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="FRE-ya-IXE"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WbX-K5-Ccb">
+                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
+                                                        <state key="normal" title="A">
+                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="SxV-hV-PVf"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2c-27-auh">
+                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
+                                                        <state key="normal" title="E">
+                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="p7T-ei-Lji"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="WbX-K5-Ccb" firstAttribute="height" secondItem="b2c-27-auh" secondAttribute="height" id="FPD-La-fMP"/>
+                                                    <constraint firstItem="wc5-3I-Hb6" firstAttribute="height" secondItem="kye-4t-OiP" secondAttribute="height" id="Ret-hB-lkj"/>
+                                                    <constraint firstItem="kye-4t-OiP" firstAttribute="height" secondItem="WbX-K5-Ccb" secondAttribute="height" id="U9f-QF-Sja"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vt3-9T-0Vd">
+                                                <subviews>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lR0-Zk-jE4">
+                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
+                                                        <state key="normal" title="3">
+                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="K1L-Rs-r8u"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gam-Tg-0ud">
+                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
+                                                        <state key="normal" title="7">
+                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="5pi-6X-fjB"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0o-GI-Tai">
+                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
+                                                        <state key="normal" title="B">
+                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="ZiO-Yj-mQx"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOu-J6-m1S">
+                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
+                                                        <state key="normal" title="F">
+                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="f2g-4i-Ox4"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Gam-Tg-0ud" firstAttribute="height" secondItem="c0o-GI-Tai" secondAttribute="height" id="nTw-Xz-F1v"/>
+                                                    <constraint firstItem="c0o-GI-Tai" firstAttribute="height" secondItem="DOu-J6-m1S" secondAttribute="height" id="pLr-Dr-Pek"/>
+                                                    <constraint firstItem="lR0-Zk-jE4" firstAttribute="height" secondItem="Gam-Tg-0ud" secondAttribute="height" id="zBo-dl-QOt"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="bX9-d3-yEq" firstAttribute="width" secondItem="23q-bt-p4K" secondAttribute="width" id="Acz-zy-i1j"/>
+                                            <constraint firstItem="23q-bt-p4K" firstAttribute="width" secondItem="Vt3-9T-0Vd" secondAttribute="width" id="chK-2L-EsN"/>
+                                            <constraint firstItem="zus-eK-GZz" firstAttribute="width" secondItem="bX9-d3-yEq" secondAttribute="width" id="mf4-Pr-dFp"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="JgQ-Rt-duG" firstAttribute="height" secondItem="iwc-Vo-af6" secondAttribute="height" id="BRc-7X-CX4"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A6D-fv-CXw" firstAttribute="top" secondItem="Qyj-uT-jih" secondAttribute="top" id="0fh-nh-zcW"/>
+                            <constraint firstItem="A6D-fv-CXw" firstAttribute="leading" secondItem="Qyj-uT-jih" secondAttribute="leading" id="8au-Xd-ILJ"/>
+                            <constraint firstItem="tGs-6I-KBP" firstAttribute="top" secondItem="A6D-fv-CXw" secondAttribute="bottom" id="Kw6-YC-qu6"/>
+                            <constraint firstAttribute="trailing" secondItem="A6D-fv-CXw" secondAttribute="trailing" id="cAv-Vc-aau"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="inputNumberLabel" destination="k0S-zw-ZeG" id="wZz-Pp-42y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YZa-1X-A8C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="927" y="38"/>
+        </scene>
+    </scenes>
+</document>
