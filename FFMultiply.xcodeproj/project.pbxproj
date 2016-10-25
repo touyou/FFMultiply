@@ -15,6 +15,7 @@
 		4603175D1DBDBFC300C9162F /* FFUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4603175C1DBDBFC300C9162F /* FFUtility.swift */; };
 		466B5AD91DBE022D00517B86 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466B5AD81DBE022D00517B86 /* GameViewController.swift */; };
 		466B5ADB1DBE11AF00517B86 /* DSEG7ClassicMini-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 466B5AD71DBDF9C900517B86 /* DSEG7ClassicMini-Bold.ttf */; };
+		46D6AF761DBF032600BA44C3 /* ToastSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D6AF751DBF032600BA44C3 /* ToastSwift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		4603175C1DBDBFC300C9162F /* FFUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFUtility.swift; sourceTree = "<group>"; };
 		466B5AD71DBDF9C900517B86 /* DSEG7ClassicMini-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DSEG7ClassicMini-Bold.ttf"; sourceTree = "<group>"; };
 		466B5AD81DBE022D00517B86 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		46D6AF751DBF032600BA44C3 /* ToastSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastSwift.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,10 +69,19 @@
 				460317511DBDBFA500C9162F /* Assets.xcassets */,
 				460317531DBDBFA500C9162F /* LaunchScreen.storyboard */,
 				460317561DBDBFA500C9162F /* Info.plist */,
-				4603175C1DBDBFC300C9162F /* FFUtility.swift */,
 				466B5AD81DBE022D00517B86 /* GameViewController.swift */,
+				46D6AF771DBF032E00BA44C3 /* Utility */,
 			);
 			path = FFMultiply;
+			sourceTree = "<group>";
+		};
+		46D6AF771DBF032E00BA44C3 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				4603175C1DBDBFC300C9162F /* FFUtility.swift */,
+				46D6AF751DBF032600BA44C3 /* ToastSwift.swift */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +160,7 @@
 			files = (
 				466B5AD91DBE022D00517B86 /* GameViewController.swift in Sources */,
 				4603175D1DBDBFC300C9162F /* FFUtility.swift in Sources */,
+				46D6AF761DBF032600BA44C3 /* ToastSwift.swift in Sources */,
 				4603174D1DBDBFA500C9162F /* ViewController.swift in Sources */,
 				4603174B1DBDBFA500C9162F /* AppDelegate.swift in Sources */,
 			);

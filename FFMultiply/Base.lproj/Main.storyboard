@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6gk-O8-QVh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6gk-O8-QVh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -338,6 +338,9 @@
                     </view>
                     <connections>
                         <outlet property="inputNumberLabel" destination="k0S-zw-ZeG" id="wZz-Pp-42y"/>
+                        <outlet property="leftProblemLabel" destination="1gG-V8-uPw" id="bLT-uN-CG2"/>
+                        <outlet property="resultLabel" destination="sU6-bL-STD" id="emv-g4-ZLq"/>
+                        <outlet property="rightProblemLabel" destination="ntY-yk-rh7" id="Qcb-WZ-JBp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YZa-1X-A8C" userLabel="First Responder" sceneMemberID="firstResponder"/>

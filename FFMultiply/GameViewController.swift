@@ -12,14 +12,23 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var inputNumberLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var leftProblemLabel: UILabel!
+    @IBOutlet weak var rightProblemLabel: UILabel!
     
     
     var nowValue: String = ""
-
+    var problems: [FFProblem]!
+    var nowProblem: FFProblem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        resultLabel.text = "0"
+        
+        problems = makeProblem(10)
+        
+        pickProblem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +43,19 @@ class GameViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
+    
+    // MARK: Initialize Utility
+    
+    fileprivate func pickProblem() {
+        if problems.count == 0 {
+            return
+        }
+        nowProblem = problems.popLast()
+        leftProblemLabel.text = convertFNum(toStr: nowProblem.0)
+        rightProblemLabel.text = convertFNum(toStr: nowProblem.1)
+    }
+    
+    // MARK: - Button
 
     @IBAction func tapNumber(_ sender: UIButton) {
         let tapped = FNum(rawValue: sender.tag) ?? .zero
@@ -44,7 +66,11 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func tapDone() {
-        
+        let res = nowProblem.2 == nowValue ? "accepted" : "failed"
+        _ = ToastView.showText(text: res, duration: .extraShort)
+        pickProblem()
+        nowValue = ""
+        inputNumberLabel.text = "--"
     }
     
     @IBAction func tapDelete() {
