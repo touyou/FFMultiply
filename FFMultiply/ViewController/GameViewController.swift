@@ -31,6 +31,10 @@ class GameViewController: UIViewController {
         
         pickProblem()
     }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
