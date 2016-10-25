@@ -17,6 +17,7 @@ class GameViewController: UIViewController {
     
     
     var nowValue: String = ""
+    var acceptedNum: Int = 0
     var problems: [FFProblem]!
     var nowProblem: FFProblem!
     
@@ -68,9 +69,13 @@ class GameViewController: UIViewController {
     @IBAction func tapDone() {
         let res = nowProblem.2 == nowValue ? "accepted" : "failed"
         _ = ToastView.showText(text: res, duration: .extraShort)
+        if res == "accepted" {
+            acceptedNum += 1
+        }
         pickProblem()
         nowValue = ""
         inputNumberLabel.text = "--"
+        resultLabel.text = String(acceptedNum)
     }
     
     @IBAction func tapDelete() {
