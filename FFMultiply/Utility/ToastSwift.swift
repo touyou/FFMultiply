@@ -105,6 +105,64 @@ class ToastView: UIView {
     // MARK: - Create Toast
     
     /**
+    現在の画面に表示できるようにする
+     */
+    
+    static func showText(text: String, duration: ToastDuration = .short, target: UIViewController) -> ToastView? {
+        guard let keyWindow = UIApplication.shared.keyWindow else {
+            return nil
+        }
+        guard let targetView = target.view  else {
+            return nil
+        }
+        
+        let offset = CGPoint(x: 8, y: 8)
+        let frame = CGRect(x: keyWindow.frame.origin.x + offset.x, y: keyWindow.frame.origin.y + offset.y, width: keyWindow.frame.size.width - offset.x, height: keyWindow.frame.size.height - offset.y)
+        let toast = ToastView(frame: frame)
+        toast.translatesAutoresizingMaskIntoConstraints = false
+        
+        let backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: toast.frame.size.width, height: toast.frame.size.height))
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundView.backgroundColor = ToastView.toastBackgroundColor
+        backgroundView.layer.cornerRadius = 4
+        
+        let textLabel = UILabel(frame: CGRect(x: 0, y: 0, width: toast.frame.size.width, height: toast.frame.size.height))
+        textLabel.translatesAutoresizingMaskIntoConstraints = false
+        textLabel.numberOfLines = 4
+        textLabel.text = text
+        textLabel.textColor = toastTextColor
+        textLabel.textAlignment = .center
+        
+        toast.addSubview(backgroundView)
+        toast.addSubview(textLabel)
+        
+        targetView.addSubview(toast)
+        
+        let constraints = [NSLayoutConstraint(item: toast, attribute: .bottom, relatedBy: .equal, toItem: backgroundView, attribute: .bottom, multiplier: 1.0, constant: 0.0),
+                           NSLayoutConstraint(item: toast, attribute: .top, relatedBy: .equal, toItem: backgroundView, attribute: .top, multiplier: 1.0, constant: 0.0),
+                           NSLayoutConstraint(item: toast, attribute: .leading, relatedBy: .equal, toItem: backgroundView, attribute: .leading, multiplier: 1.0, constant: 0.0),
+                           NSLayoutConstraint(item: toast, attribute: .trailing, relatedBy: .equal, toItem: backgroundView, attribute: .trailing, multiplier: 1.0, constant: 0.0),
+                           NSLayoutConstraint(item: backgroundView, attribute: .bottom, relatedBy: .equal, toItem: textLabel, attribute: .bottom, multiplier: 1.0, constant: 10.0),
+                           NSLayoutConstraint(item: backgroundView, attribute: .top, relatedBy: .equal, toItem: textLabel, attribute: .top, multiplier: 1.0, constant: -10.0),
+                           NSLayoutConstraint(item: backgroundView, attribute: .leading, relatedBy: .equal, toItem: textLabel, attribute: .leading, multiplier: 1.0, constant: -10.0),
+                           NSLayoutConstraint(item: backgroundView, attribute: .trailing, relatedBy: .equal, toItem: textLabel, attribute: .trailing, multiplier: 1.0, constant: 10.0),
+                           
+                           NSLayoutConstraint(item: toast, attribute: .bottom, relatedBy: .equal, toItem: targetView, attribute: .bottomMargin, multiplier: 1.0, constant: -12.0),
+                           NSLayoutConstraint(item: toast, attribute: .leading, relatedBy: .equal, toItem: targetView, attribute: .leadingMargin, multiplier: 1.0, constant: 0.0),
+                           NSLayoutConstraint(item: toast, attribute: .trailing, relatedBy: .equal, toItem: targetView, attribute: .trailingMargin, multiplier: 1.0, constant: 0.0),
+                           ]
+        
+        NSLayoutConstraint.activate(constraints)
+        targetView.layoutIfNeeded()
+        toast.alpha = 0.0
+        
+        UIView.animate(withDuration: FadeInOutDurationInSeconds, delay: 0.0, options: ToastTransition, animations: { toast.alpha = 1.0 }, completion: { if $0 { toast.startTimer(duration: duration) } } )
+        
+        return toast
+
+    }
+    
+    /**
      指定した設定でToastの表示を行う
      - parameters:
      - text:    Toastに表示するテキスト

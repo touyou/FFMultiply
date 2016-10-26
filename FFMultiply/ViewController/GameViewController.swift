@@ -14,12 +14,15 @@ class GameViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var leftProblemLabel: UILabel!
     @IBOutlet weak var rightProblemLabel: UILabel!
+    @IBOutlet weak var limitLabel: UILabel!
     
     
     var nowValue: String = ""
     var acceptedNum: Int = 0
     var problems: [FFProblem]!
     var nowProblem: FFProblem!
+    var limitTimer: Timer!
+    var limitTime: Int = 60
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +30,15 @@ class GameViewController: UIViewController {
         // Do any additional setup after loading the view.
         resultLabel.text = "0"
         
-        problems = makeProblem(10)
+        problems = makeProblem(1000)
         
         pickProblem()
+        
+        limitTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -60,6 +69,22 @@ class GameViewController: UIViewController {
         rightProblemLabel.text = convertFNum(toStr: nowProblem.1)
     }
     
+    func toResultView() {
+        // perform segue
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func updateTime() {
+        limitTime -= 1
+        limitLabel.text = String(limitTime)
+        if self.limitTime == 0 {
+            limitTimer.invalidate()
+            self.toResultView()
+            return
+        }
+
+    }
+    
     // MARK: - Button
 
     @IBAction func tapNumber(_ sender: UIButton) {
@@ -72,7 +97,7 @@ class GameViewController: UIViewController {
     
     @IBAction func tapDone() {
         let res = nowProblem.2 == nowValue ? "accepted" : "failed"
-        _ = ToastView.showText(text: res, duration: .extraShort)
+        _ = ToastView.showText(text: res, duration: .extraShort, target: self)
         if res == "accepted" {
             acceptedNum += 1
         }
