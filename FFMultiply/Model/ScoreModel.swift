@@ -13,13 +13,3 @@ final class Score: Object {
     dynamic var date = NSDate(timeIntervalSince1970: 1)
     dynamic var score: Int = 0
 }
-
-final class Rank: Object {
-    dynamic var id = 0
-    dynamic var name = ""
-    var scores = List<Score>()
-    
-    override static func primaryKey() -> String? {
-        return "id"
-    }
-}

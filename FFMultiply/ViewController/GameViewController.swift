@@ -8,6 +8,7 @@
 
 import UIKit
 import STZPopupView
+import RealmSwift
 
 final class GameViewController: UIViewController {
     
@@ -45,15 +46,10 @@ final class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    // MARK: Initialize Utility
+    // MARK: Utility
     
-    fileprivate func pickProblem() {
+    private func pickProblem() {
         if problems.count == 0 {
             return
         }
@@ -62,19 +58,31 @@ final class GameViewController: UIViewController {
         rightProblemLabel.text = convertFNum(toStr: nowProblem.1)
     }
     
-    func toResultView() {
+    private func result() {
+        // Realm
+        let newScore = Score(value: ["date": NSDate(), "score": acceptedNum])
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(newScore)
+        }
+        
+        // ResultView
         let resultView = ResultView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
         resultView.resultLabel.text = String(acceptedNum)
         resultView.parentViewController = self
-        presentPopupView(resultView)
+        // Config
+        let config = STZPopupViewConfig()
+        config.dismissTouchBackground = false
+        config.cornerRadius = 20
+        presentPopupView(resultView, config: config)
     }
     
     func updateTime() {
         limitTime -= 1
         limitLabel.text = String(limitTime)
-        if self.limitTime == 0 {
+        if limitTime == 0 {
             limitTimer.invalidate()
-            self.toResultView()
+            result()
             return
         }
 
@@ -94,7 +102,7 @@ final class GameViewController: UIViewController {
         let res = nowProblem.2 == nowValue ? "accepted" : "failed"
         _ = ToastView.showText(text: res, duration: .extraShort, target: self)
         if res == "accepted" {
-            acceptedNum += 1
+            acceptedNum += 10
         }
         pickProblem()
         nowValue = ""
