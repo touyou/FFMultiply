@@ -29,11 +29,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oCj-Ud-r4B">
                                 <rect key="frame" x="25" y="25" width="325" height="617"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fUE-mG-UGl">
-                                        <rect key="frame" x="0.0" y="0.0" width="325" height="128"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key_visual" translatesAutoresizingMaskIntoConstraints="NO" id="fUE-mG-UGl">
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="199"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yha-F6-B3g">
-                                        <rect key="frame" x="0.0" y="128" width="325" height="122.5"/>
+                                        <rect key="frame" x="0.0" y="199" width="325" height="105"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                                         <state key="normal" title="time attack">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -43,21 +43,21 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yte-D0-cI1">
-                                        <rect key="frame" x="0.0" y="250.5" width="325" height="122"/>
+                                        <rect key="frame" x="0.0" y="304" width="325" height="104.5"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                                         <state key="normal" title="local score">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRz-te-ycB">
-                                        <rect key="frame" x="0.0" y="372.5" width="325" height="122"/>
+                                        <rect key="frame" x="0.0" y="408.5" width="325" height="104.5"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                                         <state key="normal" title="online ranking">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMP-6B-TlN">
-                                        <rect key="frame" x="0.0" y="494.5" width="325" height="122.5"/>
+                                        <rect key="frame" x="0.0" y="513" width="325" height="104"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                                         <state key="normal" title="settings">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -228,7 +228,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="94" height="333.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ipg-32-fGv">
-                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="83"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="83.5"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="0">
@@ -239,7 +239,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXx-o0-3pt">
-                                                        <rect key="frame" x="0.0" y="83" width="94" height="83.5"/>
+                                                        <rect key="frame" x="0.0" y="83.5" width="94" height="83.5"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="4">
@@ -250,7 +250,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Sg-zU-PaM">
-                                                        <rect key="frame" x="0.0" y="166.5" width="94" height="83"/>
+                                                        <rect key="frame" x="0.0" y="167" width="94" height="83.5"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="8">
@@ -261,7 +261,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gip-WC-6Ux">
-                                                        <rect key="frame" x="0.0" y="249.5" width="94" height="84"/>
+                                                        <rect key="frame" x="0.0" y="250.5" width="94" height="83"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="C">
@@ -282,7 +282,7 @@
                                                 <rect key="frame" x="94" y="0.0" width="93.5" height="333.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqU-Yp-9vJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="93.5" height="83"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="93.5" height="83.5"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="1">
@@ -293,7 +293,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NqU-P5-XyN">
-                                                        <rect key="frame" x="0.0" y="83" width="93.5" height="83.5"/>
+                                                        <rect key="frame" x="0.0" y="83.5" width="93.5" height="83.5"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="5">
@@ -304,7 +304,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Nz-tb-EkC">
-                                                        <rect key="frame" x="0.0" y="166.5" width="93.5" height="83"/>
+                                                        <rect key="frame" x="0.0" y="167" width="93.5" height="83.5"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="9">
@@ -315,7 +315,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSg-A7-mqC">
-                                                        <rect key="frame" x="0.0" y="249.5" width="93.5" height="84"/>
+                                                        <rect key="frame" x="0.0" y="250.5" width="93.5" height="83"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="D">
@@ -336,7 +336,7 @@
                                                 <rect key="frame" x="187.5" y="0.0" width="94" height="333.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wc5-3I-Hb6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="83"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="83.5"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="2">
@@ -347,7 +347,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kye-4t-OiP">
-                                                        <rect key="frame" x="0.0" y="83" width="94" height="83.5"/>
+                                                        <rect key="frame" x="0.0" y="83.5" width="94" height="83.5"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="6">
@@ -358,7 +358,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WbX-K5-Ccb">
-                                                        <rect key="frame" x="0.0" y="166.5" width="94" height="83"/>
+                                                        <rect key="frame" x="0.0" y="167" width="94" height="83.5"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="A">
@@ -369,7 +369,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2c-27-auh">
-                                                        <rect key="frame" x="0.0" y="249.5" width="94" height="84"/>
+                                                        <rect key="frame" x="0.0" y="250.5" width="94" height="83"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="E">
@@ -390,7 +390,7 @@
                                                 <rect key="frame" x="281.5" y="0.0" width="93.5" height="333.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lR0-Zk-jE4">
-                                                        <rect key="frame" x="0.0" y="0.0" width="93.5" height="83"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="93.5" height="83.5"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="3">
@@ -401,7 +401,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gam-Tg-0ud">
-                                                        <rect key="frame" x="0.0" y="83" width="93.5" height="83.5"/>
+                                                        <rect key="frame" x="0.0" y="83.5" width="93.5" height="83.5"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="7">
@@ -412,7 +412,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0o-GI-Tai">
-                                                        <rect key="frame" x="0.0" y="166.5" width="93.5" height="83"/>
+                                                        <rect key="frame" x="0.0" y="167" width="93.5" height="83.5"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="B">
@@ -423,7 +423,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOu-J6-m1S">
-                                                        <rect key="frame" x="0.0" y="249.5" width="93.5" height="84"/>
+                                                        <rect key="frame" x="0.0" y="250.5" width="93.5" height="83"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="F">
@@ -512,4 +512,7 @@
             <point key="canvasLocation" x="1732" y="68"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="key_visual" width="431" height="199"/>
+    </resources>
 </document>
