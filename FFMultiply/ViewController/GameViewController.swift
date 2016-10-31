@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import STZPopupView
 
 final class GameViewController: UIViewController {
     
@@ -50,20 +51,6 @@ final class GameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        switch (segue.destination, segue.identifier) {
-        case (let viewCon as ResultViewController, "toResultView"?):
-            viewCon.score = acceptedNum
-        default:
-            break
-        }
-    }
-    
     // MARK: Initialize Utility
     
     fileprivate func pickProblem() {
@@ -76,7 +63,10 @@ final class GameViewController: UIViewController {
     }
     
     func toResultView() {
-        performSegue(withIdentifier: "toResultView", sender: nil)
+        let resultView = ResultView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        resultView.resultLabel.text = String(acceptedNum)
+        resultView.parentViewController = self
+        presentPopupView(resultView)
     }
     
     func updateTime() {

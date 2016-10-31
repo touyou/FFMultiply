@@ -18,7 +18,8 @@
 		466B5ADB1DBE11AF00517B86 /* DSEG7ClassicMini-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 466B5AD71DBDF9C900517B86 /* DSEG7ClassicMini-Bold.ttf */; };
 		4697286F1DC6F9AC00B9E5EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4697286E1DC6F9AC00B9E5EA /* GoogleService-Info.plist */; };
 		469728721DC75EBA00B9E5EA /* ScoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469728711DC75EBA00B9E5EA /* ScoreModel.swift */; };
-		469728741DC7696A00B9E5EA /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469728731DC7696A00B9E5EA /* ResultViewController.swift */; };
+		4697287E1DC775B700B9E5EA /* ResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4697287D1DC775B700B9E5EA /* ResultView.xib */; };
+		469728801DC7769B00B9E5EA /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697287F1DC7769B00B9E5EA /* ResultView.swift */; };
 		46D6AF761DBF032600BA44C3 /* ToastSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D6AF751DBF032600BA44C3 /* ToastSwift.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +37,8 @@
 		466B5AD81DBE022D00517B86 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		4697286E1DC6F9AC00B9E5EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		469728711DC75EBA00B9E5EA /* ScoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScoreModel.swift; path = Model/ScoreModel.swift; sourceTree = "<group>"; };
-		469728731DC7696A00B9E5EA /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		4697287D1DC775B700B9E5EA /* ResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultView.xib; path = Views/ResultView.xib; sourceTree = "<group>"; };
+		4697287F1DC7769B00B9E5EA /* ResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultView.swift; path = Views/ResultView.swift; sourceTree = "<group>"; };
 		46D6AF751DBF032600BA44C3 /* ToastSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastSwift.swift; sourceTree = "<group>"; };
 		BD43C510C6E6B65F614DAC02 /* Pods_FFMultiply.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FFMultiply.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3CD28C1E9537BE93A2C4A55 /* Pods-FFMultiply.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FFMultiply.release.xcconfig"; path = "Pods/Target Support Files/Pods-FFMultiply/Pods-FFMultiply.release.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		460317491DBDBFA500C9162F /* FFMultiply */ = {
 			isa = PBXGroup;
 			children = (
+				469728751DC7753700B9E5EA /* Views */,
 				469728701DC75E6600B9E5EA /* Model */,
 				46D6AF791DBF094800BA44C3 /* Assets */,
 				46D6AF7A1DBF095C00BA44C3 /* Storyboard */,
@@ -101,6 +104,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		469728751DC7753700B9E5EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4697287D1DC775B700B9E5EA /* ResultView.xib */,
+				4697287F1DC7769B00B9E5EA /* ResultView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		46D6AF771DBF032E00BA44C3 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,7 +127,6 @@
 			children = (
 				466B5AD81DBE022D00517B86 /* GameViewController.swift */,
 				4603174C1DBDBFA500C9162F /* ViewController.swift */,
-				469728731DC7696A00B9E5EA /* ResultViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -223,6 +234,7 @@
 				466B5ADB1DBE11AF00517B86 /* DSEG7ClassicMini-Bold.ttf in Resources */,
 				460317551DBDBFA500C9162F /* LaunchScreen.storyboard in Resources */,
 				4697286F1DC6F9AC00B9E5EA /* GoogleService-Info.plist in Resources */,
+				4697287E1DC775B700B9E5EA /* ResultView.xib in Resources */,
 				460317521DBDBFA500C9162F /* Assets.xcassets in Resources */,
 				460317501DBDBFA500C9162F /* Main.storyboard in Resources */,
 			);
@@ -285,10 +297,10 @@
 			files = (
 				469728721DC75EBA00B9E5EA /* ScoreModel.swift in Sources */,
 				466B5AD91DBE022D00517B86 /* GameViewController.swift in Sources */,
-				469728741DC7696A00B9E5EA /* ResultViewController.swift in Sources */,
 				4603175D1DBDBFC300C9162F /* FFUtility.swift in Sources */,
 				46D6AF761DBF032600BA44C3 /* ToastSwift.swift in Sources */,
 				4603174D1DBDBFA500C9162F /* ViewController.swift in Sources */,
+				469728801DC7769B00B9E5EA /* ResultView.swift in Sources */,
 				4603174B1DBDBFA500C9162F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
