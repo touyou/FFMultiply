@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39C9E6ADAD5E4245D0AF2ADE /* Pods_FFMultiply.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD43C510C6E6B65F614DAC02 /* Pods_FFMultiply.framework */; };
 		4603174B1DBDBFA500C9162F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4603174A1DBDBFA500C9162F /* AppDelegate.swift */; };
 		4603174D1DBDBFA500C9162F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4603174C1DBDBFA500C9162F /* ViewController.swift */; };
 		460317501DBDBFA500C9162F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4603174E1DBDBFA500C9162F /* Main.storyboard */; };
@@ -15,10 +16,12 @@
 		4603175D1DBDBFC300C9162F /* FFUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4603175C1DBDBFC300C9162F /* FFUtility.swift */; };
 		466B5AD91DBE022D00517B86 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466B5AD81DBE022D00517B86 /* GameViewController.swift */; };
 		466B5ADB1DBE11AF00517B86 /* DSEG7ClassicMini-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 466B5AD71DBDF9C900517B86 /* DSEG7ClassicMini-Bold.ttf */; };
+		4697286F1DC6F9AC00B9E5EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4697286E1DC6F9AC00B9E5EA /* GoogleService-Info.plist */; };
 		46D6AF761DBF032600BA44C3 /* ToastSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D6AF751DBF032600BA44C3 /* ToastSwift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		024C7103399235755ECCFDDE /* Pods-FFMultiply.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FFMultiply.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FFMultiply/Pods-FFMultiply.debug.xcconfig"; sourceTree = "<group>"; };
 		460317471DBDBFA500C9162F /* FFMultiply.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFMultiply.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4603174A1DBDBFA500C9162F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4603174C1DBDBFA500C9162F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,7 +32,10 @@
 		4603175C1DBDBFC300C9162F /* FFUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFUtility.swift; sourceTree = "<group>"; };
 		466B5AD71DBDF9C900517B86 /* DSEG7ClassicMini-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DSEG7ClassicMini-Bold.ttf"; sourceTree = "<group>"; };
 		466B5AD81DBE022D00517B86 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		4697286E1DC6F9AC00B9E5EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		46D6AF751DBF032600BA44C3 /* ToastSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastSwift.swift; sourceTree = "<group>"; };
+		BD43C510C6E6B65F614DAC02 /* Pods_FFMultiply.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FFMultiply.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3CD28C1E9537BE93A2C4A55 /* Pods-FFMultiply.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FFMultiply.release.xcconfig"; path = "Pods/Target Support Files/Pods-FFMultiply/Pods-FFMultiply.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +43,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39C9E6ADAD5E4245D0AF2ADE /* Pods_FFMultiply.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CAC62E759A8833E26FF3D65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD43C510C6E6B65F614DAC02 /* Pods_FFMultiply.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4603173E1DBDBFA500C9162F = {
 			isa = PBXGroup;
 			children = (
 				460317491DBDBFA500C9162F /* FFMultiply */,
 				460317481DBDBFA500C9162F /* Products */,
+				7CD22E5CF7C2250A95A1D2B2 /* Pods */,
+				1CAC62E759A8833E26FF3D65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,10 +127,20 @@
 		46D6AF7B1DBF096F00BA44C3 /* Support File */ = {
 			isa = PBXGroup;
 			children = (
+				4697286E1DC6F9AC00B9E5EA /* GoogleService-Info.plist */,
 				4603174A1DBDBFA500C9162F /* AppDelegate.swift */,
 				460317561DBDBFA500C9162F /* Info.plist */,
 			);
 			path = "Support File";
+			sourceTree = "<group>";
+		};
+		7CD22E5CF7C2250A95A1D2B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				024C7103399235755ECCFDDE /* Pods-FFMultiply.debug.xcconfig */,
+				F3CD28C1E9537BE93A2C4A55 /* Pods-FFMultiply.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,9 +150,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 460317591DBDBFA500C9162F /* Build configuration list for PBXNativeTarget "FFMultiply" */;
 			buildPhases = (
+				2060E7150D8AD749BAD90696 /* [CP] Check Pods Manifest.lock */,
 				460317431DBDBFA500C9162F /* Sources */,
 				460317441DBDBFA500C9162F /* Frameworks */,
 				460317451DBDBFA500C9162F /* Resources */,
+				4797F2CCEE742148820FDEC8 /* [CP] Embed Pods Frameworks */,
+				6CBB551C70E65401EE9D494C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -178,12 +208,61 @@
 			files = (
 				466B5ADB1DBE11AF00517B86 /* DSEG7ClassicMini-Bold.ttf in Resources */,
 				460317551DBDBFA500C9162F /* LaunchScreen.storyboard in Resources */,
+				4697286F1DC6F9AC00B9E5EA /* GoogleService-Info.plist in Resources */,
 				460317521DBDBFA500C9162F /* Assets.xcassets in Resources */,
 				460317501DBDBFA500C9162F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2060E7150D8AD749BAD90696 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4797F2CCEE742148820FDEC8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FFMultiply/Pods-FFMultiply-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6CBB551C70E65401EE9D494C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FFMultiply/Pods-FFMultiply-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		460317431DBDBFA500C9162F /* Sources */ = {
@@ -315,6 +394,7 @@
 		};
 		4603175A1DBDBFA500C9162F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 024C7103399235755ECCFDDE /* Pods-FFMultiply.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B4S4333JDW;
@@ -328,6 +408,7 @@
 		};
 		4603175B1DBDBFA500C9162F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3CD28C1E9537BE93A2C4A55 /* Pods-FFMultiply.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B4S4333JDW;
