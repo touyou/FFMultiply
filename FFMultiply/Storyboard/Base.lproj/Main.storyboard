@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -472,7 +473,6 @@
                         <outlet property="limitLabel" destination="BUg-6f-luq" id="tke-DH-Zjl"/>
                         <outlet property="resultLabel" destination="sU6-bL-STD" id="emv-g4-ZLq"/>
                         <outlet property="rightProblemLabel" destination="ntY-yk-rh7" id="Qcb-WZ-JBp"/>
-                        <segue destination="h4z-U7-gW0" kind="presentation" identifier="toResultView" modalTransitionStyle="crossDissolve" id="66z-ua-BMH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YZa-1X-A8C" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -497,10 +497,10 @@
             </objects>
             <point key="canvasLocation" x="884" y="788"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="Eeh-ra-nfo">
             <objects>
-                <viewController id="h4z-U7-gW0" sceneMemberID="viewController">
+                <viewController id="h4z-U7-gW0" customClass="ResultViewController" customModule="FFMultiply" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NNx-Ih-yFq"/>
                         <viewControllerLayoutGuide type="bottom" id="c74-w3-xQZ"/>
@@ -508,12 +508,52 @@
                     <view key="view" contentMode="scaleToFill" id="Bts-ez-vvj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iab-12-pQj">
+                                <rect key="frame" x="36" y="120" width="302" height="426"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwn-i0-iMJ">
+                                        <rect key="frame" x="146" y="82" width="10.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="kwn-i0-iMJ" firstAttribute="centerY" secondItem="iab-12-pQj" secondAttribute="centerY" constant="-120.5" id="1xR-Xk-R64"/>
+                                    <constraint firstItem="kwn-i0-iMJ" firstAttribute="centerX" secondItem="iab-12-pQj" secondAttribute="centerX" id="xto-s3-l8Z"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FB-M0-RCY">
+                                <rect key="frame" x="172" y="407" width="30" height="30"/>
+                                <state key="normal" title="Exit">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="HtT-nQ-kuU" kind="unwind" unwindAction="backWithSegue:" id="vcg-Bc-EBE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.35100064212328769" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iab-12-pQj" firstAttribute="leading" secondItem="Bts-ez-vvj" secondAttribute="leadingMargin" constant="20" id="3Cx-CW-uoE"/>
+                            <constraint firstItem="iab-12-pQj" firstAttribute="centerY" secondItem="Bts-ez-vvj" secondAttribute="centerY" id="3UB-2Q-3tb"/>
+                            <constraint firstItem="iab-12-pQj" firstAttribute="top" secondItem="NNx-Ih-yFq" secondAttribute="bottom" constant="100" id="HCI-8V-PCh"/>
+                            <constraint firstItem="1FB-M0-RCY" firstAttribute="centerX" secondItem="Bts-ez-vvj" secondAttribute="centerX" id="ah3-3t-lMW"/>
+                            <constraint firstItem="1FB-M0-RCY" firstAttribute="centerY" secondItem="Bts-ez-vvj" secondAttribute="centerY" constant="88.5" id="dqH-mB-K2Q"/>
+                            <constraint firstItem="iab-12-pQj" firstAttribute="centerX" secondItem="Bts-ez-vvj" secondAttribute="centerX" id="haa-cW-eV4"/>
+                            <constraint firstItem="iab-12-pQj" firstAttribute="centerY" secondItem="Bts-ez-vvj" secondAttribute="centerY" id="kJg-t9-eiv"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="kwn-i0-iMJ" id="6PZ-66-soD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cPR-L6-0d9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="HtT-nQ-kuU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1732" y="68"/>
+            <point key="canvasLocation" x="1732" y="67.916041979010501"/>
         </scene>
     </scenes>
     <resources>

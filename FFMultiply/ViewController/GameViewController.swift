@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+final class GameViewController: UIViewController {
     
     @IBOutlet weak var inputNumberLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
@@ -56,6 +56,12 @@ class GameViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        switch (segue.destination, segue.identifier) {
+        case (let viewCon as ResultViewController, "toResultView"?):
+            viewCon.score = acceptedNum
+        default:
+            break
+        }
     }
     
     // MARK: Initialize Utility
@@ -70,8 +76,7 @@ class GameViewController: UIViewController {
     }
     
     func toResultView() {
-        // perform segue
-        dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "toResultView", sender: nil)
     }
     
     func updateTime() {

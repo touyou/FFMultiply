@@ -18,6 +18,7 @@
 		466B5ADB1DBE11AF00517B86 /* DSEG7ClassicMini-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 466B5AD71DBDF9C900517B86 /* DSEG7ClassicMini-Bold.ttf */; };
 		4697286F1DC6F9AC00B9E5EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4697286E1DC6F9AC00B9E5EA /* GoogleService-Info.plist */; };
 		469728721DC75EBA00B9E5EA /* ScoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469728711DC75EBA00B9E5EA /* ScoreModel.swift */; };
+		469728741DC7696A00B9E5EA /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469728731DC7696A00B9E5EA /* ResultViewController.swift */; };
 		46D6AF761DBF032600BA44C3 /* ToastSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D6AF751DBF032600BA44C3 /* ToastSwift.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		466B5AD81DBE022D00517B86 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		4697286E1DC6F9AC00B9E5EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		469728711DC75EBA00B9E5EA /* ScoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScoreModel.swift; path = Model/ScoreModel.swift; sourceTree = "<group>"; };
+		469728731DC7696A00B9E5EA /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		46D6AF751DBF032600BA44C3 /* ToastSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastSwift.swift; sourceTree = "<group>"; };
 		BD43C510C6E6B65F614DAC02 /* Pods_FFMultiply.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FFMultiply.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3CD28C1E9537BE93A2C4A55 /* Pods-FFMultiply.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FFMultiply.release.xcconfig"; path = "Pods/Target Support Files/Pods-FFMultiply/Pods-FFMultiply.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				466B5AD81DBE022D00517B86 /* GameViewController.swift */,
 				4603174C1DBDBFA500C9162F /* ViewController.swift */,
+				469728731DC7696A00B9E5EA /* ResultViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			files = (
 				469728721DC75EBA00B9E5EA /* ScoreModel.swift in Sources */,
 				466B5AD91DBE022D00517B86 /* GameViewController.swift in Sources */,
+				469728741DC7696A00B9E5EA /* ResultViewController.swift in Sources */,
 				4603175D1DBDBFC300C9162F /* FFUtility.swift in Sources */,
 				46D6AF761DBF032600BA44C3 /* ToastSwift.swift in Sources */,
 				4603174D1DBDBFA500C9162F /* ViewController.swift in Sources */,
