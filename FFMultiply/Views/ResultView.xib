@@ -57,6 +57,9 @@
                     <state key="normal" title="SHARE">
                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="shareBtn" destination="-1" eventType="touchUpInside" id="wEn-jy-Pav"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🎉High Score🎉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pK5-s7-7UT">
                     <rect key="frame" x="86" y="68" width="129.5" height="22.5"/>
