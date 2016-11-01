@@ -37,7 +37,7 @@
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yha-F6-B3g">
                                         <rect key="frame" x="0.0" y="300" width="270" height="33"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="time attack">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -47,21 +47,24 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yte-D0-cI1">
                                         <rect key="frame" x="0.0" y="333" width="270" height="32.5"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="local score">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="localScore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aRL-4h-hwe"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRz-te-ycB">
                                         <rect key="frame" x="0.0" y="365.5" width="270" height="32.5"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="online ranking">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMP-6B-TlN">
                                         <rect key="frame" x="0.0" y="398" width="270" height="32"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="settings">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -482,6 +485,68 @@
             </objects>
             <point key="canvasLocation" x="887" y="68"/>
         </scene>
+        <!--Local Score View Controller-->
+        <scene sceneID="BwT-iI-QI9">
+            <objects>
+                <viewController storyboardIdentifier="LocalScore" useStoryboardIdentifierAsRestorationIdentifier="YES" id="p1V-24-kF6" customClass="LocalScoreViewController" customModule="FFMultiply" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="njJ-FI-IOh"/>
+                        <viewControllerLayoutGuide type="bottom" id="884-uS-dmV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QHY-Yy-pXX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgg-eP-D4c">
+                                <rect key="frame" x="109.5" y="41" width="102.5" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fCM-gr-9C8">
+                                <rect key="frame" x="0.0" y="71.5" width="320" height="336"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scoreCell" id="TzT-Fl-lGx">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TzT-Fl-lGx" id="mQN-pB-DsZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srd-XL-KLi">
+                                <rect key="frame" x="144" y="430" width="32" height="30"/>
+                                <state key="normal" title="EXIT">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="exitView:" destination="p1V-24-kF6" eventType="touchUpInside" id="Yg3-1r-T9E"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="fCM-gr-9C8" firstAttribute="leading" secondItem="QHY-Yy-pXX" secondAttribute="leading" id="0yw-sS-1f4"/>
+                            <constraint firstItem="884-uS-dmV" firstAttribute="top" secondItem="Srd-XL-KLi" secondAttribute="bottom" constant="20" id="5Xe-08-To5"/>
+                            <constraint firstItem="fCM-gr-9C8" firstAttribute="centerY" secondItem="QHY-Yy-pXX" secondAttribute="centerY" id="DVI-vg-Ihi"/>
+                            <constraint firstItem="fgg-eP-D4c" firstAttribute="centerX" secondItem="QHY-Yy-pXX" secondAttribute="centerX" id="imO-de-VeQ"/>
+                            <constraint firstItem="fCM-gr-9C8" firstAttribute="top" secondItem="fgg-eP-D4c" secondAttribute="bottom" constant="8" id="nAD-kx-VN9"/>
+                            <constraint firstItem="fCM-gr-9C8" firstAttribute="centerX" secondItem="QHY-Yy-pXX" secondAttribute="centerX" id="rLQ-eH-cNv"/>
+                            <constraint firstItem="Srd-XL-KLi" firstAttribute="centerX" secondItem="QHY-Yy-pXX" secondAttribute="centerX" id="tgG-DP-SdY"/>
+                            <constraint firstItem="fgg-eP-D4c" firstAttribute="top" secondItem="njJ-FI-IOh" secondAttribute="bottom" constant="21" id="yv4-PL-SLU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="fCM-gr-9C8" id="BrL-bX-zqe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OME-fj-LxA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20.625" y="-728.75"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="x7z-KZ-Ch3">
             <objects>
@@ -498,7 +563,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1hG-3d-aa9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="884" y="788"/>
+            <point key="canvasLocation" x="21" y="893"/>
         </scene>
     </scenes>
     <resources>
