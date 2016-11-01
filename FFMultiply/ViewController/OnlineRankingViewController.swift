@@ -91,16 +91,16 @@ extension OnlineRankingViewController {
             let alert = UIAlertController(title: "register name", message: "please set your username", preferredStyle: .alert)
             alert.addTextField {
                 textField in
-                _ = textField.text.flatMap {
-                    self.storage.set($0, forKey: "playername")
-                }
+                textField.placeholder = "user name"
             }
             alert.addAction(UIAlertAction(title: "OK", style: .default) {
                 _ in
-                if let name = self.storage.object(forKey: "playername") as? String {
+                let textfield = alert.textFields?.first
+                if let name = textfield?.text {
                     _ = score.flatMap {
                         self.ref.child("scores").child(self.device_id).setValue(["name": name, "score": $0.score as NSNumber])
                     }
+                    self.storage.set(name, forKey: "playername")
                 }
             })
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
