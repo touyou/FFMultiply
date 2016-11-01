@@ -47,18 +47,29 @@ final class OnlineRankingViewController: UIViewController {
         // Do any additional setup after loading the view.
         ref.child("scores").queryOrdered(byChild: "score").queryLimited(toLast: 50).observe(.value, with: {
             snapshot in
-            print("snapshot:----")
-            print(snapshot.value)
             guard let values = snapshot.value as? [String: Any] else {
                 return
             }
             print("debug -----")
             print(values)
-            if let score = values["score"] as? Int, let name = values["name"] as? String, let _ = values["id"] as? String {
-                self.dataArray.insert((1, score, name), at: 0)
-                self.tableView.reloadData()
+            let rev = values.values.reversed()
+            var sc = (rev[0] as AnyObject).object(forKey: "score") as! Int
+            var na = (rev[0] as AnyObject).object(forKey: "name") as! String
+            var r = 1
+            self.dataArray.append((1, sc, na))
+            for i in 1 ..< min(50, rev.count) {
+                let nextSc = (rev[i] as AnyObject).object(forKey: "score") as! Int
+                na = (rev[i] as AnyObject).object(forKey: "name") as! String
+                if sc != nextSc {
+                    r = i + 1
+                    sc = nextSc
+                }
+                self.dataArray.append((r, sc, na))
             }
-        })
+            self.tableView.reloadData()
+        }) { error in
+            print(error.localizedDescription)
+        }
         
     }
 }
