@@ -8,12 +8,20 @@
 
 import UIKit
 import Firebase
+import GoogleMobileAds
 
-class SettingViewController: UIViewController {
-
+final class SettingViewController: UIViewController {
     @IBOutlet weak var userTextField: UITextField! {
         didSet {
             userTextField.delegate = self
+        }
+    }
+    @IBOutlet weak var bannerView: GADBannerView! {
+        didSet {
+            bannerView.adSize = kGADAdSizeSmartBannerLandscape
+            bannerView.adUnitID = "ca-app-pub-2853999389157478/6345144062"
+            bannerView.rootViewController = self
+            bannerView.load(GADRequest())
         }
     }
     

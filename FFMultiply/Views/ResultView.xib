@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResultView" customModule="FFMultiply" customModuleProvider="target">
             <connections>
+                <outlet property="highScoreLabel" destination="pK5-s7-7UT" id="afl-8K-Jqo"/>
                 <outlet property="resultLabel" destination="03k-M7-Qn0" id="Lss-3o-m55"/>
             </connections>
         </placeholder>
@@ -25,7 +26,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnB-ud-gxJ">
-                    <rect key="frame" x="134" y="220" width="32" height="30"/>
+                    <rect key="frame" x="133" y="255" width="34" height="35"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                     <state key="normal" title="EXIT">
                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -39,7 +41,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="NnN-Cg-duO"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -49,14 +51,31 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xa0-T8-wel">
+                    <rect key="frame" x="123" y="212" width="55" height="35"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                    <state key="normal" title="SHARE">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🎉High Score🎉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pK5-s7-7UT">
+                    <rect key="frame" x="86" y="68" width="129.5" height="22.5"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="xnB-ud-gxJ" firstAttribute="top" secondItem="xa0-T8-wel" secondAttribute="bottom" constant="8" id="AId-VE-NCF"/>
                 <constraint firstItem="xnB-ud-gxJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NwY-4e-wir"/>
                 <constraint firstItem="03k-M7-Qn0" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="PZi-Cb-MmX"/>
                 <constraint firstAttribute="trailing" secondItem="hva-zd-AR7" secondAttribute="trailing" id="QoT-bg-wfg"/>
                 <constraint firstItem="hva-zd-AR7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="WBy-Kn-5hb"/>
-                <constraint firstAttribute="bottom" secondItem="xnB-ud-gxJ" secondAttribute="bottom" constant="50" id="Wh5-fn-YmK"/>
+                <constraint firstAttribute="bottom" secondItem="xnB-ud-gxJ" secondAttribute="bottom" constant="10" id="Wh5-fn-YmK"/>
+                <constraint firstItem="xa0-T8-wel" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="b6o-WY-Nk1"/>
+                <constraint firstItem="pK5-s7-7UT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fHd-m1-oyb"/>
+                <constraint firstItem="pK5-s7-7UT" firstAttribute="top" secondItem="hva-zd-AR7" secondAttribute="bottom" constant="8" id="g8y-tp-lDL"/>
                 <constraint firstItem="hva-zd-AR7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pg1-UV-WOI"/>
                 <constraint firstItem="03k-M7-Qn0" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wj1-lL-Cr0"/>
             </constraints>

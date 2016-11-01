@@ -12,7 +12,6 @@ import RealmSwift
 import Firebase
 
 final class GameViewController: UIViewController {
-    
     @IBOutlet weak var inputNumberLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var leftProblemLabel: UILabel!
@@ -79,20 +78,23 @@ final class GameViewController: UIViewController {
             realm.add(newScore)
         }
         
+        // ResultView
+        let resultView = ResultView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        resultView.resultLabel.text = String(acceptedNum)
+        resultView.parentViewController = self
+        resultView.score = acceptedNum
+        // HighScore
         let scores = realm.objects(Score.self).sorted(byProperty: "score", ascending: false)
         if let highScore = scores.first {
             if highScore.score <= newScore.score {
                 // ハイスコア更新のタイミングで書き込む
                 updateHighScore(newScore)
+                resultView.highScoreLabel.isHidden = false
             }
         } else {
             updateHighScore(newScore)
         }
         
-        // ResultView
-        let resultView = ResultView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
-        resultView.resultLabel.text = String(acceptedNum)
-        resultView.parentViewController = self
         // Config
         let config = STZPopupViewConfig()
         config.dismissTouchBackground = false

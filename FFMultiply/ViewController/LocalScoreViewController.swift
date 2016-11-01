@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class LocalScoreViewController: UIViewController {
+final class LocalScoreViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.dataSource = self

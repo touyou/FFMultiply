@@ -7,8 +7,17 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 final class ViewController: UIViewController {
+    @IBOutlet weak var bannerView: GADBannerView! {
+        didSet {
+            bannerView.adSize = kGADAdSizeSmartBannerLandscape
+            bannerView.adUnitID = "ca-app-pub-2853999389157478/6345144062"
+            bannerView.rootViewController = self
+            bannerView.load(GADRequest())
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

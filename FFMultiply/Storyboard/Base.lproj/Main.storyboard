@@ -28,16 +28,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oCj-Ud-r4B">
-                                <rect key="frame" x="25" y="25" width="270" height="430"/>
+                                <rect key="frame" x="0.0" y="-5.5" width="320" height="491"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key_visual" translatesAutoresizingMaskIntoConstraints="NO" id="fUE-mG-UGl">
-                                        <rect key="frame" x="0.0" y="0.0" width="270" height="300"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="jaa-w8-OkU"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="272"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yha-F6-B3g">
-                                        <rect key="frame" x="0.0" y="300" width="270" height="33"/>
+                                        <rect key="frame" x="0.0" y="272" width="320" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="8cf-f7-tf2"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="time attack">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,7 +47,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yte-D0-cI1">
-                                        <rect key="frame" x="0.0" y="333" width="270" height="32.5"/>
+                                        <rect key="frame" x="0.0" y="312" width="320" height="40"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="local score">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,7 +57,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRz-te-ycB">
-                                        <rect key="frame" x="0.0" y="365.5" width="270" height="32.5"/>
+                                        <rect key="frame" x="0.0" y="352" width="320" height="39.5"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="online ranking">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,7 +67,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMP-6B-TlN">
-                                        <rect key="frame" x="0.0" y="398" width="270" height="32"/>
+                                        <rect key="frame" x="0.0" y="391.5" width="320" height="39.5"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="settings">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -76,6 +76,13 @@
                                             <action selector="settingView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yqz-ua-wpv"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Cq-3R-zTn" customClass="GADBannerView">
+                                        <rect key="frame" x="0.0" y="431" width="320" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="9bW-Wy-aHQ"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Yha-F6-B3g" firstAttribute="height" secondItem="aRz-te-ycB" secondAttribute="height" id="FsC-rN-up3"/>
@@ -86,13 +93,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="oCj-Ud-r4B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="25" id="2AY-CL-lwb"/>
-                            <constraint firstItem="oCj-Ud-r4B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GSh-JM-JrC"/>
-                            <constraint firstItem="oCj-Ud-r4B" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="25" id="mIL-JJ-VCk"/>
-                            <constraint firstItem="oCj-Ud-r4B" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xdL-Ke-e2F"/>
+                            <constraint firstItem="oCj-Ud-r4B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FlR-2v-cYL"/>
+                            <constraint firstItem="oCj-Ud-r4B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JgI-iF-kop"/>
+                            <constraint firstItem="oCj-Ud-r4B" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-25.5" id="mm9-l9-65T"/>
+                            <constraint firstItem="oCj-Ud-r4B" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ykR-gP-9MS"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="7Cq-3R-zTn" id="adf-mv-ZEk"/>
                         <segue destination="6gk-O8-QVh" kind="presentation" identifier="startGame" modalTransitionStyle="coverVertical" id="X5y-po-eTe"/>
                     </connections>
                 </viewController>
@@ -579,7 +587,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzt-tI-ERy">
-                                <rect key="frame" x="267" y="442" width="37" height="30"/>
+                                <rect key="frame" x="267" y="372" width="37" height="30"/>
                                 <state key="normal" title="SAVE">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -587,8 +595,15 @@
                                     <action selector="saveBtn:" destination="RlN-Ak-Fmh" eventType="touchUpInside" id="zel-rA-LEc"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ndR-Md-bId" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="410" width="320" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="UQE-XT-hUZ"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n98-CE-HY7">
-                                <rect key="frame" x="16" y="442" width="59" height="30"/>
+                                <rect key="frame" x="16" y="372" width="59" height="30"/>
                                 <state key="normal" title="CANCEL">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -603,14 +618,18 @@
                             <constraint firstItem="Ywx-Uv-9oh" firstAttribute="top" secondItem="JaY-7V-KmC" secondAttribute="bottom" constant="36" id="6DQ-9s-QRG"/>
                             <constraint firstItem="n98-CE-HY7" firstAttribute="leading" secondItem="iZd-pY-Xqh" secondAttribute="leadingMargin" id="CJQ-IJ-Mnv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ywx-Uv-9oh" secondAttribute="trailing" id="FIz-hk-oFN"/>
-                            <constraint firstItem="mxu-mg-nyj" firstAttribute="top" secondItem="vzt-tI-ERy" secondAttribute="bottom" constant="8" id="Fb0-4P-9Yv"/>
-                            <constraint firstItem="mxu-mg-nyj" firstAttribute="top" secondItem="n98-CE-HY7" secondAttribute="bottom" constant="8" id="T6f-BR-r4r"/>
+                            <constraint firstItem="ndR-Md-bId" firstAttribute="top" secondItem="n98-CE-HY7" secondAttribute="bottom" constant="8" id="G8r-yS-sZ0"/>
+                            <constraint firstAttribute="trailing" secondItem="ndR-Md-bId" secondAttribute="trailing" id="Uo9-Kg-2S0"/>
                             <constraint firstItem="vzt-tI-ERy" firstAttribute="trailing" secondItem="iZd-pY-Xqh" secondAttribute="trailingMargin" id="abW-I7-hJP"/>
                             <constraint firstItem="JaY-7V-KmC" firstAttribute="top" secondItem="bU5-0p-XDY" secondAttribute="bottom" constant="8" id="eIG-Fj-8QC"/>
                             <constraint firstItem="Ywx-Uv-9oh" firstAttribute="leading" secondItem="iZd-pY-Xqh" secondAttribute="leadingMargin" id="spw-XU-idf"/>
+                            <constraint firstItem="ndR-Md-bId" firstAttribute="leading" secondItem="iZd-pY-Xqh" secondAttribute="leading" id="vbB-cp-SH4"/>
+                            <constraint firstItem="mxu-mg-nyj" firstAttribute="top" secondItem="ndR-Md-bId" secondAttribute="bottom" id="vxx-Km-Qq0"/>
+                            <constraint firstItem="ndR-Md-bId" firstAttribute="top" secondItem="vzt-tI-ERy" secondAttribute="bottom" constant="8" id="xOV-te-mu3"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="ndR-Md-bId" id="LeX-zX-Wq2"/>
                         <outlet property="userTextField" destination="Ywx-Uv-9oh" id="hZp-L4-h9r"/>
                     </connections>
                 </viewController>
@@ -676,6 +695,12 @@
                                     <action selector="registerRank" destination="C8a-wQ-8vG" eventType="touchUpInside" id="aVY-su-YzL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuW-zB-6m7">
+                                <rect key="frame" x="136" y="430" width="49" height="30"/>
+                                <state key="normal" title="SHARE">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.52156899999999995" green="0.74902000000000002" blue="0.36470599999999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -691,7 +716,9 @@
                             <constraint firstItem="wo6-GH-HdJ" firstAttribute="centerX" secondItem="Sbw-02-diX" secondAttribute="centerX" id="goN-gq-xzT"/>
                             <constraint firstItem="HkB-kK-I4a" firstAttribute="centerX" secondItem="Sbw-02-diX" secondAttribute="centerX" id="hdx-4k-chM"/>
                             <constraint firstItem="jXA-wI-U85" firstAttribute="top" secondItem="wo6-GH-HdJ" secondAttribute="bottom" constant="22" id="li9-vM-6mU"/>
+                            <constraint firstItem="taE-0E-APc" firstAttribute="top" secondItem="iuW-zB-6m7" secondAttribute="bottom" constant="20" id="lsS-wc-rMc"/>
                             <constraint firstItem="63f-Kv-CiG" firstAttribute="width" secondItem="HkB-kK-I4a" secondAttribute="width" id="nZu-F6-7S8"/>
+                            <constraint firstItem="iuW-zB-6m7" firstAttribute="centerX" secondItem="Sbw-02-diX" secondAttribute="centerX" id="ngF-k2-KzX"/>
                         </constraints>
                     </view>
                     <connections>

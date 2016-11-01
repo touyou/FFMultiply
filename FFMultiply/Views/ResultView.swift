@@ -8,11 +8,16 @@
 
 import UIKit
 
-//@IBDesignable
 final class ResultView: UIView {
-
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var highScoreLabel: UILabel! {
+        didSet {
+            highScoreLabel.isHidden = true
+        }
+    }
+    
     var parentViewController: UIViewController!
+    var score: Int!
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,5 +49,9 @@ final class ResultView: UIView {
     
     @IBAction func exitBtn() {
         parentViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func shareBtn() {
+        
     }
 }
