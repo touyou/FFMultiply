@@ -22,13 +22,16 @@ final class OnlineRankingViewController: UIViewController {
     }
     @IBOutlet weak var tableMode: UISegmentedControl! {
         didSet {
-            tableMode.isHidden = true
+            tableMode.addTarget(self, action: #selector(OnlineRankingViewController.changeSegment(sender:)), for: .valueChanged)
         }
     }
+    @IBOutlet weak var rankLabel: UILabel!
     
     fileprivate var transitioner: Transitioner?
     var top: Bool = true
     var dataArray = [(Int, Int, String)]()
+    var myRank: Int = 0
+    var myPosition: Int = 0
     
     let ref = FIRDatabase.database().reference()
     let storage = UserDefaults.standard
@@ -45,7 +48,7 @@ final class OnlineRankingViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        ref.child("scores").queryOrdered(byChild: "score").queryLimited(toLast: 50).observe(.value, with: {
+        ref.child("scores").queryOrdered(byChild: "score").observe(.value, with: {
             snapshot in
             guard let values = snapshot.value as? [String: Any] else {
                 return
@@ -53,16 +56,27 @@ final class OnlineRankingViewController: UIViewController {
             print("debug -----")
             print(values)
             let rev = values.values.reversed()
+            let revKey = values.keys.reversed()
             var sc = (rev[0] as AnyObject).object(forKey: "score") as! Int
             var na = (rev[0] as AnyObject).object(forKey: "name") as! String
             var r = 1
             self.dataArray.append((1, sc, na))
-            for i in 1 ..< min(50, rev.count) {
+            if revKey.first == self.device_id {
+                self.myPosition = 0
+                self.myRank = r
+                self.rankLabel.text = "Your Rank: \(self.myRank)"
+            }
+            for i in 1 ..< rev.count {
                 let nextSc = (rev[i] as AnyObject).object(forKey: "score") as! Int
                 na = (rev[i] as AnyObject).object(forKey: "name") as! String
                 if sc != nextSc {
                     r = i + 1
                     sc = nextSc
+                }
+                if revKey[i] == self.device_id {
+                    self.myPosition = i
+                    self.myRank = r
+                    self.rankLabel.text = "Your Rank: \(self.myRank)"
                 }
                 self.dataArray.append((r, sc, na))
             }
@@ -70,7 +84,15 @@ final class OnlineRankingViewController: UIViewController {
         }) { error in
             print(error.localizedDescription)
         }
-        
+    }
+    
+    func changeSegment(sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            top = true
+        } else {
+            top = false
+        }
+        tableView.reloadData()
     }
 }
 
@@ -107,6 +129,15 @@ extension OnlineRankingViewController {
             present(alert, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func shareBtn() {
+        let shareText = "My rank is \(myRank)! Let's play FFMultiplier with me! #FFMultiplier"
+        let shareURL = URL(string: "https://itunes.apple.com/us/app/ffmultiplier/id1151801381?l=ja&ls=1&mt=8")!
+        let activityViewCon = UIActivityViewController(activityItems: [shareText, shareURL], applicationActivities: nil)
+        let excludeType = [UIActivityType.print]
+        activityViewCon.excludedActivityTypes = excludeType
+        present(activityViewCon, animated: true, completion: nil)
+    }
 }
 
 extension OnlineRankingViewController: UITableViewDataSource {
@@ -127,9 +158,15 @@ extension OnlineRankingViewController: UITableViewDataSource {
         cell.textLabel?.numberOfLines = 0
         cell.tintColor = UIColor.lightGray
         
-        let d = dataArray[indexPath.row]
-        cell.textLabel?.text = "\(d.0). \(d.1) points\n\t \(d.2)"
-        return cell
+        if top || myPosition < 25 {
+            let d = dataArray[indexPath.row]
+            cell.textLabel?.text = "\(d.0). \(d.1) points\n\t \(d.2)"
+            return cell
+        } else {
+            let d = dataArray[indexPath.row + myRank - 25]
+            cell.textLabel?.text = "\(d.0). \(d.1) points\n\t \(d.2)"
+            return cell
+        }
     }
 }
 

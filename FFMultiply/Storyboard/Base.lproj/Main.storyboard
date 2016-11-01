@@ -663,8 +663,8 @@
                                 </segments>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wo6-GH-HdJ">
-                                <rect key="frame" x="0.0" y="107" width="320" height="286"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wo6-GH-HdJ">
+                                <rect key="frame" x="0.0" y="107" width="320" height="291.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rankCell" id="oXw-Lx-ahg">
@@ -700,6 +700,9 @@
                                 <state key="normal" title="SHARE">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="shareBtn" destination="C8a-wQ-8vG" eventType="touchUpInside" id="Cz3-qo-tLf"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Rank: ---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9y-jh-lfG">
                                 <rect key="frame" x="119" y="403.5" width="82.5" height="18.5"/>
@@ -730,6 +733,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="rankLabel" destination="J9y-jh-lfG" id="Dqi-aI-goW"/>
                         <outlet property="tableMode" destination="63f-Kv-CiG" id="Qfs-2G-ZHz"/>
                         <outlet property="tableView" destination="wo6-GH-HdJ" id="qzG-9y-Ivw"/>
                     </connections>
