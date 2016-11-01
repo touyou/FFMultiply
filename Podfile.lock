@@ -44,6 +44,7 @@ PODS:
   - Realm/Headers (2.0.3)
   - RealmSwift (2.0.3):
     - Realm (= 2.0.3)
+  - STZPopupView (1.1.0)
 
 DEPENDENCIES:
   - Firebase/AdMob
@@ -51,6 +52,7 @@ DEPENDENCIES:
   - Firebase/Crash
   - Firebase/Database
   - RealmSwift
+  - STZPopupView
 
 SPEC CHECKSUMS:
   Firebase: fdbecadb7b5cbef2774852d4fa659b9daf11f2af
@@ -65,7 +67,8 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   Realm: 5f008bfe3c8c47142eddfc30b8c1584cde22db24
   RealmSwift: 5afb451f65b682242f272dbb52d5c6f6e343c980
+  STZPopupView: 31be448e6c6acb292e8f882006ff8498b54050d3
 
-PODFILE CHECKSUM: 892f83353ca2df72de2faad1d2c7615ee8b021dd
+PODFILE CHECKSUM: 611391bcf5213868e6ebdcc2e585d963f50ad478
 
 COCOAPODS: 1.1.1

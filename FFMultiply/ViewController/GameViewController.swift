@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import STZPopupView
+import RealmSwift
 
-class GameViewController: UIViewController {
+final class GameViewController: UIViewController {
     
     @IBOutlet weak var inputNumberLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
@@ -44,23 +46,10 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
+    // MARK: Utility
     
-    // MARK: Initialize Utility
-    
-    fileprivate func pickProblem() {
+    private func pickProblem() {
         if problems.count == 0 {
             return
         }
@@ -69,17 +58,31 @@ class GameViewController: UIViewController {
         rightProblemLabel.text = convertFNum(toStr: nowProblem.1)
     }
     
-    func toResultView() {
-        // perform segue
-        dismiss(animated: true, completion: nil)
+    private func result() {
+        // Realm
+        let newScore = Score(value: ["date": NSDate(), "score": acceptedNum])
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(newScore)
+        }
+        
+        // ResultView
+        let resultView = ResultView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        resultView.resultLabel.text = String(acceptedNum)
+        resultView.parentViewController = self
+        // Config
+        let config = STZPopupViewConfig()
+        config.dismissTouchBackground = false
+        config.cornerRadius = 20
+        presentPopupView(resultView, config: config)
     }
     
     func updateTime() {
         limitTime -= 1
         limitLabel.text = String(limitTime)
-        if self.limitTime == 0 {
+        if limitTime == 0 {
             limitTimer.invalidate()
-            self.toResultView()
+            result()
             return
         }
 
@@ -99,7 +102,7 @@ class GameViewController: UIViewController {
         let res = nowProblem.2 == nowValue ? "accepted" : "failed"
         _ = ToastView.showText(text: res, duration: .extraShort, target: self)
         if res == "accepted" {
-            acceptedNum += 1
+            acceptedNum += 10
         }
         pickProblem()
         nowValue = ""

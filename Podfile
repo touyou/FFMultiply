@@ -11,6 +11,7 @@ target 'FFMultiply' do
   pod 'Firebase/Database'
   pod 'Firebase/Crash'
   pod 'RealmSwift'
+  pod 'STZPopupView'
 end
 
 post_install do |installer|

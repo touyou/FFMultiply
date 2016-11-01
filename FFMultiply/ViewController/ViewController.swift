@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,11 @@ class ViewController: UIViewController {
     
     @IBAction func startGame() {
         performSegue(withIdentifier: "startGame", sender: nil)
+    }
+    
+    @IBAction func localScore(_ sender: UIButton) {
+        let viewCon = LocalScoreViewController.instantiate(sender.center)
+        present(viewCon, animated: true, completion: nil)
     }
 }
 
