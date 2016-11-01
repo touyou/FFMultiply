@@ -35,5 +35,10 @@ final class ViewController: UIViewController {
         let viewCon = SettingViewController.instantiate(sender.center)
         present(viewCon, animated: true, completion: nil)
     }
+    
+    @IBAction func onlineRank(_ sender: UIButton) {
+        let viewCon = OnlineRankingViewController.instantiate(sender.center)
+        present(viewCon, animated: true, completion: nil)
+    }
 }
 

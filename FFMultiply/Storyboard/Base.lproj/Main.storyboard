@@ -47,7 +47,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yte-D0-cI1">
-                                        <rect key="frame" x="0.0" y="333" width="270" height="32"/>
+                                        <rect key="frame" x="0.0" y="333" width="270" height="32.5"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="local score">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,14 +57,17 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRz-te-ycB">
-                                        <rect key="frame" x="0.0" y="365" width="270" height="32.5"/>
+                                        <rect key="frame" x="0.0" y="365.5" width="270" height="32.5"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="online ranking">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onlineRank:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UIN-H9-L8F"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMP-6B-TlN">
-                                        <rect key="frame" x="0.0" y="397.5" width="270" height="32.5"/>
+                                        <rect key="frame" x="0.0" y="398" width="270" height="32"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="settings">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -515,7 +518,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TzT-Fl-lGx" id="mQN-pB-DsZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -594,7 +597,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="JaY-7V-KmC" firstAttribute="centerX" secondItem="iZd-pY-Xqh" secondAttribute="centerX" id="5Sz-fO-hfa"/>
                             <constraint firstItem="Ywx-Uv-9oh" firstAttribute="top" secondItem="JaY-7V-KmC" secondAttribute="bottom" constant="36" id="6DQ-9s-QRG"/>
@@ -614,6 +617,91 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1hG-3d-aa9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="20.625" y="892.5"/>
+        </scene>
+        <!--Online Ranking View Controller-->
+        <scene sceneID="Bbv-W3-bss">
+            <objects>
+                <viewController storyboardIdentifier="OnlineRank" useStoryboardIdentifierAsRestorationIdentifier="YES" id="C8a-wQ-8vG" customClass="OnlineRankingViewController" customModule="FFMultiply" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w4C-Yn-7ri"/>
+                        <viewControllerLayoutGuide type="bottom" id="taE-0E-APc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sbw-02-diX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Online Ranking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkB-kK-I4a">
+                                <rect key="frame" x="89.5" y="41" width="141" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="63f-Kv-CiG">
+                                <rect key="frame" x="89.5" y="71" width="141" height="29"/>
+                                <segments>
+                                    <segment title="Top50"/>
+                                    <segment title="Nearby"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wo6-GH-HdJ">
+                                <rect key="frame" x="0.0" y="107" width="320" height="301"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rankCell" id="oXw-Lx-ahg">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oXw-Lx-ahg" id="hR1-ds-Vn2">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXA-wI-U85">
+                                <rect key="frame" x="23" y="430" width="32" height="30"/>
+                                <state key="normal" title="EXIT">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="exitView:" destination="C8a-wQ-8vG" eventType="touchUpInside" id="lke-ar-Qfp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0o-i8-7Pe">
+                                <rect key="frame" x="234" y="430" width="70" height="30"/>
+                                <state key="normal" title="REGISTER">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerRank" destination="C8a-wQ-8vG" eventType="touchUpInside" id="aVY-su-YzL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.52156899999999995" green="0.74902000000000002" blue="0.36470599999999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="f0o-i8-7Pe" secondAttribute="trailing" id="8Ud-Y3-ayq"/>
+                            <constraint firstItem="jXA-wI-U85" firstAttribute="leading" secondItem="Sbw-02-diX" secondAttribute="leadingMargin" constant="7" id="9xT-a2-fJg"/>
+                            <constraint firstItem="taE-0E-APc" firstAttribute="top" secondItem="f0o-i8-7Pe" secondAttribute="bottom" constant="20" id="9xb-Wa-mlZ"/>
+                            <constraint firstItem="taE-0E-APc" firstAttribute="top" secondItem="jXA-wI-U85" secondAttribute="bottom" constant="20" id="DaH-1V-yFT"/>
+                            <constraint firstItem="wo6-GH-HdJ" firstAttribute="leading" secondItem="Sbw-02-diX" secondAttribute="leadingMargin" constant="-16" id="Kth-Bg-AuT"/>
+                            <constraint firstItem="63f-Kv-CiG" firstAttribute="centerX" secondItem="Sbw-02-diX" secondAttribute="centerX" id="P3p-9n-EKp"/>
+                            <constraint firstItem="wo6-GH-HdJ" firstAttribute="top" secondItem="63f-Kv-CiG" secondAttribute="bottom" constant="8" id="XZo-g7-IvP"/>
+                            <constraint firstItem="63f-Kv-CiG" firstAttribute="top" secondItem="HkB-kK-I4a" secondAttribute="bottom" constant="7.5" id="cll-C5-OeU"/>
+                            <constraint firstItem="HkB-kK-I4a" firstAttribute="top" secondItem="w4C-Yn-7ri" secondAttribute="bottom" constant="21" id="do9-28-U6Y"/>
+                            <constraint firstItem="wo6-GH-HdJ" firstAttribute="centerX" secondItem="Sbw-02-diX" secondAttribute="centerX" id="goN-gq-xzT"/>
+                            <constraint firstItem="HkB-kK-I4a" firstAttribute="centerX" secondItem="Sbw-02-diX" secondAttribute="centerX" id="hdx-4k-chM"/>
+                            <constraint firstItem="jXA-wI-U85" firstAttribute="top" secondItem="wo6-GH-HdJ" secondAttribute="bottom" constant="22" id="li9-vM-6mU"/>
+                            <constraint firstItem="63f-Kv-CiG" firstAttribute="width" secondItem="HkB-kK-I4a" secondAttribute="width" id="nZu-F6-7S8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableMode" destination="63f-Kv-CiG" id="Qfs-2G-ZHz"/>
+                        <outlet property="tableView" destination="wo6-GH-HdJ" id="qzG-9y-Ivw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dQG-3y-4la" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="886.875" y="-730"/>
         </scene>
     </scenes>
     <resources>

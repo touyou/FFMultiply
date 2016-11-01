@@ -28,6 +28,7 @@ final class GameViewController: UIViewController {
     var limitTime: Int = 60
     
     let storage = UserDefaults.standard
+    let device_id = UIDevice.current.identifierForVendor?.uuidString ?? UUID().uuidString
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +79,7 @@ final class GameViewController: UIViewController {
             realm.add(newScore)
         }
         
-        let scores = realm.objects(Score.self).sorted(byProperty: "score")
+        let scores = realm.objects(Score.self).sorted(byProperty: "score", ascending: false)
         if let highScore = scores.first {
             if highScore.score <= newScore.score {
                 // ハイスコア更新のタイミングで書き込む
@@ -113,7 +114,7 @@ final class GameViewController: UIViewController {
         let ref = FIRDatabase.database().reference()
         
         if let name = storage.object(forKey: "playername") as? String {
-            ref.child("scores").child(UUID().uuidString).setValue(["name": name, "score": newScore.score as NSNumber])
+            ref.child("scores").child(device_id).setValue(["name": name, "score": newScore.score as NSNumber])
         } else {
             let alert = UIAlertController(title: "register name", message: "please set your username", preferredStyle: .alert)
             alert.addTextField {
@@ -125,7 +126,7 @@ final class GameViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "OK", style: .default) {
                 _ in
                 if let name = self.storage.object(forKey: "playername") as? String {
-                    ref.child("scores").child(UUID().uuidString).setValue(["name": name, "score": newScore.score as NSNumber])
+                    ref.child("scores").child(self.device_id).setValue(["name": name, "score": newScore.score as NSNumber])
                 }
             })
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

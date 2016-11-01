@@ -17,6 +17,7 @@
 		4657DE731DC83ACF00F1AF63 /* CircularRevealAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657DE711DC83ACF00F1AF63 /* CircularRevealAnimator.swift */; };
 		4657DE741DC83ACF00F1AF63 /* Transitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657DE721DC83ACF00F1AF63 /* Transitioner.swift */; };
 		4657DE761DC86F4600F1AF63 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657DE751DC86F4600F1AF63 /* SettingViewController.swift */; };
+		4657DE781DC8738400F1AF63 /* OnlineRankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657DE771DC8738400F1AF63 /* OnlineRankingViewController.swift */; };
 		466B5AD91DBE022D00517B86 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466B5AD81DBE022D00517B86 /* GameViewController.swift */; };
 		4697286F1DC6F9AC00B9E5EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4697286E1DC6F9AC00B9E5EA /* GoogleService-Info.plist */; };
 		469728721DC75EBA00B9E5EA /* ScoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469728711DC75EBA00B9E5EA /* ScoreModel.swift */; };
@@ -40,6 +41,7 @@
 		4657DE711DC83ACF00F1AF63 /* CircularRevealAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularRevealAnimator.swift; sourceTree = "<group>"; };
 		4657DE721DC83ACF00F1AF63 /* Transitioner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transitioner.swift; sourceTree = "<group>"; };
 		4657DE751DC86F4600F1AF63 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		4657DE771DC8738400F1AF63 /* OnlineRankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineRankingViewController.swift; sourceTree = "<group>"; };
 		466B5AD71DBDF9C900517B86 /* DSEG7ClassicMini-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DSEG7ClassicMini-Bold.ttf"; sourceTree = "<group>"; };
 		466B5AD81DBE022D00517B86 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		4697286E1DC6F9AC00B9E5EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				4603174C1DBDBFA500C9162F /* ViewController.swift */,
 				469728881DC8287700B9E5EA /* LocalScoreViewController.swift */,
 				4657DE751DC86F4600F1AF63 /* SettingViewController.swift */,
+				4657DE771DC8738400F1AF63 /* OnlineRankingViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				4603175D1DBDBFC300C9162F /* FFUtility.swift in Sources */,
 				4657DE741DC83ACF00F1AF63 /* Transitioner.swift in Sources */,
 				46D6AF761DBF032600BA44C3 /* ToastSwift.swift in Sources */,
+				4657DE781DC8738400F1AF63 /* OnlineRankingViewController.swift in Sources */,
 				4657DE731DC83ACF00F1AF63 /* CircularRevealAnimator.swift in Sources */,
 				4603174D1DBDBFA500C9162F /* ViewController.swift in Sources */,
 				469728801DC7769B00B9E5EA /* ResultView.swift in Sources */,
