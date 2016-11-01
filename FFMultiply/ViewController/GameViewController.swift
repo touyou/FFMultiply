@@ -18,13 +18,13 @@ final class GameViewController: UIViewController {
     @IBOutlet weak var rightProblemLabel: UILabel!
     @IBOutlet weak var limitLabel: UILabel!
     
-    
     var nowValue: String = ""
     var acceptedNum: Int = 0
     var problems: [FFProblem]!
     var nowProblem: FFProblem!
     var limitTimer: Timer!
     var limitTime: Int = 60
+    var interstitial: GADInterstitial!
     
     let storage = UserDefaults.standard
     let device_id = UIDevice.current.identifierForVendor?.uuidString ?? UUID().uuidString
@@ -40,6 +40,9 @@ final class GameViewController: UIViewController {
         pickProblem()
         
         limitTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
+        
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-2853999389157478/3692728869")
+        interstitial.load(GADRequest())
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -82,7 +85,7 @@ final class GameViewController: UIViewController {
         let resultView = ResultView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
         resultView.resultLabel.text = String(acceptedNum)
         resultView.parentViewController = self
-        resultView.score = acceptedNum
+        resultView.score = acceptedNum 
         // HighScore
         let scores = realm.objects(Score.self).sorted(byProperty: "score", ascending: false)
         if let highScore = scores.first {
@@ -100,6 +103,10 @@ final class GameViewController: UIViewController {
         config.dismissTouchBackground = false
         config.cornerRadius = 20
         presentPopupView(resultView, config: config)
+        
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        }
     }
     
     func updateTime() {

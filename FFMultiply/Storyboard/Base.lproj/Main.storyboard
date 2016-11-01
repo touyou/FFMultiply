@@ -663,8 +663,8 @@
                                 </segments>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wo6-GH-HdJ">
-                                <rect key="frame" x="0.0" y="107" width="320" height="301"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wo6-GH-HdJ">
+                                <rect key="frame" x="0.0" y="107" width="320" height="286"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rankCell" id="oXw-Lx-ahg">
@@ -701,6 +701,12 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Rank: ---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9y-jh-lfG">
+                                <rect key="frame" x="119" y="403.5" width="82.5" height="18.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.52156899999999995" green="0.74902000000000002" blue="0.36470599999999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -708,17 +714,19 @@
                             <constraint firstItem="jXA-wI-U85" firstAttribute="leading" secondItem="Sbw-02-diX" secondAttribute="leadingMargin" constant="7" id="9xT-a2-fJg"/>
                             <constraint firstItem="taE-0E-APc" firstAttribute="top" secondItem="f0o-i8-7Pe" secondAttribute="bottom" constant="20" id="9xb-Wa-mlZ"/>
                             <constraint firstItem="taE-0E-APc" firstAttribute="top" secondItem="jXA-wI-U85" secondAttribute="bottom" constant="20" id="DaH-1V-yFT"/>
+                            <constraint firstItem="J9y-jh-lfG" firstAttribute="top" secondItem="wo6-GH-HdJ" secondAttribute="bottom" constant="5" id="Dvq-Xf-I4F"/>
                             <constraint firstItem="wo6-GH-HdJ" firstAttribute="leading" secondItem="Sbw-02-diX" secondAttribute="leadingMargin" constant="-16" id="Kth-Bg-AuT"/>
                             <constraint firstItem="63f-Kv-CiG" firstAttribute="centerX" secondItem="Sbw-02-diX" secondAttribute="centerX" id="P3p-9n-EKp"/>
                             <constraint firstItem="wo6-GH-HdJ" firstAttribute="top" secondItem="63f-Kv-CiG" secondAttribute="bottom" constant="8" id="XZo-g7-IvP"/>
                             <constraint firstItem="63f-Kv-CiG" firstAttribute="top" secondItem="HkB-kK-I4a" secondAttribute="bottom" constant="7.5" id="cll-C5-OeU"/>
                             <constraint firstItem="HkB-kK-I4a" firstAttribute="top" secondItem="w4C-Yn-7ri" secondAttribute="bottom" constant="21" id="do9-28-U6Y"/>
+                            <constraint firstItem="J9y-jh-lfG" firstAttribute="centerX" secondItem="Sbw-02-diX" secondAttribute="centerX" id="e4O-ef-M82"/>
                             <constraint firstItem="wo6-GH-HdJ" firstAttribute="centerX" secondItem="Sbw-02-diX" secondAttribute="centerX" id="goN-gq-xzT"/>
                             <constraint firstItem="HkB-kK-I4a" firstAttribute="centerX" secondItem="Sbw-02-diX" secondAttribute="centerX" id="hdx-4k-chM"/>
-                            <constraint firstItem="jXA-wI-U85" firstAttribute="top" secondItem="wo6-GH-HdJ" secondAttribute="bottom" constant="22" id="li9-vM-6mU"/>
                             <constraint firstItem="taE-0E-APc" firstAttribute="top" secondItem="iuW-zB-6m7" secondAttribute="bottom" constant="20" id="lsS-wc-rMc"/>
                             <constraint firstItem="63f-Kv-CiG" firstAttribute="width" secondItem="HkB-kK-I4a" secondAttribute="width" id="nZu-F6-7S8"/>
                             <constraint firstItem="iuW-zB-6m7" firstAttribute="centerX" secondItem="Sbw-02-diX" secondAttribute="centerX" id="ngF-k2-KzX"/>
+                            <constraint firstItem="iuW-zB-6m7" firstAttribute="top" secondItem="J9y-jh-lfG" secondAttribute="bottom" constant="8" id="ssy-kO-N5r"/>
                         </constraints>
                     </view>
                     <connections>
