@@ -30,5 +30,10 @@ final class ViewController: UIViewController {
         let viewCon = LocalScoreViewController.instantiate(sender.center)
         present(viewCon, animated: true, completion: nil)
     }
+    
+    @IBAction func settingView(_ sender: UIButton) {
+        let viewCon = SettingViewController.instantiate(sender.center)
+        present(viewCon, animated: true, completion: nil)
+    }
 }
 

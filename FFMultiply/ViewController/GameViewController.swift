@@ -9,6 +9,7 @@
 import UIKit
 import STZPopupView
 import RealmSwift
+import Firebase
 
 final class GameViewController: UIViewController {
     
@@ -25,6 +26,8 @@ final class GameViewController: UIViewController {
     var nowProblem: FFProblem!
     var limitTimer: Timer!
     var limitTime: Int = 60
+    
+    let storage = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +78,16 @@ final class GameViewController: UIViewController {
             realm.add(newScore)
         }
         
+        let scores = realm.objects(Score.self).sorted(byProperty: "score")
+        if let highScore = scores.first {
+            if highScore.score <= newScore.score {
+                // ハイスコア更新のタイミングで書き込む
+                updateHighScore(newScore)
+            }
+        } else {
+            updateHighScore(newScore)
+        }
+        
         // ResultView
         let resultView = ResultView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
         resultView.resultLabel.text = String(acceptedNum)
@@ -93,6 +106,30 @@ final class GameViewController: UIViewController {
             limitTimer.invalidate()
             result()
             return
+        }
+    }
+    
+    func updateHighScore(_ newScore: Score) {
+        let ref = FIRDatabase.database().reference()
+        
+        if let name = storage.object(forKey: "playername") as? String {
+            ref.child("scores").child(UUID().uuidString).setValue(["name": name, "score": newScore.score as NSNumber])
+        } else {
+            let alert = UIAlertController(title: "register name", message: "please set your username", preferredStyle: .alert)
+            alert.addTextField {
+                textField in
+                _ = textField.text.flatMap {
+                    self.storage.set($0, forKey: "playername")
+                }
+            }
+            alert.addAction(UIAlertAction(title: "OK", style: .default) {
+                _ in
+                if let name = self.storage.object(forKey: "playername") as? String {
+                    ref.child("scores").child(UUID().uuidString).setValue(["name": name, "score": newScore.score as NSNumber])
+                }
+            })
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
         }
 
     }

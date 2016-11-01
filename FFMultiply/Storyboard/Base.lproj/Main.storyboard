@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -68,6 +69,9 @@
                                         <state key="normal" title="settings">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="settingView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yqz-ua-wpv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -86,8 +90,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="6gk-O8-QVh" kind="presentation" identifier="startGame" modalTransitionStyle="crossDissolve" id="X5y-po-eTe"/>
-                        <segue destination="RlN-Ak-Fmh" kind="presentation" identifier="toSettingView" id="xsu-aq-fK1"/>
+                        <segue destination="6gk-O8-QVh" kind="presentation" identifier="startGame" modalTransitionStyle="coverVertical" id="X5y-po-eTe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -202,7 +205,7 @@
                                                             <action selector="tapDelete" destination="6gk-O8-QVh" eventType="touchUpInside" id="rTX-Kh-gRy"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sU6-bL-STD">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sU6-bL-STD">
                                                         <rect key="frame" x="106.5" y="0.0" width="107" height="50"/>
                                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
@@ -519,7 +522,8 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srd-XL-KLi">
-                                <rect key="frame" x="144" y="430" width="32" height="30"/>
+                                <rect key="frame" x="143" y="425" width="34" height="35"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <state key="normal" title="EXIT">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -548,10 +552,10 @@
             </objects>
             <point key="canvasLocation" x="20.625" y="-728.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Setting View Controller-->
         <scene sceneID="x7z-KZ-Ch3">
             <objects>
-                <viewController id="RlN-Ak-Fmh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Setting" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RlN-Ak-Fmh" customClass="SettingViewController" customModule="FFMultiply" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bU5-0p-XDY"/>
                         <viewControllerLayoutGuide type="bottom" id="mxu-mg-nyj"/>
@@ -559,12 +563,57 @@
                     <view key="view" contentMode="scaleToFill" id="iZd-pY-Xqh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaY-7V-KmC">
+                                <rect key="frame" x="131" y="28" width="59.5" height="23"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="user name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ywx-Uv-9oh">
+                                <rect key="frame" x="16" y="87" width="288" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzt-tI-ERy">
+                                <rect key="frame" x="267" y="442" width="37" height="30"/>
+                                <state key="normal" title="SAVE">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveBtn:" destination="RlN-Ak-Fmh" eventType="touchUpInside" id="zel-rA-LEc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n98-CE-HY7">
+                                <rect key="frame" x="16" y="442" width="59" height="30"/>
+                                <state key="normal" title="CANCEL">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelBtn:" destination="RlN-Ak-Fmh" eventType="touchUpInside" id="oVU-UP-1j5"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JaY-7V-KmC" firstAttribute="centerX" secondItem="iZd-pY-Xqh" secondAttribute="centerX" id="5Sz-fO-hfa"/>
+                            <constraint firstItem="Ywx-Uv-9oh" firstAttribute="top" secondItem="JaY-7V-KmC" secondAttribute="bottom" constant="36" id="6DQ-9s-QRG"/>
+                            <constraint firstItem="n98-CE-HY7" firstAttribute="leading" secondItem="iZd-pY-Xqh" secondAttribute="leadingMargin" id="CJQ-IJ-Mnv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ywx-Uv-9oh" secondAttribute="trailing" id="FIz-hk-oFN"/>
+                            <constraint firstItem="mxu-mg-nyj" firstAttribute="top" secondItem="vzt-tI-ERy" secondAttribute="bottom" constant="8" id="Fb0-4P-9Yv"/>
+                            <constraint firstItem="mxu-mg-nyj" firstAttribute="top" secondItem="n98-CE-HY7" secondAttribute="bottom" constant="8" id="T6f-BR-r4r"/>
+                            <constraint firstItem="vzt-tI-ERy" firstAttribute="trailing" secondItem="iZd-pY-Xqh" secondAttribute="trailingMargin" id="abW-I7-hJP"/>
+                            <constraint firstItem="JaY-7V-KmC" firstAttribute="top" secondItem="bU5-0p-XDY" secondAttribute="bottom" constant="8" id="eIG-Fj-8QC"/>
+                            <constraint firstItem="Ywx-Uv-9oh" firstAttribute="leading" secondItem="iZd-pY-Xqh" secondAttribute="leadingMargin" id="spw-XU-idf"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="userTextField" destination="Ywx-Uv-9oh" id="hZp-L4-h9r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1hG-3d-aa9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21" y="893"/>
+            <point key="canvasLocation" x="20.625" y="892.5"/>
         </scene>
     </scenes>
     <resources>
