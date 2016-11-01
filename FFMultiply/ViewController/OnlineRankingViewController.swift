@@ -50,32 +50,38 @@ final class OnlineRankingViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        ref.child("scores").queryOrdered(byChild: "score").observe(.value, with: {
-            snapshot in
+        let compareDict: ((key: String, value: Any), (key: String, value: Any)) -> Bool = { (a, b) in
+            let ascore = (a.value as AnyObject).object(forKey: "score") as! Int
+            let bscore = (b.value as AnyObject).object(forKey: "score") as! Int
+            return ascore < bscore
+        }
+        let loadScore: (FIRDataSnapshot) -> Void = { snapshot in
             guard let values = snapshot.value as? [String: Any] else {
                 return
             }
             print("debug -----")
             print(values)
-            let rev = values.values.reversed()
-            let revKey = values.keys.reversed()
-            var sc = (rev[0] as AnyObject).object(forKey: "score") as! Int
-            var na = (rev[0] as AnyObject).object(forKey: "name") as! String
+            let sortVal = values.sorted(by: compareDict)
+            print(sortVal)
+            let rev = Array(sortVal.reversed())
+            var sc = (rev[0].value as AnyObject).object(forKey: "score") as! Int
+            var na = (rev[0].value as AnyObject).object(forKey: "name") as! String
             var r = 1
+            self.dataArray = []
             self.dataArray.append((1, sc, na))
-            if revKey.first == self.device_id {
+            if rev.first?.key == self.device_id {
                 self.myPosition = 0
                 self.myRank = r
                 self.rankLabel.text = "Your Rank: \(self.myRank)"
             }
             for i in 1 ..< rev.count {
-                let nextSc = (rev[i] as AnyObject).object(forKey: "score") as! Int
-                na = (rev[i] as AnyObject).object(forKey: "name") as! String
+                let nextSc = (rev[i].value as AnyObject).object(forKey: "score") as! Int
+                na = (rev[i].value as AnyObject).object(forKey: "name") as! String
                 if sc != nextSc {
                     r = i + 1
                     sc = nextSc
                 }
-                if revKey[i] == self.device_id {
+                if rev[i].key == self.device_id {
                     self.myPosition = i
                     self.myRank = r
                     self.rankLabel.text = "Your Rank: \(self.myRank)"
@@ -83,7 +89,9 @@ final class OnlineRankingViewController: UIViewController {
                 self.dataArray.append((r, sc, na))
             }
             self.tableView.reloadData()
-        }) { error in
+        }
+        
+        ref.child("scores").observe(.value, with: loadScore) { error in
             print(error.localizedDescription)
         }
     }
