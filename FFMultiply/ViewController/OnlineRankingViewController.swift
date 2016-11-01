@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import Firebase
+import DZNEmptyDataSet
 
 final class OnlineRankingViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
@@ -18,6 +19,7 @@ final class OnlineRankingViewController: UIViewController {
             footer.backgroundColor = UIColor.clear
             tableView.tableFooterView = footer
             tableView.backgroundColor = UIColor.clear
+            tableView.emptyDataSetSource = self
         }
     }
     @IBOutlet weak var tableMode: UISegmentedControl! {
@@ -170,3 +172,13 @@ extension OnlineRankingViewController: UITableViewDataSource {
     }
 }
 
+extension OnlineRankingViewController: DZNEmptyDataSetSource {
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = NSAttributedString(string: "No Data", attributes: [NSFontAttributeName: UIFont(name: "Futura", size: 20)!, NSForegroundColorAttributeName: UIColor.white])
+        return str
+    }
+    
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.clear
+    }
+}
