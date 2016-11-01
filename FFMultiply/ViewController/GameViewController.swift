@@ -43,9 +43,18 @@ final class GameViewController: UIViewController {
         super.viewDidAppear(animated)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        if limitTimer.isValid {
+            limitTimer.invalidate()
+        }
+    }
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
     
     // MARK: Utility
     
