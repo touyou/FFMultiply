@@ -124,10 +124,11 @@ extension OnlineRankingViewController: UITableViewDataSource {
         cell.backgroundColor = UIColor.clear
         cell.textLabel?.textColor = UIColor.white
         cell.textLabel?.font = UIFont(name: "Futura", size: 16)
+        cell.textLabel?.numberOfLines = 0
         cell.tintColor = UIColor.lightGray
         
         let d = dataArray[indexPath.row]
-        cell.textLabel?.text = "\(d.0). \(d.1) points\t \(d.2)"
+        cell.textLabel?.text = "\(d.0). \(d.1) points\n\t \(d.2)"
         return cell
     }
 }
