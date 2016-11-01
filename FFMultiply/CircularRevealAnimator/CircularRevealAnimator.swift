@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CircularRevealAnimator: NSObject {
+class CircularRevealAnimator : NSObject {
     fileprivate let center: CGPoint
     fileprivate let duration: TimeInterval
     fileprivate let isPresent: Bool
@@ -20,12 +20,12 @@ class CircularRevealAnimator: NSObject {
         self.isPresent = isPresent
     }
     
-    dynamic func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+    dynamic func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         completionHandler?()
     }
 }
 
-extension CircularRevealAnimator: UIViewControllerAnimatedTransitioning {
+extension CircularRevealAnimator : UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return duration
     }
@@ -48,7 +48,7 @@ extension CircularRevealAnimator: UIViewControllerAnimatedTransitioning {
         }()
         
         let rectAroundCircle = { (radius: CGFloat) -> CGRect in
-            return CGRect(origin: self.center, size: .zero).insetBy(dx: -radius, dy: -radius)
+            return CGRect(origin: self.center, size: CGSize.zero).insetBy(dx: -radius, dy: -radius)
         }
         
         let zeroPath = CGPath(ellipseIn: rectAroundCircle(0), transform: nil)
@@ -56,16 +56,16 @@ extension CircularRevealAnimator: UIViewControllerAnimatedTransitioning {
         
         if isPresent {
             containerView.insertSubview(target, aboveSubview: source)
-            addAnimation(viewController: target, fromValue: zeroPath, toValue: fullPath)
+            addAnimation(target, fromValue: zeroPath, toValue: fullPath)
         } else {
             containerView.insertSubview(target, belowSubview: source)
-            addAnimation(viewController: source, fromValue: fullPath, toValue: zeroPath)
+            addAnimation(source, fromValue: fullPath, toValue: zeroPath)
         }
     }
 }
 
 extension CircularRevealAnimator: CAAnimationDelegate {
-    fileprivate func addAnimation(viewController: UIView, fromValue: CGPath, toValue: CGPath) {
+    fileprivate func addAnimation(_ viewController: UIView, fromValue: CGPath, toValue: CGPath) {
         let animation = CABasicAnimation(keyPath: "path")
         animation.fromValue = fromValue
         animation.toValue = toValue

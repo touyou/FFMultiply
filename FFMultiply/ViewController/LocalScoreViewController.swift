@@ -74,12 +74,14 @@ extension LocalScoreViewController: UITableViewDataSource {
         cell.backgroundColor = UIColor.clear
         cell.textLabel?.textColor = UIColor.white
         cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.font = UIFont(name: "Futura", size: 16)
+        cell.tintColor = UIColor.lightGray
         
         let r = rank[indexPath.row]
         let dateFormat = DateFormatter()
         dateFormat.dateStyle = .medium
         
-        cell.textLabel?.text = "\(r.0). \(r.1.score) points\n date:\(dateFormat.string(from: r.1.date as Date))"
+        cell.textLabel?.text = "\(r.0). \(r.1.score) points\n\t date: \(dateFormat.string(from: r.1.date as Date))"
         return cell
     }
 }

@@ -9,19 +9,19 @@
 import UIKit
 
 enum TransitionStyle {
-    case circularReveal(CGPoint), defaults
+    case circularReveal(CGPoint), `default`
     
     var presentTransitioning: UIViewControllerAnimatedTransitioning? {
         switch self {
         case .circularReveal(let point): return CircularRevealAnimator(center: point, isPresent: true)
-        case .defaults: return nil
+        case .default: return nil
         }
     }
     
     var dismissTransitioning: UIViewControllerAnimatedTransitioning? {
         switch self {
         case .circularReveal(let point): return CircularRevealAnimator(center: point, isPresent: false)
-        case .defaults: return nil
+        case .default: return nil
         }
     }
 }
@@ -37,11 +37,11 @@ class Transitioner: NSObject {
 }
 
 extension Transitioner: UIViewControllerTransitioningDelegate {
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return style.presentTransitioning
     }
     
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return style.dismissTransitioning
     }
 }

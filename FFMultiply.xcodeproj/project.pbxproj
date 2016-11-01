@@ -14,15 +14,15 @@
 		460317521DBDBFA500C9162F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 460317511DBDBFA500C9162F /* Assets.xcassets */; };
 		460317551DBDBFA500C9162F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460317531DBDBFA500C9162F /* LaunchScreen.storyboard */; };
 		4603175D1DBDBFC300C9162F /* FFUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4603175C1DBDBFC300C9162F /* FFUtility.swift */; };
+		4657DE731DC83ACF00F1AF63 /* CircularRevealAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657DE711DC83ACF00F1AF63 /* CircularRevealAnimator.swift */; };
+		4657DE741DC83ACF00F1AF63 /* Transitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657DE721DC83ACF00F1AF63 /* Transitioner.swift */; };
 		466B5AD91DBE022D00517B86 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466B5AD81DBE022D00517B86 /* GameViewController.swift */; };
-		466B5ADB1DBE11AF00517B86 /* DSEG7ClassicMini-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 466B5AD71DBDF9C900517B86 /* DSEG7ClassicMini-Bold.ttf */; };
 		4697286F1DC6F9AC00B9E5EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4697286E1DC6F9AC00B9E5EA /* GoogleService-Info.plist */; };
 		469728721DC75EBA00B9E5EA /* ScoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469728711DC75EBA00B9E5EA /* ScoreModel.swift */; };
 		4697287E1DC775B700B9E5EA /* ResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4697287D1DC775B700B9E5EA /* ResultView.xib */; };
 		469728801DC7769B00B9E5EA /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697287F1DC7769B00B9E5EA /* ResultView.swift */; };
-		469728861DC8280000B9E5EA /* CircularRevealAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469728841DC8280000B9E5EA /* CircularRevealAnimator.swift */; };
-		469728871DC8280000B9E5EA /* Transitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469728851DC8280000B9E5EA /* Transitioner.swift */; };
 		469728891DC8287700B9E5EA /* LocalScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469728881DC8287700B9E5EA /* LocalScoreViewController.swift */; };
+		4697288A1DC8395600B9E5EA /* DSEG7ClassicMini-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 466B5AD71DBDF9C900517B86 /* DSEG7ClassicMini-Bold.ttf */; };
 		46D6AF761DBF032600BA44C3 /* ToastSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D6AF751DBF032600BA44C3 /* ToastSwift.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,14 +36,14 @@
 		460317541DBDBFA500C9162F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		460317561DBDBFA500C9162F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4603175C1DBDBFC300C9162F /* FFUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFUtility.swift; sourceTree = "<group>"; };
+		4657DE711DC83ACF00F1AF63 /* CircularRevealAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularRevealAnimator.swift; sourceTree = "<group>"; };
+		4657DE721DC83ACF00F1AF63 /* Transitioner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transitioner.swift; sourceTree = "<group>"; };
 		466B5AD71DBDF9C900517B86 /* DSEG7ClassicMini-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DSEG7ClassicMini-Bold.ttf"; sourceTree = "<group>"; };
 		466B5AD81DBE022D00517B86 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		4697286E1DC6F9AC00B9E5EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		469728711DC75EBA00B9E5EA /* ScoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScoreModel.swift; path = Model/ScoreModel.swift; sourceTree = "<group>"; };
 		4697287D1DC775B700B9E5EA /* ResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultView.xib; path = Views/ResultView.xib; sourceTree = "<group>"; };
 		4697287F1DC7769B00B9E5EA /* ResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultView.swift; path = Views/ResultView.swift; sourceTree = "<group>"; };
-		469728841DC8280000B9E5EA /* CircularRevealAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularRevealAnimator.swift; sourceTree = "<group>"; };
-		469728851DC8280000B9E5EA /* Transitioner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transitioner.swift; sourceTree = "<group>"; };
 		469728881DC8287700B9E5EA /* LocalScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalScoreViewController.swift; sourceTree = "<group>"; };
 		46D6AF751DBF032600BA44C3 /* ToastSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastSwift.swift; sourceTree = "<group>"; };
 		BD43C510C6E6B65F614DAC02 /* Pods_FFMultiply.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FFMultiply.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,7 +91,7 @@
 		460317491DBDBFA500C9162F /* FFMultiply */ = {
 			isa = PBXGroup;
 			children = (
-				469728831DC8280000B9E5EA /* CircularRevealAnimator */,
+				4657DE701DC83ACF00F1AF63 /* CircularRevealAnimator */,
 				469728751DC7753700B9E5EA /* Views */,
 				469728701DC75E6600B9E5EA /* Model */,
 				46D6AF791DBF094800BA44C3 /* Assets */,
@@ -101,6 +101,15 @@
 				46D6AF781DBF093200BA44C3 /* ViewController */,
 			);
 			path = FFMultiply;
+			sourceTree = "<group>";
+		};
+		4657DE701DC83ACF00F1AF63 /* CircularRevealAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				4657DE711DC83ACF00F1AF63 /* CircularRevealAnimator.swift */,
+				4657DE721DC83ACF00F1AF63 /* Transitioner.swift */,
+			);
+			path = CircularRevealAnimator;
 			sourceTree = "<group>";
 		};
 		469728701DC75E6600B9E5EA /* Model */ = {
@@ -118,15 +127,6 @@
 				4697287F1DC7769B00B9E5EA /* ResultView.swift */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		469728831DC8280000B9E5EA /* CircularRevealAnimator */ = {
-			isa = PBXGroup;
-			children = (
-				469728841DC8280000B9E5EA /* CircularRevealAnimator.swift */,
-				469728851DC8280000B9E5EA /* Transitioner.swift */,
-			);
-			path = CircularRevealAnimator;
 			sourceTree = "<group>";
 		};
 		46D6AF771DBF032E00BA44C3 /* Utility */ = {
@@ -248,7 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				466B5ADB1DBE11AF00517B86 /* DSEG7ClassicMini-Bold.ttf in Resources */,
+				4697288A1DC8395600B9E5EA /* DSEG7ClassicMini-Bold.ttf in Resources */,
 				460317551DBDBFA500C9162F /* LaunchScreen.storyboard in Resources */,
 				4697286F1DC6F9AC00B9E5EA /* GoogleService-Info.plist in Resources */,
 				4697287E1DC775B700B9E5EA /* ResultView.xib in Resources */,
@@ -313,13 +313,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				469728721DC75EBA00B9E5EA /* ScoreModel.swift in Sources */,
-				469728871DC8280000B9E5EA /* Transitioner.swift in Sources */,
 				466B5AD91DBE022D00517B86 /* GameViewController.swift in Sources */,
 				4603175D1DBDBFC300C9162F /* FFUtility.swift in Sources */,
+				4657DE741DC83ACF00F1AF63 /* Transitioner.swift in Sources */,
 				46D6AF761DBF032600BA44C3 /* ToastSwift.swift in Sources */,
+				4657DE731DC83ACF00F1AF63 /* CircularRevealAnimator.swift in Sources */,
 				4603174D1DBDBFA500C9162F /* ViewController.swift in Sources */,
 				469728801DC7769B00B9E5EA /* ResultView.swift in Sources */,
-				469728861DC8280000B9E5EA /* CircularRevealAnimator.swift in Sources */,
 				4603174B1DBDBFA500C9162F /* AppDelegate.swift in Sources */,
 				469728891DC8287700B9E5EA /* LocalScoreViewController.swift in Sources */,
 			);
