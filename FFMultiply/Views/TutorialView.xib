@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TutorialView" customModule="FFMultiply" customModuleProvider="target">
+            <connections>
+                <outlet property="leftButton" destination="9vT-t8-fJa" id="9cF-7q-fpk"/>
+                <outlet property="rightButton" destination="TUx-3l-05U" id="e94-HP-am9"/>
+                <outlet property="tutorialImageView" destination="rHy-FG-Uhh" id="8PS-Ch-Mq4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="483"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ffmultiicon" translatesAutoresizingMaskIntoConstraints="NO" id="qq2-te-Av1">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="qq2-te-Av1" secondAttribute="height" multiplier="1:1" id="jFY-kU-4oM"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdD-VR-zQO">
+                    <rect key="frame" x="183" y="428" width="34" height="35"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                    <state key="normal" title="EXIT">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="exitButton" destination="-1" eventType="touchUpInside" id="DUC-XC-5OS"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUx-3l-05U">
+                    <rect key="frame" x="350" y="430" width="30" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="👉">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="pushRight" destination="-1" eventType="touchUpInside" id="boF-Nl-gWI"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vT-t8-fJa">
+                    <rect key="frame" x="20" y="430" width="30" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="👈">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="pushLeft" destination="-1" eventType="touchUpInside" id="nlr-c2-pA9"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rHy-FG-Uhh">
+                    <rect key="frame" x="20" y="20" width="360" height="402"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="mdD-VR-zQO" secondAttribute="bottom" constant="20" id="7Jj-fc-EeY"/>
+                <constraint firstItem="rHy-FG-Uhh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8d9-Ad-Vjt"/>
+                <constraint firstItem="9vT-t8-fJa" firstAttribute="top" secondItem="rHy-FG-Uhh" secondAttribute="bottom" constant="8" id="APx-IU-Z1N"/>
+                <constraint firstItem="qq2-te-Av1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="AbI-1X-MrJ"/>
+                <constraint firstAttribute="trailing" secondItem="TUx-3l-05U" secondAttribute="trailing" constant="20" id="Cm6-ez-4jH"/>
+                <constraint firstItem="qq2-te-Av1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MRM-im-9Yw"/>
+                <constraint firstItem="rHy-FG-Uhh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="NgA-Gv-ARV"/>
+                <constraint firstItem="rHy-FG-Uhh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="Uif-OX-RXY"/>
+                <constraint firstAttribute="bottom" secondItem="9vT-t8-fJa" secondAttribute="bottom" constant="20" id="WvS-Ad-nva"/>
+                <constraint firstAttribute="trailing" secondItem="qq2-te-Av1" secondAttribute="trailing" id="YYU-9H-LIr"/>
+                <constraint firstItem="9vT-t8-fJa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="dVJ-27-9PB"/>
+                <constraint firstAttribute="bottom" secondItem="TUx-3l-05U" secondAttribute="bottom" constant="20" id="xt9-NX-BsH"/>
+                <constraint firstItem="mdD-VR-zQO" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ynQ-Nn-eRb"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="34" y="45.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ffmultiicon" width="1024" height="1024"/>
+    </resources>
+</document>

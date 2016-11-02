@@ -544,7 +544,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.72548997402191162" green="0.48627498745918274" blue="0.31372499465942383" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.72549019607843135" green="0.48627450980392156" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="fCM-gr-9C8" firstAttribute="leading" secondItem="QHY-Yy-pXX" secondAttribute="leading" id="0yw-sS-1f4"/>
                             <constraint firstItem="884-uS-dmV" firstAttribute="top" secondItem="Srd-XL-KLi" secondAttribute="bottom" constant="20" id="5Xe-08-To5"/>
@@ -620,9 +620,6 @@
                                 <state key="normal" title="HELP">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="e4J-MQ-uG2" kind="presentation" id="bVR-9i-K4h"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -651,14 +648,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1hG-3d-aa9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="20.625" y="892.5"/>
-        </scene>
-        <!--Page View Controller-->
-        <scene sceneID="WVL-iw-yaU">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="e4J-MQ-uG2" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ObQ-Av-BYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="883" y="898"/>
         </scene>
         <!--Online Ranking View Controller-->
         <scene sceneID="Bbv-W3-bss">
@@ -738,7 +727,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.52156901359558105" green="0.74901998043060303" blue="0.36470600962638855" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.52156862745098043" green="0.74901960784313726" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="J9y-jh-lfG" secondAttribute="trailing" id="2dz-fU-uDu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="f0o-i8-7Pe" secondAttribute="trailing" id="8Ud-Y3-ayq"/>
