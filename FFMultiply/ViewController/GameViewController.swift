@@ -123,7 +123,7 @@ final class GameViewController: UIViewController {
         let ref = FIRDatabase.database().reference()
         
         if let name = storage.object(forKey: "playername") as? String {
-            ref.child("scores").child(device_id).setValue(["name": name, "score": newScore.score as NSNumber])
+            ref.child("scores").child(device_id).setValue(["name": name, "score": newScore.score as NSNumber], andPriority: -newScore.score)
         } else {
             let alert = UIAlertController(title: "register name", message: "please set your username", preferredStyle: .alert)
             alert.addTextField {
@@ -134,7 +134,7 @@ final class GameViewController: UIViewController {
                 _ in
                 let textfield = alert.textFields?.first
                 if let name = textfield?.text {
-                    ref.child("scores").child(self.device_id).setValue(["name": name, "score": newScore.score as NSNumber])
+                    ref.child("scores").child(self.device_id).setValue(["name": name, "score": newScore.score as NSNumber], andPriority: -newScore.score)
                     self.storage.set(name, forKey: "playername")
                 }
             })
