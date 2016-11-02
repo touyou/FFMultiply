@@ -620,6 +620,9 @@
                                 <state key="normal" title="HELP">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tutorialBtn" destination="RlN-Ak-Fmh" eventType="touchUpInside" id="xiA-xU-ccQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

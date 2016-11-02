@@ -82,7 +82,8 @@ final class GameViewController: UIViewController {
         }
         
         // ResultView
-        let resultView = ResultView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        let windowWidth = UIScreen.main.bounds.size.width - 30
+        let resultView = ResultView(frame: CGRect(x: 0, y: 0, width: windowWidth, height: windowWidth))
         resultView.resultLabel.text = String(acceptedNum)
         resultView.parentViewController = self
         resultView.score = acceptedNum 

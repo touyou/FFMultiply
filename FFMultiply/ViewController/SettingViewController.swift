@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import GoogleMobileAds
+import STZPopupView
 
 final class SettingViewController: UIViewController {
     @IBOutlet weak var userTextField: UITextField! {
@@ -56,6 +57,15 @@ extension SettingViewController {
         transitioner = Transitioner(style: .circularReveal(sender.center), viewController: self)
         _ = userTextField.text.flatMap { storage.set($0, forKey: "playername") }
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func tutorialBtn() {
+        let windowWidth = UIScreen.main.bounds.size.width - 30
+        let tutorialView = TutorialView(frame: CGRect(x: 0, y: 0, width: windowWidth, height: windowWidth / 300.0 * 362.5))
+        tutorialView.finish = {
+            self.dismissPopupView()
+        }
+        presentPopupView(tutorialView)
     }
 }
 

@@ -64,18 +64,20 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="mdD-VR-zQO" secondAttribute="bottom" constant="20" id="7Jj-fc-EeY"/>
+                <constraint firstItem="mdD-VR-zQO" firstAttribute="top" secondItem="rHy-FG-Uhh" secondAttribute="bottom" constant="6" id="6hs-U0-KfW"/>
+                <constraint firstAttribute="bottom" secondItem="TUx-3l-05U" secondAttribute="bottom" constant="20" id="7M1-c0-m9n"/>
                 <constraint firstItem="rHy-FG-Uhh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8d9-Ad-Vjt"/>
                 <constraint firstItem="9vT-t8-fJa" firstAttribute="top" secondItem="rHy-FG-Uhh" secondAttribute="bottom" constant="8" id="APx-IU-Z1N"/>
                 <constraint firstItem="qq2-te-Av1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="AbI-1X-MrJ"/>
                 <constraint firstAttribute="trailing" secondItem="TUx-3l-05U" secondAttribute="trailing" constant="20" id="Cm6-ez-4jH"/>
                 <constraint firstItem="qq2-te-Av1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MRM-im-9Yw"/>
                 <constraint firstItem="rHy-FG-Uhh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="NgA-Gv-ARV"/>
+                <constraint firstItem="TUx-3l-05U" firstAttribute="top" secondItem="rHy-FG-Uhh" secondAttribute="bottom" constant="8" id="Szy-UF-20S"/>
                 <constraint firstItem="rHy-FG-Uhh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="Uif-OX-RXY"/>
                 <constraint firstAttribute="bottom" secondItem="9vT-t8-fJa" secondAttribute="bottom" constant="20" id="WvS-Ad-nva"/>
                 <constraint firstAttribute="trailing" secondItem="qq2-te-Av1" secondAttribute="trailing" id="YYU-9H-LIr"/>
+                <constraint firstAttribute="bottom" secondItem="mdD-VR-zQO" secondAttribute="bottom" constant="20" id="cS0-MZ-ThL"/>
                 <constraint firstItem="9vT-t8-fJa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="dVJ-27-9PB"/>
-                <constraint firstAttribute="bottom" secondItem="TUx-3l-05U" secondAttribute="bottom" constant="20" id="xt9-NX-BsH"/>
                 <constraint firstItem="mdD-VR-zQO" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ynQ-Nn-eRb"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

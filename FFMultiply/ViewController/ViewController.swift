@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMobileAds
+import STZPopupView
 
 final class ViewController: UIViewController {
     @IBOutlet weak var bannerView: GADBannerView! {
@@ -19,14 +20,20 @@ final class ViewController: UIViewController {
         }
     }
     
+    let storage = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        if storage.object(forKey: "tutorial") == nil {
+            let windowWidth = UIScreen.main.bounds.size.width - 30
+            let tutorialView = TutorialView(frame: CGRect(x: 0, y: 0, width: windowWidth, height: windowWidth / 300.0 * 362.5))
+            tutorialView.finish = {
+                self.dismissPopupView()
+            }
+            presentPopupView(tutorialView)
+            storage.set(true, forKey: "tutorial")
+        }
     }
 
     @IBAction func back(segue: UIStoryboardSegue) {}
