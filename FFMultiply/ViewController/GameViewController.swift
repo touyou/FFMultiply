@@ -12,13 +12,11 @@ import RealmSwift
 import Firebase
 
 final class GameViewController: UIViewController {
-    
     @IBOutlet weak var inputNumberLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var leftProblemLabel: UILabel!
     @IBOutlet weak var rightProblemLabel: UILabel!
     @IBOutlet weak var limitLabel: UILabel!
-    
     
     var nowValue: String = ""
     var acceptedNum: Int = 0
@@ -26,6 +24,7 @@ final class GameViewController: UIViewController {
     var nowProblem: FFProblem!
     var limitTimer: Timer!
     var limitTime: Int = 60
+    var interstitial: GADInterstitial!
     
     let storage = UserDefaults.standard
     let device_id = UIDevice.current.identifierForVendor?.uuidString ?? UUID().uuidString
@@ -41,6 +40,9 @@ final class GameViewController: UIViewController {
         pickProblem()
         
         limitTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
+        
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-2853999389157478/3692728869")
+        interstitial.load(GADRequest())
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -79,25 +81,33 @@ final class GameViewController: UIViewController {
             realm.add(newScore)
         }
         
+        // ResultView
+        let windowWidth = UIScreen.main.bounds.size.width - 30
+        let resultView = ResultView(frame: CGRect(x: 0, y: 0, width: windowWidth, height: windowWidth))
+        resultView.resultLabel.text = String(acceptedNum)
+        resultView.parentViewController = self
+        resultView.score = acceptedNum 
+        // HighScore
         let scores = realm.objects(Score.self).sorted(byProperty: "score", ascending: false)
         if let highScore = scores.first {
             if highScore.score <= newScore.score {
                 // ハイスコア更新のタイミングで書き込む
                 updateHighScore(newScore)
+                resultView.highScoreLabel.isHidden = false
             }
         } else {
             updateHighScore(newScore)
         }
         
-        // ResultView
-        let resultView = ResultView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
-        resultView.resultLabel.text = String(acceptedNum)
-        resultView.parentViewController = self
         // Config
         let config = STZPopupViewConfig()
         config.dismissTouchBackground = false
         config.cornerRadius = 20
         presentPopupView(resultView, config: config)
+        
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        }
     }
     
     func updateTime() {
@@ -114,19 +124,19 @@ final class GameViewController: UIViewController {
         let ref = FIRDatabase.database().reference()
         
         if let name = storage.object(forKey: "playername") as? String {
-            ref.child("scores").child(device_id).setValue(["name": name, "score": newScore.score as NSNumber])
+            ref.child("scores").child(device_id).setValue(["name": name, "score": newScore.score as NSNumber], andPriority: -newScore.score)
         } else {
             let alert = UIAlertController(title: "register name", message: "please set your username", preferredStyle: .alert)
             alert.addTextField {
                 textField in
-                _ = textField.text.flatMap {
-                    self.storage.set($0, forKey: "playername")
-                }
+                textField.placeholder = "user name"
             }
             alert.addAction(UIAlertAction(title: "OK", style: .default) {
                 _ in
-                if let name = self.storage.object(forKey: "playername") as? String {
-                    ref.child("scores").child(self.device_id).setValue(["name": name, "score": newScore.score as NSNumber])
+                let textfield = alert.textFields?.first
+                if let name = textfield?.text {
+                    ref.child("scores").child(self.device_id).setValue(["name": name, "score": newScore.score as NSNumber], andPriority: -newScore.score)
+                    self.storage.set(name, forKey: "playername")
                 }
             })
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

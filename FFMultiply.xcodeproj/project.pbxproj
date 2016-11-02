@@ -14,6 +14,8 @@
 		460317521DBDBFA500C9162F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 460317511DBDBFA500C9162F /* Assets.xcassets */; };
 		460317551DBDBFA500C9162F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460317531DBDBFA500C9162F /* LaunchScreen.storyboard */; };
 		4603175D1DBDBFC300C9162F /* FFUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4603175C1DBDBFC300C9162F /* FFUtility.swift */; };
+		460CC8101DC9A87200EBF626 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460CC80F1DC9A87200EBF626 /* TutorialView.swift */; };
+		460CC8121DC9A8A600EBF626 /* TutorialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 460CC8111DC9A8A600EBF626 /* TutorialView.xib */; };
 		4657DE731DC83ACF00F1AF63 /* CircularRevealAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657DE711DC83ACF00F1AF63 /* CircularRevealAnimator.swift */; };
 		4657DE741DC83ACF00F1AF63 /* Transitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657DE721DC83ACF00F1AF63 /* Transitioner.swift */; };
 		4657DE761DC86F4600F1AF63 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657DE751DC86F4600F1AF63 /* SettingViewController.swift */; };
@@ -38,6 +40,8 @@
 		460317541DBDBFA500C9162F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		460317561DBDBFA500C9162F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4603175C1DBDBFC300C9162F /* FFUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFUtility.swift; sourceTree = "<group>"; };
+		460CC80F1DC9A87200EBF626 /* TutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialView.swift; path = Views/TutorialView.swift; sourceTree = "<group>"; };
+		460CC8111DC9A8A600EBF626 /* TutorialView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TutorialView.xib; path = Views/TutorialView.xib; sourceTree = "<group>"; };
 		4657DE711DC83ACF00F1AF63 /* CircularRevealAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularRevealAnimator.swift; sourceTree = "<group>"; };
 		4657DE721DC83ACF00F1AF63 /* Transitioner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transitioner.swift; sourceTree = "<group>"; };
 		4657DE751DC86F4600F1AF63 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 			children = (
 				4697287D1DC775B700B9E5EA /* ResultView.xib */,
 				4697287F1DC7769B00B9E5EA /* ResultView.swift */,
+				460CC80F1DC9A87200EBF626 /* TutorialView.swift */,
+				460CC8111DC9A8A600EBF626 /* TutorialView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -261,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				460CC8121DC9A8A600EBF626 /* TutorialView.xib in Resources */,
 				4697288A1DC8395600B9E5EA /* DSEG7ClassicMini-Bold.ttf in Resources */,
 				460317551DBDBFA500C9162F /* LaunchScreen.storyboard in Resources */,
 				4697286F1DC6F9AC00B9E5EA /* GoogleService-Info.plist in Resources */,
@@ -326,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				469728721DC75EBA00B9E5EA /* ScoreModel.swift in Sources */,
+				460CC8101DC9A87200EBF626 /* TutorialView.swift in Sources */,
 				4657DE761DC86F4600F1AF63 /* SettingViewController.swift in Sources */,
 				466B5AD91DBE022D00517B86 /* GameViewController.swift in Sources */,
 				4603175D1DBDBFC300C9162F /* FFUtility.swift in Sources */,
@@ -466,6 +474,7 @@
 				CODE_SIGN_ENTITLEMENTS = FFMultiply/FFMultiply.entitlements;
 				DEVELOPMENT_TEAM = B4S4333JDW;
 				INFOPLIST_FILE = "FFMultiply/Support File/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dev.touyou.FFMultiply;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -482,6 +491,7 @@
 				CODE_SIGN_ENTITLEMENTS = FFMultiply/FFMultiply.entitlements;
 				DEVELOPMENT_TEAM = B4S4333JDW;
 				INFOPLIST_FILE = "FFMultiply/Support File/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dev.touyou.FFMultiply;
 				PRODUCT_NAME = "$(TARGET_NAME)";

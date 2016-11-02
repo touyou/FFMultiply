@@ -1,4 +1,5 @@
 PODS:
+  - DZNEmptyDataSet (1.8.1)
   - Firebase/AdMob (3.8.0):
     - Firebase/Core
     - Google-Mobile-Ads-SDK (= 7.13.0)
@@ -47,6 +48,7 @@ PODS:
   - STZPopupView (1.1.0)
 
 DEPENDENCIES:
+  - DZNEmptyDataSet
   - Firebase/AdMob
   - Firebase/Core
   - Firebase/Crash
@@ -55,6 +57,7 @@ DEPENDENCIES:
   - STZPopupView
 
 SPEC CHECKSUMS:
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Firebase: fdbecadb7b5cbef2774852d4fa659b9daf11f2af
   FirebaseAnalytics: 6e58fc9b397664369ac7617fb0ba93fab6ba7b5b
   FirebaseCore: d0ed25f27b6f9158eccc439f1be6f92e81207e28
@@ -69,6 +72,6 @@ SPEC CHECKSUMS:
   RealmSwift: 5afb451f65b682242f272dbb52d5c6f6e343c980
   STZPopupView: 31be448e6c6acb292e8f882006ff8498b54050d3
 
-PODFILE CHECKSUM: 611391bcf5213868e6ebdcc2e585d963f50ad478
+PODFILE CHECKSUM: 8dab6da16667ae4dd920bc2d67f3e4f892e277f7
 
 COCOAPODS: 1.1.1

@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import Social
 
-//@IBDesignable
 final class ResultView: UIView {
-
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var highScoreLabel: UILabel! {
+        didSet {
+            highScoreLabel.isHidden = true
+        }
+    }
+    
     var parentViewController: UIViewController!
+    var score: Int!
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,5 +50,14 @@ final class ResultView: UIView {
     
     @IBAction func exitBtn() {
         parentViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func shareBtn() {
+        let shareText = "I got \(score ?? -1) points! Let's play FFMultiplier with me! #FFMultiplier"
+        let shareURL = URL(string: "https://itunes.apple.com/us/app/ffmultiplier/id1151801381?l=ja&ls=1&mt=8")!
+        let activityViewCon = UIActivityViewController(activityItems: [shareText, shareURL], applicationActivities: nil)
+        let excludeType = [UIActivityType.print]
+        activityViewCon.excludedActivityTypes = excludeType
+        parentViewController.present(activityViewCon, animated: true, completion: nil)
     }
 }

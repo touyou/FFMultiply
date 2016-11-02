@@ -12,6 +12,7 @@ target 'FFMultiply' do
   pod 'Firebase/Crash'
   pod 'RealmSwift'
   pod 'STZPopupView'
+  pod 'DZNEmptyDataSet'
 end
 
 post_install do |installer|

@@ -8,8 +8,9 @@
 
 import UIKit
 import RealmSwift
+import DZNEmptyDataSet
 
-class LocalScoreViewController: UIViewController {
+final class LocalScoreViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
@@ -17,6 +18,7 @@ class LocalScoreViewController: UIViewController {
             footer.backgroundColor = UIColor.clear
             tableView.tableFooterView = footer
             tableView.backgroundColor = UIColor.clear
+            tableView.emptyDataSetSource = self
         }
     }
     
@@ -83,5 +85,16 @@ extension LocalScoreViewController: UITableViewDataSource {
         
         cell.textLabel?.text = "\(r.0). \(r.1.score) points\n\t date: \(dateFormat.string(from: r.1.date as Date))"
         return cell
+    }
+}
+
+extension LocalScoreViewController: DZNEmptyDataSetSource {
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = NSAttributedString(string: "No Data", attributes: [NSFontAttributeName: UIFont(name: "Futura", size: 20)!, NSForegroundColorAttributeName: UIColor.white])
+        return str
+    }
+    
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.clear
     }
 }

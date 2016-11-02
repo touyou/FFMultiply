@@ -28,16 +28,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oCj-Ud-r4B">
-                                <rect key="frame" x="25" y="25" width="270" height="430"/>
+                                <rect key="frame" x="0.0" y="-5.5" width="320" height="491"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key_visual" translatesAutoresizingMaskIntoConstraints="NO" id="fUE-mG-UGl">
-                                        <rect key="frame" x="0.0" y="0.0" width="270" height="300"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="jaa-w8-OkU"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="272"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yha-F6-B3g">
-                                        <rect key="frame" x="0.0" y="300" width="270" height="33"/>
+                                        <rect key="frame" x="0.0" y="272" width="320" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="8cf-f7-tf2"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="time attack">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,7 +47,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yte-D0-cI1">
-                                        <rect key="frame" x="0.0" y="333" width="270" height="32.5"/>
+                                        <rect key="frame" x="0.0" y="312" width="320" height="40"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="local score">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,7 +57,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRz-te-ycB">
-                                        <rect key="frame" x="0.0" y="365.5" width="270" height="32.5"/>
+                                        <rect key="frame" x="0.0" y="352" width="320" height="39.5"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="online ranking">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,7 +67,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMP-6B-TlN">
-                                        <rect key="frame" x="0.0" y="398" width="270" height="32"/>
+                                        <rect key="frame" x="0.0" y="391.5" width="320" height="39.5"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="settings">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -76,6 +76,13 @@
                                             <action selector="settingView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yqz-ua-wpv"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Cq-3R-zTn" customClass="GADBannerView">
+                                        <rect key="frame" x="0.0" y="431" width="320" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="9bW-Wy-aHQ"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Yha-F6-B3g" firstAttribute="height" secondItem="aRz-te-ycB" secondAttribute="height" id="FsC-rN-up3"/>
@@ -84,15 +91,16 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.97647100687026978" green="0.97254902124404907" blue="0.96078401803970337" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="oCj-Ud-r4B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="25" id="2AY-CL-lwb"/>
-                            <constraint firstItem="oCj-Ud-r4B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GSh-JM-JrC"/>
-                            <constraint firstItem="oCj-Ud-r4B" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="25" id="mIL-JJ-VCk"/>
-                            <constraint firstItem="oCj-Ud-r4B" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xdL-Ke-e2F"/>
+                            <constraint firstItem="oCj-Ud-r4B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FlR-2v-cYL"/>
+                            <constraint firstItem="oCj-Ud-r4B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JgI-iF-kop"/>
+                            <constraint firstItem="oCj-Ud-r4B" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-25.5" id="mm9-l9-65T"/>
+                            <constraint firstItem="oCj-Ud-r4B" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ykR-gP-9MS"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="7Cq-3R-zTn" id="adf-mv-ZEk"/>
                         <segue destination="6gk-O8-QVh" kind="presentation" identifier="startGame" modalTransitionStyle="coverVertical" id="X5y-po-eTe"/>
                     </connections>
                 </viewController>
@@ -121,22 +129,22 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNr-Kb-DBX">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rH-LN-Svb">
+                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rH-LN-Svb">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="50" id="Ifr-ia-wrg"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                                        <state key="normal" title="help">
-                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" red="0.97647100687026978" green="0.97254902124404907" blue="0.96078401803970337" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUg-6f-luq">
                                                         <rect key="frame" x="50" y="0.0" width="220" height="50"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
-                                                        <color key="textColor" red="0.066666666666666666" green="1" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" red="0.52156862745098043" green="0.74901960784313726" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wM-Hw-bEl">
@@ -147,7 +155,7 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                         <state key="normal" title="✕">
-                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" red="0.97647100687026978" green="0.97254902124404907" blue="0.96078401803970337" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <segue destination="Wic-8j-IfI" kind="unwind" unwindAction="backWithSegue:" id="CS6-He-sGh"/>
@@ -156,6 +164,7 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Dy6-P2-pSV"/>
+                                                    <constraint firstItem="BUg-6f-luq" firstAttribute="centerX" secondItem="mNr-Kb-DBX" secondAttribute="centerX" id="aAT-5g-QeJ"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXs-x3-oN1">
@@ -202,7 +211,7 @@
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
                                                         <state key="normal" title="DELETE">
-                                                            <color key="titleColor" red="0.40000000000000002" green="0.85097999999999996" blue="0.93725499999999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" red="0.7019609808921814" green="0.21568599343299866" blue="0.21568599343299866" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="tapDelete" destination="6gk-O8-QVh" eventType="touchUpInside" id="rTX-Kh-gRy"/>
@@ -212,7 +221,7 @@
                                                         <rect key="frame" x="106.5" y="0.0" width="107" height="50"/>
                                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
-                                                        <color key="textColor" red="1" green="0.42738716469999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" red="0.97647100687026978" green="0.97254902124404907" blue="0.96078401803970337" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1c-xN-pyi">
@@ -220,7 +229,7 @@
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
                                                         <state key="normal" title="DONE">
-                                                            <color key="titleColor" red="0.388235" green="0.65882399999999997" blue="0.270588" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" red="0.52156901359558105" green="0.74901998043060303" blue="0.36470600962638855" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="tapDone" destination="6gk-O8-QVh" eventType="touchUpInside" id="S7S-GJ-wAZ"/>
@@ -256,7 +265,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXx-o0-3pt">
-                                                        <rect key="frame" x="0.0" y="60" width="80" height="60.5"/>
+                                                        <rect key="frame" x="0.0" y="60" width="80" height="60"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="4">
@@ -267,7 +276,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Sg-zU-PaM">
-                                                        <rect key="frame" x="0.0" y="120.5" width="80" height="60"/>
+                                                        <rect key="frame" x="0.0" y="120" width="80" height="60"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="8">
@@ -278,7 +287,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gip-WC-6Ux">
-                                                        <rect key="frame" x="0.0" y="180.5" width="80" height="59.5"/>
+                                                        <rect key="frame" x="0.0" y="180" width="80" height="60"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="C">
@@ -310,7 +319,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NqU-P5-XyN">
-                                                        <rect key="frame" x="0.0" y="60" width="80" height="60.5"/>
+                                                        <rect key="frame" x="0.0" y="60" width="80" height="60"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="5">
@@ -321,7 +330,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Nz-tb-EkC">
-                                                        <rect key="frame" x="0.0" y="120.5" width="80" height="60"/>
+                                                        <rect key="frame" x="0.0" y="120" width="80" height="60"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="9">
@@ -332,7 +341,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSg-A7-mqC">
-                                                        <rect key="frame" x="0.0" y="180.5" width="80" height="59.5"/>
+                                                        <rect key="frame" x="0.0" y="180" width="80" height="60"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="D">
@@ -364,7 +373,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kye-4t-OiP">
-                                                        <rect key="frame" x="0.0" y="60" width="80" height="60.5"/>
+                                                        <rect key="frame" x="0.0" y="60" width="80" height="60"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="6">
@@ -375,7 +384,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WbX-K5-Ccb">
-                                                        <rect key="frame" x="0.0" y="120.5" width="80" height="60"/>
+                                                        <rect key="frame" x="0.0" y="120" width="80" height="60"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="A">
@@ -386,7 +395,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2c-27-auh">
-                                                        <rect key="frame" x="0.0" y="180.5" width="80" height="59.5"/>
+                                                        <rect key="frame" x="0.0" y="180" width="80" height="60"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="E">
@@ -418,7 +427,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gam-Tg-0ud">
-                                                        <rect key="frame" x="0.0" y="60" width="80" height="60.5"/>
+                                                        <rect key="frame" x="0.0" y="60" width="80" height="60"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="7">
@@ -429,7 +438,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0o-GI-Tai">
-                                                        <rect key="frame" x="0.0" y="120.5" width="80" height="60"/>
+                                                        <rect key="frame" x="0.0" y="120" width="80" height="60"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="B">
@@ -440,7 +449,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOu-J6-m1S">
-                                                        <rect key="frame" x="0.0" y="180.5" width="80" height="59.5"/>
+                                                        <rect key="frame" x="0.0" y="180" width="80" height="60"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="F">
@@ -511,7 +520,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fCM-gr-9C8">
-                                <rect key="frame" x="0.0" y="71.5" width="320" height="336"/>
+                                <rect key="frame" x="0.0" y="71.5" width="320" height="337"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scoreCell" id="TzT-Fl-lGx">
@@ -525,17 +534,17 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srd-XL-KLi">
-                                <rect key="frame" x="143" y="425" width="34" height="35"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <rect key="frame" x="145" y="429" width="30" height="31"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <state key="normal" title="EXIT">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="exitView:" destination="p1V-24-kF6" eventType="touchUpInside" id="Yg3-1r-T9E"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.72549019607843135" green="0.48627450980392156" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="fCM-gr-9C8" firstAttribute="leading" secondItem="QHY-Yy-pXX" secondAttribute="leading" id="0yw-sS-1f4"/>
                             <constraint firstItem="884-uS-dmV" firstAttribute="top" secondItem="Srd-XL-KLi" secondAttribute="bottom" constant="20" id="5Xe-08-To5"/>
@@ -579,7 +588,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzt-tI-ERy">
-                                <rect key="frame" x="267" y="442" width="37" height="30"/>
+                                <rect key="frame" x="269" y="371" width="35" height="31"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <state key="normal" title="SAVE">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -587,13 +597,31 @@
                                     <action selector="saveBtn:" destination="RlN-Ak-Fmh" eventType="touchUpInside" id="zel-rA-LEc"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ndR-Md-bId" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="410" width="320" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="UQE-XT-hUZ"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n98-CE-HY7">
-                                <rect key="frame" x="16" y="442" width="59" height="30"/>
+                                <rect key="frame" x="16" y="371" width="57" height="31"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <state key="normal" title="CANCEL">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="cancelBtn:" destination="RlN-Ak-Fmh" eventType="touchUpInside" id="oVU-UP-1j5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdE-X0-6H6">
+                                <rect key="frame" x="142.5" y="224" width="35" height="32"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                <state key="normal" title="HELP">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tutorialBtn" destination="RlN-Ak-Fmh" eventType="touchUpInside" id="xiA-xU-ccQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -603,14 +631,20 @@
                             <constraint firstItem="Ywx-Uv-9oh" firstAttribute="top" secondItem="JaY-7V-KmC" secondAttribute="bottom" constant="36" id="6DQ-9s-QRG"/>
                             <constraint firstItem="n98-CE-HY7" firstAttribute="leading" secondItem="iZd-pY-Xqh" secondAttribute="leadingMargin" id="CJQ-IJ-Mnv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ywx-Uv-9oh" secondAttribute="trailing" id="FIz-hk-oFN"/>
-                            <constraint firstItem="mxu-mg-nyj" firstAttribute="top" secondItem="vzt-tI-ERy" secondAttribute="bottom" constant="8" id="Fb0-4P-9Yv"/>
-                            <constraint firstItem="mxu-mg-nyj" firstAttribute="top" secondItem="n98-CE-HY7" secondAttribute="bottom" constant="8" id="T6f-BR-r4r"/>
+                            <constraint firstItem="ndR-Md-bId" firstAttribute="top" secondItem="n98-CE-HY7" secondAttribute="bottom" constant="8" id="G8r-yS-sZ0"/>
+                            <constraint firstAttribute="trailing" secondItem="ndR-Md-bId" secondAttribute="trailing" id="Uo9-Kg-2S0"/>
                             <constraint firstItem="vzt-tI-ERy" firstAttribute="trailing" secondItem="iZd-pY-Xqh" secondAttribute="trailingMargin" id="abW-I7-hJP"/>
                             <constraint firstItem="JaY-7V-KmC" firstAttribute="top" secondItem="bU5-0p-XDY" secondAttribute="bottom" constant="8" id="eIG-Fj-8QC"/>
+                            <constraint firstItem="jdE-X0-6H6" firstAttribute="centerX" secondItem="iZd-pY-Xqh" secondAttribute="centerX" id="ouB-aS-OpS"/>
                             <constraint firstItem="Ywx-Uv-9oh" firstAttribute="leading" secondItem="iZd-pY-Xqh" secondAttribute="leadingMargin" id="spw-XU-idf"/>
+                            <constraint firstItem="jdE-X0-6H6" firstAttribute="centerY" secondItem="iZd-pY-Xqh" secondAttribute="centerY" id="v4b-Bf-J1L"/>
+                            <constraint firstItem="ndR-Md-bId" firstAttribute="leading" secondItem="iZd-pY-Xqh" secondAttribute="leading" id="vbB-cp-SH4"/>
+                            <constraint firstItem="mxu-mg-nyj" firstAttribute="top" secondItem="ndR-Md-bId" secondAttribute="bottom" id="vxx-Km-Qq0"/>
+                            <constraint firstItem="ndR-Md-bId" firstAttribute="top" secondItem="vzt-tI-ERy" secondAttribute="bottom" constant="8" id="xOV-te-mu3"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="ndR-Md-bId" id="LeX-zX-Wq2"/>
                         <outlet property="userTextField" destination="Ywx-Uv-9oh" id="hZp-L4-h9r"/>
                     </connections>
                 </viewController>
@@ -645,7 +679,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wo6-GH-HdJ">
-                                <rect key="frame" x="0.0" y="107" width="320" height="301"/>
+                                <rect key="frame" x="0.0" y="107" width="320" height="290"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rankCell" id="oXw-Lx-ahg">
@@ -659,7 +693,8 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXA-wI-U85">
-                                <rect key="frame" x="23" y="430" width="32" height="30"/>
+                                <rect key="frame" x="23" y="429" width="30" height="31"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <state key="normal" title="EXIT">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -668,7 +703,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0o-i8-7Pe">
-                                <rect key="frame" x="234" y="430" width="70" height="30"/>
+                                <rect key="frame" x="240" y="429" width="64" height="31"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <state key="normal" title="REGISTER">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -676,13 +712,33 @@
                                     <action selector="registerRank" destination="C8a-wQ-8vG" eventType="touchUpInside" id="aVY-su-YzL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuW-zB-6m7">
+                                <rect key="frame" x="137.5" y="429" width="46" height="31"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                <state key="normal" title="SHARE">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareBtn" destination="C8a-wQ-8vG" eventType="touchUpInside" id="Cz3-qo-tLf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Rank: ---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9y-jh-lfG">
+                                <rect key="frame" x="0.0" y="402" width="320" height="19"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.52156899999999995" green="0.74902000000000002" blue="0.36470599999999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.52156862745098043" green="0.74901960784313726" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="J9y-jh-lfG" secondAttribute="trailing" id="2dz-fU-uDu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="f0o-i8-7Pe" secondAttribute="trailing" id="8Ud-Y3-ayq"/>
+                            <constraint firstItem="J9y-jh-lfG" firstAttribute="leading" secondItem="Sbw-02-diX" secondAttribute="leading" id="9oG-8E-u5b"/>
                             <constraint firstItem="jXA-wI-U85" firstAttribute="leading" secondItem="Sbw-02-diX" secondAttribute="leadingMargin" constant="7" id="9xT-a2-fJg"/>
                             <constraint firstItem="taE-0E-APc" firstAttribute="top" secondItem="f0o-i8-7Pe" secondAttribute="bottom" constant="20" id="9xb-Wa-mlZ"/>
                             <constraint firstItem="taE-0E-APc" firstAttribute="top" secondItem="jXA-wI-U85" secondAttribute="bottom" constant="20" id="DaH-1V-yFT"/>
+                            <constraint firstItem="J9y-jh-lfG" firstAttribute="top" secondItem="wo6-GH-HdJ" secondAttribute="bottom" constant="5" id="Dvq-Xf-I4F"/>
                             <constraint firstItem="wo6-GH-HdJ" firstAttribute="leading" secondItem="Sbw-02-diX" secondAttribute="leadingMargin" constant="-16" id="Kth-Bg-AuT"/>
                             <constraint firstItem="63f-Kv-CiG" firstAttribute="centerX" secondItem="Sbw-02-diX" secondAttribute="centerX" id="P3p-9n-EKp"/>
                             <constraint firstItem="wo6-GH-HdJ" firstAttribute="top" secondItem="63f-Kv-CiG" secondAttribute="bottom" constant="8" id="XZo-g7-IvP"/>
@@ -690,11 +746,14 @@
                             <constraint firstItem="HkB-kK-I4a" firstAttribute="top" secondItem="w4C-Yn-7ri" secondAttribute="bottom" constant="21" id="do9-28-U6Y"/>
                             <constraint firstItem="wo6-GH-HdJ" firstAttribute="centerX" secondItem="Sbw-02-diX" secondAttribute="centerX" id="goN-gq-xzT"/>
                             <constraint firstItem="HkB-kK-I4a" firstAttribute="centerX" secondItem="Sbw-02-diX" secondAttribute="centerX" id="hdx-4k-chM"/>
-                            <constraint firstItem="jXA-wI-U85" firstAttribute="top" secondItem="wo6-GH-HdJ" secondAttribute="bottom" constant="22" id="li9-vM-6mU"/>
+                            <constraint firstItem="taE-0E-APc" firstAttribute="top" secondItem="iuW-zB-6m7" secondAttribute="bottom" constant="20" id="lsS-wc-rMc"/>
                             <constraint firstItem="63f-Kv-CiG" firstAttribute="width" secondItem="HkB-kK-I4a" secondAttribute="width" id="nZu-F6-7S8"/>
+                            <constraint firstItem="iuW-zB-6m7" firstAttribute="centerX" secondItem="Sbw-02-diX" secondAttribute="centerX" id="ngF-k2-KzX"/>
+                            <constraint firstItem="iuW-zB-6m7" firstAttribute="top" secondItem="J9y-jh-lfG" secondAttribute="bottom" constant="8" id="ssy-kO-N5r"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="rankLabel" destination="J9y-jh-lfG" id="Dqi-aI-goW"/>
                         <outlet property="tableMode" destination="63f-Kv-CiG" id="Qfs-2G-ZHz"/>
                         <outlet property="tableView" destination="wo6-GH-HdJ" id="qzG-9y-Ivw"/>
                     </connections>
