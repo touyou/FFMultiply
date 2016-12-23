@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -526,14 +526,14 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TzT-Fl-lGx" id="mQN-pB-DsZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srd-XL-KLi">
-                                <rect key="frame" x="145" y="429" width="30" height="31"/>
+                                <rect key="frame" x="16" y="429" width="30" height="31"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <state key="normal" title="EXIT">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -542,16 +542,28 @@
                                     <action selector="exitView:" destination="p1V-24-kF6" eventType="touchUpInside" id="Yg3-1r-T9E"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NrZ-cj-fUh">
+                                <rect key="frame" x="257" y="429" width="47" height="31"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                <state key="normal" title="DELETE">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteData" destination="p1V-24-kF6" eventType="touchUpInside" id="toZ-wj-177"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.72549019607843135" green="0.48627450980392156" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="NrZ-cj-fUh" firstAttribute="trailing" secondItem="QHY-Yy-pXX" secondAttribute="trailingMargin" id="0XQ-t0-0uO"/>
                             <constraint firstItem="fCM-gr-9C8" firstAttribute="leading" secondItem="QHY-Yy-pXX" secondAttribute="leading" id="0yw-sS-1f4"/>
                             <constraint firstItem="884-uS-dmV" firstAttribute="top" secondItem="Srd-XL-KLi" secondAttribute="bottom" constant="20" id="5Xe-08-To5"/>
                             <constraint firstItem="fCM-gr-9C8" firstAttribute="centerY" secondItem="QHY-Yy-pXX" secondAttribute="centerY" id="DVI-vg-Ihi"/>
+                            <constraint firstItem="Srd-XL-KLi" firstAttribute="leading" secondItem="QHY-Yy-pXX" secondAttribute="leadingMargin" id="EOl-fE-rMd"/>
+                            <constraint firstItem="884-uS-dmV" firstAttribute="top" secondItem="NrZ-cj-fUh" secondAttribute="bottom" constant="20" id="eZM-Ku-d67"/>
                             <constraint firstItem="fgg-eP-D4c" firstAttribute="centerX" secondItem="QHY-Yy-pXX" secondAttribute="centerX" id="imO-de-VeQ"/>
                             <constraint firstItem="fCM-gr-9C8" firstAttribute="top" secondItem="fgg-eP-D4c" secondAttribute="bottom" constant="8" id="nAD-kx-VN9"/>
                             <constraint firstItem="fCM-gr-9C8" firstAttribute="centerX" secondItem="QHY-Yy-pXX" secondAttribute="centerX" id="rLQ-eH-cNv"/>
-                            <constraint firstItem="Srd-XL-KLi" firstAttribute="centerX" secondItem="QHY-Yy-pXX" secondAttribute="centerX" id="tgG-DP-SdY"/>
                             <constraint firstItem="fgg-eP-D4c" firstAttribute="top" secondItem="njJ-FI-IOh" secondAttribute="bottom" constant="21" id="yv4-PL-SLU"/>
                         </constraints>
                     </view>
@@ -685,7 +697,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oXw-Lx-ahg" id="hR1-ds-Vn2">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>

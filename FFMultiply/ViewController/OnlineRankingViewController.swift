@@ -59,10 +59,7 @@ final class OnlineRankingViewController: UIViewController {
             guard let values = snapshot.value as? [String: Any] else {
                 return
             }
-            print("debug -----")
-            print(values)
             let sortVal = values.sorted(by: compareDict)
-            print(sortVal)
             let rev = Array(sortVal.reversed())
             var sc = (rev[0].value as AnyObject).object(forKey: "score") as! Int
             var na = (rev[0].value as AnyObject).object(forKey: "name") as! String

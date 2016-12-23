@@ -160,6 +160,8 @@ final class GameViewController: UIViewController {
         _ = ToastView.showText(text: res, duration: .extraShort, target: self)
         if res == "accepted" {
             acceptedNum += 10
+        } else {
+            acceptedNum -= 5
         }
         pickProblem()
         nowValue = ""

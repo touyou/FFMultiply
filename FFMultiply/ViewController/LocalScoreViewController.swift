@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import DZNEmptyDataSet
+import Firebase
 
 final class LocalScoreViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
@@ -58,6 +59,27 @@ extension LocalScoreViewController {
     @IBAction func exitView(_ sender: UIButton) {
         transitioner = Transitioner(style: .circularReveal(sender.center), viewController: self)
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func deleteData() {
+        let alert = UIAlertController(title: "delete data", message: "Do you really want to delete all your data?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default) {
+            _ in
+            let storage = UserDefaults.standard
+            let ref = FIRDatabase.database().reference()
+            let device_id = UIDevice.current.identifierForVendor?.uuidString ?? UUID().uuidString
+            if let name = storage.object(forKey: "playername") {
+                ref.child("scores").child(device_id).setValue(["name": name, "score": 0])
+            }
+            
+            let realm = try! Realm()
+            try! realm.write() {
+                realm.deleteAll()
+            }
+            self.tableView.reloadData()
+        })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
 
