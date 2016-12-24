@@ -130,6 +130,7 @@ final class GameViewController: UIViewController {
             alert.addTextField {
                 textField in
                 textField.placeholder = "user name"
+                textField.text = self.storage.object(forKey: "playername") as? String
             }
             alert.addAction(UIAlertAction(title: "OK", style: .default) {
                 _ in

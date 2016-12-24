@@ -147,7 +147,7 @@ class ToastView: UIView {
                            NSLayoutConstraint(item: backgroundView, attribute: .leading, relatedBy: .equal, toItem: textLabel, attribute: .leading, multiplier: 1.0, constant: -10.0),
                            NSLayoutConstraint(item: backgroundView, attribute: .trailing, relatedBy: .equal, toItem: textLabel, attribute: .trailing, multiplier: 1.0, constant: 10.0),
                            
-                           NSLayoutConstraint(item: toast, attribute: .bottom, relatedBy: .equal, toItem: targetView, attribute: .bottomMargin, multiplier: 1.0, constant: -12.0),
+                           NSLayoutConstraint(item: toast, attribute: .top, relatedBy: .equal, toItem: targetView, attribute: .topMargin, multiplier: 1.0, constant: 12.0),
                            NSLayoutConstraint(item: toast, attribute: .leading, relatedBy: .equal, toItem: targetView, attribute: .leadingMargin, multiplier: 1.0, constant: 0.0),
                            NSLayoutConstraint(item: toast, attribute: .trailing, relatedBy: .equal, toItem: targetView, attribute: .trailingMargin, multiplier: 1.0, constant: 0.0),
                            ]
