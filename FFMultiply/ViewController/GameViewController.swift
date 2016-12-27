@@ -24,11 +24,16 @@ final class GameViewController: UIViewController {
     var nowProblem: FFProblem!
     var limitTimer: Timer!
     var limitTime: Int = 60
+    var combo = 0
     var interstitial: GADInterstitial!
     
     let storage = UserDefaults.standard
     let device_id = UIDevice.current.identifierForVendor?.uuidString ?? UUID().uuidString
-    
+    let pointsAccepted = 10
+    let pointsFailed = -5
+    let pointsCombo = 5
+    let maxComboBonus = 15
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -160,9 +165,11 @@ final class GameViewController: UIViewController {
         let res = nowProblem.2 == nowValue ? "accepted" : "failed"
         _ = ToastView.showText(text: res, duration: .extraShort, target: self)
         if res == "accepted" {
-            acceptedNum += 10
+            acceptedNum += pointsAccepted + min(pointsCombo * (combo / 5), maxComboBonus)
+            combo += 1
         } else {
-            acceptedNum -= 5
+            acceptedNum += pointsFailed
+            combo = 0
         }
         pickProblem()
         nowValue = ""
