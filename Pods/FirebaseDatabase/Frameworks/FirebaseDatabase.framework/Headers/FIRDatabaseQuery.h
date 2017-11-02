@@ -1,32 +1,21 @@
 /*
- * Firebase iOS Client Library
+ * Copyright 2017 Google
  *
- * Copyright © 2013 Firebase - All Rights Reserved
- * https://www.firebase.com
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
- * 1. Redistributions of source code must retain the above copyright notice, this
- * list of conditions and the following disclaimer.
- *
- * 2. Redistributions in binaryform must reproduce the above copyright notice,
- * this list of conditions and the following disclaimer in the documentation
- * and/or other materials provided with the distribution.
- *
- * THIS SOFTWARE IS PROVIDED BY FIREBASE AS IS AND ANY EXPRESS OR
- * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
- * EVENT SHALL FIREBASE BE LIABLE FOR ANY DIRECT,
- * INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
- * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
- * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
- * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
- * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 #import <Foundation/Foundation.h>
+#import "FIRDatabaseSwiftNameSupport.h"
 #import "FIRDataEventType.h"
 #import "FIRDataSnapshot.h"
 
@@ -37,19 +26,20 @@ NS_ASSUME_NONNULL_BEGIN
  * are returned by observeEventType: and and can later be passed to removeObserverWithHandle: to
  * stop receiving updates.
  */
-typedef NSUInteger FIRDatabaseHandle;
+typedef NSUInteger FIRDatabaseHandle FIR_SWIFT_NAME(DatabaseHandle);
 
 /**
  * A FIRDatabaseQuery instance represents a query over the data at a particular location.
- * 
+ *
  * You create one by calling one of the query methods (queryOrderedByChild:, queryStartingAtValue:, etc.)
  * on a FIRDatabaseReference. The query methods can be chained to further specify the data you are interested in
  * observing
  */
+FIR_SWIFT_NAME(DatabaseQuery)
 @interface FIRDatabaseQuery : NSObject
 
 
-/** @name Attach observers to read data */
+#pragma mark - Attach observers to read data
 
 /**
  * observeEventType:withBlock: is used to listen for data changes at a particular location.
@@ -57,6 +47,7 @@ typedef NSUInteger FIRDatabaseHandle;
  * for the initial data and again whenever the data changes.
  *
  * Use removeObserverWithHandle: to stop receiving updates.
+ *
  * @param eventType The type of event to listen for.
  * @param block The block that should be called with initial data and updates.  It is passed the data as a FIRDataSnapshot.
  * @return A handle used to unregister this block later using removeObserverWithHandle:
@@ -159,7 +150,8 @@ typedef NSUInteger FIRDatabaseHandle;
  */
 - (void)observeSingleEventOfType:(FIRDataEventType)eventType andPreviousSiblingKeyWithBlock:(void (^)(FIRDataSnapshot *snapshot, NSString *__nullable prevKey))block withCancelBlock:(nullable void (^)(NSError* error))cancelBlock;
 
-/** @name Detaching observers */
+
+#pragma mark - Detaching observers
 
 /**
  * Detach a block previously attached with observeEventType:withBlock:.
@@ -184,8 +176,7 @@ typedef NSUInteger FIRDatabaseHandle;
  - (void) keepSynced:(BOOL)keepSynced;
 
 
-/** @name Querying and limiting */
-
+#pragma mark - Querying and limiting
 
 /**
 * queryLimitedToFirst: is used to generate a reference to a limited view of the data at this location.
@@ -207,10 +198,10 @@ typedef NSUInteger FIRDatabaseHandle;
 - (FIRDatabaseQuery *)queryLimitedToLast:(NSUInteger)limit;
 
 /**
-* queryOrderBy: is used to generate a reference to a view of the data that's been sorted by the values of
-* a particular child key. This method is intended to be used in combination with queryStartingAtValue:,
-* queryEndingAtValue:, or queryEqualToValue:.
-*
+ * queryOrderBy: is used to generate a reference to a view of the data that's been sorted by the values of
+ * a particular child key. This method is intended to be used in combination with queryStartingAtValue:,
+ * queryEndingAtValue:, or queryEqualToValue:.
+ *
  * @param key The child key to use in ordering data visible to the returned FIRDatabaseQuery
  * @return A FIRDatabaseQuery instance, ordered by the values of the specified child key.
 */
@@ -256,7 +247,8 @@ typedef NSUInteger FIRDatabaseHandle;
 /**
  * queryStartingAtValue:childKey: is used to generate a reference to a limited view of the data at this location.
  * The FIRDatabaseQuery instance returned by queryStartingAtValue:childKey will respond to events at nodes with a value
- * greater than startValue, or equal to startValue and with a key greater than or equal to childKey.
+ * greater than startValue, or equal to startValue and with a key greater than or equal to childKey. This is most
+ * useful when implementing pagination in a case where multiple nodes can match the startValue.
  *
  * @param startValue The lower bound, inclusive, for the value of data visible to the returned FIRDatabaseQuery
  * @param childKey The lower bound, inclusive, for the key of nodes with value equal to startValue
@@ -277,7 +269,8 @@ typedef NSUInteger FIRDatabaseHandle;
 /**
  * queryEndingAtValue:childKey: is used to generate a reference to a limited view of the data at this location.
  * The FIRDatabaseQuery instance returned by queryEndingAtValue:childKey will respond to events at nodes with a value
- * less than endValue, or equal to endValue and with a key less than or equal to childKey.
+ * less than endValue, or equal to endValue and with a key less than or equal to childKey. This is most useful when
+ * implementing pagination in a case where multiple nodes can match the endValue.
  *
  * @param endValue The upper bound, inclusive, for the value of data visible to the returned FIRDatabaseQuery
  * @param childKey The upper bound, inclusive, for the key of nodes with value equal to endValue
@@ -298,8 +291,8 @@ typedef NSUInteger FIRDatabaseHandle;
 /**
  * queryEqualToValue:childKey: is used to generate a reference to a limited view of the data at this location.
  * The FIRDatabaseQuery instance returned by queryEqualToValue:childKey will respond to events at nodes with a value
- * equal to the supplied argument with a name equal to childKey. There will be at most one node that matches because
- * child keys are unique.
+ * equal to the supplied argument and with their key equal to childKey. There will be at most one node that matches
+ * because child keys are unique.
  *
  * @param value The value that the data returned by this FIRDatabaseQuery will have
  * @param childKey The name of nodes with the right value
@@ -308,8 +301,7 @@ typedef NSUInteger FIRDatabaseHandle;
 - (FIRDatabaseQuery *)queryEqualToValue:(nullable id)value childKey:(nullable NSString *)childKey;
 
 
-/** @name Properties */
-
+#pragma mark - Properties
 
 /**
 * Gets a FIRDatabaseReference for the location of this query.

@@ -10,6 +10,6 @@ import Foundation
 import RealmSwift
 
 final class Score: Object {
-    dynamic var date = NSDate(timeIntervalSince1970: 1)
-    dynamic var score: Int = 0
+    @objc dynamic var date = NSDate(timeIntervalSince1970: 1)
+    @objc dynamic var score: Int = 0
 }

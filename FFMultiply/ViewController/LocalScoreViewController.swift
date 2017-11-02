@@ -38,7 +38,7 @@ final class LocalScoreViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         let realm = try! Realm()
-        let scores = realm.objects(Score.self).sorted(byProperty: "score", ascending: false)
+        let scores = realm.objects(Score.self).sorted(byKeyPath: "score", ascending: false)
         if let first = scores.first {
             rank.append((1, first))
             var r = 1
@@ -66,7 +66,7 @@ extension LocalScoreViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default) {
             _ in
             let storage = UserDefaults.standard
-            let ref = FIRDatabase.database().reference()
+            let ref = Database.database().reference()
             let device_id = UIDevice.current.identifierForVendor?.uuidString ?? UUID().uuidString
             if let name = storage.object(forKey: "playername") {
                 ref.child("scores").child(device_id).setValue(["name": name, "score": 0])
@@ -112,7 +112,7 @@ extension LocalScoreViewController: UITableViewDataSource {
 
 extension LocalScoreViewController: DZNEmptyDataSetSource {
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        let str = NSAttributedString(string: "No Data", attributes: [NSFontAttributeName: UIFont(name: "Futura", size: 20)!, NSForegroundColorAttributeName: UIColor.white])
+        let str = NSAttributedString(string: "No Data", attributes: [NSAttributedStringKey.font: UIFont(name: "Futura", size: 20)!, NSAttributedStringKey.foregroundColor: UIColor.white])
         return str
     }
     

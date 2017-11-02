@@ -35,7 +35,7 @@ final class OnlineRankingViewController: UIViewController {
     var myRank: Int = 0
     var myPosition: Int = 0
     
-    let ref = FIRDatabase.database().reference()
+    let ref = Database.database().reference()
     let storage = UserDefaults.standard
     let device_id = UIDevice.current.identifierForVendor?.uuidString ?? UUID().uuidString
     
@@ -55,7 +55,7 @@ final class OnlineRankingViewController: UIViewController {
             let bscore = (b.value as AnyObject).object(forKey: "score") as! Int
             return ascore < bscore
         }
-        let loadSortScore: (FIRDataSnapshot) -> Void = { snapshot in
+        let loadSortScore: (DataSnapshot) -> Void = { snapshot in
             guard let values = snapshot.value as? [String: Any] else {
                 return
             }
@@ -94,7 +94,7 @@ final class OnlineRankingViewController: UIViewController {
         }
     }
     
-    func changeSegment(sender: UISegmentedControl) {
+    @objc func changeSegment(sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             top = true
         } else {
@@ -112,7 +112,7 @@ extension OnlineRankingViewController {
     
     @IBAction func registerRank() {
         let realm = try! Realm()
-        let score = realm.objects(Score.self).sorted(byProperty: "score", ascending: false).first
+        let score = realm.objects(Score.self).sorted(byKeyPath: "score", ascending: false).first
         if let name = storage.object(forKey: "playername") as? String {
             _ = score.flatMap {
                 ref.child("scores").child(device_id).setValue(["name": name, "score": $0.score as NSNumber], andPriority: -$0.score)
@@ -180,7 +180,7 @@ extension OnlineRankingViewController: UITableViewDataSource {
 
 extension OnlineRankingViewController: DZNEmptyDataSetSource {
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        let str = NSAttributedString(string: "No Data", attributes: [NSFontAttributeName: UIFont(name: "Futura", size: 20)!, NSForegroundColorAttributeName: UIColor.white])
+        let str = NSAttributedString(string: "No Data", attributes: [NSAttributedStringKey.font: UIFont(name: "Futura", size: 20)!, NSAttributedStringKey.foregroundColor: UIColor.white])
         return str
     }
     

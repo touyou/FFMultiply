@@ -37,7 +37,7 @@ extension CircularRevealAnimator : UIViewControllerAnimatedTransitioning {
         }
         let containerView = transitionContext.containerView
         
-        completionHandler = { _ in
+        completionHandler = {
             transitionContext.completeTransition(true)
         }
         

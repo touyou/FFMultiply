@@ -93,7 +93,7 @@ final class GameViewController: UIViewController {
         resultView.parentViewController = self
         resultView.score = acceptedNum 
         // HighScore
-        let scores = realm.objects(Score.self).sorted(byProperty: "score", ascending: false)
+        let scores = realm.objects(Score.self).sorted(byKeyPath: "score", ascending: false)
         if let highScore = scores.first {
             if highScore.score <= newScore.score {
                 // ハイスコア更新のタイミングで書き込む
@@ -115,7 +115,7 @@ final class GameViewController: UIViewController {
         }
     }
     
-    func updateTime() {
+    @objc func updateTime() {
         limitTime -= 1
         limitLabel.text = String(limitTime)
         if limitTime == 0 {
@@ -126,7 +126,7 @@ final class GameViewController: UIViewController {
     }
     
     func updateHighScore(_ newScore: Score) {
-        let ref = FIRDatabase.database().reference()
+        let ref = Database.database().reference()
         
         if let name = storage.object(forKey: "playername") as? String {
             ref.child("scores").child(device_id).setValue(["name": name, "score": newScore.score as NSNumber], andPriority: -newScore.score)
