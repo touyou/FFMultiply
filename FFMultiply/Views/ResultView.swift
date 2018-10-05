@@ -39,11 +39,11 @@ final class ResultView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         let bindings = ["view": view]
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|",
-                                                                      options:NSLayoutFormatOptions(rawValue: 0),
+                                                                      options:NSLayoutConstraint.FormatOptions(rawValue: 0),
                                                                       metrics:nil,
                                                                       views: bindings))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|",
-                                                                      options:NSLayoutFormatOptions(rawValue: 0),
+                                                                      options:NSLayoutConstraint.FormatOptions(rawValue: 0),
                                                                       metrics:nil,
                                                                       views: bindings))
     }
@@ -56,7 +56,7 @@ final class ResultView: UIView {
         let shareText = "I got \(score ?? -1) points! Let's play FFMultiplier with me! #FFMultiplier"
         let shareURL = URL(string: "https://itunes.apple.com/us/app/ffmultiplier/id1151801381?l=ja&ls=1&mt=8")!
         let activityViewCon = UIActivityViewController(activityItems: [shareText, shareURL], applicationActivities: nil)
-        let excludeType = [UIActivityType.print]
+        let excludeType = [UIActivity.ActivityType.print]
         activityViewCon.excludedActivityTypes = excludeType
         parentViewController.present(activityViewCon, animated: true, completion: nil)
     }

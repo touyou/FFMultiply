@@ -55,7 +55,7 @@ class ToastView: UIView {
     static fileprivate let FadeInOutDurationInSeconds = 0.4
     
     /// Toastの表示・非表示時のアニメーションのタイプ
-    static fileprivate let ToastTransition = UIViewAnimationOptions.transitionCrossDissolve
+    static fileprivate let ToastTransition = UIView.AnimationOptions.transitionCrossDissolve
     
     static fileprivate let MaximumImageSize = (32, 32)
     
@@ -89,7 +89,7 @@ class ToastView: UIView {
             hideTimer = Timer(timeInterval: ToastView.LongDurationInSeconds, target: self, selector: #selector(self.hideSelf(timer:)), userInfo: nil, repeats: false)
         }
         let runLoop = RunLoop.current
-        runLoop.add(hideTimer!, forMode: RunLoopMode.defaultRunLoopMode)
+        runLoop.add(hideTimer!, forMode: RunLoop.Mode.default)
     }
     
     /// Toastを非表示にする

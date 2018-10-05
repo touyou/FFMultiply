@@ -70,10 +70,10 @@ extension CircularRevealAnimator: CAAnimationDelegate {
         animation.fromValue = fromValue
         animation.toValue = toValue
         animation.duration = duration
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
         animation.delegate = self
         animation.isRemovedOnCompletion = false
-        animation.fillMode = kCAFillModeForwards
+        animation.fillMode = CAMediaTimingFillMode.forwards
         
         viewController.layer.mask = CAShapeLayer()
         viewController.layer.mask?.add(animation, forKey: nil)

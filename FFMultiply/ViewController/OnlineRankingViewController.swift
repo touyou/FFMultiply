@@ -142,7 +142,7 @@ extension OnlineRankingViewController {
         let shareText = "My rank is \(myRank)! Let's play FFMultiplier with me! #FFMultiplier"
         let shareURL = URL(string: "https://itunes.apple.com/us/app/ffmultiplier/id1151801381?l=ja&ls=1&mt=8")!
         let activityViewCon = UIActivityViewController(activityItems: [shareText, shareURL], applicationActivities: nil)
-        let excludeType = [UIActivityType.print]
+        let excludeType = [UIActivity.ActivityType.print]
         activityViewCon.excludedActivityTypes = excludeType
         present(activityViewCon, animated: true, completion: nil)
     }
@@ -180,7 +180,7 @@ extension OnlineRankingViewController: UITableViewDataSource {
 
 extension OnlineRankingViewController: DZNEmptyDataSetSource {
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        let str = NSAttributedString(string: "No Data", attributes: [NSAttributedStringKey.font: UIFont(name: "Futura", size: 20)!, NSAttributedStringKey.foregroundColor: UIColor.white])
+        let str = NSAttributedString(string: "No Data", attributes: [NSAttributedString.Key.font: UIFont(name: "Futura", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white])
         return str
     }
     

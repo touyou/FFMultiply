@@ -44,11 +44,11 @@ class TutorialView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         let bindings = ["view": view]
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|",
-                                                      options:NSLayoutFormatOptions(rawValue: 0),
+                                                      options:NSLayoutConstraint.FormatOptions(rawValue: 0),
                                                       metrics:nil,
                                                       views: bindings))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|",
-                                                      options:NSLayoutFormatOptions(rawValue: 0),
+                                                      options:NSLayoutConstraint.FormatOptions(rawValue: 0),
                                                       metrics:nil,
                                                       views: bindings))
     }

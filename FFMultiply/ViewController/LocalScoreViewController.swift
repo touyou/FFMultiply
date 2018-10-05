@@ -112,7 +112,7 @@ extension LocalScoreViewController: UITableViewDataSource {
 
 extension LocalScoreViewController: DZNEmptyDataSetSource {
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        let str = NSAttributedString(string: "No Data", attributes: [NSAttributedStringKey.font: UIFont(name: "Futura", size: 20)!, NSAttributedStringKey.foregroundColor: UIColor.white])
+        let str = NSAttributedString(string: "No Data", attributes: [NSAttributedString.Key.font: UIFont(name: "Futura", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white])
         return str
     }
     
