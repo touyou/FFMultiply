@@ -62,7 +62,8 @@ final class OnlineRankingViewController: UIViewController {
             let sortVal = values.sorted(by: compareDict)
             let rev = Array(sortVal.reversed())
             var sc = (rev[0].value as AnyObject).object(forKey: "score") as! Int
-            var na = (rev[0].value as AnyObject).object(forKey: "name") as! String
+            var na = ((rev[0].value as AnyObject).object(forKey: "name") as? String) ?? ""
+            na = na == "" ? "No Name" : na
             var r = 1
             self.dataArray = []
             self.dataArray.append((1, sc, na))
@@ -73,7 +74,8 @@ final class OnlineRankingViewController: UIViewController {
             }
             for i in 1 ..< rev.count {
                 let nextSc = (rev[i].value as AnyObject).object(forKey: "score") as! Int
-                na = (rev[i].value as AnyObject).object(forKey: "name") as! String
+                na = ((rev[i].value as AnyObject).object(forKey: "name") as? String) ?? ""
+                na = na == "" ? "No Name" : na
                 if sc != nextSc {
                     r = i + 1
                     sc = nextSc
@@ -113,7 +115,7 @@ extension OnlineRankingViewController {
     @IBAction func registerRank() {
         let realm = try! Realm()
         let score = realm.objects(Score.self).sorted(byKeyPath: "score", ascending: false).first
-        if let name = storage.object(forKey: "playername") as? String {
+        if let name = storage.object(forKey: "playername") as? String, name != "" {
             _ = score.flatMap {
                 ref.child("scores").child(device_id).setValue(["name": name, "score": $0.score as NSNumber], andPriority: -$0.score)
             }

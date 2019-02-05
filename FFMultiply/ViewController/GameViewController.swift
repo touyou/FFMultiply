@@ -128,7 +128,7 @@ final class GameViewController: UIViewController {
     func updateHighScore(_ newScore: Score) {
         let ref = Database.database().reference()
         
-        if let name = storage.object(forKey: "playername") as? String {
+        if let name = storage.object(forKey: "playername") as? String, name != "" {
             ref.child("scores").child(device_id).setValue(["name": name, "score": newScore.score as NSNumber], andPriority: -newScore.score)
         } else {
             let alert = UIAlertController(title: "register name", message: "please set your username", preferredStyle: .alert)
@@ -155,7 +155,7 @@ final class GameViewController: UIViewController {
 
     @IBAction func tapNumber(_ sender: UIButton) {
         let tapped = FNum(rawValue: sender.tag) ?? .zero
-        if nowValue.characters.count < 2 {
+        if nowValue.count < 2 {
             nowValue += convertFNum(toStr: tapped)
             inputNumberLabel.text = nowValue
         }
@@ -178,11 +178,11 @@ final class GameViewController: UIViewController {
     }
     
     @IBAction func tapDelete() {
-        if nowValue.characters.count > 0 {
+        if nowValue.count > 0 {
             nowValue.remove(at: nowValue.index(before: nowValue.endIndex))
             inputNumberLabel.text = nowValue
         }
-        if nowValue.characters.count == 0 {
+        if nowValue.count == 0 {
             inputNumberLabel.text = "--"
         }
     }

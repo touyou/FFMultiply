@@ -60,7 +60,7 @@ func convertFNum(toStr fnum: FNum) -> String {
 
 // Convert a character to FNum
 func convertStr(toFnum str: String) -> FNum? {
-    if str.characters.count > 1 {
+    if str.count > 1 {
         return nil
     }
     if let num = Int(str) {
@@ -89,7 +89,7 @@ func convertStr(toFnum str: String) -> FNum? {
 func convertStr(toInt str: String) -> Int {
     var mul = 1
     var ret = 0
-    for c in str.characters {
+    for c in str {
         ret += (convertStr(toFnum: String(c))?.rawValue ?? 0) * mul
         mul *= 16
     }
