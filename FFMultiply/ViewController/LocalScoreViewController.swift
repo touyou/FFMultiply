@@ -30,6 +30,7 @@ final class LocalScoreViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "LocalScore") as! LocalScoreViewController
         viewController.transitioner = Transitioner(style: .circularReveal(point), viewController: viewController)
+        viewController.modalPresentationStyle = .currentContext
         return viewController
     }
     

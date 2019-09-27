@@ -34,6 +34,7 @@ final class SettingViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "Setting") as! SettingViewController
         viewController.transitioner = Transitioner(style: .circularReveal(point), viewController: viewController)
+        viewController.modalPresentationStyle = .currentContext
         return viewController
     }
     

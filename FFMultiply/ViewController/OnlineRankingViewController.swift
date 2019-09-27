@@ -43,6 +43,7 @@ final class OnlineRankingViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "OnlineRank") as! OnlineRankingViewController
         viewController.transitioner = Transitioner(style: .circularReveal(point), viewController: viewController)
+        viewController.modalPresentationStyle = .currentContext
         return viewController
     }
     
