@@ -43,18 +43,18 @@ final class ViewController: UIViewController {
     }
     
     @IBAction func localScore(_ sender: UIButton) {
-        let viewCon = LocalScoreViewController.instantiate(sender.center)
-        present(viewCon, animated: true, completion: nil)
+        let viewController = LocalScoreViewController.instantiate(sender.center)
+        present(viewController, animated: true, completion: nil)
     }
     
     @IBAction func settingView(_ sender: UIButton) {
-        let viewCon = SettingViewController.instantiate(sender.center)
-        present(viewCon, animated: true, completion: nil)
+        let viewController = SettingViewController.instantiate(sender.center)
+        present(viewController, animated: true, completion: nil)
     }
     
     @IBAction func onlineRank(_ sender: UIButton) {
-        let viewCon = OnlineRankingViewController.instantiate(sender.center)
-        present(viewCon, animated: true, completion: nil)
+        let viewController = OnlineRankingViewController.instantiate(sender.center)
+        present(viewController, animated: true, completion: nil)
     }
 }
 
