@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="DSEG7ClassicMini-Bold.ttf">
             <string>DSEG7ClassicMini-Bold</string>
-        </array>
-        <array key="Futura.ttc">
-            <string>Futura-Bold</string>
-            <string>Futura-Medium</string>
         </array>
     </customFonts>
     <scenes>
@@ -32,10 +25,10 @@
                                 <rect key="frame" x="0.0" y="18.666666666666686" width="375" height="775"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key_visual" translatesAutoresizingMaskIntoConstraints="NO" id="fUE-mG-UGl">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="556"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="555"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yha-F6-B3g">
-                                        <rect key="frame" x="0.0" y="556" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="555" width="375" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="8cf-f7-tf2"/>
                                         </constraints>
@@ -48,7 +41,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yte-D0-cI1">
-                                        <rect key="frame" x="0.0" y="596" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="595" width="375" height="40"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="local score">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -58,7 +51,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRz-te-ycB">
-                                        <rect key="frame" x="0.0" y="636" width="375" height="39.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="635" width="375" height="40"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="online ranking">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -68,7 +61,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMP-6B-TlN">
-                                        <rect key="frame" x="0.0" y="675.33333333333337" width="375" height="39.666666666666629"/>
+                                        <rect key="frame" x="0.0" y="675" width="375" height="40"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="settings">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -115,14 +108,14 @@
             <objects>
                 <viewController id="6gk-O8-QVh" customClass="GameViewController" customModule="FFMultiply" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qyj-uT-jih">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="A6D-fv-CXw">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iwc-Vo-af6">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="367"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="362"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNr-Kb-DBX">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -166,17 +159,18 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXs-x3-oN1">
-                                                <rect key="frame" x="0.0" y="50" width="375" height="217"/>
+                                                <rect key="frame" x="0.0" y="50" width="375" height="212"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gG-V8-uPw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="162.66666666666666" height="217"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="162.66666666666666" height="212"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="48"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="×" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vxx-jy-DDa">
-                                                        <rect key="frame" x="162.66666666666666" y="0.0" width="50" height="217"/>
+                                                        <rect key="frame" x="162.66666666666666" y="0.0" width="50" height="212"/>
+                                                        <color key="backgroundColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="50" id="iQS-Fv-T2C"/>
                                                         </constraints>
@@ -185,7 +179,8 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntY-yk-rh7">
-                                                        <rect key="frame" x="212.66666666666663" y="0.0" width="162.33333333333337" height="217"/>
+                                                        <rect key="frame" x="212.66666666666663" y="0.0" width="162.33333333333337" height="212"/>
+                                                        <color key="backgroundColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="48"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -196,13 +191,14 @@
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0S-zw-ZeG">
-                                                <rect key="frame" x="0.0" y="267" width="375" height="50"/>
+                                                <rect key="frame" x="0.0" y="262" width="375" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="txS-3d-Pfc">
-                                                <rect key="frame" x="0.0" y="317" width="375" height="50"/>
+                                                <rect key="frame" x="0.0" y="312" width="375" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zg0-h9-78v">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
@@ -216,14 +212,14 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sU6-bL-STD">
-                                                        <rect key="frame" x="125" y="0.0" width="125.33333333333331" height="50"/>
+                                                        <rect key="frame" x="125" y="0.0" width="125" height="50"/>
                                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <color key="textColor" red="0.97647100687026978" green="0.97254902124404907" blue="0.96078401803970337" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1c-xN-pyi">
-                                                        <rect key="frame" x="250.33333333333334" y="0.0" width="124.66666666666666" height="50"/>
+                                                        <rect key="frame" x="250" y="0.0" width="125" height="50"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
                                                         <state key="normal" title="DONE">
@@ -246,13 +242,13 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JgQ-Rt-duG">
-                                        <rect key="frame" x="0.0" y="367" width="375" height="367"/>
+                                        <rect key="frame" x="0.0" y="362" width="375" height="362"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zus-eK-GZz">
-                                                <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="367"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="362"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ipg-32-fGv">
-                                                        <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="92"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="90.666666666666671"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="0">
@@ -263,7 +259,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXx-o0-3pt">
-                                                        <rect key="frame" x="0.0" y="92" width="93.666666666666671" height="91.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="90.666666666666686" width="93.666666666666671" height="90.333333333333314"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="4">
@@ -274,7 +270,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Sg-zU-PaM">
-                                                        <rect key="frame" x="0.0" y="183.66666666666663" width="93.666666666666671" height="91.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="181" width="93.666666666666671" height="90.666666666666686"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="8">
@@ -285,7 +281,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gip-WC-6Ux">
-                                                        <rect key="frame" x="0.0" y="275.33333333333337" width="93.666666666666671" height="91.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="271.66666666666663" width="93.666666666666671" height="90.333333333333314"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="C">
@@ -303,10 +299,10 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bX9-d3-yEq">
-                                                <rect key="frame" x="93.666666666666686" y="0.0" width="94" height="367"/>
+                                                <rect key="frame" x="93.666666666666686" y="0.0" width="94" height="362"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqU-Yp-9vJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="92"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="90.666666666666671"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="1">
@@ -317,7 +313,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NqU-P5-XyN">
-                                                        <rect key="frame" x="0.0" y="92" width="94" height="91.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="90.666666666666686" width="94" height="90.333333333333314"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="5">
@@ -328,7 +324,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Nz-tb-EkC">
-                                                        <rect key="frame" x="0.0" y="183.66666666666663" width="94" height="91.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="181" width="94" height="90.666666666666686"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="9">
@@ -339,7 +335,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSg-A7-mqC">
-                                                        <rect key="frame" x="0.0" y="275.33333333333337" width="94" height="91.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="271.66666666666663" width="94" height="90.333333333333314"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="D">
@@ -357,10 +353,10 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="23q-bt-p4K">
-                                                <rect key="frame" x="187.66666666666666" y="0.0" width="93.666666666666657" height="367"/>
+                                                <rect key="frame" x="187.66666666666666" y="0.0" width="93.666666666666657" height="362"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wc5-3I-Hb6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="92"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="90.666666666666671"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="2">
@@ -371,7 +367,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kye-4t-OiP">
-                                                        <rect key="frame" x="0.0" y="92" width="93.666666666666671" height="91.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="90.666666666666686" width="93.666666666666671" height="90.333333333333314"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="6">
@@ -382,7 +378,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WbX-K5-Ccb">
-                                                        <rect key="frame" x="0.0" y="183.66666666666663" width="93.666666666666671" height="91.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="181" width="93.666666666666671" height="90.666666666666686"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="A">
@@ -393,7 +389,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2c-27-auh">
-                                                        <rect key="frame" x="0.0" y="275.33333333333337" width="93.666666666666671" height="91.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="271.66666666666663" width="93.666666666666671" height="90.333333333333314"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="E">
@@ -411,10 +407,10 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vt3-9T-0Vd">
-                                                <rect key="frame" x="281.33333333333331" y="0.0" width="93.666666666666686" height="367"/>
+                                                <rect key="frame" x="281.33333333333331" y="0.0" width="93.666666666666686" height="362"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lR0-Zk-jE4">
-                                                        <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="92"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="90.666666666666671"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="3">
@@ -425,7 +421,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gam-Tg-0ud">
-                                                        <rect key="frame" x="0.0" y="92" width="93.666666666666671" height="91.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="90.666666666666686" width="93.666666666666671" height="90.333333333333314"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="7">
@@ -436,7 +432,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0o-GI-Tai">
-                                                        <rect key="frame" x="0.0" y="183.66666666666663" width="93.666666666666671" height="91.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="181" width="93.666666666666671" height="90.666666666666686"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="B">
@@ -447,7 +443,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOu-J6-m1S">
-                                                        <rect key="frame" x="0.0" y="275.33333333333337" width="93.666666666666671" height="91.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="271.66666666666663" width="93.666666666666671" height="90.333333333333314"/>
                                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="F">
@@ -477,7 +473,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="A6D-fv-CXw" firstAttribute="leading" secondItem="2Ic-LN-4uy" secondAttribute="leading" id="8au-Xd-ILJ"/>
                             <constraint firstItem="2Ic-LN-4uy" firstAttribute="bottom" secondItem="A6D-fv-CXw" secondAttribute="bottom" id="Kw6-YC-qu6"/>
@@ -515,14 +511,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fCM-gr-9C8">
-                                <rect key="frame" x="0.0" y="95.666666666666686" width="375" height="621"/>
+                                <rect key="frame" x="0.0" y="95.666666666666686" width="375" height="620.66666666666652"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scoreCell" id="TzT-Fl-lGx">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TzT-Fl-lGx" id="mQN-pB-DsZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -586,8 +582,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="user name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ywx-Uv-9oh">
-                                <rect key="frame" x="16" y="111" width="343" height="30"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="16" y="111" width="343" height="34"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -672,7 +667,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="63f-Kv-CiG">
-                                <rect key="frame" x="117" y="95" width="141" height="29"/>
+                                <rect key="frame" x="117" y="95.333333333333329" width="141" height="32"/>
                                 <segments>
                                     <segment title="Top50"/>
                                     <segment title="Nearby"/>
@@ -680,14 +675,14 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wo6-GH-HdJ">
-                                <rect key="frame" x="0.0" y="131" width="375" height="564"/>
+                                <rect key="frame" x="0.0" y="134.33333333333331" width="375" height="560.66666666666674"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rankCell" id="oXw-Lx-ahg">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oXw-Lx-ahg" id="hR1-ds-Vn2">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
