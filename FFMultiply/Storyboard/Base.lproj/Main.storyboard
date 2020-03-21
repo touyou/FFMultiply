@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -85,7 +86,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.97647058823529409" green="0.97254901960784312" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.97647058819999999" green="0.97254901959999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="oCj-Ud-r4B" firstAttribute="leading" secondItem="2Yg-Nc-D1I" secondAttribute="leading" id="FlR-2v-cYL"/>
                             <constraint firstItem="oCj-Ud-r4B" firstAttribute="centerX" secondItem="2Yg-Nc-D1I" secondAttribute="centerX" id="JgI-iF-kop"/>
@@ -122,7 +123,7 @@
                                                 <subviews>
                                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rH-LN-Svb">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" name="FFBlackBackground"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="50" id="Ifr-ia-wrg"/>
                                                         </constraints>
@@ -133,20 +134,20 @@
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUg-6f-luq">
                                                         <rect key="frame" x="50" y="0.0" width="275" height="50"/>
-                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" name="FFBlackBackground"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
-                                                        <color key="textColor" red="0.52156862745098043" green="0.74901960784313726" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" name="FFGreen"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wM-Hw-bEl">
                                                         <rect key="frame" x="325" y="0.0" width="50" height="50"/>
-                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" name="FFBlackBackground"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="50" id="1L4-cE-PIz"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                         <state key="normal" title="✕">
-                                                            <color key="titleColor" red="0.97647100687026978" green="0.97254902124404907" blue="0.96078401803970337" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" name="FFWhite"/>
                                                         </state>
                                                         <connections>
                                                             <segue destination="Wic-8j-IfI" kind="unwind" unwindAction="backWithSegue:" id="CS6-He-sGh"/>
@@ -163,14 +164,14 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gG-V8-uPw">
                                                         <rect key="frame" x="0.0" y="0.0" width="162.66666666666666" height="212"/>
-                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" name="FFWhiteBackground"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="48"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="×" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vxx-jy-DDa">
                                                         <rect key="frame" x="162.66666666666666" y="0.0" width="50" height="212"/>
-                                                        <color key="backgroundColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" name="FFWhiteBackground"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="50" id="iQS-Fv-T2C"/>
                                                         </constraints>
@@ -180,7 +181,7 @@
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntY-yk-rh7">
                                                         <rect key="frame" x="212.66666666666663" y="0.0" width="162.33333333333337" height="212"/>
-                                                        <color key="backgroundColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" name="FFWhiteBackground"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="48"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -192,7 +193,7 @@
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0S-zw-ZeG">
                                                 <rect key="frame" x="0.0" y="262" width="375" height="50"/>
-                                                <color key="backgroundColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" name="FFWhiteBackground"/>
                                                 <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -202,10 +203,10 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zg0-h9-78v">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
-                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" name="FFBlackBackground"/>
                                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
                                                         <state key="normal" title="DELETE">
-                                                            <color key="titleColor" red="0.70196078431372544" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" name="FFRed"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="tapDelete" destination="6gk-O8-QVh" eventType="touchUpInside" id="rTX-Kh-gRy"/>
@@ -213,17 +214,17 @@
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sU6-bL-STD">
                                                         <rect key="frame" x="125" y="0.0" width="125" height="50"/>
-                                                        <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" name="FFLightGrayBackground"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
-                                                        <color key="textColor" red="0.97647100687026978" green="0.97254902124404907" blue="0.96078401803970337" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" name="FFWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1c-xN-pyi">
                                                         <rect key="frame" x="250" y="0.0" width="125" height="50"/>
-                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" name="FFBlackBackground"/>
                                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
                                                         <state key="normal" title="DONE">
-                                                            <color key="titleColor" red="0.52156901359558105" green="0.74901998043060303" blue="0.36470600962638855" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" name="FFGreen"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="tapDone" destination="6gk-O8-QVh" eventType="touchUpInside" id="S7S-GJ-wAZ"/>
@@ -249,10 +250,10 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ipg-32-fGv">
                                                         <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="90.666666666666671"/>
-                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="FFBlackBackground"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="0">
-                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" name="FFGray"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="EZd-kb-PZa"/>
@@ -260,10 +261,10 @@
                                                     </button>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXx-o0-3pt">
                                                         <rect key="frame" x="0.0" y="90.666666666666686" width="93.666666666666671" height="90.333333333333314"/>
-                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="FFBlackBackground"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="4">
-                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" name="FFGray"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="6aq-6J-moh"/>
@@ -271,10 +272,10 @@
                                                     </button>
                                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Sg-zU-PaM">
                                                         <rect key="frame" x="0.0" y="181" width="93.666666666666671" height="90.666666666666686"/>
-                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="FFBlackBackground"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="8">
-                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" name="FFGray"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="K4y-o2-DNz"/>
@@ -282,10 +283,10 @@
                                                     </button>
                                                     <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gip-WC-6Ux">
                                                         <rect key="frame" x="0.0" y="271.66666666666663" width="93.666666666666671" height="90.333333333333314"/>
-                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="FFBlackBackground"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="C">
-                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" name="FFGray"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="n7Z-Ij-Fve"/>
@@ -303,10 +304,10 @@
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqU-Yp-9vJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="94" height="90.666666666666671"/>
-                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="FFBlackBackground"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="1">
-                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" name="FFGray"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="piT-F6-rYB"/>
@@ -314,10 +315,10 @@
                                                     </button>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NqU-P5-XyN">
                                                         <rect key="frame" x="0.0" y="90.666666666666686" width="94" height="90.333333333333314"/>
-                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="FFBlackBackground"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="5">
-                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" name="FFGray"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="PUX-Ca-WAP"/>
@@ -325,10 +326,10 @@
                                                     </button>
                                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Nz-tb-EkC">
                                                         <rect key="frame" x="0.0" y="181" width="94" height="90.666666666666686"/>
-                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="FFBlackBackground"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="9">
-                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" name="FFGray"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="ZFp-Ip-wDS"/>
@@ -336,10 +337,10 @@
                                                     </button>
                                                     <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSg-A7-mqC">
                                                         <rect key="frame" x="0.0" y="271.66666666666663" width="94" height="90.333333333333314"/>
-                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="FFBlackBackground"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="D">
-                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" name="FFGray"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="91v-16-jlc"/>
@@ -357,10 +358,10 @@
                                                 <subviews>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wc5-3I-Hb6">
                                                         <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="90.666666666666671"/>
-                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="FFBlackBackground"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="2">
-                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" name="FFGray"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="d1D-kp-cJN"/>
@@ -368,10 +369,10 @@
                                                     </button>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kye-4t-OiP">
                                                         <rect key="frame" x="0.0" y="90.666666666666686" width="93.666666666666671" height="90.333333333333314"/>
-                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="FFBlackBackground"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="6">
-                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" name="FFGray"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="FRE-ya-IXE"/>
@@ -379,10 +380,10 @@
                                                     </button>
                                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WbX-K5-Ccb">
                                                         <rect key="frame" x="0.0" y="181" width="93.666666666666671" height="90.666666666666686"/>
-                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="FFBlackBackground"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="A">
-                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" name="FFGray"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="SxV-hV-PVf"/>
@@ -390,10 +391,10 @@
                                                     </button>
                                                     <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2c-27-auh">
                                                         <rect key="frame" x="0.0" y="271.66666666666663" width="93.666666666666671" height="90.333333333333314"/>
-                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="FFBlackBackground"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="E">
-                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" name="FFGray"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="p7T-ei-Lji"/>
@@ -411,10 +412,10 @@
                                                 <subviews>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lR0-Zk-jE4">
                                                         <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="90.666666666666671"/>
-                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="FFBlackBackground"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="3">
-                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" name="FFGray"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="K1L-Rs-r8u"/>
@@ -422,10 +423,10 @@
                                                     </button>
                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gam-Tg-0ud">
                                                         <rect key="frame" x="0.0" y="90.666666666666686" width="93.666666666666671" height="90.333333333333314"/>
-                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="FFBlackBackground"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="7">
-                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" name="FFGray"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="5pi-6X-fjB"/>
@@ -433,10 +434,10 @@
                                                     </button>
                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0o-GI-Tai">
                                                         <rect key="frame" x="0.0" y="181" width="93.666666666666671" height="90.666666666666686"/>
-                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="FFBlackBackground"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="B">
-                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" name="FFGray"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="ZiO-Yj-mQx"/>
@@ -444,10 +445,10 @@
                                                     </button>
                                                     <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOu-J6-m1S">
                                                         <rect key="frame" x="0.0" y="271.66666666666663" width="93.666666666666671" height="90.333333333333314"/>
-                                                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="FFBlackBackground"/>
                                                         <fontDescription key="fontDescription" name="DSEG7ClassicMini-Bold" family="DSEG7 Classic Mini" pointSize="17"/>
                                                         <state key="normal" title="F">
-                                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" name="FFGray"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="tapNumber:" destination="6gk-O8-QVh" eventType="touchUpInside" id="f2g-4i-Ox4"/>
@@ -512,7 +513,8 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fCM-gr-9C8">
                                 <rect key="frame" x="0.0" y="95.666666666666686" width="375" height="620.66666666666652"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" name="FFWhiteBackground"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scoreCell" id="TzT-Fl-lGx">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -521,6 +523,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="FFWhiteBackground"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -528,7 +531,7 @@
                                 <rect key="frame" x="16" y="727" width="30" height="31"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <state key="normal" title="EXIT">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" name="FFDarkGray"/>
                                 </state>
                                 <connections>
                                     <action selector="exitView:" destination="p1V-24-kF6" eventType="touchUpInside" id="Yg3-1r-T9E"/>
@@ -538,14 +541,14 @@
                                 <rect key="frame" x="312" y="727" width="47" height="31"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <state key="normal" title="DELETE">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" name="FFDarkGray"/>
                                 </state>
                                 <connections>
                                     <action selector="deleteData" destination="p1V-24-kF6" eventType="touchUpInside" id="toZ-wj-177"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.72549019607843135" green="0.48627450980392156" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="FFBrown"/>
                         <constraints>
                             <constraint firstItem="NrZ-cj-fUh" firstAttribute="trailing" secondItem="QHY-Yy-pXX" secondAttribute="trailingMargin" id="0XQ-t0-0uO"/>
                             <constraint firstItem="fCM-gr-9C8" firstAttribute="leading" secondItem="mOn-2L-sgM" secondAttribute="leading" id="0yw-sS-1f4"/>
@@ -583,6 +586,7 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="user name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ywx-Uv-9oh">
                                 <rect key="frame" x="16" y="111" width="343" height="34"/>
+                                <color key="backgroundColor" name="FFWhiteBackground"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -590,7 +594,7 @@
                                 <rect key="frame" x="324" y="669" width="35" height="31"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <state key="normal" title="SAVE">
-                                    <color key="titleColor" red="0.40784313725490196" green="0.40784313725490196" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" name="FFDarkGray"/>
                                 </state>
                                 <connections>
                                     <action selector="saveBtn:" destination="RlN-Ak-Fmh" eventType="touchUpInside" id="zel-rA-LEc"/>
@@ -607,7 +611,7 @@
                                 <rect key="frame" x="16" y="669" width="57" height="31"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <state key="normal" title="CANCEL">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" name="FFDarkGray"/>
                                 </state>
                                 <connections>
                                     <action selector="cancelBtn:" destination="RlN-Ak-Fmh" eventType="touchUpInside" id="oVU-UP-1j5"/>
@@ -617,14 +621,14 @@
                                 <rect key="frame" x="170" y="390" width="35" height="32"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                 <state key="normal" title="HELP">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" name="FFDarkGray"/>
                                 </state>
                                 <connections>
                                     <action selector="tutorialBtn" destination="RlN-Ak-Fmh" eventType="touchUpInside" id="xiA-xU-ccQ"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="FFSettingGray"/>
                         <constraints>
                             <constraint firstItem="JaY-7V-KmC" firstAttribute="centerX" secondItem="uiI-eP-exr" secondAttribute="centerX" id="5Sz-fO-hfa"/>
                             <constraint firstItem="Ywx-Uv-9oh" firstAttribute="top" secondItem="JaY-7V-KmC" secondAttribute="bottom" constant="36" id="6DQ-9s-QRG"/>
@@ -692,7 +696,7 @@
                                 <rect key="frame" x="23" y="727" width="30" height="31"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <state key="normal" title="EXIT">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" name="FFDarkGray"/>
                                 </state>
                                 <connections>
                                     <action selector="exitView:" destination="C8a-wQ-8vG" eventType="touchUpInside" id="lke-ar-Qfp"/>
@@ -702,7 +706,7 @@
                                 <rect key="frame" x="295" y="727" width="64" height="31"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <state key="normal" title="REGISTER">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" name="FFDarkGray"/>
                                 </state>
                                 <connections>
                                     <action selector="registerRank" destination="C8a-wQ-8vG" eventType="touchUpInside" id="aVY-su-YzL"/>
@@ -712,7 +716,7 @@
                                 <rect key="frame" x="164.66666666666666" y="727" width="46" height="31"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <state key="normal" title="SHARE">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" name="FFDarkGray"/>
                                 </state>
                                 <connections>
                                     <action selector="shareBtn" destination="C8a-wQ-8vG" eventType="touchUpInside" id="Cz3-qo-tLf"/>
@@ -726,7 +730,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.52156862745098043" green="0.74901960784313726" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="FFGreenBackground"/>
                         <constraints>
                             <constraint firstItem="QOU-zp-5iy" firstAttribute="trailing" secondItem="J9y-jh-lfG" secondAttribute="trailing" id="2dz-fU-uDu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="f0o-i8-7Pe" secondAttribute="trailing" id="8Ud-Y3-ayq"/>
@@ -762,5 +766,38 @@
     </scenes>
     <resources>
         <image name="key_visual" width="431" height="199"/>
+        <namedColor name="FFBlackBackground">
+            <color red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="FFBrown">
+            <color red="0.72549019607843135" green="0.48627450980392156" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="FFDarkGray">
+            <color red="0.40392156862745099" green="0.40392156862745099" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="FFGray">
+            <color red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="FFGreen">
+            <color red="0.52156862745098043" green="0.74901960784313726" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="FFGreenBackground">
+            <color red="0.52156862745098043" green="0.74901960784313726" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="FFLightGrayBackground">
+            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="FFRed">
+            <color red="0.70196078431372544" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="FFSettingGray">
+            <color red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="FFWhite">
+            <color red="0.97647058823529409" green="0.97254901960784312" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="FFWhiteBackground">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

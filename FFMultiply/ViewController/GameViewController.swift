@@ -108,6 +108,7 @@ final class GameViewController: UIViewController {
         let config = STZPopupViewConfig()
         config.dismissTouchBackground = false
         config.cornerRadius = 20
+        config.overlayColor = UIColor(named: "FFBlackReversible")?.withAlphaComponent(0.3) ?? UIColor.black.withAlphaComponent(0.3)
         presentPopupView(resultView, config: config)
         
         if interstitial.isReady {
