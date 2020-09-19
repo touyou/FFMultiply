@@ -6,11 +6,11 @@ target 'FFMultiply' do
   use_frameworks!
 
   # Pods for FFMultiply
-  pod 'Firebase/Core'
-  pod 'Firebase/AdMob'
-  pod 'Firebase/Database'
-  pod 'Firebase/Crash'
-  pod 'RealmSwift'
+#pod 'Firebase/Core'
+#  pod 'Firebase/AdMob'
+# pod 'Firebase/Database'
+# pod 'Firebase/Crash'
+  pod  'Google-Mobile-Ads-SDK'
   pod 'STZPopupView'
   pod 'DZNEmptyDataSet'
 end
