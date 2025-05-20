@@ -32,7 +32,9 @@ final class SettingViewController: UIViewController {
     
     class func instantiate(_ point: CGPoint) -> SettingViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "Setting") as! SettingViewController
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "Setting") as? SettingViewController else {
+            fatalError("SettingViewControllerのインスタンス化に失敗")
+        }
         viewController.transitioner = Transitioner(style: .circularReveal(point), viewController: viewController)
         viewController.modalPresentationStyle = .currentContext
         return viewController

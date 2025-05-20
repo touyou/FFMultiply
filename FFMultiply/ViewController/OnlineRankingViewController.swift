@@ -41,7 +41,9 @@ final class OnlineRankingViewController: UIViewController {
     
     class func instantiate(_ point: CGPoint) -> OnlineRankingViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "OnlineRank") as! OnlineRankingViewController
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "OnlineRank") as? OnlineRankingViewController else {
+            fatalError("OnlineRankingViewControllerのインスタンス化に失敗")
+        }
         viewController.transitioner = Transitioner(style: .circularReveal(point), viewController: viewController)
         viewController.modalPresentationStyle = .currentContext
         return viewController
@@ -52,8 +54,10 @@ final class OnlineRankingViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         let compareDict: ((key: String, value: Any), (key: String, value: Any)) -> Bool = { (a, b) in
-            let ascore = (a.value as AnyObject).object(forKey: "score") as! Int
-            let bscore = (b.value as AnyObject).object(forKey: "score") as! Int
+            guard let ascore = (a.value as AnyObject).object(forKey: "score") as? Int,
+                  let bscore = (b.value as AnyObject).object(forKey: "score") as? Int else {
+                return false
+            }
             return ascore < bscore
         }
         let loadSortScore: (DataSnapshot) -> Void = { snapshot in
@@ -62,8 +66,9 @@ final class OnlineRankingViewController: UIViewController {
             }
             let sortVal = values.sorted(by: compareDict)
             let rev = Array(sortVal.reversed())
-            var sc = (rev[0].value as AnyObject).object(forKey: "score") as! Int
-            var na = ((rev[0].value as AnyObject).object(forKey: "name") as? String) ?? ""
+            guard let firstScore = (rev.first?.value as AnyObject).object(forKey: "score") as? Int else { return }
+            var sc = firstScore
+            var na = ((rev.first?.value as AnyObject).object(forKey: "name") as? String) ?? ""
             na = na == "" ? "No Name" : na
             var r = 1
             self.dataArray = []
@@ -74,7 +79,7 @@ final class OnlineRankingViewController: UIViewController {
                 self.rankLabel.text = "Your Rank: \(self.myRank)"
             }
             for i in 1 ..< rev.count {
-                let nextSc = (rev[i].value as AnyObject).object(forKey: "score") as! Int
+                guard let nextSc = (rev[i].value as AnyObject).object(forKey: "score") as? Int else { continue }
                 na = ((rev[i].value as AnyObject).object(forKey: "name") as? String) ?? ""
                 na = na == "" ? "No Name" : na
                 if sc != nextSc {
