@@ -115,8 +115,8 @@ fileprivate func isEqual(_ a: FFProblem, _ b: FFProblem) -> Bool {
 func makeProblem(_ num: Int) -> [FFProblem] {
     var ret: [FFProblem] = []
     for i in 0 ..< num {
-        var a = FNum(rawValue: Int(arc4random_uniform(16))) ?? .zero
-        var b = FNum(rawValue: Int(arc4random_uniform(16))) ?? .zero
+        var a = FNum(rawValue: Int.random(in: 0..<16)) ?? .zero
+        var b = FNum(rawValue: Int.random(in: 0..<16)) ?? .zero
         var ans = fTimes(a, b)
         for _ in 0 ..< 10 {
             var flag = true
@@ -129,8 +129,8 @@ func makeProblem(_ num: Int) -> [FFProblem] {
             if flag {
                 break
             } else {
-                a = FNum(rawValue: Int(arc4random_uniform(16))) ?? .zero
-                b = FNum(rawValue: Int(arc4random_uniform(16))) ?? .zero
+                a = FNum(rawValue: Int.random(in: 0..<16)) ?? .zero
+                b = FNum(rawValue: Int.random(in: 0..<16)) ?? .zero
                 ans = fTimes(a, b)
             }
         }

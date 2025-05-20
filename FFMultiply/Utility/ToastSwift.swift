@@ -109,7 +109,10 @@ class ToastView: UIView {
      */
     
     static func showText(text: String, duration: ToastDuration = .short, target: UIViewController) -> ToastView? {
-        guard let keyWindow = UIApplication.shared.keyWindow else {
+        guard let keyWindow = UIApplication.shared.connectedScenes
+                .compactMap({ $0 as? UIWindowScene })
+                .flatMap({ $0.windows })
+                .first(where: { $0.isKeyWindow }) else {
             return nil
         }
         guard let targetView = target.view  else {
@@ -171,7 +174,10 @@ class ToastView: UIView {
      生成したToastのView
      */
     static func showText(text: String, duration: ToastDuration = .short) -> ToastView? {
-        guard let keyWindow = UIApplication.shared.keyWindow else {
+        guard let keyWindow = UIApplication.shared.connectedScenes
+                .compactMap({ $0 as? UIWindowScene })
+                .flatMap({ $0.windows })
+                .first(where: { $0.isKeyWindow }) else {
             return nil
         }
         guard let targetView = keyWindow.rootViewController?.view else {
@@ -234,7 +240,10 @@ class ToastView: UIView {
      生成したToastのView
      */
     static func showText(text: String, image: UIImage, imagePosition: ToastImagePosition = .left, duration: ToastDuration = .short) -> ToastView? {
-        guard let keyWindow = UIApplication.shared.keyWindow else {
+        guard let keyWindow = UIApplication.shared.connectedScenes
+                .compactMap({ $0 as? UIWindowScene })
+                .flatMap({ $0.windows })
+                .first(where: { $0.isKeyWindow }) else {
             return nil
         }
         guard let targetView = keyWindow.rootViewController?.view else {
