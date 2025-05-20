@@ -32,7 +32,7 @@ final class ResultView: UIView {
     
     private func commonInit() {
         let nib = UINib(nibName: "ResultView", bundle: nil)
-        let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
+        guard let view = nib.instantiate(withOwner: self, options: nil).first as? UIView else { return }
         addSubview(view)
         
         // カスタムViewのサイズを自分自身と同じサイズにする
