@@ -20,7 +20,7 @@ class CircularRevealAnimator : NSObject {
         self.isPresent = isPresent
     }
     
-    dynamic func animationDidStop(_ animation: CAAnimation, finished flag: Bool) {
+    @objc dynamic func animationDidStop(_ animation: CAAnimation, finished flag: Bool) {
         completionHandler?()
     }
 }
