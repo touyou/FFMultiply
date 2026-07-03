@@ -20,6 +20,8 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
+                Spacer(minLength: 24)
+                
                 Image("key_visual")
                     .resizable()
                     .scaledToFit()

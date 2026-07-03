@@ -11,7 +11,6 @@
 		4603175D1DBDBFC300C9162F /* FFUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4603175C1DBDBFC300C9162F /* FFUtility.swift */; };
 		460CC8101DC9A87200EBF626 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460CC80F1DC9A87200EBF626 /* TutorialView.swift */; };
 		461352AE25160A04001550E6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 461352AD25160A04001550E6 /* FirebaseDatabase */; };
-		461352B025160A04001550E6 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 461352AF25160A04001550E6 /* FirebaseCrashlytics */; };
 		46229BAD2FF816D20043E4FD /* FFColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BAC2FF816D20043E4FD /* FFColor.swift */; };
 		46229BAF2FF816D60043E4FD /* FFFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BAE2FF816D60043E4FD /* FFFont.swift */; };
 		46229BB12FF816EE0043E4FD /* GlassStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BB02FF816EE0043E4FD /* GlassStyles.swift */; };
@@ -78,7 +77,6 @@
 			files = (
 				46229BDA2FF8196A0043E4FD /* RealmSwift in Frameworks */,
 				46229BDD2FF819A30043E4FD /* GoogleMobileAds in Frameworks */,
-				461352B025160A04001550E6 /* FirebaseCrashlytics in Frameworks */,
 				461352AE25160A04001550E6 /* FirebaseDatabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,7 +241,6 @@
 			name = FFMultiply;
 			packageProductDependencies = (
 				461352AD25160A04001550E6 /* FirebaseDatabase */,
-				461352AF25160A04001550E6 /* FirebaseCrashlytics */,
 				46229BD92FF8196A0043E4FD /* RealmSwift */,
 				46229BDC2FF819A30043E4FD /* GoogleMobileAds */,
 			);
@@ -557,11 +554,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 461352AC25160A04001550E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
-		};
-		461352AF25160A04001550E6 /* FirebaseCrashlytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 461352AC25160A04001550E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
 		};
 		46229BD92FF8196A0043E4FD /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
