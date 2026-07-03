@@ -3,64 +3,72 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		39C9E6ADAD5E4245D0AF2ADE /* Pods_FFMultiply.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD43C510C6E6B65F614DAC02 /* Pods_FFMultiply.framework */; };
-		4603174B1DBDBFA500C9162F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4603174A1DBDBFA500C9162F /* AppDelegate.swift */; };
-		4603174D1DBDBFA500C9162F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4603174C1DBDBFA500C9162F /* ViewController.swift */; };
-		460317501DBDBFA500C9162F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4603174E1DBDBFA500C9162F /* Main.storyboard */; };
 		460317521DBDBFA500C9162F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 460317511DBDBFA500C9162F /* Assets.xcassets */; };
-		460317551DBDBFA500C9162F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460317531DBDBFA500C9162F /* LaunchScreen.storyboard */; };
 		4603175D1DBDBFC300C9162F /* FFUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4603175C1DBDBFC300C9162F /* FFUtility.swift */; };
 		460CC8101DC9A87200EBF626 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460CC80F1DC9A87200EBF626 /* TutorialView.swift */; };
-		460CC8121DC9A8A600EBF626 /* TutorialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 460CC8111DC9A8A600EBF626 /* TutorialView.xib */; };
-		461352A825160612001550E6 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 461352A725160612001550E6 /* Realm */; };
-		461352AA25160612001550E6 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 461352A925160612001550E6 /* RealmSwift */; };
 		461352AE25160A04001550E6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 461352AD25160A04001550E6 /* FirebaseDatabase */; };
 		461352B025160A04001550E6 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 461352AF25160A04001550E6 /* FirebaseCrashlytics */; };
-		4657DE731DC83ACF00F1AF63 /* CircularRevealAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657DE711DC83ACF00F1AF63 /* CircularRevealAnimator.swift */; };
-		4657DE741DC83ACF00F1AF63 /* Transitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657DE721DC83ACF00F1AF63 /* Transitioner.swift */; };
-		4657DE761DC86F4600F1AF63 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657DE751DC86F4600F1AF63 /* SettingViewController.swift */; };
-		4657DE781DC8738400F1AF63 /* OnlineRankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657DE771DC8738400F1AF63 /* OnlineRankingViewController.swift */; };
-		466B5AD91DBE022D00517B86 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466B5AD81DBE022D00517B86 /* GameViewController.swift */; };
+		46229BAD2FF816D20043E4FD /* FFColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BAC2FF816D20043E4FD /* FFColor.swift */; };
+		46229BAF2FF816D60043E4FD /* FFFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BAE2FF816D60043E4FD /* FFFont.swift */; };
+		46229BB12FF816EE0043E4FD /* GlassStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BB02FF816EE0043E4FD /* GlassStyles.swift */; };
+		46229BB32FF816F00043E4FD /* ScoreEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BB22FF816F00043E4FD /* ScoreEntry.swift */; };
+		46229BB52FF816FE0043E4FD /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BB42FF816FE0043E4FD /* ToastModifier.swift */; };
+		46229BB72FF817120043E4FD /* LegacyRealmScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BB62FF817120043E4FD /* LegacyRealmScore.swift */; };
+		46229BBA2FF817180043E4FD /* ScoreStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BB92FF817180043E4FD /* ScoreStore.swift */; };
+		46229BBC2FF817230043E4FD /* RealmMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BBB2FF817230043E4FD /* RealmMigration.swift */; };
+		46229BBE2FF817300043E4FD /* RankingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BBD2FF817300043E4FD /* RankingService.swift */; };
+		46229BC02FF817480043E4FD /* AdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BBF2FF817480043E4FD /* AdManager.swift */; };
+		46229BC22FF8174B0043E4FD /* BannerAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BC12FF8174B0043E4FD /* BannerAdView.swift */; };
+		46229BC52FF8176B0043E4FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BC42FF8176B0043E4FD /* AppDelegate.swift */; };
+		46229BC72FF817740043E4FD /* FFMultiplyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BC62FF817740043E4FD /* FFMultiplyApp.swift */; };
+		46229BC92FF817940043E4FD /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BC82FF817940043E4FD /* GameViewModel.swift */; };
+		46229BCB2FF817D20043E4FD /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BCA2FF817D20043E4FD /* GameView.swift */; };
+		46229BCD2FF817F80043E4FD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BCC2FF817F80043E4FD /* HomeView.swift */; };
+		46229BCF2FF8180E0043E4FD /* LocalScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BCE2FF8180E0043E4FD /* LocalScoreView.swift */; };
+		46229BD12FF8181E0043E4FD /* OnlineRankingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BD02FF8181E0043E4FD /* OnlineRankingViewModel.swift */; };
+		46229BD32FF8182F0043E4FD /* OnlineRankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BD22FF8182F0043E4FD /* OnlineRankingView.swift */; };
+		46229BD52FF8183A0043E4FD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BD42FF8183A0043E4FD /* SettingsView.swift */; };
+		46229BDA2FF8196A0043E4FD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 46229BD92FF8196A0043E4FD /* RealmSwift */; };
+		46229BDD2FF819A30043E4FD /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 46229BDC2FF819A30043E4FD /* GoogleMobileAds */; };
 		4697286F1DC6F9AC00B9E5EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4697286E1DC6F9AC00B9E5EA /* GoogleService-Info.plist */; };
-		469728721DC75EBA00B9E5EA /* ScoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469728711DC75EBA00B9E5EA /* ScoreModel.swift */; };
-		4697287E1DC775B700B9E5EA /* ResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4697287D1DC775B700B9E5EA /* ResultView.xib */; };
 		469728801DC7769B00B9E5EA /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697287F1DC7769B00B9E5EA /* ResultView.swift */; };
-		469728891DC8287700B9E5EA /* LocalScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469728881DC8287700B9E5EA /* LocalScoreViewController.swift */; };
 		4697288A1DC8395600B9E5EA /* DSEG7ClassicMini-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 466B5AD71DBDF9C900517B86 /* DSEG7ClassicMini-Bold.ttf */; };
-		46D6AF761DBF032600BA44C3 /* ToastSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D6AF751DBF032600BA44C3 /* ToastSwift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		024C7103399235755ECCFDDE /* Pods-FFMultiply.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FFMultiply.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FFMultiply/Pods-FFMultiply.debug.xcconfig"; sourceTree = "<group>"; };
 		460317471DBDBFA500C9162F /* FFMultiply.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFMultiply.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4603174A1DBDBFA500C9162F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4603174C1DBDBFA500C9162F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4603174F1DBDBFA500C9162F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		460317511DBDBFA500C9162F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		460317541DBDBFA500C9162F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		460317561DBDBFA500C9162F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4603175C1DBDBFC300C9162F /* FFUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFUtility.swift; sourceTree = "<group>"; };
 		460CC80F1DC9A87200EBF626 /* TutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialView.swift; path = Views/TutorialView.swift; sourceTree = "<group>"; };
-		460CC8111DC9A8A600EBF626 /* TutorialView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TutorialView.xib; path = Views/TutorialView.xib; sourceTree = "<group>"; };
-		4657DE711DC83ACF00F1AF63 /* CircularRevealAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularRevealAnimator.swift; sourceTree = "<group>"; };
-		4657DE721DC83ACF00F1AF63 /* Transitioner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transitioner.swift; sourceTree = "<group>"; };
-		4657DE751DC86F4600F1AF63 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		4657DE771DC8738400F1AF63 /* OnlineRankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineRankingViewController.swift; sourceTree = "<group>"; };
+		46229BAC2FF816D20043E4FD /* FFColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFColor.swift; sourceTree = "<group>"; };
+		46229BAE2FF816D60043E4FD /* FFFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFFont.swift; sourceTree = "<group>"; };
+		46229BB02FF816EE0043E4FD /* GlassStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassStyles.swift; sourceTree = "<group>"; };
+		46229BB22FF816F00043E4FD /* ScoreEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreEntry.swift; sourceTree = "<group>"; };
+		46229BB42FF816FE0043E4FD /* ToastModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
+		46229BB62FF817120043E4FD /* LegacyRealmScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyRealmScore.swift; sourceTree = "<group>"; };
+		46229BB92FF817180043E4FD /* ScoreStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreStore.swift; sourceTree = "<group>"; };
+		46229BBB2FF817230043E4FD /* RealmMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMigration.swift; sourceTree = "<group>"; };
+		46229BBD2FF817300043E4FD /* RankingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingService.swift; sourceTree = "<group>"; };
+		46229BBF2FF817480043E4FD /* AdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdManager.swift; sourceTree = "<group>"; };
+		46229BC12FF8174B0043E4FD /* BannerAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdView.swift; sourceTree = "<group>"; };
+		46229BC42FF8176B0043E4FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		46229BC62FF817740043E4FD /* FFMultiplyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFMultiplyApp.swift; sourceTree = "<group>"; };
+		46229BC82FF817940043E4FD /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		46229BCA2FF817D20043E4FD /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		46229BCC2FF817F80043E4FD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		46229BCE2FF8180E0043E4FD /* LocalScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalScoreView.swift; sourceTree = "<group>"; };
+		46229BD02FF8181E0043E4FD /* OnlineRankingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineRankingViewModel.swift; sourceTree = "<group>"; };
+		46229BD22FF8182F0043E4FD /* OnlineRankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineRankingView.swift; sourceTree = "<group>"; };
+		46229BD42FF8183A0043E4FD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4657DE791DC8952B00F1AF63 /* FFMultiply.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FFMultiply.entitlements; sourceTree = "<group>"; };
 		466B5AD71DBDF9C900517B86 /* DSEG7ClassicMini-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DSEG7ClassicMini-Bold.ttf"; sourceTree = "<group>"; };
-		466B5AD81DBE022D00517B86 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		4697286E1DC6F9AC00B9E5EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		469728711DC75EBA00B9E5EA /* ScoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScoreModel.swift; path = Model/ScoreModel.swift; sourceTree = "<group>"; };
-		4697287D1DC775B700B9E5EA /* ResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultView.xib; path = Views/ResultView.xib; sourceTree = "<group>"; };
 		4697287F1DC7769B00B9E5EA /* ResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultView.swift; path = Views/ResultView.swift; sourceTree = "<group>"; };
-		469728881DC8287700B9E5EA /* LocalScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalScoreViewController.swift; sourceTree = "<group>"; };
-		46D6AF751DBF032600BA44C3 /* ToastSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastSwift.swift; sourceTree = "<group>"; };
-		BD43C510C6E6B65F614DAC02 /* Pods_FFMultiply.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FFMultiply.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3CD28C1E9537BE93A2C4A55 /* Pods-FFMultiply.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FFMultiply.release.xcconfig"; path = "Pods/Target Support Files/Pods-FFMultiply/Pods-FFMultiply.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,32 +76,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				461352AA25160612001550E6 /* RealmSwift in Frameworks */,
-				461352A825160612001550E6 /* Realm in Frameworks */,
+				46229BDA2FF8196A0043E4FD /* RealmSwift in Frameworks */,
+				46229BDD2FF819A30043E4FD /* GoogleMobileAds in Frameworks */,
 				461352B025160A04001550E6 /* FirebaseCrashlytics in Frameworks */,
 				461352AE25160A04001550E6 /* FirebaseDatabase in Frameworks */,
-				39C9E6ADAD5E4245D0AF2ADE /* Pods_FFMultiply.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1CAC62E759A8833E26FF3D65 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BD43C510C6E6B65F614DAC02 /* Pods_FFMultiply.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		4603173E1DBDBFA500C9162F = {
 			isa = PBXGroup;
 			children = (
 				460317491DBDBFA500C9162F /* FFMultiply */,
 				460317481DBDBFA500C9162F /* Products */,
-				7CD22E5CF7C2250A95A1D2B2 /* Pods */,
-				1CAC62E759A8833E26FF3D65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,15 +114,47 @@
 				46D6AF7B1DBF096F00BA44C3 /* Support File */,
 				46D6AF771DBF032E00BA44C3 /* Utility */,
 				46D6AF781DBF093200BA44C3 /* ViewController */,
+				46229BAB2FF816D20043E4FD /* DesignSystem */,
+				46229BB82FF817180043E4FD /* Services */,
+				46229BC32FF8176B0043E4FD /* App */,
 			);
 			path = FFMultiply;
+			sourceTree = "<group>";
+		};
+		46229BAB2FF816D20043E4FD /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				46229BAC2FF816D20043E4FD /* FFColor.swift */,
+				46229BAE2FF816D60043E4FD /* FFFont.swift */,
+				46229BB02FF816EE0043E4FD /* GlassStyles.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		46229BB82FF817180043E4FD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				46229BB92FF817180043E4FD /* ScoreStore.swift */,
+				46229BBB2FF817230043E4FD /* RealmMigration.swift */,
+				46229BBD2FF817300043E4FD /* RankingService.swift */,
+				46229BBF2FF817480043E4FD /* AdManager.swift */,
+				46229BC12FF8174B0043E4FD /* BannerAdView.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		46229BC32FF8176B0043E4FD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				46229BC42FF8176B0043E4FD /* AppDelegate.swift */,
+				46229BC62FF817740043E4FD /* FFMultiplyApp.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		4657DE701DC83ACF00F1AF63 /* CircularRevealAnimator */ = {
 			isa = PBXGroup;
 			children = (
-				4657DE711DC83ACF00F1AF63 /* CircularRevealAnimator.swift */,
-				4657DE721DC83ACF00F1AF63 /* Transitioner.swift */,
 			);
 			path = CircularRevealAnimator;
 			sourceTree = "<group>";
@@ -133,7 +162,8 @@
 		469728701DC75E6600B9E5EA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				469728711DC75EBA00B9E5EA /* ScoreModel.swift */,
+				46229BB22FF816F00043E4FD /* ScoreEntry.swift */,
+				46229BB62FF817120043E4FD /* LegacyRealmScore.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -141,10 +171,16 @@
 		469728751DC7753700B9E5EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4697287D1DC775B700B9E5EA /* ResultView.xib */,
 				4697287F1DC7769B00B9E5EA /* ResultView.swift */,
 				460CC80F1DC9A87200EBF626 /* TutorialView.swift */,
-				460CC8111DC9A8A600EBF626 /* TutorialView.xib */,
+				46229BB42FF816FE0043E4FD /* ToastModifier.swift */,
+				46229BC82FF817940043E4FD /* GameViewModel.swift */,
+				46229BCA2FF817D20043E4FD /* GameView.swift */,
+				46229BCC2FF817F80043E4FD /* HomeView.swift */,
+				46229BCE2FF8180E0043E4FD /* LocalScoreView.swift */,
+				46229BD02FF8181E0043E4FD /* OnlineRankingViewModel.swift */,
+				46229BD22FF8182F0043E4FD /* OnlineRankingView.swift */,
+				46229BD42FF8183A0043E4FD /* SettingsView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -153,7 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				4603175C1DBDBFC300C9162F /* FFUtility.swift */,
-				46D6AF751DBF032600BA44C3 /* ToastSwift.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -161,11 +196,6 @@
 		46D6AF781DBF093200BA44C3 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				466B5AD81DBE022D00517B86 /* GameViewController.swift */,
-				4603174C1DBDBFA500C9162F /* ViewController.swift */,
-				469728881DC8287700B9E5EA /* LocalScoreViewController.swift */,
-				4657DE751DC86F4600F1AF63 /* SettingViewController.swift */,
-				4657DE771DC8738400F1AF63 /* OnlineRankingViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -182,8 +212,6 @@
 		46D6AF7A1DBF095C00BA44C3 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				460317531DBDBFA500C9162F /* LaunchScreen.storyboard */,
-				4603174E1DBDBFA500C9162F /* Main.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -192,19 +220,9 @@
 			isa = PBXGroup;
 			children = (
 				4697286E1DC6F9AC00B9E5EA /* GoogleService-Info.plist */,
-				4603174A1DBDBFA500C9162F /* AppDelegate.swift */,
 				460317561DBDBFA500C9162F /* Info.plist */,
 			);
 			path = "Support File";
-			sourceTree = "<group>";
-		};
-		7CD22E5CF7C2250A95A1D2B2 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				024C7103399235755ECCFDDE /* Pods-FFMultiply.debug.xcconfig */,
-				F3CD28C1E9537BE93A2C4A55 /* Pods-FFMultiply.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,12 +232,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 460317591DBDBFA500C9162F /* Build configuration list for PBXNativeTarget "FFMultiply" */;
 			buildPhases = (
-				2060E7150D8AD749BAD90696 /* [CP] Check Pods Manifest.lock */,
 				460317431DBDBFA500C9162F /* Sources */,
 				460317441DBDBFA500C9162F /* Frameworks */,
 				460317451DBDBFA500C9162F /* Resources */,
-				4797F2CCEE742148820FDEC8 /* [CP] Embed Pods Frameworks */,
-				531BF6D3FE95A0CAE096B06F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -227,10 +242,10 @@
 			);
 			name = FFMultiply;
 			packageProductDependencies = (
-				461352A725160612001550E6 /* Realm */,
-				461352A925160612001550E6 /* RealmSwift */,
 				461352AD25160A04001550E6 /* FirebaseDatabase */,
 				461352AF25160A04001550E6 /* FirebaseCrashlytics */,
+				46229BD92FF8196A0043E4FD /* RealmSwift */,
+				46229BDC2FF819A30043E4FD /* GoogleMobileAds */,
 			);
 			productName = FFMultiply;
 			productReference = 460317471DBDBFA500C9162F /* FFMultiply.app */;
@@ -269,8 +284,9 @@
 			);
 			mainGroup = 4603173E1DBDBFA500C9162F;
 			packageReferences = (
-				461352A625160612001550E6 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				461352AC25160A04001550E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				46229BD62FF8196A0043E4FD /* XCRemoteSwiftPackageReference "realm-swift" */,
+				46229BDB2FF819A30043E4FD /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = 460317481DBDBFA500C9162F /* Products */;
 			projectDirPath = "";
@@ -286,122 +302,46 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				460CC8121DC9A8A600EBF626 /* TutorialView.xib in Resources */,
 				4697288A1DC8395600B9E5EA /* DSEG7ClassicMini-Bold.ttf in Resources */,
-				460317551DBDBFA500C9162F /* LaunchScreen.storyboard in Resources */,
 				4697286F1DC6F9AC00B9E5EA /* GoogleService-Info.plist in Resources */,
-				4697287E1DC775B700B9E5EA /* ResultView.xib in Resources */,
 				460317521DBDBFA500C9162F /* Assets.xcassets in Resources */,
-				460317501DBDBFA500C9162F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2060E7150D8AD749BAD90696 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FFMultiply-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4797F2CCEE742148820FDEC8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FFMultiply/Pods-FFMultiply-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
-				"${BUILT_PRODUCTS_DIR}/STZPopupView/STZPopupView.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/STZPopupView.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FFMultiply/Pods-FFMultiply-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		531BF6D3FE95A0CAE096B06F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FFMultiply/Pods-FFMultiply-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/Google-Mobile-Ads-SDK/GoogleMobileAdsResources.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUserMessagingPlatform/UserMessagingPlatformResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMobileAdsResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UserMessagingPlatformResources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FFMultiply/Pods-FFMultiply-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		460317431DBDBFA500C9162F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				469728721DC75EBA00B9E5EA /* ScoreModel.swift in Sources */,
+				46229BB32FF816F00043E4FD /* ScoreEntry.swift in Sources */,
 				460CC8101DC9A87200EBF626 /* TutorialView.swift in Sources */,
-				4657DE761DC86F4600F1AF63 /* SettingViewController.swift in Sources */,
-				466B5AD91DBE022D00517B86 /* GameViewController.swift in Sources */,
+				46229BCF2FF8180E0043E4FD /* LocalScoreView.swift in Sources */,
+				46229BC72FF817740043E4FD /* FFMultiplyApp.swift in Sources */,
+				46229BC22FF8174B0043E4FD /* BannerAdView.swift in Sources */,
+				46229BCB2FF817D20043E4FD /* GameView.swift in Sources */,
+				46229BAD2FF816D20043E4FD /* FFColor.swift in Sources */,
 				4603175D1DBDBFC300C9162F /* FFUtility.swift in Sources */,
-				4657DE741DC83ACF00F1AF63 /* Transitioner.swift in Sources */,
-				46D6AF761DBF032600BA44C3 /* ToastSwift.swift in Sources */,
-				4657DE781DC8738400F1AF63 /* OnlineRankingViewController.swift in Sources */,
-				4657DE731DC83ACF00F1AF63 /* CircularRevealAnimator.swift in Sources */,
-				4603174D1DBDBFA500C9162F /* ViewController.swift in Sources */,
+				46229BC92FF817940043E4FD /* GameViewModel.swift in Sources */,
+				46229BCD2FF817F80043E4FD /* HomeView.swift in Sources */,
+				46229BD12FF8181E0043E4FD /* OnlineRankingViewModel.swift in Sources */,
+				46229BB72FF817120043E4FD /* LegacyRealmScore.swift in Sources */,
+				46229BBC2FF817230043E4FD /* RealmMigration.swift in Sources */,
+				46229BBE2FF817300043E4FD /* RankingService.swift in Sources */,
+				46229BC52FF8176B0043E4FD /* AppDelegate.swift in Sources */,
+				46229BD52FF8183A0043E4FD /* SettingsView.swift in Sources */,
+				46229BB52FF816FE0043E4FD /* ToastModifier.swift in Sources */,
+				46229BBA2FF817180043E4FD /* ScoreStore.swift in Sources */,
+				46229BB12FF816EE0043E4FD /* GlassStyles.swift in Sources */,
+				46229BAF2FF816D60043E4FD /* FFFont.swift in Sources */,
 				469728801DC7769B00B9E5EA /* ResultView.swift in Sources */,
-				4603174B1DBDBFA500C9162F /* AppDelegate.swift in Sources */,
-				469728891DC8287700B9E5EA /* LocalScoreViewController.swift in Sources */,
+				46229BD32FF8182F0043E4FD /* OnlineRankingView.swift in Sources */,
+				46229BC02FF817480043E4FD /* AdManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		4603174E1DBDBFA500C9162F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4603174F1DBDBFA500C9162F /* Base */,
-			);
-			name = Main.storyboard;
-			path = .;
-			sourceTree = "<group>";
-		};
-		460317531DBDBFA500C9162F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				460317541DBDBFA500C9162F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			path = .;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		460317571DBDBFA500C9162F /* Debug */ = {
@@ -458,6 +398,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -511,6 +452,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -520,7 +462,6 @@
 		};
 		4603175A1DBDBFA500C9162F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 024C7103399235755ECCFDDE /* Pods-FFMultiply.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -542,7 +483,6 @@
 		};
 		4603175B1DBDBFA500C9162F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3CD28C1E9537BE93A2C4A55 /* Pods-FFMultiply.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -586,35 +526,33 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		461352A625160612001550E6 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-cocoa";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.4.2;
-			};
-		};
 		461352AC25160A04001550E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
-				branch = "6.32-spm-beta";
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
+		46229BD62FF8196A0043E4FD /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 20.0.0;
+			};
+		};
+		46229BDB2FF819A30043E4FD /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.6.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		461352A725160612001550E6 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 461352A625160612001550E6 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = Realm;
-		};
-		461352A925160612001550E6 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 461352A625160612001550E6 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = RealmSwift;
-		};
 		461352AD25160A04001550E6 /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 461352AC25160A04001550E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -624,6 +562,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 461352AC25160A04001550E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
+		};
+		46229BD92FF8196A0043E4FD /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46229BD62FF8196A0043E4FD /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		46229BDC2FF819A30043E4FD /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46229BDB2FF819A30043E4FD /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

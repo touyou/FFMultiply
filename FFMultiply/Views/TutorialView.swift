@@ -2,78 +2,62 @@
 //  TutorialView.swift
 //  FFMultiply
 //
-//  Created by 藤井陽介 on 2016/11/02.
-//  Copyright © 2016年 touyou. All rights reserved.
+//  チュートリアルのポップアップ。app icon + tutorial1..6 をページングで表示する。
 //
 
-import UIKit
+import SwiftUI
 
-class TutorialView: UIView {
-    @IBOutlet weak var tutorialImageView: UIImageView! {
-        didSet {
-            tutorialImageView.image = tutorialImageList[0]
+struct TutorialView: View {
+    let onExit: () -> Void
+
+    @State private var selection = 0
+    private let images = ["tutorial1", "tutorial2", "tutorial3", "tutorial4", "tutorial5", "tutorial6"]
+
+    var body: some View {
+        VStack(spacing: 12) {
+            Image("ffmultiicon")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 60, height: 60)
+                .clipShape(.rect(cornerRadius: 12))
+                .padding(.top, 12)
+
+            TabView(selection: $selection) {
+                ForEach(images.indices, id: \.self) { index in
+                    Image(images[index])
+                        .resizable()
+                        .scaledToFit()
+                        .padding(.horizontal, 8)
+                        .tag(index)
+                }
+            }
+            .tabViewStyle(.page(indexDisplayMode: .always))
+            .frame(height: 320)
+
+            HStack(spacing: 16) {
+                Button {
+                    if selection > 0 { withAnimation { selection -= 1 } }
+                } label: {
+                    Text("👈").font(.system(size: 24))
+                }
+                .disabled(selection == 0)
+
+                Button("EXIT", action: onExit)
+                    .ffButtonStyle(prominent: true, tint: FFColor.green)
+                    .controlSize(.large)
+
+                Button {
+                    if selection < images.count - 1 { withAnimation { selection += 1 } }
+                } label: {
+                    Text("👉").font(.system(size: 24))
+                }
+                .disabled(selection == images.count - 1)
+            }
+            .padding(.horizontal, 20)
+            .padding(.bottom, 16)
         }
-    }
-    @IBOutlet weak var rightButton: UIButton!
-    @IBOutlet weak var leftButton: UIButton! {
-        didSet {
-            leftButton.isEnabled = false
-        }
-    }
-    
-    var finish: (() -> ())!
-    var pos: Int = 0
-    var tutorialImageList = [#imageLiteral(resourceName: "tutorial1"), #imageLiteral(resourceName: "tutorial2"), #imageLiteral(resourceName: "tutorial3"), #imageLiteral(resourceName: "tutorial4"), #imageLiteral(resourceName: "tutorial5"), #imageLiteral(resourceName: "tutorial6")]
-    
-    override public init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
-    }
-    
-    private func commonInit() {
-        let nib = UINib(nibName: "TutorialView", bundle: nil)
-        guard let view = nib.instantiate(withOwner: self, options: nil).first as? UIView else { return }
-        addSubview(view)
-        
-        // カスタムViewのサイズを自分自身と同じサイズにする
-        view.translatesAutoresizingMaskIntoConstraints = false
-        let bindings = ["view": view]
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|",
-                                                      options:NSLayoutConstraint.FormatOptions(rawValue: 0),
-                                                      metrics:nil,
-                                                      views: bindings))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|",
-                                                      options:NSLayoutConstraint.FormatOptions(rawValue: 0),
-                                                      metrics:nil,
-                                                      views: bindings))
-    }
-    
-    @IBAction func exitButton() {
-        finish()
-    }
-    
-    @IBAction func pushLeft() {
-        pos -= 1
-        if pos < 1 {
-            leftButton.isEnabled = false
-        } else if pos < tutorialImageList.count - 1 {
-            rightButton.isEnabled = true
-        }
-        tutorialImageView.image = tutorialImageList[pos]
-    }
-    
-    @IBAction func pushRight() {
-        pos += 1
-        if pos > tutorialImageList.count - 2 {
-            rightButton.isEnabled = false
-        } else if pos > 0 {
-            leftButton.isEnabled = true
-        }
-        tutorialImageView.image = tutorialImageList[pos]
+        .frame(width: 320, height: 483)
+        .background(FFColor.whiteBackground)
+        .ffGlassCard(cornerRadius: 20)
     }
 }
