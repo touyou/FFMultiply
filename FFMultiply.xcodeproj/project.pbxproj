@@ -104,14 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				4657DE791DC8952B00F1AF63 /* FFMultiply.entitlements */,
-				4657DE701DC83ACF00F1AF63 /* CircularRevealAnimator */,
 				469728751DC7753700B9E5EA /* Views */,
 				469728701DC75E6600B9E5EA /* Model */,
 				46D6AF791DBF094800BA44C3 /* Assets */,
-				46D6AF7A1DBF095C00BA44C3 /* Storyboard */,
 				46D6AF7B1DBF096F00BA44C3 /* Support File */,
 				46D6AF771DBF032E00BA44C3 /* Utility */,
-				46D6AF781DBF093200BA44C3 /* ViewController */,
 				46229BAB2FF816D20043E4FD /* DesignSystem */,
 				46229BB82FF817180043E4FD /* Services */,
 				46229BC32FF8176B0043E4FD /* App */,
@@ -150,13 +147,6 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		4657DE701DC83ACF00F1AF63 /* CircularRevealAnimator */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CircularRevealAnimator;
-			sourceTree = "<group>";
-		};
 		469728701DC75E6600B9E5EA /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,13 +181,6 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		46D6AF781DBF093200BA44C3 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
 		46D6AF791DBF094800BA44C3 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,13 +188,6 @@
 				466B5AD71DBDF9C900517B86 /* DSEG7ClassicMini-Bold.ttf */,
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		46D6AF7A1DBF095C00BA44C3 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		46D6AF7B1DBF096F00BA44C3 /* Support File */ = {
