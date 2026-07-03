@@ -33,6 +33,7 @@
 		46229BD52FF8183A0043E4FD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BD42FF8183A0043E4FD /* SettingsView.swift */; };
 		46229BDA2FF8196A0043E4FD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 46229BD92FF8196A0043E4FD /* RealmSwift */; };
 		46229BDD2FF819A30043E4FD /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 46229BDC2FF819A30043E4FD /* GoogleMobileAds */; };
+		46229BDF2FF883760043E4FD /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 46229BDE2FF883760043E4FD /* AppIcon.icon */; };
 		4697286F1DC6F9AC00B9E5EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4697286E1DC6F9AC00B9E5EA /* GoogleService-Info.plist */; };
 		469728801DC7769B00B9E5EA /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697287F1DC7769B00B9E5EA /* ResultView.swift */; };
 		4697288A1DC8395600B9E5EA /* DSEG7ClassicMini-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 466B5AD71DBDF9C900517B86 /* DSEG7ClassicMini-Bold.ttf */; };
@@ -64,6 +65,7 @@
 		46229BD02FF8181E0043E4FD /* OnlineRankingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineRankingViewModel.swift; sourceTree = "<group>"; };
 		46229BD22FF8182F0043E4FD /* OnlineRankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineRankingView.swift; sourceTree = "<group>"; };
 		46229BD42FF8183A0043E4FD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		46229BDE2FF883760043E4FD /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		4657DE791DC8952B00F1AF63 /* FFMultiply.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FFMultiply.entitlements; sourceTree = "<group>"; };
 		466B5AD71DBDF9C900517B86 /* DSEG7ClassicMini-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DSEG7ClassicMini-Bold.ttf"; sourceTree = "<group>"; };
 		4697286E1DC6F9AC00B9E5EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 		46D6AF791DBF094800BA44C3 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				46229BDE2FF883760043E4FD /* AppIcon.icon */,
 				460317511DBDBFA500C9162F /* Assets.xcassets */,
 				466B5AD71DBDF9C900517B86 /* DSEG7ClassicMini-Bold.ttf */,
 			);
@@ -276,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4697288A1DC8395600B9E5EA /* DSEG7ClassicMini-Bold.ttf in Resources */,
+				46229BDF2FF883760043E4FD /* AppIcon.icon in Resources */,
 				4697286F1DC6F9AC00B9E5EA /* GoogleService-Info.plist in Resources */,
 				460317521DBDBFA500C9162F /* Assets.xcassets in Resources */,
 			);
