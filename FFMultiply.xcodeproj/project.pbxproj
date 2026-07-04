@@ -3,97 +3,52 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		39C9E6ADAD5E4245D0AF2ADE /* Pods_FFMultiply.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD43C510C6E6B65F614DAC02 /* Pods_FFMultiply.framework */; };
-		4603174B1DBDBFA500C9162F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4603174A1DBDBFA500C9162F /* AppDelegate.swift */; };
-		4603174D1DBDBFA500C9162F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4603174C1DBDBFA500C9162F /* ViewController.swift */; };
-		460317501DBDBFA500C9162F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4603174E1DBDBFA500C9162F /* Main.storyboard */; };
-		460317521DBDBFA500C9162F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 460317511DBDBFA500C9162F /* Assets.xcassets */; };
-		460317551DBDBFA500C9162F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460317531DBDBFA500C9162F /* LaunchScreen.storyboard */; };
-		4603175D1DBDBFC300C9162F /* FFUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4603175C1DBDBFC300C9162F /* FFUtility.swift */; };
-		460CC8101DC9A87200EBF626 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460CC80F1DC9A87200EBF626 /* TutorialView.swift */; };
-		460CC8121DC9A8A600EBF626 /* TutorialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 460CC8111DC9A8A600EBF626 /* TutorialView.xib */; };
-		461352A825160612001550E6 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 461352A725160612001550E6 /* Realm */; };
-		461352AA25160612001550E6 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 461352A925160612001550E6 /* RealmSwift */; };
 		461352AE25160A04001550E6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 461352AD25160A04001550E6 /* FirebaseDatabase */; };
-		461352B025160A04001550E6 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 461352AF25160A04001550E6 /* FirebaseCrashlytics */; };
-		4657DE731DC83ACF00F1AF63 /* CircularRevealAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657DE711DC83ACF00F1AF63 /* CircularRevealAnimator.swift */; };
-		4657DE741DC83ACF00F1AF63 /* Transitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657DE721DC83ACF00F1AF63 /* Transitioner.swift */; };
-		4657DE761DC86F4600F1AF63 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657DE751DC86F4600F1AF63 /* SettingViewController.swift */; };
-		4657DE781DC8738400F1AF63 /* OnlineRankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657DE771DC8738400F1AF63 /* OnlineRankingViewController.swift */; };
-		466B5AD91DBE022D00517B86 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466B5AD81DBE022D00517B86 /* GameViewController.swift */; };
-		4697286F1DC6F9AC00B9E5EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4697286E1DC6F9AC00B9E5EA /* GoogleService-Info.plist */; };
-		469728721DC75EBA00B9E5EA /* ScoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469728711DC75EBA00B9E5EA /* ScoreModel.swift */; };
-		4697287E1DC775B700B9E5EA /* ResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4697287D1DC775B700B9E5EA /* ResultView.xib */; };
-		469728801DC7769B00B9E5EA /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697287F1DC7769B00B9E5EA /* ResultView.swift */; };
-		469728891DC8287700B9E5EA /* LocalScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469728881DC8287700B9E5EA /* LocalScoreViewController.swift */; };
-		4697288A1DC8395600B9E5EA /* DSEG7ClassicMini-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 466B5AD71DBDF9C900517B86 /* DSEG7ClassicMini-Bold.ttf */; };
-		46D6AF761DBF032600BA44C3 /* ToastSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D6AF751DBF032600BA44C3 /* ToastSwift.swift */; };
+		46229BDA2FF8196A0043E4FD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 46229BD92FF8196A0043E4FD /* RealmSwift */; };
+		46229BDD2FF819A30043E4FD /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 46229BDC2FF819A30043E4FD /* GoogleMobileAds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		024C7103399235755ECCFDDE /* Pods-FFMultiply.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FFMultiply.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FFMultiply/Pods-FFMultiply.debug.xcconfig"; sourceTree = "<group>"; };
 		460317471DBDBFA500C9162F /* FFMultiply.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFMultiply.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4603174A1DBDBFA500C9162F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4603174C1DBDBFA500C9162F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4603174F1DBDBFA500C9162F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		460317511DBDBFA500C9162F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		460317541DBDBFA500C9162F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		460317561DBDBFA500C9162F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4603175C1DBDBFC300C9162F /* FFUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFUtility.swift; sourceTree = "<group>"; };
-		460CC80F1DC9A87200EBF626 /* TutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialView.swift; path = Views/TutorialView.swift; sourceTree = "<group>"; };
-		460CC8111DC9A8A600EBF626 /* TutorialView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TutorialView.xib; path = Views/TutorialView.xib; sourceTree = "<group>"; };
-		4657DE711DC83ACF00F1AF63 /* CircularRevealAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularRevealAnimator.swift; sourceTree = "<group>"; };
-		4657DE721DC83ACF00F1AF63 /* Transitioner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transitioner.swift; sourceTree = "<group>"; };
-		4657DE751DC86F4600F1AF63 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		4657DE771DC8738400F1AF63 /* OnlineRankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineRankingViewController.swift; sourceTree = "<group>"; };
-		4657DE791DC8952B00F1AF63 /* FFMultiply.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FFMultiply.entitlements; sourceTree = "<group>"; };
-		466B5AD71DBDF9C900517B86 /* DSEG7ClassicMini-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DSEG7ClassicMini-Bold.ttf"; sourceTree = "<group>"; };
-		466B5AD81DBE022D00517B86 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		4697286E1DC6F9AC00B9E5EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		469728711DC75EBA00B9E5EA /* ScoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScoreModel.swift; path = Model/ScoreModel.swift; sourceTree = "<group>"; };
-		4697287D1DC775B700B9E5EA /* ResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultView.xib; path = Views/ResultView.xib; sourceTree = "<group>"; };
-		4697287F1DC7769B00B9E5EA /* ResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultView.swift; path = Views/ResultView.swift; sourceTree = "<group>"; };
-		469728881DC8287700B9E5EA /* LocalScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalScoreViewController.swift; sourceTree = "<group>"; };
-		46D6AF751DBF032600BA44C3 /* ToastSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastSwift.swift; sourceTree = "<group>"; };
-		BD43C510C6E6B65F614DAC02 /* Pods_FFMultiply.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FFMultiply.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3CD28C1E9537BE93A2C4A55 /* Pods-FFMultiply.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FFMultiply.release.xcconfig"; path = "Pods/Target Support Files/Pods-FFMultiply/Pods-FFMultiply.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		46229C642FF88C750043E4FD /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Support File/Info.plist",
+			);
+			target = 460317461DBDBFA500C9162F /* FFMultiply */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		46229C472FF88C740043E4FD /* FFMultiply */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (46229C642FF88C750043E4FD /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = FFMultiply; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		460317441DBDBFA500C9162F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				461352AA25160612001550E6 /* RealmSwift in Frameworks */,
-				461352A825160612001550E6 /* Realm in Frameworks */,
-				461352B025160A04001550E6 /* FirebaseCrashlytics in Frameworks */,
+				46229BDA2FF8196A0043E4FD /* RealmSwift in Frameworks */,
+				46229BDD2FF819A30043E4FD /* GoogleMobileAds in Frameworks */,
 				461352AE25160A04001550E6 /* FirebaseDatabase in Frameworks */,
-				39C9E6ADAD5E4245D0AF2ADE /* Pods_FFMultiply.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1CAC62E759A8833E26FF3D65 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BD43C510C6E6B65F614DAC02 /* Pods_FFMultiply.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		4603173E1DBDBFA500C9162F = {
 			isa = PBXGroup;
 			children = (
-				460317491DBDBFA500C9162F /* FFMultiply */,
+				46229C472FF88C740043E4FD /* FFMultiply */,
 				460317481DBDBFA500C9162F /* Products */,
-				7CD22E5CF7C2250A95A1D2B2 /* Pods */,
-				1CAC62E759A8833E26FF3D65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,108 +60,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		460317491DBDBFA500C9162F /* FFMultiply */ = {
-			isa = PBXGroup;
-			children = (
-				4657DE791DC8952B00F1AF63 /* FFMultiply.entitlements */,
-				4657DE701DC83ACF00F1AF63 /* CircularRevealAnimator */,
-				469728751DC7753700B9E5EA /* Views */,
-				469728701DC75E6600B9E5EA /* Model */,
-				46D6AF791DBF094800BA44C3 /* Assets */,
-				46D6AF7A1DBF095C00BA44C3 /* Storyboard */,
-				46D6AF7B1DBF096F00BA44C3 /* Support File */,
-				46D6AF771DBF032E00BA44C3 /* Utility */,
-				46D6AF781DBF093200BA44C3 /* ViewController */,
-			);
-			path = FFMultiply;
-			sourceTree = "<group>";
-		};
-		4657DE701DC83ACF00F1AF63 /* CircularRevealAnimator */ = {
-			isa = PBXGroup;
-			children = (
-				4657DE711DC83ACF00F1AF63 /* CircularRevealAnimator.swift */,
-				4657DE721DC83ACF00F1AF63 /* Transitioner.swift */,
-			);
-			path = CircularRevealAnimator;
-			sourceTree = "<group>";
-		};
-		469728701DC75E6600B9E5EA /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				469728711DC75EBA00B9E5EA /* ScoreModel.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		469728751DC7753700B9E5EA /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				4697287D1DC775B700B9E5EA /* ResultView.xib */,
-				4697287F1DC7769B00B9E5EA /* ResultView.swift */,
-				460CC80F1DC9A87200EBF626 /* TutorialView.swift */,
-				460CC8111DC9A8A600EBF626 /* TutorialView.xib */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		46D6AF771DBF032E00BA44C3 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-				4603175C1DBDBFC300C9162F /* FFUtility.swift */,
-				46D6AF751DBF032600BA44C3 /* ToastSwift.swift */,
-			);
-			path = Utility;
-			sourceTree = "<group>";
-		};
-		46D6AF781DBF093200BA44C3 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				466B5AD81DBE022D00517B86 /* GameViewController.swift */,
-				4603174C1DBDBFA500C9162F /* ViewController.swift */,
-				469728881DC8287700B9E5EA /* LocalScoreViewController.swift */,
-				4657DE751DC86F4600F1AF63 /* SettingViewController.swift */,
-				4657DE771DC8738400F1AF63 /* OnlineRankingViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		46D6AF791DBF094800BA44C3 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				460317511DBDBFA500C9162F /* Assets.xcassets */,
-				466B5AD71DBDF9C900517B86 /* DSEG7ClassicMini-Bold.ttf */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
-		46D6AF7A1DBF095C00BA44C3 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				460317531DBDBFA500C9162F /* LaunchScreen.storyboard */,
-				4603174E1DBDBFA500C9162F /* Main.storyboard */,
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
-		46D6AF7B1DBF096F00BA44C3 /* Support File */ = {
-			isa = PBXGroup;
-			children = (
-				4697286E1DC6F9AC00B9E5EA /* GoogleService-Info.plist */,
-				4603174A1DBDBFA500C9162F /* AppDelegate.swift */,
-				460317561DBDBFA500C9162F /* Info.plist */,
-			);
-			path = "Support File";
-			sourceTree = "<group>";
-		};
-		7CD22E5CF7C2250A95A1D2B2 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				024C7103399235755ECCFDDE /* Pods-FFMultiply.debug.xcconfig */,
-				F3CD28C1E9537BE93A2C4A55 /* Pods-FFMultiply.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,23 +67,22 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 460317591DBDBFA500C9162F /* Build configuration list for PBXNativeTarget "FFMultiply" */;
 			buildPhases = (
-				2060E7150D8AD749BAD90696 /* [CP] Check Pods Manifest.lock */,
 				460317431DBDBFA500C9162F /* Sources */,
 				460317441DBDBFA500C9162F /* Frameworks */,
 				460317451DBDBFA500C9162F /* Resources */,
-				4797F2CCEE742148820FDEC8 /* [CP] Embed Pods Frameworks */,
-				531BF6D3FE95A0CAE096B06F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				46229C472FF88C740043E4FD /* FFMultiply */,
+			);
 			name = FFMultiply;
 			packageProductDependencies = (
-				461352A725160612001550E6 /* Realm */,
-				461352A925160612001550E6 /* RealmSwift */,
 				461352AD25160A04001550E6 /* FirebaseDatabase */,
-				461352AF25160A04001550E6 /* FirebaseCrashlytics */,
+				46229BD92FF8196A0043E4FD /* RealmSwift */,
+				46229BDC2FF819A30043E4FD /* GoogleMobileAds */,
 			);
 			productName = FFMultiply;
 			productReference = 460317471DBDBFA500C9162F /* FFMultiply.app */;
@@ -242,8 +94,9 @@
 		4603173F1DBDBFA500C9162F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 2700;
 				ORGANIZATIONNAME = touyou;
 				TargetAttributes = {
 					460317461DBDBFA500C9162F = {
@@ -269,8 +122,9 @@
 			);
 			mainGroup = 4603173E1DBDBFA500C9162F;
 			packageReferences = (
-				461352A625160612001550E6 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				461352AC25160A04001550E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				46229BD62FF8196A0043E4FD /* XCRemoteSwiftPackageReference "realm-swift" */,
+				46229BDB2FF819A30043E4FD /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = 460317481DBDBFA500C9162F /* Products */;
 			projectDirPath = "";
@@ -286,122 +140,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				460CC8121DC9A8A600EBF626 /* TutorialView.xib in Resources */,
-				4697288A1DC8395600B9E5EA /* DSEG7ClassicMini-Bold.ttf in Resources */,
-				460317551DBDBFA500C9162F /* LaunchScreen.storyboard in Resources */,
-				4697286F1DC6F9AC00B9E5EA /* GoogleService-Info.plist in Resources */,
-				4697287E1DC775B700B9E5EA /* ResultView.xib in Resources */,
-				460317521DBDBFA500C9162F /* Assets.xcassets in Resources */,
-				460317501DBDBFA500C9162F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2060E7150D8AD749BAD90696 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FFMultiply-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4797F2CCEE742148820FDEC8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FFMultiply/Pods-FFMultiply-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
-				"${BUILT_PRODUCTS_DIR}/STZPopupView/STZPopupView.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/STZPopupView.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FFMultiply/Pods-FFMultiply-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		531BF6D3FE95A0CAE096B06F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FFMultiply/Pods-FFMultiply-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/Google-Mobile-Ads-SDK/GoogleMobileAdsResources.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUserMessagingPlatform/UserMessagingPlatformResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMobileAdsResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UserMessagingPlatformResources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FFMultiply/Pods-FFMultiply-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		460317431DBDBFA500C9162F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				469728721DC75EBA00B9E5EA /* ScoreModel.swift in Sources */,
-				460CC8101DC9A87200EBF626 /* TutorialView.swift in Sources */,
-				4657DE761DC86F4600F1AF63 /* SettingViewController.swift in Sources */,
-				466B5AD91DBE022D00517B86 /* GameViewController.swift in Sources */,
-				4603175D1DBDBFC300C9162F /* FFUtility.swift in Sources */,
-				4657DE741DC83ACF00F1AF63 /* Transitioner.swift in Sources */,
-				46D6AF761DBF032600BA44C3 /* ToastSwift.swift in Sources */,
-				4657DE781DC8738400F1AF63 /* OnlineRankingViewController.swift in Sources */,
-				4657DE731DC83ACF00F1AF63 /* CircularRevealAnimator.swift in Sources */,
-				4603174D1DBDBFA500C9162F /* ViewController.swift in Sources */,
-				469728801DC7769B00B9E5EA /* ResultView.swift in Sources */,
-				4603174B1DBDBFA500C9162F /* AppDelegate.swift in Sources */,
-				469728891DC8287700B9E5EA /* LocalScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		4603174E1DBDBFA500C9162F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4603174F1DBDBFA500C9162F /* Base */,
-			);
-			name = Main.storyboard;
-			path = .;
-			sourceTree = "<group>";
-		};
-		460317531DBDBFA500C9162F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				460317541DBDBFA500C9162F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			path = .;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		460317571DBDBFA500C9162F /* Debug */ = {
@@ -439,8 +191,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = B4S4333JDW;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -458,7 +212,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -499,8 +255,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = B4S4333JDW;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -511,7 +269,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -520,13 +280,10 @@
 		};
 		4603175A1DBDBFA500C9162F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 024C7103399235755ECCFDDE /* Pods-FFMultiply.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FFMultiply/FFMultiply.entitlements;
 				CURRENT_PROJECT_VERSION = 1.1.14.0;
-				DEVELOPMENT_TEAM = B4S4333JDW;
 				INFOPLIST_FILE = "FFMultiply/Support File/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -542,13 +299,10 @@
 		};
 		4603175B1DBDBFA500C9162F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3CD28C1E9537BE93A2C4A55 /* Pods-FFMultiply.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FFMultiply/FFMultiply.entitlements;
 				CURRENT_PROJECT_VERSION = 1.1.14.0;
-				DEVELOPMENT_TEAM = B4S4333JDW;
 				INFOPLIST_FILE = "FFMultiply/Support File/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -586,44 +340,47 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		461352A625160612001550E6 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-cocoa";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.4.2;
-			};
-		};
 		461352AC25160A04001550E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
-				branch = "6.32-spm-beta";
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
+		46229BD62FF8196A0043E4FD /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 20.0.0;
+			};
+		};
+		46229BDB2FF819A30043E4FD /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.6.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		461352A725160612001550E6 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 461352A625160612001550E6 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = Realm;
-		};
-		461352A925160612001550E6 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 461352A625160612001550E6 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = RealmSwift;
-		};
 		461352AD25160A04001550E6 /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 461352AC25160A04001550E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
 		};
-		461352AF25160A04001550E6 /* FirebaseCrashlytics */ = {
+		46229BD92FF8196A0043E4FD /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 461352AC25160A04001550E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
+			package = 46229BD62FF8196A0043E4FD /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		46229BDC2FF819A30043E4FD /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46229BDB2FF819A30043E4FD /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -1,6 +1,0 @@
-framework module STZPopupView {
-  umbrella header "STZPopupView-umbrella.h"
-
-  export *
-  module * { export * }
-}
