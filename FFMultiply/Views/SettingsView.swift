@@ -45,8 +45,7 @@ struct SettingsView: View {
 
                 Spacer()
 
-                BannerAdView()
-                    .frame(width: 320, height: BannerAdView.height)
+                AdBannerView()
             }
             .padding(24)
             .frame(maxWidth: .infinity, maxHeight: .infinity)

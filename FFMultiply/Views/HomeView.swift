@@ -42,8 +42,7 @@ struct HomeView: View {
 
                 Spacer(minLength: 24)
 
-                BannerAdView()
-                    .frame(width: 320, height: BannerAdView.height)
+                AdBannerView()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(FFColor.white.ignoresSafeArea())
