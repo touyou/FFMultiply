@@ -12,7 +12,8 @@ import SwiftData
 struct LocalScoreView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
-    @Query(sort: \ScoreEntry.score, order: .reverse) private var scores: [ScoreEntry]
+    @Query(sort: [SortDescriptor(\ScoreEntry.score, order: .reverse),
+                  SortDescriptor(\ScoreEntry.date, order: .reverse)]) private var scores: [ScoreEntry]
 
     @State private var showDeleteConfirm = false
 

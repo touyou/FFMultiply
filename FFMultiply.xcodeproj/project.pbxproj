@@ -7,57 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		460CC8101DC9A87200EBF626 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460CC80F1DC9A87200EBF626 /* TutorialView.swift */; };
 		461352AE25160A04001550E6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 461352AD25160A04001550E6 /* FirebaseDatabase */; };
-		46229BB32FF816F00043E4FD /* ScoreEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BB22FF816F00043E4FD /* ScoreEntry.swift */; };
-		46229BB52FF816FE0043E4FD /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BB42FF816FE0043E4FD /* ToastModifier.swift */; };
-		46229BB72FF817120043E4FD /* LegacyRealmScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BB62FF817120043E4FD /* LegacyRealmScore.swift */; };
-		46229BC92FF817940043E4FD /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BC82FF817940043E4FD /* GameViewModel.swift */; };
-		46229BCB2FF817D20043E4FD /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BCA2FF817D20043E4FD /* GameView.swift */; };
-		46229BCD2FF817F80043E4FD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BCC2FF817F80043E4FD /* HomeView.swift */; };
-		46229BCF2FF8180E0043E4FD /* LocalScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BCE2FF8180E0043E4FD /* LocalScoreView.swift */; };
-		46229BD12FF8181E0043E4FD /* OnlineRankingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BD02FF8181E0043E4FD /* OnlineRankingViewModel.swift */; };
-		46229BD32FF8182F0043E4FD /* OnlineRankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BD22FF8182F0043E4FD /* OnlineRankingView.swift */; };
-		46229BD52FF8183A0043E4FD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BD42FF8183A0043E4FD /* SettingsView.swift */; };
 		46229BDA2FF8196A0043E4FD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 46229BD92FF8196A0043E4FD /* RealmSwift */; };
 		46229BDD2FF819A30043E4FD /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 46229BDC2FF819A30043E4FD /* GoogleMobileAds */; };
-		469728801DC7769B00B9E5EA /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697287F1DC7769B00B9E5EA /* ResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		460317471DBDBFA500C9162F /* FFMultiply.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFMultiply.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		460CC80F1DC9A87200EBF626 /* TutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
-		46229BB22FF816F00043E4FD /* ScoreEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreEntry.swift; sourceTree = "<group>"; };
-		46229BB42FF816FE0043E4FD /* ToastModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
-		46229BB62FF817120043E4FD /* LegacyRealmScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyRealmScore.swift; sourceTree = "<group>"; };
-		46229BC82FF817940043E4FD /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
-		46229BCA2FF817D20043E4FD /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
-		46229BCC2FF817F80043E4FD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		46229BCE2FF8180E0043E4FD /* LocalScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalScoreView.swift; sourceTree = "<group>"; };
-		46229BD02FF8181E0043E4FD /* OnlineRankingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineRankingViewModel.swift; sourceTree = "<group>"; };
-		46229BD22FF8182F0043E4FD /* OnlineRankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineRankingView.swift; sourceTree = "<group>"; };
-		46229BD42FF8183A0043E4FD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		4657DE791DC8952B00F1AF63 /* FFMultiply.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FFMultiply.entitlements; sourceTree = "<group>"; };
-		4697287F1DC7769B00B9E5EA /* ResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		46229C052FF887380043E4FD /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		46229C642FF88C750043E4FD /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"GoogleService-Info.plist",
+				"Support File/Info.plist",
 			);
 			target = 460317461DBDBFA500C9162F /* FFMultiply */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		46229BE22FF887370043E4FD /* App */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = App; sourceTree = "<group>"; };
-		46229BE82FF887370043E4FD /* Assets */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Assets; sourceTree = "<group>"; };
-		46229BED2FF887370043E4FD /* Utility */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Utility; sourceTree = "<group>"; };
-		46229BF22FF887370043E4FD /* DesignSystem */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DesignSystem; sourceTree = "<group>"; };
-		46229BF82FF887370043E4FD /* Support File */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (46229C052FF887380043E4FD /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Support File"; sourceTree = "<group>"; };
-		46229BFF2FF887370043E4FD /* Services */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Services; sourceTree = "<group>"; };
+		46229C472FF88C740043E4FD /* FFMultiply */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (46229C642FF88C750043E4FD /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = FFMultiply; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +47,7 @@
 		4603173E1DBDBFA500C9162F = {
 			isa = PBXGroup;
 			children = (
-				460317491DBDBFA500C9162F /* FFMultiply */,
+				46229C472FF88C740043E4FD /* FFMultiply */,
 				460317481DBDBFA500C9162F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,48 +58,6 @@
 				460317471DBDBFA500C9162F /* FFMultiply.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		460317491DBDBFA500C9162F /* FFMultiply */ = {
-			isa = PBXGroup;
-			children = (
-				4657DE791DC8952B00F1AF63 /* FFMultiply.entitlements */,
-				46229BE82FF887370043E4FD /* Assets */,
-				46229BF82FF887370043E4FD /* Support File */,
-				46229BED2FF887370043E4FD /* Utility */,
-				46229BF22FF887370043E4FD /* DesignSystem */,
-				46229BFF2FF887370043E4FD /* Services */,
-				46229BE22FF887370043E4FD /* App */,
-				46229C062FF88B670043E4FD /* Views */,
-				46229C072FF88BF30043E4FD /* Model */,
-			);
-			path = FFMultiply;
-			sourceTree = "<group>";
-		};
-		46229C062FF88B670043E4FD /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				4697287F1DC7769B00B9E5EA /* ResultView.swift */,
-				460CC80F1DC9A87200EBF626 /* TutorialView.swift */,
-				46229BB42FF816FE0043E4FD /* ToastModifier.swift */,
-				46229BC82FF817940043E4FD /* GameViewModel.swift */,
-				46229BCA2FF817D20043E4FD /* GameView.swift */,
-				46229BCC2FF817F80043E4FD /* HomeView.swift */,
-				46229BCE2FF8180E0043E4FD /* LocalScoreView.swift */,
-				46229BD02FF8181E0043E4FD /* OnlineRankingViewModel.swift */,
-				46229BD22FF8182F0043E4FD /* OnlineRankingView.swift */,
-				46229BD42FF8183A0043E4FD /* SettingsView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		46229C072FF88BF30043E4FD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				46229BB22FF816F00043E4FD /* ScoreEntry.swift */,
-				46229BB62FF817120043E4FD /* LegacyRealmScore.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,11 +76,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				46229BE22FF887370043E4FD /* App */,
-				46229BE82FF887370043E4FD /* Assets */,
-				46229BED2FF887370043E4FD /* Utility */,
-				46229BF22FF887370043E4FD /* DesignSystem */,
-				46229BFF2FF887370043E4FD /* Services */,
+				46229C472FF88C740043E4FD /* FFMultiply */,
 			);
 			name = FFMultiply;
 			packageProductDependencies = (
@@ -226,18 +150,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46229BB32FF816F00043E4FD /* ScoreEntry.swift in Sources */,
-				460CC8101DC9A87200EBF626 /* TutorialView.swift in Sources */,
-				46229BCF2FF8180E0043E4FD /* LocalScoreView.swift in Sources */,
-				46229BCB2FF817D20043E4FD /* GameView.swift in Sources */,
-				46229BC92FF817940043E4FD /* GameViewModel.swift in Sources */,
-				46229BCD2FF817F80043E4FD /* HomeView.swift in Sources */,
-				46229BD12FF8181E0043E4FD /* OnlineRankingViewModel.swift in Sources */,
-				46229BB72FF817120043E4FD /* LegacyRealmScore.swift in Sources */,
-				46229BD52FF8183A0043E4FD /* SettingsView.swift in Sources */,
-				46229BB52FF816FE0043E4FD /* ToastModifier.swift in Sources */,
-				469728801DC7769B00B9E5EA /* ResultView.swift in Sources */,
-				46229BD32FF8182F0043E4FD /* OnlineRankingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

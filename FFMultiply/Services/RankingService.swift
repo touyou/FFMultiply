@@ -38,8 +38,8 @@ final class RankingService {
     }
 
     /// 全スコアを priority 順で取得し、順位付けした配列を返す。
-    /// 併せて自分の順位（見つからなければ 0）も返す。
-    func fetchRanking() async -> (entries: [RankEntry], myRank: Int) {
+    /// 併せて自分の順位（見つからなければ 0）と、自分の行の並び順インデックス（無ければ nil）も返す。
+    func fetchRanking() async -> (entries: [RankEntry], myRank: Int, myIndex: Int?) {
         // Firebase のコールバックへ渡すため、MainActor 隔離の self を捕捉せずローカルへ退避する。
         let deviceID = self.deviceID
         let query = ref.child("scores").queryOrderedByPriority()
@@ -48,21 +48,21 @@ final class RankingService {
                 continuation.resume(returning: RankingService.rank(from: snapshot, deviceID: deviceID))
             } withCancel: { error in
                 print(error.localizedDescription)
-                continuation.resume(returning: ([], 0))
+                continuation.resume(returning: ([], 0, nil))
             }
         }
     }
 
     /// snapshot を score 降順に並べ、同点は同順位でランク付けする。
-    private static func rank(from snapshot: DataSnapshot, deviceID: String) -> (entries: [RankEntry], myRank: Int) {
+    private static func rank(from snapshot: DataSnapshot, deviceID: String) -> (entries: [RankEntry], myRank: Int, myIndex: Int?) {
         guard let values = snapshot.value as? [String: Any] else {
-            return ([], 0)
+            return ([], 0, nil)
         }
 
         // (key, score, name) に整形して score 降順にソート。
         let rows: [(key: String, score: Int, name: String)] = values.compactMap { key, value in
             guard let dict = value as? [String: Any],
-                  let score = dict["score"] as? Int else { return nil }
+                  let score = (dict["score"] as? NSNumber)?.intValue else { return nil }
             let rawName = (dict["name"] as? String) ?? ""
             let name = rawName.isEmpty ? "No Name" : rawName
             return (key, score, name)
@@ -71,6 +71,7 @@ final class RankingService {
 
         var entries: [RankEntry] = []
         var myRank = 0
+        var myIndex: Int?
         var currentRank = 0
         var previousScore: Int?
         for (index, row) in rows.enumerated() {
@@ -79,10 +80,12 @@ final class RankingService {
                 previousScore = row.score
             }
             entries.append(RankEntry(rank: currentRank, score: row.score, name: row.name))
+            // 同点者がいても、自分の行は device_id で一意に特定する。
             if row.key == deviceID {
                 myRank = currentRank
+                myIndex = index
             }
         }
-        return (entries, myRank)
+        return (entries, myRank, myIndex)
     }
 }
