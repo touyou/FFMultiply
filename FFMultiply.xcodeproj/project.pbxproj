@@ -94,30 +94,23 @@
 			isa = PBXGroup;
 			children = (
 				4657DE791DC8952B00F1AF63 /* FFMultiply.entitlements */,
-				469728751DC7753700B9E5EA /* Views */,
-				469728701DC75E6600B9E5EA /* Model */,
 				46229BE82FF887370043E4FD /* Assets */,
 				46229BF82FF887370043E4FD /* Support File */,
 				46229BED2FF887370043E4FD /* Utility */,
 				46229BF22FF887370043E4FD /* DesignSystem */,
 				46229BFF2FF887370043E4FD /* Services */,
 				46229BE22FF887370043E4FD /* App */,
+				46229C062FF88B670043E4FD /* Views */,
+				46229C072FF88BF30043E4FD /* Model */,
 			);
 			path = FFMultiply;
 			sourceTree = "<group>";
 		};
-		469728701DC75E6600B9E5EA /* Model */ = {
+		46229C062FF88B670043E4FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				46229BB62FF817120043E4FD /* LegacyRealmScore.swift */,
-				46229BB22FF816F00043E4FD /* ScoreEntry.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		469728751DC7753700B9E5EA /* Views */ = {
-			isa = PBXGroup;
-			children = (
+				4697287F1DC7769B00B9E5EA /* ResultView.swift */,
+				460CC80F1DC9A87200EBF626 /* TutorialView.swift */,
 				46229BB42FF816FE0043E4FD /* ToastModifier.swift */,
 				46229BC82FF817940043E4FD /* GameViewModel.swift */,
 				46229BCA2FF817D20043E4FD /* GameView.swift */,
@@ -126,10 +119,17 @@
 				46229BD02FF8181E0043E4FD /* OnlineRankingViewModel.swift */,
 				46229BD22FF8182F0043E4FD /* OnlineRankingView.swift */,
 				46229BD42FF8183A0043E4FD /* SettingsView.swift */,
-				4697287F1DC7769B00B9E5EA /* ResultView.swift */,
-				460CC80F1DC9A87200EBF626 /* TutorialView.swift */,
 			);
-			name = Views;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		46229C072FF88BF30043E4FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				46229BB22FF816F00043E4FD /* ScoreEntry.swift */,
+				46229BB62FF817120043E4FD /* LegacyRealmScore.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
