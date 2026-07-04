@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AppTrackingTransparency
 import GoogleMobileAds
 
 @Observable
@@ -26,6 +27,13 @@ final class AdManager {
     /// SDK を起動する（アプリ起動時に一度）。
     func start() {
         MobileAds.shared.start(completionHandler: nil)
+    }
+
+    /// App Tracking Transparency の許可をリクエストする。
+    /// 未決定のときのみプロンプトが表示される。アプリがアクティブな状態で呼ぶこと。
+    /// 許可が得られた場合のみ AdMob が IDFA を用いたパーソナライズ広告を配信する。
+    func requestTrackingAuthorization() async {
+        _ = await ATTrackingManager.requestTrackingAuthorization()
     }
 
     /// インタースティシャル広告を事前ロードする。

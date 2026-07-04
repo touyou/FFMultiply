@@ -28,6 +28,8 @@ struct FFMultiplyApp: App {
             HomeView()
                 .task {
                     RealmMigration.migrateIfNeeded(context: container.mainContext)
+                    // ATT の許可を求めてから広告をロードする（許可状況に応じて配信が決まる）。
+                    await AdManager.shared.requestTrackingAuthorization()
                     AdManager.shared.loadInterstitial()
                 }
         }
