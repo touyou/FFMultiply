@@ -24,6 +24,8 @@
 	<string>ca-app-pub-2853999389157478~4868410869</string>
 	<key>GADIsAdManagerApp</key>
 	<true/>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSUserTrackingUsageDescription</key>
