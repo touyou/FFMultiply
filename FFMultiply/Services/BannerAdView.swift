@@ -9,6 +9,18 @@
 import SwiftUI
 import GoogleMobileAds
 
+/// 画面下部に置くバナー領域。広告無効時（スクショ/UIテスト）は何も表示しない。
+struct AdBannerView: View {
+    var body: some View {
+        if AdManager.adsDisabled {
+            EmptyView()
+        } else {
+            BannerAdView()
+                .frame(width: 320, height: BannerAdView.height)
+        }
+    }
+}
+
 struct BannerAdView: UIViewRepresentable {
     var adUnitID: String = AdManager.bannerAdUnitID
 
