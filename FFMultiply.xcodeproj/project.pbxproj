@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		461352AE25160A04001550E6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 461352AD25160A04001550E6 /* FirebaseDatabase */; };
-		46229BDA2FF8196A0043E4FD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 46229BD92FF8196A0043E4FD /* RealmSwift */; };
 		46229BDD2FF819A30043E4FD /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 46229BDC2FF819A30043E4FD /* GoogleMobileAds */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +34,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46229BDA2FF8196A0043E4FD /* RealmSwift in Frameworks */,
 				46229BDD2FF819A30043E4FD /* GoogleMobileAds in Frameworks */,
 				461352AE25160A04001550E6 /* FirebaseDatabase in Frameworks */,
 			);
@@ -81,7 +79,6 @@
 			name = FFMultiply;
 			packageProductDependencies = (
 				461352AD25160A04001550E6 /* FirebaseDatabase */,
-				46229BD92FF8196A0043E4FD /* RealmSwift */,
 				46229BDC2FF819A30043E4FD /* GoogleMobileAds */,
 			);
 			productName = FFMultiply;
@@ -123,7 +120,6 @@
 			mainGroup = 4603173E1DBDBFA500C9162F;
 			packageReferences = (
 				461352AC25160A04001550E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				46229BD62FF8196A0043E4FD /* XCRemoteSwiftPackageReference "realm-swift" */,
 				46229BDB2FF819A30043E4FD /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = 460317481DBDBFA500C9162F /* Products */;
@@ -283,7 +279,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FFMultiply/FFMultiply.entitlements;
-				CURRENT_PROJECT_VERSION = 2.0.0.3;
+				CURRENT_PROJECT_VERSION = 2.0.0.4;
 				INFOPLIST_FILE = "FFMultiply/Support File/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.educational-games";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
@@ -308,7 +304,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FFMultiply/FFMultiply.entitlements;
-				CURRENT_PROJECT_VERSION = 2.0.0.3;
+				CURRENT_PROJECT_VERSION = 2.0.0.4;
 				INFOPLIST_FILE = "FFMultiply/Support File/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.educational-games";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
@@ -360,14 +356,6 @@
 				minimumVersion = 11.0.0;
 			};
 		};
-		46229BD62FF8196A0043E4FD /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 20.0.0;
-			};
-		};
 		46229BDB2FF819A30043E4FD /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
@@ -383,11 +371,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 461352AC25160A04001550E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
-		};
-		46229BD92FF8196A0043E4FD /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 46229BD62FF8196A0043E4FD /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
 		};
 		46229BDC2FF819A30043E4FD /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;
