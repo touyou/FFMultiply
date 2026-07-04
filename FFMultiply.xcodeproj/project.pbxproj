@@ -3,27 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		460317521DBDBFA500C9162F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 460317511DBDBFA500C9162F /* Assets.xcassets */; };
-		4603175D1DBDBFC300C9162F /* FFUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4603175C1DBDBFC300C9162F /* FFUtility.swift */; };
 		460CC8101DC9A87200EBF626 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460CC80F1DC9A87200EBF626 /* TutorialView.swift */; };
 		461352AE25160A04001550E6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 461352AD25160A04001550E6 /* FirebaseDatabase */; };
-		46229BAD2FF816D20043E4FD /* FFColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BAC2FF816D20043E4FD /* FFColor.swift */; };
-		46229BAF2FF816D60043E4FD /* FFFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BAE2FF816D60043E4FD /* FFFont.swift */; };
-		46229BB12FF816EE0043E4FD /* GlassStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BB02FF816EE0043E4FD /* GlassStyles.swift */; };
 		46229BB32FF816F00043E4FD /* ScoreEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BB22FF816F00043E4FD /* ScoreEntry.swift */; };
 		46229BB52FF816FE0043E4FD /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BB42FF816FE0043E4FD /* ToastModifier.swift */; };
 		46229BB72FF817120043E4FD /* LegacyRealmScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BB62FF817120043E4FD /* LegacyRealmScore.swift */; };
-		46229BBA2FF817180043E4FD /* ScoreStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BB92FF817180043E4FD /* ScoreStore.swift */; };
-		46229BBC2FF817230043E4FD /* RealmMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BBB2FF817230043E4FD /* RealmMigration.swift */; };
-		46229BBE2FF817300043E4FD /* RankingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BBD2FF817300043E4FD /* RankingService.swift */; };
-		46229BC02FF817480043E4FD /* AdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BBF2FF817480043E4FD /* AdManager.swift */; };
-		46229BC22FF8174B0043E4FD /* BannerAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BC12FF8174B0043E4FD /* BannerAdView.swift */; };
-		46229BC52FF8176B0043E4FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BC42FF8176B0043E4FD /* AppDelegate.swift */; };
-		46229BC72FF817740043E4FD /* FFMultiplyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BC62FF817740043E4FD /* FFMultiplyApp.swift */; };
 		46229BC92FF817940043E4FD /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BC82FF817940043E4FD /* GameViewModel.swift */; };
 		46229BCB2FF817D20043E4FD /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BCA2FF817D20043E4FD /* GameView.swift */; };
 		46229BCD2FF817F80043E4FD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BCC2FF817F80043E4FD /* HomeView.swift */; };
@@ -33,31 +21,15 @@
 		46229BD52FF8183A0043E4FD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46229BD42FF8183A0043E4FD /* SettingsView.swift */; };
 		46229BDA2FF8196A0043E4FD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 46229BD92FF8196A0043E4FD /* RealmSwift */; };
 		46229BDD2FF819A30043E4FD /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 46229BDC2FF819A30043E4FD /* GoogleMobileAds */; };
-		46229BDF2FF883760043E4FD /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 46229BDE2FF883760043E4FD /* AppIcon.icon */; };
-		4697286F1DC6F9AC00B9E5EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4697286E1DC6F9AC00B9E5EA /* GoogleService-Info.plist */; };
 		469728801DC7769B00B9E5EA /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697287F1DC7769B00B9E5EA /* ResultView.swift */; };
-		4697288A1DC8395600B9E5EA /* DSEG7ClassicMini-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 466B5AD71DBDF9C900517B86 /* DSEG7ClassicMini-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		460317471DBDBFA500C9162F /* FFMultiply.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFMultiply.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		460317511DBDBFA500C9162F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		460317561DBDBFA500C9162F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4603175C1DBDBFC300C9162F /* FFUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFUtility.swift; sourceTree = "<group>"; };
-		460CC80F1DC9A87200EBF626 /* TutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialView.swift; path = Views/TutorialView.swift; sourceTree = "<group>"; };
-		46229BAC2FF816D20043E4FD /* FFColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFColor.swift; sourceTree = "<group>"; };
-		46229BAE2FF816D60043E4FD /* FFFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFFont.swift; sourceTree = "<group>"; };
-		46229BB02FF816EE0043E4FD /* GlassStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassStyles.swift; sourceTree = "<group>"; };
+		460CC80F1DC9A87200EBF626 /* TutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		46229BB22FF816F00043E4FD /* ScoreEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreEntry.swift; sourceTree = "<group>"; };
 		46229BB42FF816FE0043E4FD /* ToastModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
 		46229BB62FF817120043E4FD /* LegacyRealmScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyRealmScore.swift; sourceTree = "<group>"; };
-		46229BB92FF817180043E4FD /* ScoreStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreStore.swift; sourceTree = "<group>"; };
-		46229BBB2FF817230043E4FD /* RealmMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMigration.swift; sourceTree = "<group>"; };
-		46229BBD2FF817300043E4FD /* RankingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingService.swift; sourceTree = "<group>"; };
-		46229BBF2FF817480043E4FD /* AdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdManager.swift; sourceTree = "<group>"; };
-		46229BC12FF8174B0043E4FD /* BannerAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdView.swift; sourceTree = "<group>"; };
-		46229BC42FF8176B0043E4FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		46229BC62FF817740043E4FD /* FFMultiplyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFMultiplyApp.swift; sourceTree = "<group>"; };
 		46229BC82FF817940043E4FD /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		46229BCA2FF817D20043E4FD /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		46229BCC2FF817F80043E4FD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -65,12 +37,28 @@
 		46229BD02FF8181E0043E4FD /* OnlineRankingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineRankingViewModel.swift; sourceTree = "<group>"; };
 		46229BD22FF8182F0043E4FD /* OnlineRankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineRankingView.swift; sourceTree = "<group>"; };
 		46229BD42FF8183A0043E4FD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		46229BDE2FF883760043E4FD /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		4657DE791DC8952B00F1AF63 /* FFMultiply.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FFMultiply.entitlements; sourceTree = "<group>"; };
-		466B5AD71DBDF9C900517B86 /* DSEG7ClassicMini-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DSEG7ClassicMini-Bold.ttf"; sourceTree = "<group>"; };
-		4697286E1DC6F9AC00B9E5EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		4697287F1DC7769B00B9E5EA /* ResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultView.swift; path = Views/ResultView.swift; sourceTree = "<group>"; };
+		4697287F1DC7769B00B9E5EA /* ResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		46229C052FF887380043E4FD /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"GoogleService-Info.plist",
+			);
+			target = 460317461DBDBFA500C9162F /* FFMultiply */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		46229BE22FF887370043E4FD /* App */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = App; sourceTree = "<group>"; };
+		46229BE82FF887370043E4FD /* Assets */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Assets; sourceTree = "<group>"; };
+		46229BED2FF887370043E4FD /* Utility */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Utility; sourceTree = "<group>"; };
+		46229BF22FF887370043E4FD /* DesignSystem */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DesignSystem; sourceTree = "<group>"; };
+		46229BF82FF887370043E4FD /* Support File */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (46229C052FF887380043E4FD /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Support File"; sourceTree = "<group>"; };
+		46229BFF2FF887370043E4FD /* Services */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Services; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		460317441DBDBFA500C9162F /* Frameworks */ = {
@@ -108,52 +96,21 @@
 				4657DE791DC8952B00F1AF63 /* FFMultiply.entitlements */,
 				469728751DC7753700B9E5EA /* Views */,
 				469728701DC75E6600B9E5EA /* Model */,
-				46D6AF791DBF094800BA44C3 /* Assets */,
-				46D6AF7B1DBF096F00BA44C3 /* Support File */,
-				46D6AF771DBF032E00BA44C3 /* Utility */,
-				46229BAB2FF816D20043E4FD /* DesignSystem */,
-				46229BB82FF817180043E4FD /* Services */,
-				46229BC32FF8176B0043E4FD /* App */,
+				46229BE82FF887370043E4FD /* Assets */,
+				46229BF82FF887370043E4FD /* Support File */,
+				46229BED2FF887370043E4FD /* Utility */,
+				46229BF22FF887370043E4FD /* DesignSystem */,
+				46229BFF2FF887370043E4FD /* Services */,
+				46229BE22FF887370043E4FD /* App */,
 			);
 			path = FFMultiply;
-			sourceTree = "<group>";
-		};
-		46229BAB2FF816D20043E4FD /* DesignSystem */ = {
-			isa = PBXGroup;
-			children = (
-				46229BAC2FF816D20043E4FD /* FFColor.swift */,
-				46229BAE2FF816D60043E4FD /* FFFont.swift */,
-				46229BB02FF816EE0043E4FD /* GlassStyles.swift */,
-			);
-			path = DesignSystem;
-			sourceTree = "<group>";
-		};
-		46229BB82FF817180043E4FD /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				46229BB92FF817180043E4FD /* ScoreStore.swift */,
-				46229BBB2FF817230043E4FD /* RealmMigration.swift */,
-				46229BBD2FF817300043E4FD /* RankingService.swift */,
-				46229BBF2FF817480043E4FD /* AdManager.swift */,
-				46229BC12FF8174B0043E4FD /* BannerAdView.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		46229BC32FF8176B0043E4FD /* App */ = {
-			isa = PBXGroup;
-			children = (
-				46229BC42FF8176B0043E4FD /* AppDelegate.swift */,
-				46229BC62FF817740043E4FD /* FFMultiplyApp.swift */,
-			);
-			path = App;
 			sourceTree = "<group>";
 		};
 		469728701DC75E6600B9E5EA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				46229BB22FF816F00043E4FD /* ScoreEntry.swift */,
 				46229BB62FF817120043E4FD /* LegacyRealmScore.swift */,
+				46229BB22FF816F00043E4FD /* ScoreEntry.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -161,8 +118,6 @@
 		469728751DC7753700B9E5EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4697287F1DC7769B00B9E5EA /* ResultView.swift */,
-				460CC80F1DC9A87200EBF626 /* TutorialView.swift */,
 				46229BB42FF816FE0043E4FD /* ToastModifier.swift */,
 				46229BC82FF817940043E4FD /* GameViewModel.swift */,
 				46229BCA2FF817D20043E4FD /* GameView.swift */,
@@ -171,35 +126,10 @@
 				46229BD02FF8181E0043E4FD /* OnlineRankingViewModel.swift */,
 				46229BD22FF8182F0043E4FD /* OnlineRankingView.swift */,
 				46229BD42FF8183A0043E4FD /* SettingsView.swift */,
+				4697287F1DC7769B00B9E5EA /* ResultView.swift */,
+				460CC80F1DC9A87200EBF626 /* TutorialView.swift */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		46D6AF771DBF032E00BA44C3 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-				4603175C1DBDBFC300C9162F /* FFUtility.swift */,
-			);
-			path = Utility;
-			sourceTree = "<group>";
-		};
-		46D6AF791DBF094800BA44C3 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				46229BDE2FF883760043E4FD /* AppIcon.icon */,
-				460317511DBDBFA500C9162F /* Assets.xcassets */,
-				466B5AD71DBDF9C900517B86 /* DSEG7ClassicMini-Bold.ttf */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
-		46D6AF7B1DBF096F00BA44C3 /* Support File */ = {
-			isa = PBXGroup;
-			children = (
-				4697286E1DC6F9AC00B9E5EA /* GoogleService-Info.plist */,
-				460317561DBDBFA500C9162F /* Info.plist */,
-			);
-			path = "Support File";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +147,13 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				46229BE22FF887370043E4FD /* App */,
+				46229BE82FF887370043E4FD /* Assets */,
+				46229BED2FF887370043E4FD /* Utility */,
+				46229BF22FF887370043E4FD /* DesignSystem */,
+				46229BFF2FF887370043E4FD /* Services */,
+			);
 			name = FFMultiply;
 			packageProductDependencies = (
 				461352AD25160A04001550E6 /* FirebaseDatabase */,
@@ -233,8 +170,9 @@
 		4603173F1DBDBFA500C9162F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 2700;
 				ORGANIZATIONNAME = touyou;
 				TargetAttributes = {
 					460317461DBDBFA500C9162F = {
@@ -278,10 +216,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4697288A1DC8395600B9E5EA /* DSEG7ClassicMini-Bold.ttf in Resources */,
-				46229BDF2FF883760043E4FD /* AppIcon.icon in Resources */,
-				4697286F1DC6F9AC00B9E5EA /* GoogleService-Info.plist in Resources */,
-				460317521DBDBFA500C9162F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,26 +229,15 @@
 				46229BB32FF816F00043E4FD /* ScoreEntry.swift in Sources */,
 				460CC8101DC9A87200EBF626 /* TutorialView.swift in Sources */,
 				46229BCF2FF8180E0043E4FD /* LocalScoreView.swift in Sources */,
-				46229BC72FF817740043E4FD /* FFMultiplyApp.swift in Sources */,
-				46229BC22FF8174B0043E4FD /* BannerAdView.swift in Sources */,
 				46229BCB2FF817D20043E4FD /* GameView.swift in Sources */,
-				46229BAD2FF816D20043E4FD /* FFColor.swift in Sources */,
-				4603175D1DBDBFC300C9162F /* FFUtility.swift in Sources */,
 				46229BC92FF817940043E4FD /* GameViewModel.swift in Sources */,
 				46229BCD2FF817F80043E4FD /* HomeView.swift in Sources */,
 				46229BD12FF8181E0043E4FD /* OnlineRankingViewModel.swift in Sources */,
 				46229BB72FF817120043E4FD /* LegacyRealmScore.swift in Sources */,
-				46229BBC2FF817230043E4FD /* RealmMigration.swift in Sources */,
-				46229BBE2FF817300043E4FD /* RankingService.swift in Sources */,
-				46229BC52FF8176B0043E4FD /* AppDelegate.swift in Sources */,
 				46229BD52FF8183A0043E4FD /* SettingsView.swift in Sources */,
 				46229BB52FF816FE0043E4FD /* ToastModifier.swift in Sources */,
-				46229BBA2FF817180043E4FD /* ScoreStore.swift in Sources */,
-				46229BB12FF816EE0043E4FD /* GlassStyles.swift in Sources */,
-				46229BAF2FF816D60043E4FD /* FFFont.swift in Sources */,
 				469728801DC7769B00B9E5EA /* ResultView.swift in Sources */,
 				46229BD32FF8182F0043E4FD /* OnlineRankingView.swift in Sources */,
-				46229BC02FF817480043E4FD /* AdManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,8 +279,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = B4S4333JDW;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -377,6 +302,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -417,8 +343,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = B4S4333JDW;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -431,6 +359,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -440,11 +369,9 @@
 		4603175A1DBDBFA500C9162F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FFMultiply/FFMultiply.entitlements;
 				CURRENT_PROJECT_VERSION = 1.1.14.0;
-				DEVELOPMENT_TEAM = B4S4333JDW;
 				INFOPLIST_FILE = "FFMultiply/Support File/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -461,11 +388,9 @@
 		4603175B1DBDBFA500C9162F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FFMultiply/FFMultiply.entitlements;
 				CURRENT_PROJECT_VERSION = 1.1.14.0;
-				DEVELOPMENT_TEAM = B4S4333JDW;
 				INFOPLIST_FILE = "FFMultiply/Support File/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
