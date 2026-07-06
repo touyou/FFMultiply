@@ -14,6 +14,7 @@ struct GameView: View {
     @Environment(\.modelContext) private var modelContext
 
     @State private var vm = GameViewModel()
+    @State private var didStart = false
     @State private var didFinish = false
     @State private var showResult = false
     @State private var isHighScore = false
@@ -31,6 +32,10 @@ struct GameView: View {
         .statusBarHidden()
         .toast($vm.toast)
         .task {
+            // 広告表示などで一時的に view が disappear→reappear すると .task が
+            // 再実行される。その際にゲームを初期化し直して score が 0 に戻るのを防ぐ。
+            guard !didStart else { return }
+            didStart = true
             vm.start()
             while !vm.isFinished {
                 try? await Task.sleep(for: .seconds(1))
