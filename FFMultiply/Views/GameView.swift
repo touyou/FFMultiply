@@ -102,11 +102,16 @@ struct GameView: View {
                     .foregroundStyle(FFColor.white)
                 operandLabel(vm.rightText)
             }
+            // キーパッドと中心線を揃えるため、問題・入力表示も横幅いっぱいを基準に中央寄せする。
+            .frame(maxWidth: .infinity)
+            .ignoresSafeArea(edges: .horizontal)
 
             // 入力表示
             Text(vm.displayInput)
                 .font(.dseg7(size: 40))
                 .foregroundStyle(FFColor.white)
+                .frame(maxWidth: .infinity)
+                .ignoresSafeArea(edges: .horizontal)
 
             Spacer()
 
@@ -133,6 +138,8 @@ struct GameView: View {
                 }
             }
             .padding(.horizontal)
+            // 操作バーもキーパッドと同じ横幅に揃える（右上のタイマー・閉じるボタンは安全領域内に残す）。
+            .ignoresSafeArea(edges: .horizontal)
             .padding(.bottom, 12)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
