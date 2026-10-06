@@ -32,7 +32,7 @@ struct TutorialView: View {
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .always))
-            .frame(height: 320)
+            .frame(maxHeight: 320)
 
             HStack(spacing: 16) {
                 Button {
@@ -56,8 +56,11 @@ struct TutorialView: View {
             .padding(.horizontal, 20)
             .padding(.bottom, 16)
         }
-        .frame(width: 320, height: 483)
+        // 固定サイズだとウインドウが小さいとき（iPhone Duo の画面切替・リサイズ時など）に
+        // はみ出すため、上限サイズだけ決めて表示領域に合わせて縮むようにする。
+        .frame(maxWidth: 320, maxHeight: 483)
         .background(FFColor.whiteBackground)
         .ffGlassCard(cornerRadius: 20)
+        .padding(24)
     }
 }
