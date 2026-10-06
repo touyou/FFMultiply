@@ -173,6 +173,9 @@ struct GameView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(FFColor.blackBackground)
+        // 電卓と同様にキーパッドは横幅いっぱいに広げる。iPhone Duo などで
+        // 左右に縦型バーの安全領域があっても、キーをそこまで均等に配置する。
+        .ignoresSafeArea(edges: .horizontal)
     }
 
     private func keypadButton(_ value: Int) -> some View {
