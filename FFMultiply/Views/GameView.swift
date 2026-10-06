@@ -79,8 +79,9 @@ struct GameView: View {
             } secondary: {
                 keypadSection
             }
-            // 縦持ち専用のため上下分割に限定する。
-            .arrangementViewStyle(.split.axes(.vertical))
+            // 分割方向はシステムに任せる。上下に限定すると、iPhone Duo の内側画面を
+            // 横長にしたとき上下に収まらずキーパッドが非表示になるため。
+            .arrangementViewStyle(.split)
         } else {
             VStack(spacing: 0) {
                 displaySection
