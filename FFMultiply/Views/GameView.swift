@@ -73,24 +73,32 @@ struct GameView: View {
 
     private var displaySection: some View {
         VStack(spacing: 16) {
-            // 上バー: 左ダミー / タイマー / 閉じる
-            HStack {
-                Color.clear.frame(width: 50, height: 1)
-                Spacer()
+            // 上バー: 閉じる（左・安全領域内）/ タイマー（横幅いっぱいを基準に中央）。
+            // 右上はシステムの予約領域になり得るため閉じるボタンは左に置き、
+            // タイマーは下のキーパッド等と中心線を揃える。
+            ZStack {
                 Text(vm.timeText)
                     .font(.dseg7(size: 17))
                     .foregroundStyle(FFColor.green)
-                Spacer()
-                Button {
-                    dismiss()
-                } label: {
-                    Text("✕")
-                        .font(.system(size: 30))
-                        .foregroundStyle(FFColor.white)
+                    .frame(maxWidth: .infinity)
+                    .ignoresSafeArea(edges: .horizontal)
+                HStack {
+                    Button {
+                        dismiss()
+                    } label: {
+                        // iPhone Duo では上端の安全領域が 0 になり画面最上部に来るため、
+                        // タップ領域を 44pt 確保して押し損じを防ぐ。
+                        Text("✕")
+                            .font(.system(size: 30))
+                            .foregroundStyle(FFColor.white)
+                            .frame(width: 50, height: 44)
+                            .contentShape(.rect)
+                    }
+                    Spacer()
                 }
-                .frame(width: 50)
+                .padding(.horizontal)
             }
-            .padding(.horizontal)
+            .padding(.top, 8)
 
             Spacer()
 
@@ -102,11 +110,16 @@ struct GameView: View {
                     .foregroundStyle(FFColor.white)
                 operandLabel(vm.rightText)
             }
+            // キーパッドと中心線を揃えるため、問題・入力表示も横幅いっぱいを基準に中央寄せする。
+            .frame(maxWidth: .infinity)
+            .ignoresSafeArea(edges: .horizontal)
 
             // 入力表示
             Text(vm.displayInput)
                 .font(.dseg7(size: 40))
                 .foregroundStyle(FFColor.white)
+                .frame(maxWidth: .infinity)
+                .ignoresSafeArea(edges: .horizontal)
 
             Spacer()
 
@@ -133,6 +146,8 @@ struct GameView: View {
                 }
             }
             .padding(.horizontal)
+            // 操作バーもキーパッドと同じ横幅に揃える（右上のタイマー・閉じるボタンは安全領域内に残す）。
+            .ignoresSafeArea(edges: .horizontal)
             .padding(.bottom, 12)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -173,6 +188,9 @@ struct GameView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(FFColor.blackBackground)
+        // 電卓と同様にキーパッドは横幅いっぱいに広げる。iPhone Duo などで
+        // 左右に縦型バーの安全領域があっても、キーをそこまで均等に配置する。
+        .ignoresSafeArea(edges: .horizontal)
     }
 
     private func keypadButton(_ value: Int) -> some View {
