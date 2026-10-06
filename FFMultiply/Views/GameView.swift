@@ -24,10 +24,7 @@ struct GameView: View {
     private let storage = UserDefaults.standard
 
     var body: some View {
-        VStack(spacing: 0) {
-            displaySection
-            keypadSection
-        }
+        gameLayout
         .background(FFColor.blackBackground.ignoresSafeArea())
         .statusBarHidden()
         .toast($vm.toast)
@@ -66,6 +63,29 @@ struct GameView: View {
             Button("Cancel", role: .cancel) {}
         } message: {
             Text("please set your username")
+        }
+    }
+
+    // MARK: - レイアウト
+
+    /// 表示部（上）とキーパッド（下）の配置。
+    /// iOS 27.1 以降は `ArrangementView` に任せ、iPhone Duo の半開きなどハードウェアの状態に
+    /// 合わせて表示部と操作部（キーパッド）をシステムが分割配置できるようにする。
+    @ViewBuilder
+    private var gameLayout: some View {
+        if #available(iOS 27.1, *) {
+            ArrangementView {
+                displaySection
+            } secondary: {
+                keypadSection
+            }
+            // 縦持ち専用のため上下分割に限定する。
+            .arrangementViewStyle(.split.axes(.vertical))
+        } else {
+            VStack(spacing: 0) {
+                displaySection
+                keypadSection
+            }
         }
     }
 
