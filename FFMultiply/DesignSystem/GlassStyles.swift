@@ -38,4 +38,15 @@ extension View {
             }
         }
     }
+
+    /// ツールバーのボタンのような円形の Liquid Glass ボタンスタイル（閉じるボタン等のアイコン用）。
+    /// iOS 18 では `.bordered` の円形にフォールバックする。
+    @ViewBuilder
+    func ffGlassCircleButtonStyle() -> some View {
+        if #available(iOS 26, *) {
+            self.buttonStyle(.glass).buttonBorderShape(.circle)
+        } else {
+            self.buttonStyle(.bordered).buttonBorderShape(.circle)
+        }
+    }
 }

@@ -107,14 +107,16 @@ struct GameView: View {
                     Button {
                         dismiss()
                     } label: {
+                        // ツールバーのボタンと同様の円形ガラスにして押せる場所を明確にする。
                         // iPhone Duo では上端の安全領域が 0 になり画面最上部に来るため、
-                        // タップ領域を 44pt 確保して押し損じを防ぐ。
-                        Text("✕")
-                            .font(.system(size: 30))
+                        // ガラス込みで 44pt 程度のタップ領域を確保する。
+                        Image(systemName: "xmark")
+                            .font(.system(size: 17, weight: .semibold))
                             .foregroundStyle(FFColor.white)
-                            .frame(width: 50, height: 44)
-                            .contentShape(.rect)
+                            .frame(width: 30, height: 30)
                     }
+                    .ffGlassCircleButtonStyle()
+                    .accessibilityLabel("Close")
                     Spacer()
                 }
                 .padding(.horizontal)
