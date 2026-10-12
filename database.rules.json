@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "scores": {
+      ".read": true,
+    	".write": true,
+      "$uuid": {
+        ".indexOn": ["score"]
+      }
+    }
+  }
+}
