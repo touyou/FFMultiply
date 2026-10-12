@@ -104,19 +104,9 @@ struct GameView: View {
                     .frame(maxWidth: .infinity)
                     .ignoresSafeArea(edges: .horizontal)
                 HStack {
-                    Button {
-                        dismiss()
-                    } label: {
-                        // ツールバーのボタンと同様の円形ガラスにして押せる場所を明確にする。
-                        // iPhone Duo では上端の安全領域が 0 になり画面最上部に来るため、
-                        // ガラス込みで 44pt 程度のタップ領域を確保する。
-                        Image(systemName: "xmark")
-                            .font(.system(size: 17, weight: .semibold))
-                            .foregroundStyle(FFColor.white)
-                            .frame(width: 30, height: 30)
-                    }
-                    .ffGlassCircleButtonStyle()
-                    .accessibilityLabel("Close")
+                    closeButton
+                        .ffGlassCircleButtonStyle()
+                        .accessibilityLabel("Close")
                     Spacer()
                 }
                 .padding(.horizontal)
@@ -174,6 +164,34 @@ struct GameView: View {
             .padding(.bottom, 12)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+
+    /// 閉じるボタン。自作の bar なので縦のバーには載らないが、役割は `.close`（iOS 26+）で伝える。
+    @ViewBuilder
+    private var closeButton: some View {
+        if #available(iOS 26, *) {
+            Button(role: .close) {
+                dismiss()
+            } label: {
+                closeLabel
+            }
+        } else {
+            Button {
+                dismiss()
+            } label: {
+                closeLabel
+            }
+        }
+    }
+
+    // ツールバーのボタンと同様の円形ガラスにして押せる場所を明確にする。
+    // iPhone Duo では上端の安全領域が 0 になり画面最上部に来るため、
+    // ガラス込みで 44pt 程度のタップ領域を確保する。
+    private var closeLabel: some View {
+        Image(systemName: "xmark")
+            .font(.system(size: 17, weight: .semibold))
+            .foregroundStyle(FFColor.white)
+            .frame(width: 30, height: 30)
     }
 
     /// 役割の異なるアクション（DELETE/DONE）用の塗りカプセルラベル。
