@@ -56,9 +56,10 @@ struct GameView: View {
         .alert("register name", isPresented: $showNamePrompt) {
             TextField("user name", text: $nameInput)
             Button("OK") {
-                guard !nameInput.isEmpty else { return }
-                storage.set(nameInput, forKey: "playername")
-                RankingService.shared.register(name: nameInput, score: vm.score)
+                let name = RankingService.normalizedName(nameInput)
+                guard !name.isEmpty else { return }
+                storage.set(name, forKey: "playername")
+                RankingService.shared.register(name: name, score: vm.score)
             }
             Button("Cancel", role: .cancel) {}
         } message: {

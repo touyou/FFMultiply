@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		461352AE25160A04001550E6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 461352AD25160A04001550E6 /* FirebaseDatabase */; };
+		46A7C0012FFA0001000A0B01 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 46A7C0002FFA0001000A0B00 /* FirebaseAuth */; };
 		46229BDD2FF819A30043E4FD /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 46229BDC2FF819A30043E4FD /* GoogleMobileAds */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 			files = (
 				46229BDD2FF819A30043E4FD /* GoogleMobileAds in Frameworks */,
 				461352AE25160A04001550E6 /* FirebaseDatabase in Frameworks */,
+				46A7C0012FFA0001000A0B01 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +81,7 @@
 			name = FFMultiply;
 			packageProductDependencies = (
 				461352AD25160A04001550E6 /* FirebaseDatabase */,
+				46A7C0002FFA0001000A0B00 /* FirebaseAuth */,
 				46229BDC2FF819A30043E4FD /* GoogleMobileAds */,
 			);
 			productName = FFMultiply;
@@ -371,6 +374,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 461352AC25160A04001550E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
+		};
+		46A7C0002FFA0001000A0B00 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 461352AC25160A04001550E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 		46229BDC2FF819A30043E4FD /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;
