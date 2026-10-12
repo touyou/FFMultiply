@@ -61,6 +61,8 @@ struct LocalScoreView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(FFColor.brown.ignoresSafeArea())
+            // 見た目のタイトルは principal の Futura だが、システムが使うタイトルも渡しておく。
+            .navigationTitle("Local Score")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -69,20 +71,15 @@ struct LocalScoreView: View {
                         .foregroundStyle(FFColor.white)
                 }
                 ToolbarItem(placement: .cancellationAction) {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Image(systemName: "xmark")
-                    }
+                    FFCloseButton { dismiss() }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button(role: .destructive) {
+                    Button("Delete All", systemImage: "trash", role: .destructive) {
                         showDeleteConfirm = true
-                    } label: {
-                        Image(systemName: "trash")
                     }
                     .tint(FFColor.red)
                 }
+                .ffLowVisibilityPriority()
             }
             .alert("delete data", isPresented: $showDeleteConfirm) {
                 Button("OK", role: .destructive, action: deleteAll)

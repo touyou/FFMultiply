@@ -64,6 +64,8 @@ struct OnlineRankingView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(FFColor.greenBackground.ignoresSafeArea())
+            // 見た目のタイトルは principal の Futura だが、システムが使うタイトルも渡しておく。
+            .navigationTitle("Online Ranking")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -72,17 +74,14 @@ struct OnlineRankingView: View {
                         .foregroundStyle(FFColor.white)
                 }
                 ToolbarItem(placement: .cancellationAction) {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Image(systemName: "xmark")
-                    }
+                    FFCloseButton { dismiss() }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     ShareLink(item: shareURL, message: Text(shareText)) {
-                        Image(systemName: "square.and.arrow.up")
+                        Label("Share", systemImage: "square.and.arrow.up")
                     }
                 }
+                .ffLowVisibilityPriority()
             }
         }
         .task { await vm.load() }
