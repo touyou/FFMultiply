@@ -88,10 +88,10 @@ struct OnlineRankingView: View {
         .alert("register name", isPresented: $showNamePrompt) {
             TextField("user name", text: $nameInput)
             Button("OK") {
-                guard !nameInput.isEmpty else { return }
-                storage.set(nameInput, forKey: "playername")
-                registerScore(name: nameInput)
-                Task { await vm.load() }
+                let name = RankingService.normalizedName(nameInput)
+                guard !name.isEmpty else { return }
+                storage.set(name, forKey: "playername")
+                registerScoreAndReload(name: name)
             }
             Button("Cancel", role: .cancel) {}
         } message: {
@@ -106,16 +106,20 @@ struct OnlineRankingView: View {
     /// 自分の最高スコアを登録する。名前未設定なら入力を促す。
     private func register() {
         if let name = storage.object(forKey: "playername") as? String, !name.isEmpty {
-            registerScore(name: name)
-            Task { await vm.load() }
+            registerScoreAndReload(name: name)
         } else {
             nameInput = ""
             showNamePrompt = true
         }
     }
 
-    private func registerScore(name: String) {
-        guard let best = ScoreStore(context: modelContext).highScore() else { return }
-        RankingService.shared.register(name: name, score: best.score)
+    private func registerScoreAndReload(name: String) {
+        let best = ScoreStore(context: modelContext).highScore()
+        Task {
+            if let best {
+                await RankingService.shared.registerAndWait(name: name, score: best.score)
+            }
+            await vm.load()
+        }
     }
 }

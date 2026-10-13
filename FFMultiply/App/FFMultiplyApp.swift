@@ -30,6 +30,10 @@ struct FFMultiplyApp: App {
                     // ATT の許可を求めてから広告をロードする（許可状況に応じて配信が決まる）。
                     await AdManager.shared.requestTrackingAuthorization()
                     AdManager.shared.loadInterstitial()
+                    await RankingService.shared.migrateIfNeeded(
+                        bestScore: ScoreStore(context: container.mainContext).highScore()?.score,
+                        name: UserDefaults.standard.string(forKey: "playername")
+                    )
                 }
         }
         .modelContainer(container)
