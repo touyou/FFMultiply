@@ -58,7 +58,7 @@ struct SettingsView: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     FFConfirmButton("Save") {
-                        storage.set(name, forKey: "playername")
+                        storage.set(RankingService.normalizedName(name), forKey: "playername")
                         dismiss()
                     }
                 }
