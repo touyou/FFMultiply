@@ -3,7 +3,7 @@
 //  FFMultiply
 //
 //  SwiftUI アプリのエントリポイント。SwiftData コンテナの構築、
-//  旧 Realm データの一度きり移行、広告の事前ロードを起動時に行う。
+//  旧 Realm データの一度きり移行、広告の同意取得と事前ロードを起動時に行う。
 //
 
 import SwiftUI
@@ -27,9 +27,8 @@ struct FFMultiplyApp: App {
         WindowGroup {
             HomeView()
                 .task {
-                    // ATT の許可を求めてから広告をロードする（許可状況に応じて配信が決まる）。
-                    await AdManager.shared.requestTrackingAuthorization()
-                    AdManager.shared.loadInterstitial()
+                    // 広告の同意（UMP）→ ATT の許可 → 広告 SDK 起動 → 広告のロード。
+                    await AdManager.shared.prepareAds()
                     await RankingService.shared.migrateIfNeeded(
                         bestScore: ScoreStore(context: container.mainContext).highScore()?.score,
                         name: UserDefaults.standard.string(forKey: "playername")
