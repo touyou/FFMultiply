@@ -1,0 +1,23 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "PRIVACY SETTINGS" : {
+      "comment" : "設定画面のボタン。広告の同意（GDPR）を変更するフォームを開く。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PRIVACY SETTINGS"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プライバシーの設定"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
