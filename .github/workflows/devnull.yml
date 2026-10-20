@@ -1,0 +1,80 @@
+name: /dev/null
+
+# production に新しいバージョンが入ったら、アップデートの予告を dev-null.sh/@touyou に投稿する。
+# MARKETING_VERSION が上がった push だけが対象。文面に足したいことは .github/devnull/next.md に書いて同じ push に含める。
+# head commit に [ci skip] / [skip ci] があると GitHub Actions ごと走らないので、予告したい push では付けない。
+# リポジトリ変数 DEVNULL_ENABLED=true とシークレット DEVNULL_SSH_KEY が揃うまでは動かない。
+
+on:
+  push:
+    branches: [production]
+
+permissions:
+  contents: read
+
+jobs:
+  commit:
+    if: vars.DEVNULL_ENABLED == 'true' && github.event.before != '0000000000000000000000000000000000000000'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - id: body
+        env:
+          APP_NAME: FFMultiplier
+          APP_STORE_URL: https://apps.apple.com/jp/app/id1151801381
+          VERSION_FILE: FFMultiply.xcodeproj/project.pbxproj
+          NOTES_JSON: ""
+          BEFORE: ${{ github.event.before }}
+          HAS_KEY: ${{ secrets.DEVNULL_SSH_KEY != '' }}
+        shell: python3 {0}
+        run: |
+          import json, os, re, subprocess, uuid
+
+          def git(*args):
+              return subprocess.run(["git", *args], capture_output=True, text=True)
+
+          def version(text):
+              found = re.findall(r'MARKETING_VERSION"?\s*[=:]\s*"?(\d+(?:\.\d+)*)', text)
+              return max((tuple(map(int, v.split("."))) for v in found), default=None)
+
+          before = os.environ["BEFORE"]
+          path = os.environ["VERSION_FILE"]
+          # force-push で before が消えていると旧版が読めないので、版上げと誤認して投稿しない
+          before_known = git("cat-file", "-e", f"{before}^{{commit}}").returncode == 0
+          old = version(git("show", f"{before}:{path}").stdout) if before_known else None
+          new = version(git("show", f"HEAD:{path}").stdout)
+          body = ""
+          if not before_known:
+              print(f"push 前のコミット {before} が履歴に無いので投稿しない")
+          elif new and (old is None or new > old):
+              ver = ".".join(map(str, new))
+              notes = ""
+              notes_json = os.environ["NOTES_JSON"].replace("{version}", ver)
+              if notes_json and os.path.exists(notes_json):
+                  with open(notes_json, encoding="utf-8") as f:
+                      notes = (json.load(f).get("whatsNew") or "").strip()
+              if not notes and ".github/devnull/next.md" in git("diff", "--name-only", before, "HEAD").stdout.split() and os.path.isfile(".github/devnull/next.md"):
+                  with open(".github/devnull/next.md", encoding="utf-8") as f:
+                      notes = f.read().strip()
+              lines = [f"{os.environ['APP_NAME']} {ver} を準備しています。審査が通りしだい配信します", ""]
+              if notes:
+                  lines += [notes[:3000], ""]
+              lines.append(os.environ["APP_STORE_URL"])
+              body = "\n".join(lines)
+              print(body)
+          else:
+              print(f"バージョンが上がっていないので投稿しない ({old} -> {new})")
+          if body and os.environ.get("HAS_KEY") != "true":
+              print("DEVNULL_SSH_KEY が無いので投稿しない")
+              body = ""
+          delimiter = uuid.uuid4().hex
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
+              out.write(f"body<<{delimiter}\n{body}\n{delimiter}\n")
+      - if: steps.body.outputs.body != ''
+        uses: nunomaduro/dev-null.sh/.github/actions/commit@8bec9b18939ae627b256eec89f83fbb368b0f228 # production
+        with:
+          body: ${{ steps.body.outputs.body }}
+          ssh-key: ${{ secrets.DEVNULL_SSH_KEY }}
