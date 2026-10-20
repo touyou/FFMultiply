@@ -20,6 +20,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: false
       - id: body
         env:
           APP_NAME: FFMultiplier
@@ -55,7 +56,7 @@ jobs:
               if notes_json and os.path.exists(notes_json):
                   with open(notes_json, encoding="utf-8") as f:
                       notes = (json.load(f).get("whatsNew") or "").strip()
-              if not notes and ".github/devnull/next.md" in git("diff", "--name-only", before, "HEAD").stdout.split():
+              if not notes and ".github/devnull/next.md" in git("diff", "--name-only", before, "HEAD").stdout.split() and os.path.isfile(".github/devnull/next.md"):
                   with open(".github/devnull/next.md", encoding="utf-8") as f:
                       notes = f.read().strip()
               lines = [f"{os.environ['APP_NAME']} {ver} を準備しています。審査が通りしだい配信します", ""]
