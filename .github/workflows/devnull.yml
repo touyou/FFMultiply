@@ -33,7 +33,7 @@ jobs:
           import json, os, re, subprocess, uuid
 
           def git(*args):
-              return subprocess.run(["git", *args], capture_output=True, text=True).stdout
+              return subprocess.run(["git", *args], capture_output=True, text=True)
 
           def version(text):
               found = re.findall(r'MARKETING_VERSION"?\s*[=:]\s*"?(\d+(?:\.\d+)*)', text)
@@ -41,17 +41,21 @@ jobs:
 
           before = os.environ["BEFORE"]
           path = os.environ["VERSION_FILE"]
-          old = version(git("show", f"{before}:{path}"))
-          new = version(git("show", f"HEAD:{path}"))
+          # force-push で before が消えていると旧版が読めないので、版上げと誤認して投稿しない
+          before_known = git("cat-file", "-e", f"{before}^{{commit}}").returncode == 0
+          old = version(git("show", f"{before}:{path}").stdout) if before_known else None
+          new = version(git("show", f"HEAD:{path}").stdout)
           body = ""
-          if new and (old is None or new > old):
+          if not before_known:
+              print(f"push 前のコミット {before} が履歴に無いので投稿しない")
+          elif new and (old is None or new > old):
               ver = ".".join(map(str, new))
               notes = ""
               notes_json = os.environ["NOTES_JSON"].replace("{version}", ver)
               if notes_json and os.path.exists(notes_json):
                   with open(notes_json, encoding="utf-8") as f:
                       notes = (json.load(f).get("whatsNew") or "").strip()
-              if not notes and ".github/devnull/next.md" in git("diff", "--name-only", before, "HEAD").split():
+              if not notes and ".github/devnull/next.md" in git("diff", "--name-only", before, "HEAD").stdout.split():
                   with open(".github/devnull/next.md", encoding="utf-8") as f:
                       notes = f.read().strip()
               lines = [f"{os.environ['APP_NAME']} {ver} を準備しています。審査が通りしだい配信します", ""]
