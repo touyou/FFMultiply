@@ -43,6 +43,21 @@ struct SettingsView: View {
                 .ffButtonStyle(tint: FFColor.green)
                 .controlSize(.large)
 
+                // EEA・英国など、広告の同意を変更できる必要がある地域でだけ出す。
+                if ConsentManager.shared.isPrivacyOptionsRequired {
+                    Button {
+                        Task {
+                            await ConsentManager.shared.presentPrivacyOptionsForm()
+                            AdManager.shared.startIfAllowed()
+                        }
+                    } label: {
+                        Label("PRIVACY SETTINGS", systemImage: "hand.raised")
+                            .frame(maxWidth: .infinity)
+                    }
+                    .ffButtonStyle(tint: FFColor.darkGray)
+                    .controlSize(.large)
+                }
+
                 Spacer()
 
                 AdBannerView()

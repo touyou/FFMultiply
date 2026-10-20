@@ -10,12 +10,16 @@ import SwiftUI
 import GoogleMobileAds
 
 /// 画面下部に置くバナー領域。広告無効時（スクショ/UIテスト）は何も表示しない。
+/// 同意が取れず SDK を起動していない間は、レイアウトが跳ねないよう枠だけ確保して読み込まない。
 struct AdBannerView: View {
     var body: some View {
         if AdManager.adsDisabled {
             EmptyView()
-        } else {
+        } else if AdManager.shared.isStarted {
             BannerAdView()
+                .frame(width: 320, height: BannerAdView.height)
+        } else {
+            Color.clear
                 .frame(width: 320, height: BannerAdView.height)
         }
     }
