@@ -46,6 +46,7 @@ struct OnlineRankingView: View {
                 }
 
                 Text("Your Rank: \(vm.myRank)")
+                    .accessibilityIdentifier("yourRankLabel")
                     .font(.futuraMedium(size: 14))
                     .foregroundStyle(Color(white: 0.33))
                     .frame(maxWidth: .infinity)
