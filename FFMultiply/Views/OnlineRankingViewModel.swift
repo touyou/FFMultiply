@@ -17,10 +17,17 @@ final class OnlineRankingViewModel {
     var myIndex: Int?
     var isTop = true
 
-    private let service = RankingService.shared
+    /// 撮影用の固定データで動かしている間は Firebase を起動しないため、使うときに初めて参照する。
+    private var service: RankingService { RankingService.shared }
 
     /// ランキングを取得する。
     func load() async {
+        if ScreenshotFixture.isActive {
+            entries = ScreenshotFixture.ranking
+            myRank = ScreenshotFixture.myRank
+            myIndex = entries.firstIndex { $0.rank == ScreenshotFixture.myRank }
+            return
+        }
         let result = await service.fetchRanking()
         entries = result.entries
         myRank = result.myRank

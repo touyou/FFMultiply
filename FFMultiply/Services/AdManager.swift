@@ -29,8 +29,9 @@ final class AdManager {
     /// スクリーンショット / UI テスト用に広告一式を無効化するフラグ。
     /// 起動引数 `-disableAds` を付けて実行すると true になる（App Store 用スクショで
     /// 「Test Ad」表示の広告が写り込まないようにするため）。
+    /// 撮影用の固定データ（`ScreenshotFixture`）で動かしている間も無効にする。
     static var adsDisabled: Bool {
-        ProcessInfo.processInfo.arguments.contains("-disableAds")
+        ProcessInfo.processInfo.arguments.contains("-disableAds") || ScreenshotFixture.isActive
     }
 
     private init() {}

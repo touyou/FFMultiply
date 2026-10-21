@@ -81,6 +81,27 @@ final class GameViewModel {
         pickProblem()
     }
 
+    #if DEBUG
+    /// スクリーンショット用の固定の盤面で始める（`ScreenshotFixture`）。
+    /// `finished` なら残り時間 0・終了済みにする（そのままリザルトを出す用）。
+    func startForScreenshot(finished: Bool) {
+        problems = []
+        current = ScreenshotFixture.problem
+        combo = 0
+        if finished {
+            input = ""
+            score = ScreenshotFixture.resultScore
+            remaining = 0
+            isFinished = true
+        } else {
+            input = ScreenshotFixture.input
+            score = ScreenshotFixture.playingScore
+            remaining = ScreenshotFixture.playingRemaining
+            isFinished = false
+        }
+    }
+    #endif
+
     /// 1 秒経過。0 になったら終了する。
     func tick() {
         guard !isFinished else { return }
