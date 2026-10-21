@@ -135,6 +135,27 @@ check_duo_state() {
   return 0
 }
 
+# PNG から向きの情報（eXIf と XMP）を取り除く。XCUIScreen の画像は「表示時に 90° 回す」の
+# 印（orientation 6）を持っていて、画素を回したあとも残ると、ブラウザや App Store Connect が
+# もう一度回してしまう。
+strip_png_orientation() {
+  python3 - "$1" <<'EXIF'
+import struct, sys
+
+path = sys.argv[1]
+data = open(path, "rb").read()
+out, i = [data[:8]], 8
+while i < len(data):
+    length, kind = struct.unpack(">I4s", data[i:i + 8])
+    chunk = data[i:i + 12 + length]
+    xmp = kind == b"iTXt" and data[i + 8:i + 8 + 17] == b"XML:com.adobe.xmp"
+    if kind != b"eXIf" and not xmp:
+        out.append(chunk)
+    i += 12 + length
+open(path, "wb").write(b"".join(out))
+EXIF
+}
+
 # 開いた Duo の内側の画面は縦長のフレームバッファで返るので、横向きに回して 2853x2007 に揃える。
 # XCUIScreen の画像は 1px 小さい（2006x2852）ので、最後に指定のサイズへ合わせる。
 normalize_duo_open() {
@@ -148,6 +169,7 @@ normalize_duo_open() {
     if [ "$(pixel_size "$png")" != "$DUO_OPEN_SIZE" ]; then
       sips -z "${DUO_OPEN_SIZE#*x}" "${DUO_OPEN_SIZE%x*}" "$png" > /dev/null
     fi
+    strip_png_orientation "$png"
   done
   echo "    normalized to $DUO_OPEN_SIZE"
 }
