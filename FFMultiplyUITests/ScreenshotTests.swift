@@ -17,8 +17,15 @@ final class ScreenshotTests: XCTestCase {
     /// ローカルスコアの日付）が撮影言語に合わない。
     private let baseArguments = ["-uitest-screenshot-fixture"]
 
+    /// iPhone Duo を開いた状態で撮るとき、スクリプトが `TEST_RUNNER_SCREENSHOT_DUO_OPEN=1` で立てる。
+    private let isDuoOpen = ProcessInfo.processInfo.environment["SCREENSHOT_DUO_OPEN"] == "1"
+
     override func setUpWithError() throws {
         continueAfterFailure = false
+        // 開いた Duo は横向きで撮る。向きはスクリプト側の回転（時計回り 90°）と対になっている。
+        if isDuoOpen {
+            XCUIDevice.shared.orientation = .landscapeLeft
+        }
     }
 
     // MARK: - 撮影
@@ -97,11 +104,25 @@ final class ScreenshotTests: XCTestCase {
         Thread.sleep(forTimeInterval: 1.5)
     }
 
+    /// 撮る画面。ふだんは `XCUIScreen.main`。
+    ///
+    /// iPhone Duo は外側と内側の 2 枚の画面を持ち、`XCUIScreen.main` は開いていても外側を返す。
+    /// 開いた状態では画素数がいちばん大きい画面（内側）を撮る。内側のフレームバッファは縦長のままなので、
+    /// 横向きへの回転とサイズ合わせはスクリプトが行う。
+    private func screenToCapture() -> XCUIScreen {
+        guard isDuoOpen else { return XCUIScreen.main }
+        func pixels(_ screen: XCUIScreen) -> CGFloat {
+            let size = screen.screenshot().image.size
+            return size.width * size.height
+        }
+        return XCUIScreen.screens.max { pixels($0) < pixels($1) } ?? XCUIScreen.main
+    }
+
     /// 取り出しスクリプトが並べ替えられる名前で添付する。
     @MainActor
     private func capture(_ name: String) {
         // 端末のフレームバッファそのもの。App Store Connect が求めるピクセルサイズになる。
-        let attachment = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+        let attachment = XCTAttachment(screenshot: screenToCapture().screenshot())
         attachment.name = name
         // 成功したテストの添付は既定で捨てられる。撮影は必ず成功するので、これが無いと何も残らない。
         attachment.lifetime = .keepAlways

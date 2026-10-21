@@ -2,7 +2,7 @@
 #
 # App Store 提出用のスクリーンショットを端末・言語ごとに撮る。
 #
-#   ./scripts/capture_screenshots.sh                # 既定の端末（iphone duo）すべて
+#   ./scripts/capture_screenshots.sh                # 既定の端末（iphone duo-closed duo-open）すべて
 #   ./scripts/capture_screenshots.sh iphone         # 指定した端末だけ
 #   LOCALES="ja" ./scripts/capture_screenshots.sh   # 指定した言語だけ
 #
@@ -21,6 +21,16 @@
 #     ./scripts/capture_screenshots.sh
 #
 # id= で指定した端末は撮影前に起動し、ステータスバーを 9:41・電波と電池が満タンの表示に固定する。
+#
+# iPhone Duo は閉じた状態（外側の画面、縦 1398x2034）と開いた状態（内側の画面、横 2853x2007）を
+# 撮り分ける。開閉はシミュレータのコマンドからは切り替えられず、DeviceHub でデバイスの下にある
+# ボタンを押すしかない。なので撮る前に今の状態を確かめ、合っていなければ止める:
+#
+#   duo-closed  閉じた Duo で撮る（起動し直した直後は閉じている）
+#   duo-open    DeviceHub で開いてから撮る
+#
+# 開いた状態ではテストが内側の画面を撮る（`SCREENSHOT_DUO_OPEN`）。内側のフレームバッファは
+# 縦長のままなので、ここで時計回りに 90° 回して 2853x2007 に揃える。
 
 set -euo pipefail
 
@@ -41,15 +51,18 @@ IPHONE_DEST="${IPHONE_DEST:-platform=iOS Simulator,name=iPhone 17 Pro Max,OS=27.
 IPAD_DEST="${IPAD_DEST:-platform=iOS Simulator,name=iPad Pro 13-inch (M5),OS=27.0}"
 # iPhone Duo は iOS 27.1 のシミュレータにしか無い。
 DUO_DEST="${DUO_DEST:-platform=iOS Simulator,name=iPhone Duo,OS=27.1}"
+DUO_OPEN_SIZE="2853x2007"
+DUO_CLOSED_SIZE="1398x2034"
 
 # platform | destination
 PLATFORMS=(
   "iphone|$IPHONE_DEST"
   "ipad|$IPAD_DEST"
-  "duo|$DUO_DEST"
+  "duo-closed|$DUO_DEST"
+  "duo-open|$DUO_DEST"
 )
 # 引数なしで撮る端末（iPad は上の理由で含めない）。
-DEFAULT_PLATFORMS=(iphone duo)
+DEFAULT_PLATFORMS=(iphone duo-closed duo-open)
 
 requested=("$@")
 [ ${#requested[@]} -eq 0 ] && requested=("${DEFAULT_PLATFORMS[@]}")
@@ -71,6 +84,65 @@ region_for() {
 
 mkdir -p "$WORK"
 
+# 撮影先の UDID。id= ならそのまま、name= なら OS ごとの一覧から引く（Duo の開閉確認に使う）。
+udid_for() {
+  local destination=$1 udid name os
+  udid=$(echo "$destination" | sed -nE 's/.*id=([0-9A-Fa-f-]{36}).*/\1/p')
+  if [ -z "$udid" ]; then
+    name=$(echo "$destination" | sed -nE 's/.*name=([^,]+).*/\1/p')
+    os=$(echo "$destination" | sed -nE 's/.*OS=([0-9.]+).*/\1/p')
+    udid=$(xcrun simctl list devices available \
+      | awk -v os="-- iOS $os --" -v name="$name" '$0 == os {f=1; next} /^-- /{f=0} f && index($0, "    " name " (") == 1' \
+      | head -1 | sed -E 's/.*\(([0-9A-F-]{36})\).*/\1/')
+  fi
+  echo "$udid"
+}
+
+pixel_size() {
+  sips -g pixelWidth -g pixelHeight "$1" | awk '/pixelWidth/ {w=$2} /pixelHeight/ {h=$2} END {print w"x"h}'
+}
+
+# Duo が期待した開閉状態か。既定の画面のサイズで見分ける（閉じていれば外側、開いていれば内側）。
+check_duo_state() {
+  local platform=$1 destination=$2 udid shot size
+  udid=$(udid_for "$destination")
+  if [ -z "$udid" ]; then
+    echo "    FAILED — iPhone Duo のシミュレータが見つからない（$destination）"
+    return 1
+  fi
+  xcrun simctl boot "$udid" 2>/dev/null || true
+  xcrun simctl bootstatus "$udid" -b > /dev/null 2>&1 || true
+  shot="$WORK/duo-state.png"
+  xcrun simctl io "$udid" screenshot "$shot" > /dev/null 2>&1
+  size=$(pixel_size "$shot")
+  case "$platform" in
+    duo-open)
+      [ "$size" = "$DUO_OPEN_SIZE" ] && return 0
+      echo "    FAILED — Duo が閉じている（$size）。DeviceHub でデバイスの下のボタンを押して開いてから撮り直す" ;;
+    duo-closed)
+      [ "$size" = "$DUO_CLOSED_SIZE" ] && return 0
+      echo "    FAILED — Duo が開いている（$size）。DeviceHub で閉じるか、シミュレータを起動し直してから撮り直す" ;;
+  esac
+  return 1
+}
+
+# 開いた Duo の内側の画面は縦長のフレームバッファで返るので、横向きに回して 2853x2007 に揃える。
+# XCUIScreen の画像は 1px 小さい（2006x2852）ので、最後に指定のサイズへ合わせる。
+normalize_duo_open() {
+  local dest=$1 png size w h
+  for png in "$dest"/*.png; do
+    size=$(pixel_size "$png")
+    w=${size%x*}; h=${size#*x}
+    if [ "$w" -lt "$h" ]; then
+      sips -r 90 "$png" > /dev/null
+    fi
+    if [ "$(pixel_size "$png")" != "$DUO_OPEN_SIZE" ]; then
+      sips -z "${DUO_OPEN_SIZE#*x}" "${DUO_OPEN_SIZE%x*}" "$png" > /dev/null
+    fi
+  done
+  echo "    normalized to $DUO_OPEN_SIZE"
+}
+
 # id= で指定された端末を起動し、ステータスバーの表示を固定する（失敗しても撮影は続ける）。
 prepare_simulator() {
   local destination=$1 udid
@@ -90,11 +162,26 @@ capture() {
   local log="$WORK/$platform-$locale.log"
   rm -rf "$bundle"
 
+  case "$platform" in
+    duo-*)
+      if ! check_duo_state "$platform" "$destination"; then
+        failed+=("$platform/$locale")
+        return
+      fi ;;
+  esac
+
   prepare_simulator "$destination"
+
+  # 開いた Duo のときだけ、テストに内側の画面を撮らせる（TEST_RUNNER_ を外した名前でテストに届く）。
+  local duo_open=0
+  if [ "$platform" = "duo-open" ]; then
+    duo_open=1
+  fi
+
 
   # -AppleLanguages の起動引数ではなく -testLanguage / -testRegion を使う。
   # こちらでないとアプリ内の `Locale.current` が変わらず、固定データの言語が切り替わらない。
-  if ! xcodebuild test \
+  if ! TEST_RUNNER_SCREENSHOT_DUO_OPEN=$duo_open xcodebuild test \
     -project FFMultiply.xcodeproj \
     -scheme "$SCHEME" \
     -destination "$destination" \
@@ -140,6 +227,10 @@ if count == 0:
     sys.exit("no attachments in the result bundle")
 print(f"    {count} screenshot(s) -> {dest}")
 PY
+
+  if [ "$platform" = "duo-open" ]; then
+    normalize_duo_open "$dest"
+  fi
 }
 
 for entry in "${PLATFORMS[@]}"; do
