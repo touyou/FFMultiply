@@ -52,7 +52,8 @@ IPAD_DEST="${IPAD_DEST:-platform=iOS Simulator,name=iPad Pro 13-inch (M5),OS=27.
 # iPhone Duo は iOS 27.1 のシミュレータにしか無い。
 DUO_DEST="${DUO_DEST:-platform=iOS Simulator,name=iPhone Duo,OS=27.1}"
 DUO_OPEN_SIZE="2853x2007"
-DUO_CLOSED_SIZE="1398x2034"
+# 閉じているときの内側の画面（まっ黒）の PNG はこれより小さい。
+DUO_INNER_BLANK_MAX_BYTES=1000000
 
 # platform | destination
 PLATFORMS=(
@@ -102,9 +103,9 @@ pixel_size() {
   sips -g pixelWidth -g pixelHeight "$1" | awk '/pixelWidth/ {w=$2} /pixelHeight/ {h=$2} END {print w"x"h}'
 }
 
-# Duo が期待した開閉状態か。既定の画面のサイズで見分ける（閉じていれば外側、開いていれば内側）。
+# Duo が期待した開閉状態か。内側の画面に何か映っているかで見分ける。
 check_duo_state() {
-  local platform=$1 destination=$2 udid shot size
+  local platform=$1 destination=$2 udid shot bytes state
   udid=$(udid_for "$destination")
   if [ -z "$udid" ]; then
     echo "    FAILED — iPhone Duo のシミュレータが見つからない（$destination）"
@@ -112,18 +113,26 @@ check_duo_state() {
   fi
   xcrun simctl boot "$udid" 2>/dev/null || true
   xcrun simctl bootstatus "$udid" -b > /dev/null 2>&1 || true
-  shot="$WORK/duo-state.png"
-  xcrun simctl io "$udid" screenshot "$shot" > /dev/null 2>&1
-  size=$(pixel_size "$shot")
+  # 内側の画面は閉じている間まっ黒なので、PNG にすると 100KB ほどに縮む（中身があると数 MB になる）。
+  # 既定の画面のサイズでは見分けられない（開いていても外側を横向きで返すことがある）。
+  shot="$WORK/duo-inner.png"
+  xcrun simctl io "$udid" screenshot --display=primary-1 "$shot" > /dev/null 2>&1
+  bytes=$(stat -f%z "$shot" 2>/dev/null || echo 0)
+  state=closed
+  [ "$bytes" -gt "$DUO_INNER_BLANK_MAX_BYTES" ] && state=open
   case "$platform" in
     duo-open)
-      [ "$size" = "$DUO_OPEN_SIZE" ] && return 0
-      echo "    FAILED — Duo が閉じている（$size）。DeviceHub でデバイスの下のボタンを押して開いてから撮り直す" ;;
+      if [ "$state" != open ]; then
+        echo "    FAILED — Duo が閉じている。DeviceHub でデバイスの下のボタンを押して開いてから撮り直す"
+        return 1
+      fi ;;
     duo-closed)
-      [ "$size" = "$DUO_CLOSED_SIZE" ] && return 0
-      echo "    FAILED — Duo が開いている（$size）。DeviceHub で閉じるか、シミュレータを起動し直してから撮り直す" ;;
+      if [ "$state" != closed ]; then
+        echo "    FAILED — Duo が開いている。DeviceHub で閉じるか、シミュレータを起動し直してから撮り直す"
+        return 1
+      fi ;;
   esac
-  return 1
+  return 0
 }
 
 # 開いた Duo の内側の画面は縦長のフレームバッファで返るので、横向きに回して 2853x2007 に揃える。
