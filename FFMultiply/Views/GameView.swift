@@ -240,7 +240,7 @@ struct GameView: View {
         return Button {
             vm.tapNumber(fnum)
         } label: {
-            Text(convertFNum(toStr: fnum))
+            Text(fnum.symbol)
                 .font(.dseg7(size: 36))
                 .foregroundStyle(FFColor.gray)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
