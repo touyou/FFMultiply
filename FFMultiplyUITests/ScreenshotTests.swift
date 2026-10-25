@@ -9,6 +9,7 @@
 
 import XCTest
 
+@MainActor
 final class ScreenshotTests: XCTestCase {
     /// どの画面を撮るときも付ける起動引数。
     ///
@@ -20,11 +21,13 @@ final class ScreenshotTests: XCTestCase {
     /// iPhone Duo を開いた状態で撮るとき、スクリプトが `TEST_RUNNER_SCREENSHOT_DUO_OPEN=1` で立てる。
     private let isDuoOpen = ProcessInfo.processInfo.environment["SCREENSHOT_DUO_OPEN"] == "1"
 
-    override func setUpWithError() throws {
+    // XCTest の setUp は nonisolated なので、main actor の XCUIDevice は MainActor.run で触る。
+    override func setUp() async throws {
+        try await super.setUp()
         continueAfterFailure = false
         // 開いた Duo は横向きで撮る。向きはスクリプト側の回転（時計回り 90°）と対になっている。
         if isDuoOpen {
-            XCUIDevice.shared.orientation = .landscapeLeft
+            await MainActor.run { XCUIDevice.shared.orientation = .landscapeLeft }
         }
     }
 
@@ -33,7 +36,6 @@ final class ScreenshotTests: XCTestCase {
     /// 画面ごとにアプリを起動し直し、ホームから目的の画面を開いて撮る。
     /// sheet / fullScreenCover を閉じる手順（iPhone Duo では閉じるボタンが縦のバーへ移る）に
     /// 左右されないよう、毎回まっさらな状態から開く。
-    @MainActor
     func testCaptureScreenshots() throws {
         // 1. ホーム
         var app = launch()
@@ -85,7 +87,6 @@ final class ScreenshotTests: XCTestCase {
     // MARK: - 補助
 
     /// アプリを起動し直し、ホームが出るまで待つ。
-    @MainActor
     @discardableResult
     private func launch(extraArguments: [String] = []) -> XCUIApplication {
         let app = XCUIApplication()
@@ -119,7 +120,6 @@ final class ScreenshotTests: XCTestCase {
     }
 
     /// 取り出しスクリプトが並べ替えられる名前で添付する。
-    @MainActor
     private func capture(_ name: String) {
         // 端末のフレームバッファそのもの。App Store Connect が求めるピクセルサイズになる。
         let attachment = XCTAttachment(screenshot: screenToCapture().screenshot())
