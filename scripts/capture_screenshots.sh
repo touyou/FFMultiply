@@ -231,10 +231,14 @@ capture() {
 
   local staging="$WORK/$platform-$locale-attachments"
   rm -rf "$staging"
-  xcrun xcresulttool export attachments --path "$bundle" --output-path "$staging" > /dev/null
+  if ! xcrun xcresulttool export attachments --path "$bundle" --output-path "$staging" > /dev/null; then
+    echo "    FAILED — could not export attachments from $bundle"
+    failed+=("$platform/$locale")
+    return
+  fi
 
   # 書き出されたファイル名は意味の無い名前なので、manifest.json でテストが付けた名前に戻す。
-  python3 - "$staging" "$dest" <<'PY'
+  if ! python3 - "$staging" "$dest" <<'PY'
 import json, pathlib, re, shutil, sys
 
 staging, dest = (pathlib.Path(p) for p in sys.argv[1:3])
@@ -258,6 +262,10 @@ if count == 0:
     sys.exit("no attachments in the result bundle")
 print(f"    {count} screenshot(s) -> {dest}")
 PY
+  then
+    failed+=("$platform/$locale")
+    return
+  fi
 
   if [ "$platform" = "duo-open" ]; then
     normalize_duo_open "$dest"

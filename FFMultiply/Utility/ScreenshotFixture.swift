@@ -41,7 +41,7 @@ enum ScreenshotFixture {
     // MARK: - ゲーム
 
     /// プレイ中の盤面: B × 7 = 4D を 1 桁目まで入力したところ。
-    static let problem: FFProblem = (.b, .seven, fTimes(.b, .seven))
+    static let problem = FFProblem(left: .b, right: .seven)
     static let input = "4"
     static let playingScore = 185
     static let playingRemaining = 37
