@@ -17,7 +17,10 @@ struct FFMultiplyApp: App {
 
     init() {
         do {
-            container = try ModelContainer(for: ScoreEntry.self)
+            // スクリーンショット撮影中は端末の保存先ではなく、固定の履歴を入れたメモリ上のコンテナを使う。
+            container = ScreenshotFixture.isActive
+                ? try ScreenshotFixture.makeContainer()
+                : try ModelContainer(for: ScoreEntry.self)
         } catch {
             fatalError("Failed to create ModelContainer: \(error)")
         }
@@ -27,6 +30,8 @@ struct FFMultiplyApp: App {
         WindowGroup {
             HomeView()
                 .task {
+                    // スクリーンショット撮影中は同意・ATT の確認もランキングの移行もしない。
+                    guard !ScreenshotFixture.isActive else { return }
                     // 広告の同意（UMP）→ ATT の許可 → 広告 SDK 起動 → 広告のロード。
                     await AdManager.shared.prepareAds()
                     await RankingService.shared.migrateIfNeeded(

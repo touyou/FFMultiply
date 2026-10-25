@@ -33,9 +33,13 @@ struct HomeView: View {
 
                 VStack(spacing: 14) {
                     menuButton("time attack", prominent: true) { showGame = true }
+                        .accessibilityIdentifier("timeAttackButton")
                     menuButton("local score", prominent: false) { showLocalScore = true }
+                        .accessibilityIdentifier("localScoreButton")
                     menuButton("online ranking", prominent: false) { showOnlineRanking = true }
+                        .accessibilityIdentifier("onlineRankingButton")
                     menuButton("settings", prominent: false) { showSettings = true }
+                        .accessibilityIdentifier("settingsButton")
                 }
                 .controlSize(.large)
                 .padding(.horizontal, 40)
@@ -82,7 +86,8 @@ struct HomeView: View {
     }
 
     private func presentTutorialIfNeeded() {
-        guard storage.object(forKey: "tutorial") == nil else { return }
+        // スクリーンショット撮影中はチュートリアルを出さない（表示済みの記録も残さない）。
+        guard !ScreenshotFixture.isActive, storage.object(forKey: "tutorial") == nil else { return }
         showTutorial = true
         storage.set(true, forKey: "tutorial")
     }

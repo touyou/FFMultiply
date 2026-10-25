@@ -57,6 +57,7 @@ struct LocalScoreView: View {
                     }
                     .listStyle(.plain)
                     .scrollContentBackground(.hidden)
+                    .accessibilityIdentifier("localScoreList")
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
