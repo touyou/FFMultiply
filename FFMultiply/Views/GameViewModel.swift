@@ -32,14 +32,14 @@ final class GameViewModel {
     // MARK: 表示用
     /// 入力中の値。空なら "--"。
     var displayInput: String { input.isEmpty ? "--" : input }
-    var leftText: String { current.map { convertFNum(toStr: $0.0) } ?? "" }
-    var rightText: String { current.map { convertFNum(toStr: $0.1) } ?? "" }
+    var leftText: String { current?.left.symbol ?? "" }
+    var rightText: String { current?.right.symbol ?? "" }
     var scoreText: String { String(score) }
     var timeText: String { String(remaining) }
 
     // MARK: ゲーム進行
     func start() {
-        problems = makeProblem(1000)
+        problems = FFProblem.makeSet(count: 1000)
         remaining = limitTime
         score = 0
         combo = 0
@@ -56,7 +56,7 @@ final class GameViewModel {
     /// 数字キー入力（最大 2 文字）。
     func tapNumber(_ value: FNum) {
         guard input.count < 2 else { return }
-        input += convertFNum(toStr: value)
+        input += value.symbol
     }
 
     /// 1 文字削除。
@@ -68,7 +68,7 @@ final class GameViewModel {
     /// 解答判定。正誤に応じてスコア・コンボを更新し、次の問題へ。
     func done() {
         guard let current else { return }
-        let accepted = current.2 == input
+        let accepted = current.answer == input
         toast = ToastMessage(accepted ? "accepted" : "failed")
         if accepted {
             score += pointsAccepted + min(pointsCombo * (combo / 5), maxComboBonus)
