@@ -33,6 +33,14 @@ struct GameView: View {
             // 再実行される。その際にゲームを初期化し直して score が 0 に戻るのを防ぐ。
             guard !didStart else { return }
             didStart = true
+            #if DEBUG
+            if ScreenshotFixture.isActive {
+                // 撮影用: タイマーを進めず固定の盤面で止める。リザルト指定ならすぐに終了させる。
+                vm.startForScreenshot(finished: ScreenshotFixture.showsResult)
+                if vm.isFinished { finishGame() }
+                return
+            }
+            #endif
             vm.start()
             while !vm.isFinished {
                 try? await Task.sleep(for: .seconds(1))
@@ -130,6 +138,7 @@ struct GameView: View {
 
             // 入力表示
             Text(vm.displayInput)
+                .accessibilityIdentifier("answerInput")
                 .font(.dseg7(size: 40))
                 .foregroundStyle(FFColor.white)
                 .frame(maxWidth: .infinity)
@@ -240,7 +249,7 @@ struct GameView: View {
         return Button {
             vm.tapNumber(fnum)
         } label: {
-            Text(convertFNum(toStr: fnum))
+            Text(fnum.symbol)
                 .font(.dseg7(size: 36))
                 .foregroundStyle(FFColor.gray)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -261,7 +270,8 @@ struct GameView: View {
         let best = store.highScore()?.score ?? vm.score
         isHighScore = best <= vm.score
 
-        if isHighScore {
+        // スクリーンショット撮影中はランキングに登録しない（名前の入力も求めない）。
+        if isHighScore && !ScreenshotFixture.isActive {
             if let name = storage.object(forKey: "playername") as? String, !name.isEmpty {
                 RankingService.shared.register(name: name, score: vm.score)
             } else {

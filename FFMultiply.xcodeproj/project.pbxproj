@@ -9,12 +9,24 @@
 /* Begin PBXBuildFile section */
 		461352AE25160A04001550E6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 461352AD25160A04001550E6 /* FirebaseDatabase */; };
 		46A7C0012FFA0001000A0B01 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 46A7C0002FFA0001000A0B00 /* FirebaseAuth */; };
+		46C1A0012FFC0001000A0D01 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 46C1A0002FFC0001000A0D00 /* FirebaseAppCheck */; };
 		46229BDD2FF819A30043E4FD /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 46229BDC2FF819A30043E4FD /* GoogleMobileAds */; };
 		46B1C0022FFB0001000A0C02 /* GoogleUserMessagingPlatform in Frameworks */ = {isa = PBXBuildFile; productRef = 46B1C0012FFB0001000A0C01 /* GoogleUserMessagingPlatform */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		46E52909C10C0B0B3D936668 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4603173F1DBDBFA500C9162F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 460317461DBDBFA500C9162F;
+			remoteInfo = FFMultiply;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		460317471DBDBFA500C9162F /* FFMultiply.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFMultiply.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46E55D5374FB3B93FC535487 /* FFMultiplyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FFMultiplyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -29,6 +41,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		46229C472FF88C740043E4FD /* FFMultiply */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (46229C642FF88C750043E4FD /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = FFMultiply; sourceTree = "<group>"; };
+		46E51B981FBA26D53B678463 /* FFMultiplyUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; path = FFMultiplyUITests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +52,15 @@
 				46229BDD2FF819A30043E4FD /* GoogleMobileAds in Frameworks */,
 				461352AE25160A04001550E6 /* FirebaseDatabase in Frameworks */,
 				46A7C0012FFA0001000A0B01 /* FirebaseAuth in Frameworks */,
+				46C1A0012FFC0001000A0D01 /* FirebaseAppCheck in Frameworks */,
 				46B1C0022FFB0001000A0C02 /* GoogleUserMessagingPlatform in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46E5C938FA4F93C65FBC62C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				46229C472FF88C740043E4FD /* FFMultiply */,
+				46E51B981FBA26D53B678463 /* FFMultiplyUITests */,
 				460317481DBDBFA500C9162F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				460317471DBDBFA500C9162F /* FFMultiply.app */,
+				46E55D5374FB3B93FC535487 /* FFMultiplyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,12 +107,36 @@
 			packageProductDependencies = (
 				461352AD25160A04001550E6 /* FirebaseDatabase */,
 				46A7C0002FFA0001000A0B00 /* FirebaseAuth */,
+				46C1A0002FFC0001000A0D00 /* FirebaseAppCheck */,
 				46229BDC2FF819A30043E4FD /* GoogleMobileAds */,
 				46B1C0012FFB0001000A0C01 /* GoogleUserMessagingPlatform */,
 			);
 			productName = FFMultiply;
 			productReference = 460317471DBDBFA500C9162F /* FFMultiply.app */;
 			productType = "com.apple.product-type.application";
+		};
+		46E5D9FBA0641C2FE8946219 /* FFMultiplyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46E592752D7972647BE770F4 /* Build configuration list for PBXNativeTarget "FFMultiplyUITests" */;
+			buildPhases = (
+				46E52957CE435D5798B5CE47 /* Sources */,
+				46E5C938FA4F93C65FBC62C5 /* Frameworks */,
+				46E54EE784DFAB534363DF98 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46E5DE414BBC51ED60B6DF68 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				46E51B981FBA26D53B678463 /* FFMultiplyUITests */,
+			);
+			name = FFMultiplyUITests;
+			packageProductDependencies = (
+			);
+			productName = FFMultiplyUITests;
+			productReference = 46E55D5374FB3B93FC535487 /* FFMultiplyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -113,6 +160,10 @@
 							};
 						};
 					};
+					46E5D9FBA0641C2FE8946219 = {
+						CreatedOnToolsVersion = 27.1;
+						TestTargetID = 460317461DBDBFA500C9162F;
+					};
 				};
 			};
 			buildConfigurationList = 460317421DBDBFA500C9162F /* Build configuration list for PBXProject "FFMultiply" */;
@@ -135,12 +186,20 @@
 			projectRoot = "";
 			targets = (
 				460317461DBDBFA500C9162F /* FFMultiply */,
+				46E5D9FBA0641C2FE8946219 /* FFMultiplyUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		460317451DBDBFA500C9162F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46E54EE784DFAB534363DF98 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -157,7 +216,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		46E52957CE435D5798B5CE47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		46E5DE414BBC51ED60B6DF68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 460317461DBDBFA500C9162F /* FFMultiply */;
+			targetProxy = 46E52909C10C0B0B3D936668 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		460317571DBDBFA500C9162F /* Debug */ = {
@@ -295,7 +369,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.1;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dev.touyou.FFMultiply;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -320,7 +394,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.1;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dev.touyou.FFMultiply;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -329,6 +403,46 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		46E564E7C190D7259A215633 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B4S4333JDW;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.touyou.FFMultiplyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = FFMultiply;
+			};
+			name = Debug;
+		};
+		46E54CF0BE206B40C3A06775 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B4S4333JDW;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.touyou.FFMultiplyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = FFMultiply;
 			};
 			name = Release;
 		};
@@ -349,6 +463,15 @@
 			buildConfigurations = (
 				4603175A1DBDBFA500C9162F /* Debug */,
 				4603175B1DBDBFA500C9162F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46E592752D7972647BE770F4 /* Build configuration list for PBXNativeTarget "FFMultiplyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46E564E7C190D7259A215633 /* Debug */,
+				46E54CF0BE206B40C3A06775 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -392,6 +515,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 461352AC25160A04001550E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		46C1A0002FFC0001000A0D00 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 461352AC25160A04001550E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
 		};
 		46229BDC2FF819A30043E4FD /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;

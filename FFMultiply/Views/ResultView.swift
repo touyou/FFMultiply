@@ -36,6 +36,7 @@ struct ResultView: View {
 
             // 得点はゲーム画面と同じ「黒地に緑セブンセグ」チップで高コントラストに。
             Text(String(score))
+                .accessibilityIdentifier("resultScore")
                 .font(.dseg7(size: 72))
                 .foregroundStyle(FFColor.green)
                 .minimumScaleFactor(0.4)
