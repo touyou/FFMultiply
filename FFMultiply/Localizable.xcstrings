@@ -17,6 +17,94 @@
           }
         }
       }
+    },
+    "Start Time Attack" : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タイムアタックを始める"
+          }
+        }
+      }
+    },
+    "Opens FFMultiplier and starts a 60-second time attack." : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FFMultiplier を開いて 60 秒のタイムアタックを始めます。"
+          }
+        }
+      }
+    },
+    "Get High Score" : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ハイスコアを確認"
+          }
+        }
+      }
+    },
+    "Tells your best time attack score on this device." : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この端末でのタイムアタックの最高得点を答えます。"
+          }
+        }
+      }
+    },
+    "You haven't played a time attack yet." : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "まだタイムアタックの記録がありません。"
+          }
+        }
+      }
+    },
+    "Your high score is %lld." : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ハイスコアは %lld 点です。"
+          }
+        }
+      }
+    },
+    "Time Attack" : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タイムアタック"
+          }
+        }
+      }
+    },
+    "High Score" : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ハイスコア"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

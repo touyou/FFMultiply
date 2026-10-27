@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		461352AE25160A04001550E6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 461352AD25160A04001550E6 /* FirebaseDatabase */; };
 		46A7C0012FFA0001000A0B01 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 46A7C0002FFA0001000A0B00 /* FirebaseAuth */; };
+		46C1A0012FFC0001000A0D01 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 46C1A0002FFC0001000A0D00 /* FirebaseAppCheck */; };
 		46229BDD2FF819A30043E4FD /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 46229BDC2FF819A30043E4FD /* GoogleMobileAds */; };
 		46B1C0022FFB0001000A0C02 /* GoogleUserMessagingPlatform in Frameworks */ = {isa = PBXBuildFile; productRef = 46B1C0012FFB0001000A0C01 /* GoogleUserMessagingPlatform */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 				46229BDD2FF819A30043E4FD /* GoogleMobileAds in Frameworks */,
 				461352AE25160A04001550E6 /* FirebaseDatabase in Frameworks */,
 				46A7C0012FFA0001000A0B01 /* FirebaseAuth in Frameworks */,
+				46C1A0012FFC0001000A0D01 /* FirebaseAppCheck in Frameworks */,
 				46B1C0022FFB0001000A0C02 /* GoogleUserMessagingPlatform in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +107,7 @@
 			packageProductDependencies = (
 				461352AD25160A04001550E6 /* FirebaseDatabase */,
 				46A7C0002FFA0001000A0B00 /* FirebaseAuth */,
+				46C1A0002FFC0001000A0D00 /* FirebaseAppCheck */,
 				46229BDC2FF819A30043E4FD /* GoogleMobileAds */,
 				46B1C0012FFB0001000A0C01 /* GoogleUserMessagingPlatform */,
 			);
@@ -366,7 +369,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.1;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dev.touyou.FFMultiply;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -391,7 +394,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.1;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dev.touyou.FFMultiply;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -512,6 +515,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 461352AC25160A04001550E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		46C1A0002FFC0001000A0D00 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 461352AC25160A04001550E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
 		};
 		46229BDC2FF819A30043E4FD /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -7,9 +7,10 @@
 //
 
 import SwiftUI
+import AppIntents
 
 struct HomeView: View {
-    @State private var showGame = false
+    @Environment(AppNavigator.self) private var navigator
     @State private var showLocalScore = false
     @State private var showOnlineRanking = false
     @State private var showSettings = false
@@ -32,8 +33,12 @@ struct HomeView: View {
                 Spacer(minLength: 24)
 
                 VStack(spacing: 14) {
-                    menuButton("time attack", prominent: true) { showGame = true }
-                        .accessibilityIdentifier("timeAttackButton")
+                    // Siri から始めたときと同じ経路を通す。
+                    Button(intent: StartTimeAttackIntent()) {
+                        Text("time attack").frame(maxWidth: .infinity)
+                    }
+                    .ffButtonStyle(prominent: true, tint: FFColor.green)
+                    .accessibilityIdentifier("timeAttackButton")
                     menuButton("local score", prominent: false) { showLocalScore = true }
                         .accessibilityIdentifier("localScoreButton")
                     menuButton("online ranking", prominent: false) { showOnlineRanking = true }
@@ -51,7 +56,7 @@ struct HomeView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(FFColor.white.ignoresSafeArea())
         }
-        .fullScreenCover(isPresented: $showGame) {
+        .fullScreenCover(isPresented: Bindable(navigator).isPlayingTimeAttack) {
             GameView()
         }
         .sheet(isPresented: $showLocalScore) {

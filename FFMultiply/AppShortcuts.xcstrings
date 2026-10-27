@@ -1,0 +1,52 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Start a time attack in ${applicationName}" : {
+      "localizations" : {
+        "en" : {
+          "stringSet" : {
+            "state" : "new",
+            "values" : [
+              "Start a time attack in ${applicationName}",
+              "Play ${applicationName}"
+            ]
+          }
+        },
+        "ja" : {
+          "stringSet" : {
+            "state" : "translated",
+            "values" : [
+              "${applicationName}でタイムアタック",
+              "${applicationName}でタイムアタックを始めて",
+              "${applicationName}で遊ぶ"
+            ]
+          }
+        }
+      }
+    },
+    "What's my high score in ${applicationName}" : {
+      "localizations" : {
+        "en" : {
+          "stringSet" : {
+            "state" : "new",
+            "values" : [
+              "What's my high score in ${applicationName}",
+              "Show my ${applicationName} high score"
+            ]
+          }
+        },
+        "ja" : {
+          "stringSet" : {
+            "state" : "translated",
+            "values" : [
+              "${applicationName}のハイスコアは",
+              "${applicationName}のハイスコアを教えて",
+              "${applicationName}の最高得点"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
