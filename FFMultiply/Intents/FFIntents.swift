@@ -23,7 +23,7 @@ struct StartTimeAttackIntent: AppIntent {
 
     @MainActor
     func perform() async throws -> some IntentResult {
-        navigator.isPlayingTimeAttack = true
+        navigator.startTimeAttack()
         return .result()
     }
 }

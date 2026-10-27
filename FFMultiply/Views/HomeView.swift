@@ -58,6 +58,7 @@ struct HomeView: View {
         }
         .fullScreenCover(isPresented: Bindable(navigator).isPlayingTimeAttack) {
             GameView()
+                .id(navigator.timeAttackID)
         }
         .sheet(isPresented: $showLocalScore) {
             LocalScoreView()
