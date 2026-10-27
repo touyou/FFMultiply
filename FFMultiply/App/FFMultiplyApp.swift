@@ -29,6 +29,8 @@ struct FFMultiplyApp: App {
         // Siri から起動されたときは画面より先に Intent が走るので、ここで同期的に登録する。
         let navigator = AppNavigator()
         _navigator = State(initialValue: navigator)
+        // `dependency:` はエスケープするクロージャなので、self ではなくローカルを渡す。
+        let container = container
         AppDependencyManager.shared.add(dependency: container)
         AppDependencyManager.shared.add(dependency: navigator)
     }

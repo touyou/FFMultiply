@@ -78,6 +78,19 @@ struct HomeView: View {
             }
         }
         .animation(.easeInOut, value: showTutorial)
+        .onChange(of: navigator.isPlayingTimeAttack) { _, isPlaying in
+            // シートの上には全画面カバーを出せない。Siri から始めたときに開いていたシートは閉じて、
+            // 閉じ終わってから出し直す（フラグが true のまま残るとボタンが効かなくなる）。
+            guard isPlaying, showLocalScore || showOnlineRanking || showSettings else { return }
+            showLocalScore = false
+            showOnlineRanking = false
+            showSettings = false
+            navigator.isPlayingTimeAttack = false
+            Task {
+                try? await Task.sleep(for: .milliseconds(600))
+                navigator.isPlayingTimeAttack = true
+            }
+        }
         .onAppear(perform: presentTutorialIfNeeded)
     }
 

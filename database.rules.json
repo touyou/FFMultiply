@@ -3,7 +3,7 @@
     "scores": {
       ".read": true,
       "$uuid": {
-        ".write": "!newData.exists()",
+        ".write": true,
         ".validate": "newData.hasChildren(['name', 'score'])",
         ".indexOn": ["score"],
         "name": {
