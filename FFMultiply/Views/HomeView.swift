@@ -7,9 +7,10 @@
 //
 
 import SwiftUI
+import AppIntents
 
 struct HomeView: View {
-    @State private var showGame = false
+    @Environment(AppNavigator.self) private var navigator
     @State private var showLocalScore = false
     @State private var showOnlineRanking = false
     @State private var showSettings = false
@@ -32,8 +33,12 @@ struct HomeView: View {
                 Spacer(minLength: 24)
 
                 VStack(spacing: 14) {
-                    menuButton("time attack", prominent: true) { showGame = true }
-                        .accessibilityIdentifier("timeAttackButton")
+                    // Siri から始めたときと同じ経路を通す。
+                    Button(intent: StartTimeAttackIntent()) {
+                        Text("time attack").frame(maxWidth: .infinity)
+                    }
+                    .ffButtonStyle(prominent: true, tint: FFColor.green)
+                    .accessibilityIdentifier("timeAttackButton")
                     menuButton("local score", prominent: false) { showLocalScore = true }
                         .accessibilityIdentifier("localScoreButton")
                     menuButton("online ranking", prominent: false) { showOnlineRanking = true }
@@ -51,8 +56,9 @@ struct HomeView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(FFColor.white.ignoresSafeArea())
         }
-        .fullScreenCover(isPresented: $showGame) {
+        .fullScreenCover(isPresented: Bindable(navigator).isPlayingTimeAttack) {
             GameView()
+                .id(navigator.timeAttackID)
         }
         .sheet(isPresented: $showLocalScore) {
             LocalScoreView()
@@ -73,6 +79,19 @@ struct HomeView: View {
             }
         }
         .animation(.easeInOut, value: showTutorial)
+        .onChange(of: navigator.isPlayingTimeAttack) { _, isPlaying in
+            // シートの上には全画面カバーを出せない。Siri から始めたときに開いていたシートは閉じて、
+            // 閉じ終わってから出し直す（フラグが true のまま残るとボタンが効かなくなる）。
+            guard isPlaying, showLocalScore || showOnlineRanking || showSettings else { return }
+            showLocalScore = false
+            showOnlineRanking = false
+            showSettings = false
+            navigator.isPlayingTimeAttack = false
+            Task {
+                try? await Task.sleep(for: .milliseconds(600))
+                navigator.isPlayingTimeAttack = true
+            }
+        }
         .onAppear(perform: presentTutorialIfNeeded)
     }
 

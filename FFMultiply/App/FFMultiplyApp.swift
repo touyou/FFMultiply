@@ -8,12 +8,14 @@
 
 import SwiftUI
 import SwiftData
+import AppIntents
 
 @main
 struct FFMultiplyApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
 
     private let container: ModelContainer
+    @State private var navigator: AppNavigator
 
     init() {
         do {
@@ -24,11 +26,19 @@ struct FFMultiplyApp: App {
         } catch {
             fatalError("Failed to create ModelContainer: \(error)")
         }
+        // Siri から起動されたときは画面より先に Intent が走るので、ここで同期的に登録する。
+        let navigator = AppNavigator()
+        _navigator = State(initialValue: navigator)
+        // `dependency:` はエスケープするクロージャなので、self ではなくローカルを渡す。
+        let container = container
+        AppDependencyManager.shared.add(dependency: container)
+        AppDependencyManager.shared.add(dependency: navigator)
     }
 
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .environment(navigator)
                 .task {
                     // スクリーンショット撮影中は同意・ATT の確認もランキングの移行もしない。
                     guard !ScreenshotFixture.isActive else { return }
