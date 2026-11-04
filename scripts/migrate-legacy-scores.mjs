@@ -8,9 +8,12 @@
 //   node scripts/migrate-legacy-scores.mjs /tmp/scores.json > /tmp/scores_legacy.json
 //   firebase database:update /scores_legacy /tmp/scores_legacy.json
 // 何度流しても同じ結果になる（同じ key に同じ値を書くだけ）。`scores` 側は消さない。
+// 書き出しから書き込みまでの間にアプリが消した行は戻るが、アプリは登録のたびに自分の旧行を消し直す。
+// 書き出しは毎回 update の直前に取り直すこと。
 
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
+import { pathToFileURL } from "node:url";
 
 export const LEGACY_KEY_SALT = "ffmultiplier-ranking-legacy:";
 
@@ -32,7 +35,7 @@ export function migrate(scores) {
   return out;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const path = process.argv[2];
   if (!path) {
     console.error("usage: node scripts/migrate-legacy-scores.mjs <scores.json>");

@@ -43,9 +43,6 @@ final class RankingService {
     nonisolated private static let legacyKeySalt = "ffmultiplier-ranking-legacy:"
     /// 起動時の登録し直しが済んだことを示す UserDefaults のキー。
     private static let migratedKey = "rankingMigratedToV2"
-    /// 旧レコードを `scores` と `scores_legacy` の両方から消し終えたことを示す UserDefaults のキー。
-    /// `scores` だけを消していた版のフラグとは分け、`scores_legacy` に写った分も消し直す。
-    private static let legacyRemovedKey = "rankingLegacyAndHashedRemoved"
 
     /// ランキングの 1 行（並べ替え前）。
     private typealias Row = (key: String, score: Int, name: String)
@@ -149,9 +146,8 @@ final class RankingService {
             print(error.localizedDescription)
             return false
         }
-        if !storage.bool(forKey: Self.legacyRemovedKey) {
-            await removeLegacyRecords()
-        }
+        // 移行スクリプトを流し直すと消した行が戻るので、フラグで止めず登録のたびに消す。
+        await removeLegacyRecords()
         return true
     }
 
@@ -163,7 +159,6 @@ final class RankingService {
             _ = try await ref.child(Self.legacyPath).child(legacyDeviceID).removeValue()
             _ = try await ref.child(Self.hashedLegacyPath)
                 .child(Self.hashedLegacyKey(for: legacyDeviceID)).removeValue()
-            storage.set(true, forKey: Self.legacyRemovedKey)
             return true
         } catch {
             print(error.localizedDescription)
