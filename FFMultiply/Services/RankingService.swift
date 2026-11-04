@@ -5,10 +5,12 @@
 //  Firebase Realtime Database を async/await でラップしたオンラインランキング。
 //
 //  自分のレコードは匿名認証の uid を key にして `scores_v2/<uid>` に置く。
-//  以前の版は `scores/<identifierForVendor>` に認証なしで書いていたため、移行期間中は
-//  両方を読んで順位を出し、`scores_v2` に登録できた端末は旧レコードを自分で消す。
+//  以前の版は `scores/<identifierForVendor>` に書いていた。端末 ID をほかの利用者に配らないよう、
+//  旧レコードはサーバー側で key をハッシュにした `scores_legacy` へ写してあり、こちらだけを読む。
+//  `scores_v2` に登録できた端末は、旧レコードを両方の場所から自分で消す。
 //
 
+import CryptoKit
 import Foundation
 import UIKit
 import FirebaseAuth
@@ -33,19 +35,29 @@ final class RankingService {
     private static let maxNameUTF16Length = 100
 
     private static let path = "scores_v2"
+    /// 旧版が書いていた場所。key が端末 ID なので読まない。自分の旧レコードを消すときだけ触る。
     private static let legacyPath = "scores"
+    /// 旧レコードを key をハッシュにして写した場所（scripts/migrate-legacy-scores.mjs）。
+    private static let hashedLegacyPath = "scores_legacy"
+    /// ハッシュの前に付ける文字列。scripts/migrate-legacy-scores.mjs と Android 版と同じ値にする。
+    nonisolated private static let legacyKeySalt = "ffmultiplier-ranking-legacy:"
     /// 起動時の登録し直しが済んだことを示す UserDefaults のキー。
     private static let migratedKey = "rankingMigratedToV2"
-    /// 旧レコードを消し終えたことを示す UserDefaults のキー。
-    private static let legacyRemovedKey = "rankingLegacyRemoved"
 
     /// ランキングの 1 行（並べ替え前）。
     private typealias Row = (key: String, score: Int, name: String)
 
     private let ref = Database.database().reference()
     private let storage = UserDefaults.standard
-    /// 旧形式での自分の key。移行期間中の読み取りと後始末にだけ使う。
+    /// 旧形式での自分の key（端末 ID）。後始末にだけ使い、送るのは削除のときだけ。
     private let legacyDeviceID = UIDevice.current.identifierForVendor?.uuidString
+
+    /// `scores_legacy` での key。旧 key（端末 ID）に salt を付けた SHA-256 の 16 進。
+    nonisolated static func hashedLegacyKey(for deviceID: String) -> String {
+        SHA256.hash(data: Data((legacyKeySalt + deviceID).utf8))
+            .map { String(format: "%02x", $0) }
+            .joined()
+    }
 
     /// ランキングに登録できる長さに名前を切り詰める。
     static func normalizedName(_ name: String) -> String {
@@ -66,9 +78,17 @@ final class RankingService {
         await write(name: name, score: score)
     }
 
-    /// 自分のスコアを 0 にリセット（ローカル全削除時）。
-    func reset(name: String) {
-        Task { await write(name: name, score: 0) }
+    /// ランキングから自分の記録を消す（新旧すべての場所）。すべて消せたら true。
+    @discardableResult
+    func deleteMyRecords() async -> Bool {
+        guard let uid = await signedInUserID() else { return false }
+        do {
+            _ = try await ref.child(Self.path).child(uid).removeValue()
+        } catch {
+            print(error.localizedDescription)
+            return false
+        }
+        return await removeLegacyRecords()
     }
 
     /// 以前の版で登録していた端末のために、端末内の最高スコアを一度だけ `scores_v2` に登録し直す。
@@ -87,12 +107,13 @@ final class RankingService {
     func fetchRanking() async -> (entries: [RankEntry], myRank: Int, myIndex: Int?) {
         let uid = await signedInUserID()
         async let current = rows(at: Self.path)
-        async let legacy = rows(at: Self.legacyPath)
+        async let legacy = rows(at: Self.hashedLegacyPath)
+        let myLegacyKey = legacyDeviceID.map(Self.hashedLegacyKey(for:))
         var rows = await current
         let hasCurrentRecord = rows.contains { $0.key == uid }
         // 登録し直した端末の旧レコードがまだ残っていても、二重に並べない。
-        rows += await legacy.filter { !(hasCurrentRecord && $0.key == legacyDeviceID) }
-        let myKey = hasCurrentRecord ? uid : legacyDeviceID
+        rows += await legacy.filter { !(hasCurrentRecord && $0.key == myLegacyKey) }
+        let myKey = hasCurrentRecord ? uid : myLegacyKey
         return Self.rank(rows, myKey: myKey)
     }
 
@@ -125,17 +146,23 @@ final class RankingService {
             print(error.localizedDescription)
             return false
         }
-        await removeLegacyRecordIfNeeded()
+        // 移行スクリプトを流し直すと消した行が戻るので、フラグで止めず登録のたびに消す。
+        await removeLegacyRecords()
         return true
     }
 
-    private func removeLegacyRecordIfNeeded() async {
-        guard !storage.bool(forKey: Self.legacyRemovedKey), let legacyDeviceID else { return }
+    /// 自分の旧レコードを `scores` と `scores_legacy` から消す。無いものを消しても成功になる。
+    @discardableResult
+    private func removeLegacyRecords() async -> Bool {
+        guard let legacyDeviceID else { return true }
         do {
             _ = try await ref.child(Self.legacyPath).child(legacyDeviceID).removeValue()
-            storage.set(true, forKey: Self.legacyRemovedKey)
+            _ = try await ref.child(Self.hashedLegacyPath)
+                .child(Self.hashedLegacyKey(for: legacyDeviceID)).removeValue()
+            return true
         } catch {
             print(error.localizedDescription)
+            return false
         }
     }
 

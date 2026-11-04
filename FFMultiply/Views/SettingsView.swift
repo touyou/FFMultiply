@@ -12,6 +12,8 @@ struct SettingsView: View {
 
     @State private var name = ""
     @State private var showTutorial = false
+    @State private var showRankingDeleteConfirm = false
+    @State private var rankingDeleteFailed = false
 
     private let storage = UserDefaults.standard
 
@@ -58,6 +60,15 @@ struct SettingsView: View {
                     .controlSize(.large)
                 }
 
+                Button(role: .destructive) {
+                    showRankingDeleteConfirm = true
+                } label: {
+                    Label("DELETE FROM RANKING", systemImage: "person.crop.circle.badge.minus")
+                        .frame(maxWidth: .infinity)
+                }
+                .ffButtonStyle(tint: FFColor.red)
+                .controlSize(.large)
+
                 Spacer()
 
                 AdBannerView()
@@ -82,6 +93,17 @@ struct SettingsView: View {
         .onAppear {
             name = storage.object(forKey: "playername") as? String ?? ""
         }
+        .alert("Delete from ranking", isPresented: $showRankingDeleteConfirm) {
+            Button("Delete", role: .destructive, action: deleteFromRanking)
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("Your name and scores will be removed from the online ranking, and your user name will be cleared. Nothing is sent to the ranking until you set a user name again.")
+        }
+        .alert("Couldn't delete from ranking", isPresented: $rankingDeleteFailed) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text("Check your connection and try again.")
+        }
         .overlay {
             if showTutorial {
                 ZStack {
@@ -92,5 +114,17 @@ struct SettingsView: View {
             }
         }
         .animation(.easeInOut, value: showTutorial)
+    }
+
+    /// ランキングの名前が自動で登録し直されないよう、記録を消したらユーザー名も消す。
+    private func deleteFromRanking() {
+        Task {
+            if await RankingService.shared.deleteMyRecords() {
+                storage.removeObject(forKey: "playername")
+                name = ""
+            } else {
+                rankingDeleteFailed = true
+            }
+        }
     }
 }
