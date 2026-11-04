@@ -224,6 +224,23 @@
           }
         }
       }
+    },
+    "Retry" : {
+      "comment" : "ランキングからの削除に失敗したときの再試行ボタン。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retry"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "もう一度"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

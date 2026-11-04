@@ -16,6 +16,7 @@ struct LocalScoreView: View {
                   SortDescriptor(\ScoreEntry.date, order: .reverse)]) private var scores: [ScoreEntry]
 
     @State private var showDeleteConfirm = false
+    @State private var rankingDeleteFailed = false
 
     /// ランキング表示の 1 行。
     private struct RankedScore: Identifiable {
@@ -86,11 +87,21 @@ struct LocalScoreView: View {
             } message: {
                 Text("Do you really want to delete all your data? Your scores will also be removed from the online ranking.")
             }
+            .alert("Couldn't delete from ranking", isPresented: $rankingDeleteFailed) {
+                Button("Retry") { Task { await deleteFromRanking() } }
+                Button("Cancel", role: .cancel) {}
+            } message: {
+                Text("Check your connection and try again.")
+            }
         }
     }
 
     private func deleteAll() {
-        Task { await RankingService.shared.deleteMyRecords() }
         ScoreStore(context: modelContext).deleteAll()
+        Task { await deleteFromRanking() }
+    }
+
+    private func deleteFromRanking() async {
+        rankingDeleteFailed = !(await RankingService.shared.deleteMyRecords())
     }
 }
