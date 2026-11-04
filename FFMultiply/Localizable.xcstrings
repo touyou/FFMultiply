@@ -105,6 +105,142 @@
           }
         }
       }
+    },
+    "Check your connection and try again." : {
+      "comment" : "ランキングからの削除に失敗したときのアラートの本文。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check your connection and try again."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通信できる状態か確かめて、もう一度お試しください。"
+          }
+        }
+      }
+    },
+    "Couldn't delete from ranking" : {
+      "comment" : "ランキングからの削除に失敗したときのアラートのタイトル。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couldn't delete from ranking"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ランキングから削除できませんでした"
+          }
+        }
+      }
+    },
+    "DELETE FROM RANKING" : {
+      "comment" : "設定画面のボタン。オンラインランキングから自分の記録を消す。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DELETE FROM RANKING"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ランキングから削除"
+          }
+        }
+      }
+    },
+    "Delete" : {
+      "comment" : "確認アラートの削除ボタン。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除"
+          }
+        }
+      }
+    },
+    "Delete from ranking" : {
+      "comment" : "ランキングから削除する前の確認アラートのタイトル。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete from ranking"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ランキングから削除"
+          }
+        }
+      }
+    },
+    "Do you really want to delete all your data? Your scores will also be removed from the online ranking." : {
+      "comment" : "ローカルスコアの全削除の確認アラートの本文。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you really want to delete all your data? Your scores will also be removed from the online ranking."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべてのデータを削除しますか？オンラインランキングの記録も削除します。"
+          }
+        }
+      }
+    },
+    "Your name and scores will be removed from the online ranking, and your user name will be cleared. Nothing is sent to the ranking until you set a user name again." : {
+      "comment" : "ランキングから削除する前の確認アラートの本文。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your name and scores will be removed from the online ranking, and your user name will be cleared. Nothing is sent to the ranking until you set a user name again."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オンラインランキングから名前と点数を削除し、ユーザー名も消します。もう一度ユーザー名を設定するまで、ランキングには何も送りません。"
+          }
+        }
+      }
+    },
+    "Retry" : {
+      "comment" : "ランキングからの削除に失敗したときの再試行ボタン。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retry"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "もう一度"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

@@ -16,8 +16,7 @@ struct LocalScoreView: View {
                   SortDescriptor(\ScoreEntry.date, order: .reverse)]) private var scores: [ScoreEntry]
 
     @State private var showDeleteConfirm = false
-
-    private let storage = UserDefaults.standard
+    @State private var rankingDeleteFailed = false
 
     /// ランキング表示の 1 行。
     private struct RankedScore: Identifiable {
@@ -86,15 +85,23 @@ struct LocalScoreView: View {
                 Button("OK", role: .destructive, action: deleteAll)
                 Button("Cancel", role: .cancel) {}
             } message: {
-                Text("Do you really want to delete all your data?")
+                Text("Do you really want to delete all your data? Your scores will also be removed from the online ranking.")
+            }
+            .alert("Couldn't delete from ranking", isPresented: $rankingDeleteFailed) {
+                Button("Retry") { Task { await deleteFromRanking() } }
+                Button("Cancel", role: .cancel) {}
+            } message: {
+                Text("Check your connection and try again.")
             }
         }
     }
 
     private func deleteAll() {
-        if let name = storage.object(forKey: "playername") as? String, !name.isEmpty {
-            RankingService.shared.reset(name: name)
-        }
         ScoreStore(context: modelContext).deleteAll()
+        Task { await deleteFromRanking() }
+    }
+
+    private func deleteFromRanking() async {
+        rankingDeleteFailed = !(await RankingService.shared.deleteMyRecords())
     }
 }
