@@ -17,6 +17,12 @@
         }
       }
     },
+    "scores_legacy": {
+      ".read": "auth != null",
+      "$key": {
+        ".write": "auth != null && !newData.exists()"
+      }
+    },
     "scores_v2": {
       ".read": "auth != null",
       "$uid": {

@@ -17,8 +17,6 @@ struct LocalScoreView: View {
 
     @State private var showDeleteConfirm = false
 
-    private let storage = UserDefaults.standard
-
     /// ランキング表示の 1 行。
     private struct RankedScore: Identifiable {
         let id: PersistentIdentifier
@@ -86,15 +84,13 @@ struct LocalScoreView: View {
                 Button("OK", role: .destructive, action: deleteAll)
                 Button("Cancel", role: .cancel) {}
             } message: {
-                Text("Do you really want to delete all your data?")
+                Text("Do you really want to delete all your data? Your scores will also be removed from the online ranking.")
             }
         }
     }
 
     private func deleteAll() {
-        if let name = storage.object(forKey: "playername") as? String, !name.isEmpty {
-            RankingService.shared.reset(name: name)
-        }
+        Task { await RankingService.shared.deleteMyRecords() }
         ScoreStore(context: modelContext).deleteAll()
     }
 }
