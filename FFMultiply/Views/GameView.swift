@@ -24,7 +24,7 @@ struct GameView: View {
     private let storage = UserDefaults.standard
 
     var body: some View {
-        gameLayout
+        GameLayout(vm: vm)
         .background(FFColor.blackBackground.ignoresSafeArea())
         .statusBarHidden()
         .toast($vm.toast)
@@ -75,188 +75,6 @@ struct GameView: View {
         }
     }
 
-    // MARK: - レイアウト
-
-    /// 表示部（上）とキーパッド（下）の配置。
-    /// iOS 27.1 以降は `ArrangementView` に任せ、iPhone Duo の半開きなどハードウェアの状態に
-    /// 合わせて表示部と操作部（キーパッド）をシステムが分割配置できるようにする。
-    @ViewBuilder
-    private var gameLayout: some View {
-        if #available(iOS 27.1, *) {
-            ArrangementView {
-                displaySection
-            } secondary: {
-                keypadSection
-            }
-            // 分割方向はシステムに任せる。上下に限定すると、iPhone Duo の内側画面を
-            // 横長にしたとき上下に収まらずキーパッドが非表示になるため。
-            .arrangementViewStyle(.split)
-        } else {
-            VStack(spacing: 0) {
-                displaySection
-                keypadSection
-            }
-        }
-    }
-
-    // MARK: - 表示部
-
-    private var displaySection: some View {
-        VStack(spacing: 16) {
-            // 上バー: 閉じる（左・安全領域内）/ タイマー（横幅いっぱいを基準に中央）。
-            // 右上はシステムの予約領域になり得るため閉じるボタンは左に置き、
-            // タイマーは下のキーパッド等と中心線を揃える。
-            ZStack {
-                Text(vm.timeText)
-                    .font(.dseg7(size: 17))
-                    .foregroundStyle(FFColor.green)
-                    .frame(maxWidth: .infinity)
-                    .ignoresSafeArea(edges: .horizontal)
-                HStack {
-                    closeButton
-                        .ffGlassCircleButtonStyle()
-                        .accessibilityLabel("Close")
-                    Spacer()
-                }
-                .padding(.horizontal)
-            }
-            .padding(.top, 8)
-
-            Spacer()
-
-            // 問題: 左オペランド × 右オペランド
-            HStack(spacing: 12) {
-                operandLabel(vm.leftText)
-                Text("×")
-                    .font(.system(size: 41))
-                    .foregroundStyle(FFColor.white)
-                operandLabel(vm.rightText)
-            }
-            // キーパッドと中心線を揃えるため、問題・入力表示も横幅いっぱいを基準に中央寄せする。
-            .frame(maxWidth: .infinity)
-            .ignoresSafeArea(edges: .horizontal)
-
-            // 入力表示
-            Text(vm.displayInput)
-                .accessibilityIdentifier("answerInput")
-                .font(.dseg7(size: 40))
-                .foregroundStyle(FFColor.white)
-                .frame(maxWidth: .infinity)
-                .ignoresSafeArea(edges: .horizontal)
-
-            Spacer()
-
-            // 操作バー: DELETE(破壊的=赤) / score / DONE(確定=緑) を役割で明確に差別化
-            HStack {
-                Button {
-                    vm.delete()
-                } label: {
-                    actionLabel("DELETE", systemImage: "delete.left.fill", background: FFColor.red)
-                }
-                Spacer(minLength: 8)
-                Text(vm.scoreText)
-                    .font(.dseg7(size: 20))
-                    .foregroundStyle(FFColor.white)
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 8)
-                    .background(FFColor.lightGrayBackground)
-                    .clipShape(.rect(cornerRadius: 8))
-                Spacer(minLength: 8)
-                Button {
-                    vm.done()
-                } label: {
-                    actionLabel("DONE", systemImage: "checkmark", background: FFColor.green)
-                }
-            }
-            .padding(.horizontal)
-            // 操作バーもキーパッドと同じ横幅に揃える（右上のタイマー・閉じるボタンは安全領域内に残す）。
-            .ignoresSafeArea(edges: .horizontal)
-            .padding(.bottom, 12)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
-
-    /// 閉じるボタン。自作の bar なので縦のバーには載らないが、役割は `.close`（iOS 26+）で伝える。
-    @ViewBuilder
-    private var closeButton: some View {
-        if #available(iOS 26, *) {
-            Button(role: .close) {
-                dismiss()
-            } label: {
-                closeLabel
-            }
-        } else {
-            Button {
-                dismiss()
-            } label: {
-                closeLabel
-            }
-        }
-    }
-
-    // ツールバーのボタンと同様の円形ガラスにして押せる場所を明確にする。
-    // iPhone Duo では上端の安全領域が 0 になり画面最上部に来るため、
-    // ガラス込みで 44pt 程度のタップ領域を確保する。
-    private var closeLabel: some View {
-        Image(systemName: "xmark")
-            .font(.system(size: 17, weight: .semibold))
-            .foregroundStyle(FFColor.white)
-            .frame(width: 30, height: 30)
-    }
-
-    /// 役割の異なるアクション（DELETE/DONE）用の塗りカプセルラベル。
-    private func actionLabel(_ title: String, systemImage: String, background: Color) -> some View {
-        Label(title, systemImage: systemImage)
-            .font(.futuraBold(size: 16))
-            .foregroundStyle(.white)
-            .padding(.horizontal, 18)
-            .padding(.vertical, 12)
-            .background(background, in: .capsule)
-    }
-
-    private func operandLabel(_ text: String) -> some View {
-        Text(text)
-            .font(.dseg7(size: 48))
-            .foregroundStyle(FFColor.blackReversible)
-            .frame(minWidth: 64, minHeight: 72)
-            .padding(8)
-            .background(FFColor.whiteBackground)
-            .clipShape(.rect(cornerRadius: 8))
-    }
-
-    // MARK: - キーパッド
-
-    private var keypadSection: some View {
-        VStack(spacing: 0) {
-            ForEach(0..<4, id: \.self) { row in
-                HStack(spacing: 0) {
-                    ForEach(0..<4, id: \.self) { col in
-                        let value = row * 4 + col
-                        keypadButton(value)
-                    }
-                }
-            }
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(FFColor.blackBackground)
-        // 電卓と同様にキーパッドは横幅いっぱいに広げる。iPhone Duo などで
-        // 左右に縦型バーの安全領域があっても、キーをそこまで均等に配置する。
-        .ignoresSafeArea(edges: .horizontal)
-    }
-
-    private func keypadButton(_ value: Int) -> some View {
-        let fnum = FNum(rawValue: value) ?? .zero
-        return Button {
-            vm.tapNumber(fnum)
-        } label: {
-            Text(fnum.symbol)
-                .font(.dseg7(size: 36))
-                .foregroundStyle(FFColor.gray)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .contentShape(.rect)
-        }
-    }
-
     // MARK: - 終了処理
 
     private func finishGame() {
@@ -282,5 +100,211 @@ struct GameView: View {
 
         AdManager.shared.presentInterstitial()
         showResult = true
+    }
+}
+
+/// 表示部（上）とキーパッド（下）の配置。
+/// iOS 27.1 以降は `ArrangementView` に任せ、iPhone Duo の半開きなどハードウェアの状態に
+/// 合わせて表示部と操作部（キーパッド）をシステムが分割配置できるようにする。
+private struct GameLayout: View {
+    let vm: GameViewModel
+
+    var body: some View {
+        if #available(iOS 27.1, *) {
+            ArrangementView {
+                GameDisplay(vm: vm)
+            } secondary: {
+                GameKeypad(vm: vm)
+            }
+            // 分割方向はシステムに任せる。上下に限定すると、iPhone Duo の内側画面を
+            // 横長にしたとき上下に収まらずキーパッドが非表示になるため。
+            .arrangementViewStyle(.split)
+        } else {
+            VStack(spacing: 0) {
+                GameDisplay(vm: vm)
+                GameKeypad(vm: vm)
+            }
+        }
+    }
+}
+
+// 盤面は 7 セグの固定サイズで組んでいるので、記号や数字も Dynamic Type で伸ばさない。
+private struct GameDisplay: View {
+    let vm: GameViewModel
+
+    var body: some View {
+        VStack(spacing: 16) {
+            // 上バー: 閉じる（左・安全領域内）/ タイマー（横幅いっぱいを基準に中央）。
+            // 右上はシステムの予約領域になり得るため閉じるボタンは左に置き、
+            // タイマーは下のキーパッド等と中心線を揃える。
+            ZStack {
+                Text(vm.timeText)
+                    .font(.dseg7(size: 17))
+                    .foregroundStyle(FFColor.green)
+                    .frame(maxWidth: .infinity)
+                    .ignoresSafeArea(edges: .horizontal)
+                HStack {
+                    GameCloseButton()
+                        .ffGlassCircleButtonStyle()
+                        .accessibilityLabel("Close")
+                    Spacer()
+                }
+                .padding(.horizontal)
+            }
+            .padding(.top, 8)
+
+            Spacer()
+
+            // 問題: 左オペランド × 右オペランド
+            HStack(spacing: 12) {
+                OperandLabel(text: vm.leftText)
+                Text("×")
+                    .font(.system(size: 41))
+                    .foregroundStyle(FFColor.white)
+                OperandLabel(text: vm.rightText)
+            }
+            // キーパッドと中心線を揃えるため、問題・入力表示も横幅いっぱいを基準に中央寄せする。
+            .frame(maxWidth: .infinity)
+            .ignoresSafeArea(edges: .horizontal)
+
+            // 入力表示
+            Text(vm.displayInput)
+                .accessibilityIdentifier("answerInput")
+                .font(.dseg7(size: 40))
+                .foregroundStyle(FFColor.white)
+                .frame(maxWidth: .infinity)
+                .ignoresSafeArea(edges: .horizontal)
+
+            Spacer()
+
+            // 操作バー: DELETE(破壊的=赤) / score / DONE(確定=緑) を役割で明確に差別化
+            HStack {
+                Button {
+                    vm.delete()
+                } label: {
+                    ActionLabel(title: "DELETE", systemImage: "delete.left.fill", background: FFColor.red)
+                }
+                Spacer(minLength: 8)
+                Text(vm.scoreText)
+                    .font(.dseg7(size: 20))
+                    .foregroundStyle(FFColor.white)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .background(FFColor.lightGrayBackground)
+                    .clipShape(.rect(cornerRadius: 8))
+                Spacer(minLength: 8)
+                Button {
+                    vm.done()
+                } label: {
+                    ActionLabel(title: "DONE", systemImage: "checkmark", background: FFColor.green)
+                }
+            }
+            .padding(.horizontal)
+            // 操作バーもキーパッドと同じ横幅に揃える（右上のタイマー・閉じるボタンは安全領域内に残す）。
+            .ignoresSafeArea(edges: .horizontal)
+            .padding(.bottom, 12)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+}
+
+/// 閉じるボタン。自作の bar なので縦のバーには載らないが、役割は `.close`（iOS 26+）で伝える。
+private struct GameCloseButton: View {
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        if #available(iOS 26, *) {
+            Button(role: .close) {
+                dismiss()
+            } label: {
+                GameCloseLabel()
+            }
+        } else {
+            Button {
+                dismiss()
+            } label: {
+                GameCloseLabel()
+            }
+        }
+    }
+}
+
+// ツールバーのボタンと同様の円形ガラスにして押せる場所を明確にする。
+// iPhone Duo では上端の安全領域が 0 になり画面最上部に来るため、
+// ガラス込みで 44pt 程度のタップ領域を確保する。
+private struct GameCloseLabel: View {
+    var body: some View {
+        Image(systemName: "xmark")
+            .font(.system(size: 17, weight: .semibold))
+            .foregroundStyle(FFColor.white)
+            .frame(width: 30, height: 30)
+    }
+}
+
+/// 役割の異なるアクション（DELETE/DONE）用の塗りカプセルラベル。
+private struct ActionLabel: View {
+    let title: LocalizedStringKey
+    let systemImage: String
+    let background: Color
+
+    var body: some View {
+        Label(title, systemImage: systemImage)
+            .font(.futuraBold(size: 16))
+            .foregroundStyle(.white)
+            .padding(.horizontal, 18)
+            .padding(.vertical, 12)
+            .background(background, in: .capsule)
+    }
+}
+
+private struct OperandLabel: View {
+    let text: String
+
+    var body: some View {
+        Text(text)
+            .font(.dseg7(size: 48))
+            .foregroundStyle(FFColor.blackReversible)
+            .frame(minWidth: 64, minHeight: 72)
+            .padding(8)
+            .background(FFColor.whiteBackground)
+            .clipShape(.rect(cornerRadius: 8))
+    }
+}
+
+private struct GameKeypad: View {
+    let vm: GameViewModel
+
+    var body: some View {
+        VStack(spacing: 0) {
+            ForEach(0..<4, id: \.self) { row in
+                HStack(spacing: 0) {
+                    ForEach(0..<4, id: \.self) { col in
+                        KeypadKey(number: FNum(rawValue: row * 4 + col) ?? .zero, vm: vm)
+                    }
+                }
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(FFColor.blackBackground)
+        // 電卓と同様にキーパッドは横幅いっぱいに広げる。iPhone Duo などで
+        // 左右に縦型バーの安全領域があっても、キーをそこまで均等に配置する。
+        .ignoresSafeArea(edges: .horizontal)
+    }
+}
+
+private struct KeypadKey: View {
+    let number: FNum
+    let vm: GameViewModel
+
+    var body: some View {
+        Button {
+            vm.tapNumber(number)
+        } label: {
+            Text(number.symbol)
+                .font(.dseg7(size: 36))
+                .foregroundStyle(FFColor.gray)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .contentShape(.rect)
+        }
     }
 }

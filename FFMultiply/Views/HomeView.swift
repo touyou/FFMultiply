@@ -39,11 +39,11 @@ struct HomeView: View {
                     }
                     .ffButtonStyle(prominent: true, tint: FFColor.green)
                     .accessibilityIdentifier("timeAttackButton")
-                    menuButton("local score", prominent: false) { showLocalScore = true }
+                    MenuButton(title: "local score") { showLocalScore = true }
                         .accessibilityIdentifier("localScoreButton")
-                    menuButton("online ranking", prominent: false) { showOnlineRanking = true }
+                    MenuButton(title: "online ranking") { showOnlineRanking = true }
                         .accessibilityIdentifier("onlineRankingButton")
-                    menuButton("settings", prominent: false) { showSettings = true }
+                    MenuButton(title: "settings") { showSettings = true }
                         .accessibilityIdentifier("settingsButton")
                 }
                 .controlSize(.large)
@@ -95,19 +95,22 @@ struct HomeView: View {
         .onAppear(perform: presentTutorialIfNeeded)
     }
 
-    private func menuButton(_ title: String,
-                            prominent: Bool,
-                            action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            Text(title).frame(maxWidth: .infinity)
-        }
-        .ffButtonStyle(prominent: prominent, tint: FFColor.green)
-    }
-
     private func presentTutorialIfNeeded() {
         // スクリーンショット撮影中はチュートリアルを出さない（表示済みの記録も残さない）。
         guard !ScreenshotFixture.isActive, storage.object(forKey: "tutorial") == nil else { return }
         showTutorial = true
         storage.set(true, forKey: "tutorial")
+    }
+}
+
+private struct MenuButton: View {
+    let title: LocalizedStringKey
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Text(title).frame(maxWidth: .infinity)
+        }
+        .ffButtonStyle(prominent: false, tint: FFColor.green)
     }
 }
