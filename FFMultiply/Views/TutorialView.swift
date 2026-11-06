@@ -11,6 +11,7 @@ struct TutorialView: View {
     let onExit: () -> Void
 
     @State private var selection = 0
+    @ScaledMetric(relativeTo: .title2) private var arrowSize: CGFloat = 24
     private let images = ["tutorial1", "tutorial2", "tutorial3", "tutorial4", "tutorial5", "tutorial6"]
 
     var body: some View {
@@ -38,7 +39,7 @@ struct TutorialView: View {
                 Button {
                     if selection > 0 { withAnimation { selection -= 1 } }
                 } label: {
-                    Text("👈").font(.system(size: 24))
+                    Text("👈").font(.system(size: arrowSize))
                 }
                 .disabled(selection == 0)
 
@@ -49,7 +50,7 @@ struct TutorialView: View {
                 Button {
                     if selection < images.count - 1 { withAnimation { selection += 1 } }
                 } label: {
-                    Text("👉").font(.system(size: 24))
+                    Text("👉").font(.system(size: arrowSize))
                 }
                 .disabled(selection == images.count - 1)
             }
