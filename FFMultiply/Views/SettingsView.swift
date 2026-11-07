@@ -83,7 +83,7 @@ struct SettingsView: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     FFConfirmButton("Save") {
-                        scoreService.playerName = RankingService.normalizedName(name)
+                        scoreService.setPlayerName(name)
                         dismiss()
                     }
                 }

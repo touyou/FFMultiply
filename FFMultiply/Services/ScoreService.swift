@@ -31,6 +31,11 @@ final class ScoreService {
         playerName = storage.string(forKey: Self.playerNameKey) ?? ""
     }
 
+    /// ランキングに登録できる長さに切り詰めて名前を変える。設定画面と SetUserNameIntent が通す。
+    func setPlayerName(_ name: String) {
+        playerName = RankingService.normalizedName(name)
+    }
+
     func highScore() -> ScoreEntry? {
         ScoreStore(context: container.mainContext).highScore()
     }
