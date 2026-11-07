@@ -278,14 +278,14 @@
         }
       }
     },
-    "Show %@" : {
+    "Show ${board}" : {
       "comment" : "App Intents（Siri / ショートカット）",
       "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@を開く"
+            "value" : "${board}を開く"
           }
         }
       }
@@ -566,14 +566,14 @@
         }
       }
     },
-    "Set user name to %@" : {
+    "Set user name to ${name}" : {
       "comment" : "App Intents（Siri / ショートカット）",
       "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ユーザー名を%@にする"
+            "value" : "ユーザー名を${name}にする"
           }
         }
       }
