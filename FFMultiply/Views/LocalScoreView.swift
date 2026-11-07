@@ -88,7 +88,7 @@ struct LocalScoreView: View {
                 Text("Do you really want to delete all your data? Your scores will also be removed from the online ranking.")
             }
             .alert("Couldn't delete from ranking", isPresented: Bindable(scoreService).rankingDeleteFailed) {
-                Button("Retry") { Task { await scoreService.deleteFromRanking() } }
+                Button("Retry") { Task { await scoreService.deleteFromRanking(alertOnFailure: true) } }
                 Button("Cancel", role: .cancel) {}
             } message: {
                 Text("Check your connection and try again.")

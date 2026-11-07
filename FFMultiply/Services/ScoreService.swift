@@ -13,7 +13,8 @@ import SwiftData
 @MainActor
 final class ScoreService {
     private let container: ModelContainer
-    /// ランキングからの削除が通信で失敗したか。スコア画面と設定画面がアラートを出す。
+    /// 画面から頼んだランキング削除が通信で失敗したか。スコア画面と設定画面がアラートを出す。
+    /// Siri から頼んだ失敗はその場のダイアログで伝えるので立てない（立てると後で開いた画面に古いアラートが出る）。
     var rankingDeleteFailed = false
     /// ランキングに出す名前。Intent が消したときに設定画面の入力欄も追従できるよう、ここで持つ。
     var playerName: String {
@@ -37,15 +38,15 @@ final class ScoreService {
 
     /// 端末のスコアをすべて消し、オンラインランキングの自分の記録も消す。ランキングまで消せたら true。
     @discardableResult
-    func deleteAll() async -> Bool {
+    func deleteAll(alertOnFailure: Bool = false) async -> Bool {
         ScoreStore(context: container.mainContext).deleteAll()
-        return await deleteFromRanking()
+        return await deleteFromRanking(alertOnFailure: alertOnFailure)
     }
 
     @discardableResult
-    func deleteFromRanking() async -> Bool {
+    func deleteFromRanking(alertOnFailure: Bool = false) async -> Bool {
         let succeeded = await RankingService.shared.deleteMyRecords()
-        rankingDeleteFailed = !succeeded
+        if alertOnFailure { rankingDeleteFailed = !succeeded }
         return succeeded
     }
 
@@ -61,8 +62,8 @@ final class ScoreService {
 
     /// ランキングから自分の記録を消し、名前も消す（名前が残ると次のプレイで自動登録され直す）。
     @discardableResult
-    func leaveRanking() async -> Bool {
-        guard await deleteFromRanking() else { return false }
+    func leaveRanking(alertOnFailure: Bool = false) async -> Bool {
+        guard await deleteFromRanking(alertOnFailure: alertOnFailure) else { return false }
         playerName = ""
         return true
     }
