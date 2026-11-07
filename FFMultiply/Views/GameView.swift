@@ -12,6 +12,7 @@ import SwiftData
 struct GameView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
+    @Environment(ScoreService.self) private var scoreService
 
     @State private var vm = GameViewModel()
     @State private var didStart = false
@@ -20,8 +21,6 @@ struct GameView: View {
     @State private var isHighScore = false
     @State private var showNamePrompt = false
     @State private var nameInput = ""
-
-    private let storage = UserDefaults.standard
 
     var body: some View {
         GameLayout(vm: vm)
@@ -66,7 +65,7 @@ struct GameView: View {
             Button("OK") {
                 let name = RankingService.normalizedName(nameInput)
                 guard !name.isEmpty else { return }
-                storage.set(name, forKey: "playername")
+                scoreService.playerName = name
                 RankingService.shared.register(name: name, score: vm.score)
             }
             Button("Cancel", role: .cancel) {}
@@ -90,8 +89,8 @@ struct GameView: View {
 
         // スクリーンショット撮影中はランキングに登録しない（名前の入力も求めない）。
         if isHighScore && !ScreenshotFixture.isActive {
-            if let name = storage.object(forKey: "playername") as? String, !name.isEmpty {
-                RankingService.shared.register(name: name, score: vm.score)
+            if !scoreService.playerName.isEmpty {
+                RankingService.shared.register(name: scoreService.playerName, score: vm.score)
             } else {
                 nameInput = ""
                 showNamePrompt = true

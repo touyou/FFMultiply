@@ -241,6 +241,294 @@
           }
         }
       }
+    },
+    "Score Board" : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スコアの一覧"
+          }
+        }
+      }
+    },
+    "Show Scores" : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スコアを見る"
+          }
+        }
+      }
+    },
+    "Opens your local scores or the online ranking." : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この端末のスコアか、オンラインランキングを開きます。"
+          }
+        }
+      }
+    },
+    "Show %@" : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@を開く"
+          }
+        }
+      }
+    },
+    "Delete All Scores" : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スコアをすべて消す"
+          }
+        }
+      }
+    },
+    "Deletes all your scores on this device and your records in the online ranking." : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この端末のスコアと、オンラインランキングのあなたの記録をすべて消します。"
+          }
+        }
+      }
+    },
+    "Delete all your scores? They will also be removed from the online ranking." : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スコアをすべて消しますか？オンラインランキングからも消えます。"
+          }
+        }
+      }
+    },
+    "Deleted all your scores." : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スコアをすべて消しました。"
+          }
+        }
+      }
+    },
+    "Deleted your scores on this device, but couldn't reach the online ranking." : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この端末のスコアは消しましたが、オンラインランキングにつながりませんでした。"
+          }
+        }
+      }
+    },
+    "Delete All Scores Without Asking" : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確認せずにスコアをすべて消す"
+          }
+        }
+      }
+    },
+    "Scores on This Device" : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この端末のスコア"
+          }
+        }
+      }
+    },
+    "The Online Ranking" : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オンラインランキング"
+          }
+        }
+      }
+    },
+    "Scores" : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スコア"
+          }
+        }
+      }
+    },
+    "Register High Score" : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ハイスコアを登録する"
+          }
+        }
+      }
+    },
+    "Registers your best score on this device to the online ranking with your user name." : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この端末のハイスコアを、設定した名前でオンラインランキングに登録します。"
+          }
+        }
+      }
+    },
+    "Registered your high score to the online ranking." : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ハイスコアをオンラインランキングに登録しました。"
+          }
+        }
+      }
+    },
+    "Delete from Online Ranking" : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オンラインランキングから削除"
+          }
+        }
+      }
+    },
+    "Removes your name and scores from the online ranking and clears your user name." : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オンラインランキングからあなたの名前とスコアを消し、ユーザー名も消します。"
+          }
+        }
+      }
+    },
+    "Remove your name and scores from the online ranking?" : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オンラインランキングからあなたの名前とスコアを消しますか？"
+          }
+        }
+      }
+    },
+    "Removed you from the online ranking." : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オンラインランキングから削除しました。"
+          }
+        }
+      }
+    },
+    "Delete from Online Ranking Without Asking" : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確認せずにオンラインランキングから削除"
+          }
+        }
+      }
+    },
+    "Set a user name in Settings first." : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "先に設定でユーザー名を決めてください。"
+          }
+        }
+      }
+    },
+    "Couldn't reach the online ranking. Check your connection and try again." : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オンラインランキングにつながりませんでした。通信を確認してもう一度お試しください。"
+          }
+        }
+      }
+    },
+    "Register Score" : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スコアを登録"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

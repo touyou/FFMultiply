@@ -11,9 +11,6 @@ import AppIntents
 
 struct HomeView: View {
     @Environment(AppNavigator.self) private var navigator
-    @State private var showLocalScore = false
-    @State private var showOnlineRanking = false
-    @State private var showSettings = false
     @State private var showTutorial = false
 
     private let storage = UserDefaults.standard
@@ -39,11 +36,18 @@ struct HomeView: View {
                     }
                     .ffButtonStyle(prominent: true, tint: FFColor.green)
                     .accessibilityIdentifier("timeAttackButton")
-                    MenuButton(title: "local score") { showLocalScore = true }
-                        .accessibilityIdentifier("localScoreButton")
-                    MenuButton(title: "online ranking") { showOnlineRanking = true }
-                        .accessibilityIdentifier("onlineRankingButton")
-                    MenuButton(title: "settings") { showSettings = true }
+                    // スコアの 2 つは Siri から開くときと同じ Intent を通す。
+                    Button(intent: ShowScoresIntent(board: .local)) {
+                        MenuLabel(title: "local score")
+                    }
+                    .ffButtonStyle(prominent: false, tint: FFColor.green)
+                    .accessibilityIdentifier("localScoreButton")
+                    Button(intent: ShowScoresIntent(board: .online)) {
+                        MenuLabel(title: "online ranking")
+                    }
+                    .ffButtonStyle(prominent: false, tint: FFColor.green)
+                    .accessibilityIdentifier("onlineRankingButton")
+                    MenuButton(title: "settings") { navigator.sheet = .settings }
                         .accessibilityIdentifier("settingsButton")
                 }
                 .controlSize(.large)
@@ -60,14 +64,12 @@ struct HomeView: View {
             GameView()
                 .id(navigator.timeAttackID)
         }
-        .sheet(isPresented: $showLocalScore) {
-            LocalScoreView()
-        }
-        .sheet(isPresented: $showOnlineRanking) {
-            OnlineRankingView()
-        }
-        .sheet(isPresented: $showSettings) {
-            SettingsView()
+        .sheet(item: Bindable(navigator).sheet) { sheet in
+            switch sheet {
+            case .localScore: LocalScoreView()
+            case .onlineRanking: OnlineRankingView()
+            case .settings: SettingsView()
+            }
         }
         .overlay {
             if showTutorial {
@@ -82,10 +84,8 @@ struct HomeView: View {
         .onChange(of: navigator.isPlayingTimeAttack) { _, isPlaying in
             // シートの上には全画面カバーを出せない。Siri から始めたときに開いていたシートは閉じて、
             // 閉じ終わってから出し直す（フラグが true のまま残るとボタンが効かなくなる）。
-            guard isPlaying, showLocalScore || showOnlineRanking || showSettings else { return }
-            showLocalScore = false
-            showOnlineRanking = false
-            showSettings = false
+            guard isPlaying, navigator.sheet != nil else { return }
+            navigator.sheet = nil
             navigator.isPlayingTimeAttack = false
             Task {
                 try? await Task.sleep(for: .milliseconds(600))
@@ -109,8 +109,16 @@ private struct MenuButton: View {
 
     var body: some View {
         Button(action: action) {
-            Text(title).frame(maxWidth: .infinity)
+            MenuLabel(title: title)
         }
         .ffButtonStyle(prominent: false, tint: FFColor.green)
+    }
+}
+
+private struct MenuLabel: View {
+    let title: LocalizedStringKey
+
+    var body: some View {
+        Text(title).frame(maxWidth: .infinity)
     }
 }
