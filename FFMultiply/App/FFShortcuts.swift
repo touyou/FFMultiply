@@ -30,5 +30,22 @@ struct FFShortcuts: AppShortcutsProvider {
             shortTitle: "High Score",
             systemImageName: "crown.fill"
         )
+        AppShortcut(
+            intent: ShowScoresIntent(),
+            phrases: [
+                "Show my scores in \(.applicationName)",
+                "Show \(\.$board) in \(.applicationName)"
+            ],
+            shortTitle: "Scores",
+            systemImageName: "list.number"
+        )
+        AppShortcut(
+            intent: RegisterHighScoreIntent(),
+            phrases: [
+                "Register my high score in \(.applicationName)"
+            ],
+            shortTitle: "Register Score",
+            systemImageName: "trophy.fill"
+        )
     }
 }

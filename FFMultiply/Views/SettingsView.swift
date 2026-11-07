@@ -6,16 +6,15 @@
 //
 
 import SwiftUI
+import AppIntents
 
 struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(ScoreService.self) private var scoreService
 
     @State private var name = ""
     @State private var showTutorial = false
     @State private var showRankingDeleteConfirm = false
-    @State private var rankingDeleteFailed = false
-
-    private let storage = UserDefaults.standard
 
     var body: some View {
         NavigationStack {
@@ -84,22 +83,22 @@ struct SettingsView: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     FFConfirmButton("Save") {
-                        storage.set(RankingService.normalizedName(name), forKey: "playername")
+                        scoreService.playerName = RankingService.normalizedName(name)
                         dismiss()
                     }
                 }
             }
         }
-        .onAppear {
-            name = storage.object(forKey: "playername") as? String ?? ""
-        }
+        .onAppear { name = scoreService.playerName }
+        // ランキングから抜けると名前も消える（Siri から抜けたときも入力欄を合わせる）。
+        .onChange(of: scoreService.playerName) { _, newName in name = newName }
         .alert("Delete from ranking", isPresented: $showRankingDeleteConfirm) {
-            Button("Delete", role: .destructive, action: deleteFromRanking)
+            Button("Delete", role: .destructive, intent: LeaveRankingNowIntent())
             Button("Cancel", role: .cancel) {}
         } message: {
             Text("Your name and scores will be removed from the online ranking, and your user name will be cleared. Nothing is sent to the ranking until you set a user name again.")
         }
-        .alert("Couldn't delete from ranking", isPresented: $rankingDeleteFailed) {
+        .alert("Couldn't delete from ranking", isPresented: Bindable(scoreService).rankingDeleteFailed) {
             Button("OK", role: .cancel) {}
         } message: {
             Text("Check your connection and try again.")
@@ -114,17 +113,5 @@ struct SettingsView: View {
             }
         }
         .animation(.easeInOut, value: showTutorial)
-    }
-
-    /// ランキングの名前が自動で登録し直されないよう、記録を消したらユーザー名も消す。
-    private func deleteFromRanking() {
-        Task {
-            if await RankingService.shared.deleteMyRecords() {
-                storage.removeObject(forKey: "playername")
-                name = ""
-            } else {
-                rankingDeleteFailed = true
-            }
-        }
     }
 }

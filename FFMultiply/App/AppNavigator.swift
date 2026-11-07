@@ -17,6 +17,23 @@ final class AppNavigator {
     /// GameView の identity。変えると表示中のゲーム（結果画面を含む）が作り直される。
     private(set) var timeAttackID = UUID()
 
+    /// ホームから開くシート。Intent からも開けるよう、画面の @State ではなくここに置く。
+    enum Sheet: String, Identifiable {
+        case localScore, onlineRanking, settings
+        var id: String { rawValue }
+    }
+
+    var sheet: Sheet?
+
+    /// シートを開く。全画面のゲームの上にはシートを出せないので、遊んでいる最中なら閉じてから開く。
+    func show(_ sheet: Sheet) async {
+        if isPlayingTimeAttack {
+            isPlayingTimeAttack = false
+            try? await Task.sleep(for: .milliseconds(600))
+        }
+        self.sheet = sheet
+    }
+
     /// 結果画面を開いたまま始めても、新しいゲームになるようにする。
     func startTimeAttack() {
         if isPlayingTimeAttack {

@@ -74,7 +74,8 @@ final class RankingService {
     }
 
     /// スコアを登録し、書き込みが終わるまで待つ（登録直後にランキングを読み直すとき用）。
-    func registerAndWait(name: String, score: Int) async {
+    @discardableResult
+    func registerAndWait(name: String, score: Int) async -> Bool {
         await write(name: name, score: score)
     }
 

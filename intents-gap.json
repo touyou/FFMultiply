@@ -1,0 +1,33 @@
+{
+  "actions": {
+    "AdManager.startIfAllowed": "広告 SDK の起動。同意の結果に従うだけの内部処理",
+    "GameViewModel.delete": "ゲーム中の入力 1 文字削除。60 秒のタイムアタックの手元操作で、Siri から呼ぶ意味がない",
+    "GameViewModel.start": "StartTimeAttackIntent が画面を開いた後のゲーム開始処理",
+    "GameViewModel.startForScreenshot": "DEBUG のスクリーンショット用",
+    "RankingService.deleteMyRecords": "ScoreService 経由で DeleteAllScores / LeaveRanking の Intent が呼ぶ",
+    "ScoreService.deleteFromRanking": "LocalScoreView の失敗時の再試行。DeleteAllScoresIntent の後半を繰り返すだけ",
+    "ScoreStore.add": "ゲーム終了時の記録。遊んだ結果としてだけ増える"
+  },
+  "ui": {
+    "ui-button FFMultiply/DesignSystem/ToolbarStyles.swift: Button(\"Close\", systemImage: \"xmark\", action: action)": "閉じる・確定の共通ボタン部品",
+    "ui-button FFMultiply/DesignSystem/ToolbarStyles.swift: Button(\"Close\", systemImage: \"xmark\", role: .close, action: action)": "閉じる・確定の共通ボタン部品",
+    "ui-button FFMultiply/DesignSystem/ToolbarStyles.swift: Button(title, action: action)": "閉じる・確定の共通ボタン部品",
+    "ui-button FFMultiply/DesignSystem/ToolbarStyles.swift: Button(title, role: .confirm, action: action)": "閉じる・確定の共通ボタン部品",
+    "ui-button FFMultiply/Views/GameView.swift: Button {": "ゲームの DELETE（1 文字削除）。60 秒のゲーム中の手元操作",
+    "ui-button FFMultiply/Views/GameView.swift: Button { (2)": "ゲームの DONE（解答）。ゲーム中の手元操作",
+    "ui-button FFMultiply/Views/GameView.swift: Button { (3)": "テンキーの数字入力",
+    "ui-button FFMultiply/Views/GameView.swift: Button(\"Cancel\", role: .cancel) {}": "名前入力アラートのキャンセル",
+    "ui-button FFMultiply/Views/GameView.swift: Button(\"OK\") {": "ハイスコア時の名前入力。名前を決めて登録する画面内の手続き（Siri からは RegisterHighScoreIntent）",
+    "ui-button FFMultiply/Views/HomeView.swift: Button(action: action) {": "MenuButton 部品（設定を開く）。設定画面の表示だけ",
+    "ui-button FFMultiply/Views/LocalScoreView.swift: Button(\"Cancel\", role: .cancel) {}": "アラートのキャンセル",
+    "ui-button FFMultiply/Views/LocalScoreView.swift: Button(\"Delete All\", systemImage: \"trash\", role: .destructive) {": "確認アラートを開くだけ。OK は DeleteAllScoresNowIntent",
+    "ui-button FFMultiply/Views/LocalScoreView.swift: Button(\"Retry\") { Task { await scoreService.deleteFromRanking() } }": "ランキング削除の再試行",
+    "ui-button FFMultiply/Views/OnlineRankingView.swift: Button(\"Cancel\", role: .cancel) {}": "アラートのキャンセル",
+    "ui-button FFMultiply/Views/OnlineRankingView.swift: Button(\"OK\") {": "名前の入力。名前が無いときだけ出る画面内の手続き",
+    "ui-button FFMultiply/Views/OnlineRankingView.swift: Button(action: askName) { RegisterScoreLabel() }": "名前が無いときに入力を促すだけ。名前があれば RegisterHighScoreIntent",
+    "ui-button FFMultiply/Views/ResultView.swift: Button(action: onExit) {": "結果画面を閉じる",
+    "ui-button FFMultiply/Views/SettingsView.swift: Button {": "HELP（チュートリアル表示）とプライバシー設定フォーム（UMP の画面を出すだけ）",
+    "ui-button FFMultiply/Views/SettingsView.swift: Button(\"OK\", role: .cancel) {}": "失敗アラートを閉じる",
+    "ui-button FFMultiply/Views/SettingsView.swift: Button(role: .destructive) {": "確認アラートを開くだけ。削除は LeaveRankingNowIntent"
+  }
+}
