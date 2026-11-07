@@ -12,6 +12,7 @@ import SwiftData
 struct GameView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
+    @Environment(ScoreService.self) private var scoreService
 
     @State private var vm = GameViewModel()
     @State private var didStart = false
@@ -21,10 +22,8 @@ struct GameView: View {
     @State private var showNamePrompt = false
     @State private var nameInput = ""
 
-    private let storage = UserDefaults.standard
-
     var body: some View {
-        gameLayout
+        GameLayout(vm: vm)
         .background(FFColor.blackBackground.ignoresSafeArea())
         .statusBarHidden()
         .toast($vm.toast)
@@ -66,7 +65,7 @@ struct GameView: View {
             Button("OK") {
                 let name = RankingService.normalizedName(nameInput)
                 guard !name.isEmpty else { return }
-                storage.set(name, forKey: "playername")
+                scoreService.playerName = name
                 RankingService.shared.register(name: name, score: vm.score)
             }
             Button("Cancel", role: .cancel) {}
@@ -75,33 +74,64 @@ struct GameView: View {
         }
     }
 
-    // MARK: - レイアウト
+    // MARK: - 終了処理
 
-    /// 表示部（上）とキーパッド（下）の配置。
-    /// iOS 27.1 以降は `ArrangementView` に任せ、iPhone Duo の半開きなどハードウェアの状態に
-    /// 合わせて表示部と操作部（キーパッド）をシステムが分割配置できるようにする。
-    @ViewBuilder
-    private var gameLayout: some View {
+    private func finishGame() {
+        guard !didFinish else { return }
+        didFinish = true
+
+        let store = ScoreStore(context: modelContext)
+        store.add(score: vm.score)
+
+        // ハイスコア判定（保存後の最高スコアが今回スコア以下なら更新）。
+        let best = store.highScore()?.score ?? vm.score
+        isHighScore = best <= vm.score
+
+        // スクリーンショット撮影中はランキングに登録しない（名前の入力も求めない）。
+        if isHighScore && !ScreenshotFixture.isActive {
+            if !scoreService.playerName.isEmpty {
+                RankingService.shared.register(name: scoreService.playerName, score: vm.score)
+            } else {
+                nameInput = ""
+                showNamePrompt = true
+            }
+        }
+
+        AdManager.shared.presentInterstitial()
+        showResult = true
+    }
+}
+
+/// 表示部（上）とキーパッド（下）の配置。
+/// iOS 27.1 以降は `ArrangementView` に任せ、iPhone Duo の半開きなどハードウェアの状態に
+/// 合わせて表示部と操作部（キーパッド）をシステムが分割配置できるようにする。
+private struct GameLayout: View {
+    let vm: GameViewModel
+
+    var body: some View {
         if #available(iOS 27.1, *) {
             ArrangementView {
-                displaySection
+                GameDisplay(vm: vm)
             } secondary: {
-                keypadSection
+                GameKeypad(vm: vm)
             }
             // 分割方向はシステムに任せる。上下に限定すると、iPhone Duo の内側画面を
             // 横長にしたとき上下に収まらずキーパッドが非表示になるため。
             .arrangementViewStyle(.split)
         } else {
             VStack(spacing: 0) {
-                displaySection
-                keypadSection
+                GameDisplay(vm: vm)
+                GameKeypad(vm: vm)
             }
         }
     }
+}
 
-    // MARK: - 表示部
+// 盤面は 7 セグの固定サイズで組んでいるので、記号や数字も Dynamic Type で伸ばさない。
+private struct GameDisplay: View {
+    let vm: GameViewModel
 
-    private var displaySection: some View {
+    var body: some View {
         VStack(spacing: 16) {
             // 上バー: 閉じる（左・安全領域内）/ タイマー（横幅いっぱいを基準に中央）。
             // 右上はシステムの予約領域になり得るため閉じるボタンは左に置き、
@@ -113,7 +143,7 @@ struct GameView: View {
                     .frame(maxWidth: .infinity)
                     .ignoresSafeArea(edges: .horizontal)
                 HStack {
-                    closeButton
+                    GameCloseButton()
                         .ffGlassCircleButtonStyle()
                         .accessibilityLabel("Close")
                     Spacer()
@@ -126,11 +156,11 @@ struct GameView: View {
 
             // 問題: 左オペランド × 右オペランド
             HStack(spacing: 12) {
-                operandLabel(vm.leftText)
+                OperandLabel(text: vm.leftText)
                 Text("×")
                     .font(.system(size: 41))
                     .foregroundStyle(FFColor.white)
-                operandLabel(vm.rightText)
+                OperandLabel(text: vm.rightText)
             }
             // キーパッドと中心線を揃えるため、問題・入力表示も横幅いっぱいを基準に中央寄せする。
             .frame(maxWidth: .infinity)
@@ -151,7 +181,7 @@ struct GameView: View {
                 Button {
                     vm.delete()
                 } label: {
-                    actionLabel("DELETE", systemImage: "delete.left.fill", background: FFColor.red)
+                    ActionLabel(title: "DELETE", systemImage: "delete.left.fill", background: FFColor.red)
                 }
                 Spacer(minLength: 8)
                 Text(vm.scoreText)
@@ -165,7 +195,7 @@ struct GameView: View {
                 Button {
                     vm.done()
                 } label: {
-                    actionLabel("DONE", systemImage: "checkmark", background: FFColor.green)
+                    ActionLabel(title: "DONE", systemImage: "checkmark", background: FFColor.green)
                 }
             }
             .padding(.horizontal)
@@ -175,37 +205,48 @@ struct GameView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
+}
 
-    /// 閉じるボタン。自作の bar なので縦のバーには載らないが、役割は `.close`（iOS 26+）で伝える。
-    @ViewBuilder
-    private var closeButton: some View {
+/// 閉じるボタン。自作の bar なので縦のバーには載らないが、役割は `.close`（iOS 26+）で伝える。
+private struct GameCloseButton: View {
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
         if #available(iOS 26, *) {
             Button(role: .close) {
                 dismiss()
             } label: {
-                closeLabel
+                GameCloseLabel()
             }
         } else {
             Button {
                 dismiss()
             } label: {
-                closeLabel
+                GameCloseLabel()
             }
         }
     }
+}
 
-    // ツールバーのボタンと同様の円形ガラスにして押せる場所を明確にする。
-    // iPhone Duo では上端の安全領域が 0 になり画面最上部に来るため、
-    // ガラス込みで 44pt 程度のタップ領域を確保する。
-    private var closeLabel: some View {
+// ツールバーのボタンと同様の円形ガラスにして押せる場所を明確にする。
+// iPhone Duo では上端の安全領域が 0 になり画面最上部に来るため、
+// ガラス込みで 44pt 程度のタップ領域を確保する。
+private struct GameCloseLabel: View {
+    var body: some View {
         Image(systemName: "xmark")
             .font(.system(size: 17, weight: .semibold))
             .foregroundStyle(FFColor.white)
             .frame(width: 30, height: 30)
     }
+}
 
-    /// 役割の異なるアクション（DELETE/DONE）用の塗りカプセルラベル。
-    private func actionLabel(_ title: String, systemImage: String, background: Color) -> some View {
+/// 役割の異なるアクション（DELETE/DONE）用の塗りカプセルラベル。
+private struct ActionLabel: View {
+    let title: LocalizedStringKey
+    let systemImage: String
+    let background: Color
+
+    var body: some View {
         Label(title, systemImage: systemImage)
             .font(.futuraBold(size: 16))
             .foregroundStyle(.white)
@@ -213,8 +254,12 @@ struct GameView: View {
             .padding(.vertical, 12)
             .background(background, in: .capsule)
     }
+}
 
-    private func operandLabel(_ text: String) -> some View {
+private struct OperandLabel: View {
+    let text: String
+
+    var body: some View {
         Text(text)
             .font(.dseg7(size: 48))
             .foregroundStyle(FFColor.blackReversible)
@@ -223,16 +268,17 @@ struct GameView: View {
             .background(FFColor.whiteBackground)
             .clipShape(.rect(cornerRadius: 8))
     }
+}
 
-    // MARK: - キーパッド
+private struct GameKeypad: View {
+    let vm: GameViewModel
 
-    private var keypadSection: some View {
+    var body: some View {
         VStack(spacing: 0) {
             ForEach(0..<4, id: \.self) { row in
                 HStack(spacing: 0) {
                     ForEach(0..<4, id: \.self) { col in
-                        let value = row * 4 + col
-                        keypadButton(value)
+                        KeypadKey(number: FNum(rawValue: row * 4 + col) ?? .zero, vm: vm)
                     }
                 }
             }
@@ -243,44 +289,21 @@ struct GameView: View {
         // 左右に縦型バーの安全領域があっても、キーをそこまで均等に配置する。
         .ignoresSafeArea(edges: .horizontal)
     }
+}
 
-    private func keypadButton(_ value: Int) -> some View {
-        let fnum = FNum(rawValue: value) ?? .zero
-        return Button {
-            vm.tapNumber(fnum)
+private struct KeypadKey: View {
+    let number: FNum
+    let vm: GameViewModel
+
+    var body: some View {
+        Button {
+            vm.tapNumber(number)
         } label: {
-            Text(fnum.symbol)
+            Text(number.symbol)
                 .font(.dseg7(size: 36))
                 .foregroundStyle(FFColor.gray)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .contentShape(.rect)
         }
-    }
-
-    // MARK: - 終了処理
-
-    private func finishGame() {
-        guard !didFinish else { return }
-        didFinish = true
-
-        let store = ScoreStore(context: modelContext)
-        store.add(score: vm.score)
-
-        // ハイスコア判定（保存後の最高スコアが今回スコア以下なら更新）。
-        let best = store.highScore()?.score ?? vm.score
-        isHighScore = best <= vm.score
-
-        // スクリーンショット撮影中はランキングに登録しない（名前の入力も求めない）。
-        if isHighScore && !ScreenshotFixture.isActive {
-            if let name = storage.object(forKey: "playername") as? String, !name.isEmpty {
-                RankingService.shared.register(name: name, score: vm.score)
-            } else {
-                nameInput = ""
-                showNamePrompt = true
-            }
-        }
-
-        AdManager.shared.presentInterstitial()
-        showResult = true
     }
 }

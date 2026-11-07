@@ -8,15 +8,15 @@
 
 import SwiftUI
 import SwiftData
+import AppIntents
 
 struct LocalScoreView: View {
     @Environment(\.dismiss) private var dismiss
-    @Environment(\.modelContext) private var modelContext
+    @Environment(ScoreService.self) private var scoreService
     @Query(sort: [SortDescriptor(\ScoreEntry.score, order: .reverse),
                   SortDescriptor(\ScoreEntry.date, order: .reverse)]) private var scores: [ScoreEntry]
 
     @State private var showDeleteConfirm = false
-    @State private var rankingDeleteFailed = false
 
     /// ランキング表示の 1 行。
     private struct RankedScore: Identifiable {
@@ -82,26 +82,17 @@ struct LocalScoreView: View {
                 .ffLowVisibilityPriority()
             }
             .alert("delete data", isPresented: $showDeleteConfirm) {
-                Button("OK", role: .destructive, action: deleteAll)
+                Button("OK", role: .destructive, intent: DeleteAllScoresNowIntent())
                 Button("Cancel", role: .cancel) {}
             } message: {
                 Text("Do you really want to delete all your data? Your scores will also be removed from the online ranking.")
             }
-            .alert("Couldn't delete from ranking", isPresented: $rankingDeleteFailed) {
-                Button("Retry") { Task { await deleteFromRanking() } }
+            .alert("Couldn't delete from ranking", isPresented: Bindable(scoreService).rankingDeleteFailed) {
+                Button("Retry") { Task { await scoreService.deleteFromRanking(alertOnFailure: true) } }
                 Button("Cancel", role: .cancel) {}
             } message: {
                 Text("Check your connection and try again.")
             }
         }
-    }
-
-    private func deleteAll() {
-        ScoreStore(context: modelContext).deleteAll()
-        Task { await deleteFromRanking() }
-    }
-
-    private func deleteFromRanking() async {
-        rankingDeleteFailed = !(await RankingService.shared.deleteMyRecords())
     }
 }

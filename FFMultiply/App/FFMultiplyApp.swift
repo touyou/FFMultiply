@@ -16,6 +16,7 @@ struct FFMultiplyApp: App {
 
     private let container: ModelContainer
     @State private var navigator: AppNavigator
+    @State private var scores: ScoreService
 
     init() {
         do {
@@ -31,22 +32,26 @@ struct FFMultiplyApp: App {
         _navigator = State(initialValue: navigator)
         // `dependency:` はエスケープするクロージャなので、self ではなくローカルを渡す。
         let container = container
+        let scores = ScoreService(container: container)
+        _scores = State(initialValue: scores)
         AppDependencyManager.shared.add(dependency: container)
         AppDependencyManager.shared.add(dependency: navigator)
+        AppDependencyManager.shared.add(dependency: scores)
     }
 
     var body: some Scene {
         WindowGroup {
             HomeView()
                 .environment(navigator)
+                .environment(scores)
                 .task {
                     // スクリーンショット撮影中は同意・ATT の確認もランキングの移行もしない。
                     guard !ScreenshotFixture.isActive else { return }
                     // 広告の同意（UMP）→ ATT の許可 → 広告 SDK 起動 → 広告のロード。
                     await AdManager.shared.prepareAds()
                     await RankingService.shared.migrateIfNeeded(
-                        bestScore: ScoreStore(context: container.mainContext).highScore()?.score,
-                        name: UserDefaults.standard.string(forKey: "playername")
+                        bestScore: scores.highScore()?.score,
+                        name: scores.playerName
                     )
                 }
         }

@@ -46,6 +46,50 @@
           }
         }
       }
+    },
+    "Show my scores in ${applicationName}" : {
+      "localizations" : {
+        "en" : {
+          "stringSet" : {
+            "state" : "new",
+            "values" : [
+              "Show my scores in ${applicationName}",
+              "Show ${board} in ${applicationName}"
+            ]
+          }
+        },
+        "ja" : {
+          "stringSet" : {
+            "state" : "translated",
+            "values" : [
+              "${applicationName}のスコアを見る",
+              "${applicationName}で${board}を見る",
+              "${applicationName}のランキングを見る"
+            ]
+          }
+        }
+      }
+    },
+    "Register my high score in ${applicationName}" : {
+      "localizations" : {
+        "en" : {
+          "stringSet" : {
+            "state" : "new",
+            "values" : [
+              "Register my high score in ${applicationName}"
+            ]
+          }
+        },
+        "ja" : {
+          "stringSet" : {
+            "state" : "translated",
+            "values" : [
+              "${applicationName}のハイスコアを登録",
+              "${applicationName}でランキングに登録"
+            ]
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

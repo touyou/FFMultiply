@@ -6,17 +6,16 @@
 //
 
 import SwiftUI
-import SwiftData
+import AppIntents
 
 struct OnlineRankingView: View {
     @Environment(\.dismiss) private var dismiss
-    @Environment(\.modelContext) private var modelContext
+    @Environment(ScoreService.self) private var scoreService
 
     @State private var vm = OnlineRankingViewModel()
     @State private var showNamePrompt = false
     @State private var nameInput = ""
 
-    private let storage = UserDefaults.standard
     private let shareURL = URL(string: "https://itunes.apple.com/us/app/ffmultiplier/id1151801381?l=ja&ls=1&mt=8")!
 
     var body: some View {
@@ -53,10 +52,9 @@ struct OnlineRankingView: View {
                     .padding(.vertical, 6)
                     .background(FFColor.whiteBackground)
 
-                Button {
-                    register()
-                } label: {
-                    Text("REGISTER MY SCORE").frame(maxWidth: .infinity)
+                RegisterScoreButton(hasPlayerName: !scoreService.playerName.isEmpty) {
+                    nameInput = ""
+                    showNamePrompt = true
                 }
                 .ffButtonStyle(prominent: true, tint: FFColor.blackReversible)
                 .controlSize(.large)
@@ -85,14 +83,15 @@ struct OnlineRankingView: View {
                 .ffLowVisibilityPriority()
             }
         }
-        .task { await vm.load() }
+        // 登録したら（Siri からでも）読み直す。
+        .task(id: scoreService.lastRegistration) { await vm.load() }
         .alert("register name", isPresented: $showNamePrompt) {
             TextField("user name", text: $nameInput)
             Button("OK") {
                 let name = RankingService.normalizedName(nameInput)
                 guard !name.isEmpty else { return }
-                storage.set(name, forKey: "playername")
-                registerScoreAndReload(name: name)
+                scoreService.playerName = name
+                Task { try? await scoreService.registerHighScore() }
             }
             Button("Cancel", role: .cancel) {}
         } message: {
@@ -103,24 +102,24 @@ struct OnlineRankingView: View {
     private var shareText: String {
         "My rank is \(vm.myRank)! Let's play FFMultiplier with me! #FFMultiplier"
     }
+}
 
-    /// 自分の最高スコアを登録する。名前未設定なら入力を促す。
-    private func register() {
-        if let name = storage.object(forKey: "playername") as? String, !name.isEmpty {
-            registerScoreAndReload(name: name)
+/// 名前があれば Siri と同じ Intent で登録し、無ければ名前の入力を促す。
+private struct RegisterScoreButton: View {
+    let hasPlayerName: Bool
+    let askName: () -> Void
+
+    var body: some View {
+        if hasPlayerName {
+            Button(intent: RegisterHighScoreIntent()) { RegisterScoreLabel() }
         } else {
-            nameInput = ""
-            showNamePrompt = true
+            Button(action: askName) { RegisterScoreLabel() }
         }
     }
+}
 
-    private func registerScoreAndReload(name: String) {
-        let best = ScoreStore(context: modelContext).highScore()
-        Task {
-            if let best {
-                await RankingService.shared.registerAndWait(name: name, score: best.score)
-            }
-            await vm.load()
-        }
+private struct RegisterScoreLabel: View {
+    var body: some View {
+        Text("REGISTER MY SCORE").frame(maxWidth: .infinity)
     }
 }
