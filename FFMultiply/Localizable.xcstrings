@@ -278,14 +278,14 @@
         }
       }
     },
-    "Show %@" : {
+    "Show ${board}" : {
       "comment" : "App Intents（Siri / ショートカット）",
       "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@を開く"
+            "value" : "${board}を開く"
           }
         }
       }
@@ -526,6 +526,78 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "スコアを登録"
+          }
+        }
+      }
+    },
+    "Set User Name" : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ユーザー名を設定する"
+          }
+        }
+      }
+    },
+    "Sets the user name shown with your scores in the online ranking." : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オンラインランキングで点数と一緒に表示するユーザー名を設定します。"
+          }
+        }
+      }
+    },
+    "User Name" : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ユーザー名"
+          }
+        }
+      }
+    },
+    "Set user name to ${name}" : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ユーザー名を${name}にする"
+          }
+        }
+      }
+    },
+    "What name should appear in the online ranking?" : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オンラインランキングに表示する名前は何にしますか？"
+          }
+        }
+      }
+    },
+    "Your user name is now %@." : {
+      "comment" : "App Intents（Siri / ショートカット）",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ユーザー名を%@にしました。"
           }
         }
       }

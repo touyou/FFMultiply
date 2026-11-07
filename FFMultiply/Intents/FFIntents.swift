@@ -91,40 +91,6 @@ struct ShowScoresIntent: AppIntent {
     }
 }
 
-/// 端末のスコアをすべて消す（オンラインランキングの自分の記録も）。Siri からは確認してから消す。
-struct DeleteAllScoresIntent: AppIntent {
-    static let title: LocalizedStringResource = "Delete All Scores"
-    static let description = IntentDescription("Deletes all your scores on this device and your records in the online ranking.")
-    @available(iOS 27.0, *)
-    static var allowedExecutionTargets: IntentExecutionTargets { [.main] }
-
-    @Dependency private var scores: ScoreService
-
-    @MainActor
-    func perform() async throws -> some IntentResult & ProvidesDialog {
-        try await requestConfirmation(dialog: "Delete all your scores? They will also be removed from the online ranking.")
-        return .result(dialog: await scores.deleteAll()
-            ? "Deleted all your scores."
-            : "Deleted your scores on this device, but couldn't reach the online ranking.")
-    }
-}
-
-/// 画面の確認アラートから呼ぶ、確認なしの版。アプリ内のボタンから requestConfirmation は出せない。
-struct DeleteAllScoresNowIntent: AppIntent {
-    static let title: LocalizedStringResource = "Delete All Scores Without Asking"
-    static let isDiscoverable = false
-    @available(iOS 27.0, *)
-    static var allowedExecutionTargets: IntentExecutionTargets { [.main] }
-
-    @Dependency private var scores: ScoreService
-
-    @MainActor
-    func perform() async throws -> some IntentResult {
-        await scores.deleteAll(alertOnFailure: true)
-        return .result()
-    }
-}
-
 /// 端末のハイスコアを、設定した名前でオンラインランキングに登録する。ランキング画面のボタンもこれを通す。
 struct RegisterHighScoreIntent: AppIntent {
     static let title: LocalizedStringResource = "Register High Score"
@@ -141,35 +107,36 @@ struct RegisterHighScoreIntent: AppIntent {
     }
 }
 
-/// オンラインランキングから自分の記録と名前を消す。Siri からは確認してから消す。
-struct LeaveRankingIntent: AppIntent {
-    static let title: LocalizedStringResource = "Delete from Online Ranking"
-    static let description = IntentDescription("Removes your name and scores from the online ranking and clears your user name.")
+/// ランキングに出す名前を変える。設定画面の保存と同じ ScoreService.setPlayerName を通す。
+/// 名前を消す操作は LeaveRankingIntent（記録も消さないと、次のプレイまで古い名前の記録が残る）。
+struct SetUserNameIntent: AppIntent {
+    static let title: LocalizedStringResource = "Set User Name"
+    static let description = IntentDescription("Sets the user name shown with your scores in the online ranking.")
     @available(iOS 27.0, *)
     static var allowedExecutionTargets: IntentExecutionTargets { [.main] }
 
-    @Dependency private var scores: ScoreService
-
-    @MainActor
-    func perform() async throws -> some IntentResult & ProvidesDialog {
-        try await requestConfirmation(dialog: "Remove your name and scores from the online ranking?")
-        guard await scores.leaveRanking() else { throw RankingError.offline }
-        return .result(dialog: "Removed you from the online ranking.")
+    static var parameterSummary: some ParameterSummary {
+        Summary("Set user name to \(\.$name)")
     }
-}
 
-/// 設定画面の確認アラートから呼ぶ、確認なしの版。
-struct LeaveRankingNowIntent: AppIntent {
-    static let title: LocalizedStringResource = "Delete from Online Ranking Without Asking"
-    static let isDiscoverable = false
-    @available(iOS 27.0, *)
-    static var allowedExecutionTargets: IntentExecutionTargets { [.main] }
+    @Parameter(title: "User Name")
+    var name: String
 
     @Dependency private var scores: ScoreService
 
+    init() {}
+
+    init(name: String) {
+        self.name = name
+    }
+
     @MainActor
-    func perform() async throws -> some IntentResult {
-        await scores.leaveRanking(alertOnFailure: true)
-        return .result()
+    func perform() async throws -> some IntentResult & ReturnsValue<String> & ProvidesDialog {
+        let trimmed = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else {
+            throw $name.needsValueError("What name should appear in the online ranking?")
+        }
+        scores.setPlayerName(trimmed)
+        return .result(value: scores.playerName, dialog: "Your user name is now \(scores.playerName).")
     }
 }
