@@ -38,7 +38,7 @@ struct DeleteAllScoresNowIntent: AppIntent {
 
     @MainActor
     func perform() async throws -> some IntentResult {
-        await scores.deleteAll()
+        await scores.deleteAll(alertOnFailure: true)
         return .result()
     }
 }
@@ -71,7 +71,7 @@ struct LeaveRankingNowIntent: AppIntent {
 
     @MainActor
     func perform() async throws -> some IntentResult {
-        await scores.leaveRanking()
+        await scores.leaveRanking(alertOnFailure: true)
         return .result()
     }
 }

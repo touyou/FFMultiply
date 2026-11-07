@@ -31,6 +31,8 @@ final class AppNavigator {
             isPlayingTimeAttack = false
             try? await Task.sleep(for: .milliseconds(600))
         }
+        // 待っている間に新しいゲームが始まったら、そちらを優先してシートは出さない。
+        guard !isPlayingTimeAttack else { return }
         self.sheet = sheet
     }
 
