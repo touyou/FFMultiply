@@ -283,6 +283,9 @@ private struct GameKeypad: View {
                 }
             }
         }
+        // iPad ではマスが大きくなりすぎて指の移動が長くなるので、上限を置いて真ん中に寄せる。
+        // 上限は iPhone と Duo（開いた状態で高さ約 669pt）には掛からない大きさにする
+        .frame(maxWidth: 600, maxHeight: 680)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(FFColor.blackBackground)
         // 電卓と同様にキーパッドは横幅いっぱいに広げる。iPhone Duo などで
