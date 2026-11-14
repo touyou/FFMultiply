@@ -51,6 +51,8 @@ struct HomeView: View {
                         .accessibilityIdentifier("settingsButton")
                 }
                 .controlSize(.large)
+                // iPad で画面幅いっぱいに伸びて間延びしないよう、iPhone と同じくらいの幅で止める
+                .frame(maxWidth: 420)
                 .padding(.horizontal, 40)
 
                 Spacer(minLength: 24)
