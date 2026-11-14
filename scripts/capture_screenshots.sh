@@ -2,7 +2,7 @@
 #
 # App Store 提出用のスクリーンショットを端末・言語ごとに撮る。
 #
-#   ./scripts/capture_screenshots.sh                # 既定の端末（iphone duo-closed duo-open）すべて
+#   ./scripts/capture_screenshots.sh                # 既定の端末（iphone ipad duo-closed duo-open）すべて
 #   ./scripts/capture_screenshots.sh iphone         # 指定した端末だけ
 #   LOCALES="ja" ./scripts/capture_screenshots.sh   # 指定した言語だけ
 #
@@ -44,10 +44,8 @@ SCHEME="FFMultiply"
 TEST_ID="FFMultiplyUITests/ScreenshotTests"
 
 IPHONE_DEST="${IPHONE_DEST:-platform=iOS Simulator,name=iPhone 17 Pro Max,OS=27.0}"
-# iPad は既定では撮らない。FFMultiply は iPhone 専用（TARGETED_DEVICE_FAMILY = 1）で、
-# App Store Connect も iPhone 専用アプリには iPad のスクリーンショットを求めない。
-# iPad で動かしても iPhone アプリの互換モード表示になり、提出用の画にならない。
-# 確認したいときだけ `./scripts/capture_screenshots.sh ipad` で明示的に指定する。
+# iPad にも対応している（TARGETED_DEVICE_FAMILY = 1,2）ので、App Store Connect は 13 インチ iPad の
+# スクリーンショット（2064x2752）も求める。
 IPAD_DEST="${IPAD_DEST:-platform=iOS Simulator,name=iPad Pro 13-inch (M5),OS=27.0}"
 # iPhone Duo は iOS 27.1 のシミュレータにしか無い。
 DUO_DEST="${DUO_DEST:-platform=iOS Simulator,name=iPhone Duo,OS=27.1}"
@@ -62,8 +60,7 @@ PLATFORMS=(
   "duo-closed|$DUO_DEST"
   "duo-open|$DUO_DEST"
 )
-# 引数なしで撮る端末（iPad は上の理由で含めない）。
-DEFAULT_PLATFORMS=(iphone duo-closed duo-open)
+DEFAULT_PLATFORMS=(iphone ipad duo-closed duo-open)
 
 requested=("$@")
 [ ${#requested[@]} -eq 0 ] && requested=("${DEFAULT_PLATFORMS[@]}")

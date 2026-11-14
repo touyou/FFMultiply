@@ -199,6 +199,8 @@ private struct GameDisplay: View {
                 }
             }
             .padding(.horizontal)
+            // iPad でキーパッドと同じ上限の幅に寄せる。iPhone と Duo には掛からない
+            .frame(maxWidth: 600)
             // 操作バーもキーパッドと同じ横幅に揃える（右上のタイマー・閉じるボタンは安全領域内に残す）。
             .ignoresSafeArea(edges: .horizontal)
             .padding(.bottom, 12)
@@ -283,6 +285,9 @@ private struct GameKeypad: View {
                 }
             }
         }
+        // iPad ではマスが大きくなりすぎて指の移動が長くなるので、上限を置いて真ん中に寄せる。
+        // 上限は iPhone と Duo（開いた状態で高さ約 669pt）には掛からない大きさにする
+        .frame(maxWidth: 600, maxHeight: 680)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(FFColor.blackBackground)
         // 電卓と同様にキーパッドは横幅いっぱいに広げる。iPhone Duo などで
