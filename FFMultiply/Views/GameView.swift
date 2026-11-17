@@ -6,6 +6,7 @@
 //  下半分に 4×4 の 16進キーパッドを配置する。ダーク基調。
 //
 
+import StoreKit
 import SwiftUI
 import SwiftData
 
@@ -13,6 +14,7 @@ struct GameView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
     @Environment(ScoreService.self) private var scoreService
+    @Environment(\.requestReview) private var requestReview
 
     @State private var vm = GameViewModel()
     @State private var didStart = false
@@ -81,6 +83,8 @@ struct GameView: View {
         didFinish = true
 
         let store = ScoreStore(context: modelContext)
+        // レビューは前回までの最高を上回ったときだけ頼む（初回や同点は達成とみなさない）
+        let beatsPreviousBest = store.highScore().map { vm.score > $0.score } ?? false
         store.add(score: vm.score)
 
         // ハイスコア判定（保存後の最高スコアが今回スコア以下なら更新）。
@@ -88,16 +92,26 @@ struct GameView: View {
         isHighScore = best <= vm.score
 
         // スクリーンショット撮影中はランキングに登録しない（名前の入力も求めない）。
-        if isHighScore && !ScreenshotFixture.isActive {
+        var asksForReview = false
+        if isHighScore && vm.score > 0 && !ScreenshotFixture.isActive {
             if !scoreService.playerName.isEmpty {
                 RankingService.shared.register(name: scoreService.playerName, score: vm.score)
+                asksForReview = beatsPreviousBest && ReviewPrompt.recordAchievement()
             } else {
                 nameInput = ""
                 showNamePrompt = true
             }
         }
 
-        AdManager.shared.presentInterstitial()
+        // レビューを頼むときは広告を重ねない。リザルトを見てもらってから頼む
+        if asksForReview {
+            Task {
+                try? await Task.sleep(for: .seconds(1))
+                requestReview()
+            }
+        } else {
+            AdManager.shared.presentInterstitial()
+        }
         showResult = true
     }
 }
