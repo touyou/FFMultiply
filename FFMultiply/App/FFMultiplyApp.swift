@@ -37,6 +37,7 @@ struct FFMultiplyApp: App {
         AppDependencyManager.shared.add(dependency: container)
         AppDependencyManager.shared.add(dependency: navigator)
         AppDependencyManager.shared.add(dependency: scores)
+        ReviewPrompt.recordLaunch()
     }
 
     var body: some Scene {
