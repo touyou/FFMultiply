@@ -83,6 +83,8 @@ struct GameView: View {
         didFinish = true
 
         let store = ScoreStore(context: modelContext)
+        // レビューは前回までの最高を上回ったときだけ頼む（初回や同点は達成とみなさない）
+        let beatsPreviousBest = store.highScore().map { vm.score > $0.score } ?? false
         store.add(score: vm.score)
 
         // ハイスコア判定（保存後の最高スコアが今回スコア以下なら更新）。
@@ -94,7 +96,7 @@ struct GameView: View {
         if isHighScore && vm.score > 0 && !ScreenshotFixture.isActive {
             if !scoreService.playerName.isEmpty {
                 RankingService.shared.register(name: scoreService.playerName, score: vm.score)
-                asksForReview = ReviewPrompt.recordAchievement()
+                asksForReview = beatsPreviousBest && ReviewPrompt.recordAchievement()
             } else {
                 nameInput = ""
                 showNamePrompt = true
