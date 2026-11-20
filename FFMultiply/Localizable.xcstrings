@@ -602,23 +602,6 @@
         }
       }
     },
-    "LICENSES" : {
-      "comment" : "設定画面のボタン。同梱ライブラリとフォントのライセンスを開く。",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "LICENSES"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "オープンソースライセンス"
-          }
-        }
-      }
-    },
     "Open Source Licenses" : {
       "comment" : "ライセンス画面のタイトル。",
       "localizations" : {
@@ -632,6 +615,176 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "オープンソースライセンス"
+          }
+        }
+      }
+    },
+    "INFO" : {
+      "comment" : "設定画面のボタン。バージョン・フィードバック・プライバシーポリシーなどの情報画面を開く。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "INFO"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "情報"
+          }
+        }
+      }
+    },
+    "RATE THIS APP" : {
+      "comment" : "情報画面の行。App Store のレビューを書く画面を開く。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RATE THIS APP"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アプリを評価"
+          }
+        }
+      }
+    },
+    "FEEDBACK & BUG REPORTS" : {
+      "comment" : "情報画面の行。サポートページを開く。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FEEDBACK & BUG REPORTS"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "機能要望・不具合報告"
+          }
+        }
+      }
+    },
+    "SHARE THIS APP" : {
+      "comment" : "情報画面の行。App Store のリンクを共有する。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SHARE THIS APP"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アプリを共有"
+          }
+        }
+      }
+    },
+    "FEEDBACK" : {
+      "comment" : "情報画面のセクション見出し。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FEEDBACK"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フィードバック"
+          }
+        }
+      }
+    },
+    "DEVELOPER" : {
+      "comment" : "情報画面の行。開発者のサイト（touyou.dev）を開く。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DEVELOPER"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開発者について"
+          }
+        }
+      }
+    },
+    "PRIVACY POLICY" : {
+      "comment" : "情報画面の行。プライバシーポリシーのページを開く。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PRIVACY POLICY"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プライバシーポリシー"
+          }
+        }
+      }
+    },
+    "HELP" : {
+      "comment" : "情報画面の行。遊び方（チュートリアル）を表示する。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HELP"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "遊び方"
+          }
+        }
+      }
+    },
+    "Version %@" : {
+      "comment" : "情報画面の見出し。%@ はバージョン（ビルド番号）。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "バージョン %@"
+          }
+        }
+      }
+    },
+    "Made by one developer in Japan." : {
+      "comment" : "情報画面の見出しの一言。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Made by one developer in Japan."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日本で個人が開発しています。"
           }
         }
       }
