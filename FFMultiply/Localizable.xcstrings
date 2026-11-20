@@ -601,6 +601,40 @@
           }
         }
       }
+    },
+    "LICENSES" : {
+      "comment" : "設定画面のボタン。同梱ライブラリとフォントのライセンスを開く。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LICENSES"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オープンソースライセンス"
+          }
+        }
+      }
+    },
+    "Open Source Licenses" : {
+      "comment" : "ライセンス画面のタイトル。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Source Licenses"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オープンソースライセンス"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
