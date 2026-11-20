@@ -721,6 +721,23 @@
         }
       }
     },
+    "OPEN SOURCE LICENSES" : {
+      "comment" : "情報画面の行。オープンソースライセンスの画面を開く。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OPEN SOURCE LICENSES"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オープンソースライセンス"
+          }
+        }
+      }
+    },
     "PRIVACY POLICY" : {
       "comment" : "情報画面の行。プライバシーポリシーのページを開く。",
       "localizations" : {

@@ -50,7 +50,7 @@ struct AboutView: View {
                 NavigationLink {
                     LicensesView()
                 } label: {
-                    Label("Open Source Licenses", systemImage: "doc.text")
+                    Label("OPEN SOURCE LICENSES", systemImage: "doc.text")
                 }
             }
         }
