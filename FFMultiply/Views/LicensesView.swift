@@ -25,7 +25,7 @@ struct LicensesView: View {
                 .padding(24)
         }
         .background(FFColor.settingGray.ignoresSafeArea())
-        .navigationTitle("Licenses")
+        .navigationTitle("Open Source Licenses")
         .navigationBarTitleDisplayMode(.inline)
     }
 }

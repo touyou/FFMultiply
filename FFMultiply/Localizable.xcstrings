@@ -614,24 +614,24 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ライセンス"
+            "value" : "オープンソースライセンス"
           }
         }
       }
     },
-    "Licenses" : {
+    "Open Source Licenses" : {
       "comment" : "ライセンス画面のタイトル。",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Licenses"
+            "value" : "Open Source Licenses"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ライセンス"
+            "value" : "オープンソースライセンス"
           }
         }
       }
