@@ -59,6 +59,15 @@ struct SettingsView: View {
                     .controlSize(.large)
                 }
 
+                NavigationLink {
+                    LicensesView()
+                } label: {
+                    Label("LICENSES", systemImage: "doc.text")
+                        .frame(maxWidth: .infinity)
+                }
+                .ffButtonStyle(tint: FFColor.darkGray)
+                .controlSize(.large)
+
                 Button(role: .destructive) {
                     showRankingDeleteConfirm = true
                 } label: {
