@@ -789,19 +789,87 @@
         }
       }
     },
-    "Made by one developer in Japan." : {
+    "Made in Japan." : {
       "comment" : "情報画面の見出しの一言。",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Made by one developer in Japan."
+            "value" : "Made in Japan."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "日本で個人が開発しています。"
+            "value" : "日本で開発しています。"
+          }
+        }
+      }
+    },
+    "How fast can you multiply in your head? I'm waiting for you in FFMultiplier." : {
+      "comment" : "アプリを共有するときに App Store のリンクに添える文。ライバルの語り口。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How fast can you multiply in your head? I'm waiting for you in FFMultiplier."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "暗算のかけ算、どこまで速く解ける？ FFMultiplier で待ってるよ。"
+          }
+        }
+      }
+    },
+    "WHAT'S NEW" : {
+      "comment" : "情報画面の行と、版ごとの新機能の一覧のタイトル。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WHAT'S NEW"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新機能"
+          }
+        }
+      }
+    },
+    "What's New in FFMultiplier" : {
+      "comment" : "アップデート後に出す新機能のお知らせのタイトル。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's New in FFMultiplier"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FFMultiplier の新機能"
+          }
+        }
+      }
+    },
+    "Continue" : {
+      "comment" : "新機能のお知らせを閉じるボタン。",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "続ける"
           }
         }
       }
