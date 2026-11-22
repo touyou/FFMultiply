@@ -1976,3 +1976,43 @@ INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
 DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE.
+=====
+Google Mobile Ads SDK
+Google の利用規約 / Google Terms of Service
+
+Copyright Google LLC
+
+Google の利用規約に従って使用しています。
+Used under Google's terms of service.
+
+https://developers.google.com/admob/terms
+=====
+Google User Messaging Platform SDK
+Google の利用規約 / Google Terms of Service
+
+Copyright Google LLC
+
+Google の利用規約に従って使用しています。
+Used under Google's terms of service.
+
+https://developers.google.com/admob/terms
+=====
+GoogleAppMeasurement
+Google の利用規約 / Google Terms of Service
+
+Copyright Google LLC
+
+Google の利用規約に従って使用しています。
+Used under Google's terms of service.
+
+https://firebase.google.com/terms/analytics
+=====
+Google Ads On-Device Conversion SDK
+Google の利用規約 / Google Terms of Service
+
+Copyright Google LLC
+
+Google の利用規約に従って使用しています。
+Used under Google's terms of service.
+
+https://policies.google.com/terms

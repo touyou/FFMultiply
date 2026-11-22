@@ -22,7 +22,7 @@ enum WhatsNew {
     /// 起動時に出すお知らせ。`prepareOnLaunch()` が決める
     @MainActor private(set) static var pending: Release?
 
-    /// 起動時に 1 回だけ呼ぶ。新機能の無い版でも呼び、見終えた版を記録しておく（次に新機能を出す版で見分けるため）
+    /// 起動時に 1 回だけ呼ぶ。新機能の無い版でも呼ぶ（新しく入れた人は、ここでこの版を見終えたことになる）
     @MainActor static func prepareOnLaunch(defaults: UserDefaults = .standard) {
         // 前の版から使っている人は、レビュー依頼のために記録している最初の起動日で見分ける（記録より前に呼ぶ）
         let isReturning = defaults.object(forKey: "reviewFirstLaunchDate") != nil
