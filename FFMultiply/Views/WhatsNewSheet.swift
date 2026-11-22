@@ -17,7 +17,7 @@ enum WhatsNew {
         var id: String { version }
     }
 
-    static let releases: [Release] = []
+    @MainActor static let releases: [Release] = []
 
     /// 起動時に出すお知らせ。`prepareOnLaunch()` が決める
     @MainActor private(set) static var pending: Release?
