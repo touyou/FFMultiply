@@ -37,6 +37,7 @@ struct FFMultiplyApp: App {
         AppDependencyManager.shared.add(dependency: container)
         AppDependencyManager.shared.add(dependency: navigator)
         AppDependencyManager.shared.add(dependency: scores)
+        WhatsNew.prepareOnLaunch()
         ReviewPrompt.recordLaunch()
     }
 
@@ -45,6 +46,7 @@ struct FFMultiplyApp: App {
             HomeView()
                 .environment(navigator)
                 .environment(scores)
+                .whatsNewOnUpdate()
                 .task {
                     // スクリーンショット撮影中は同意・ATT の確認もランキングの移行もしない。
                     guard !ScreenshotFixture.isActive else { return }

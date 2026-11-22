@@ -20,7 +20,11 @@ struct AboutView: View {
             Section {
                 AboutLinkRow(title: "RATE THIS APP", systemImage: "star", destination: AppLinks.writeReview)
                 AboutLinkRow(title: "FEEDBACK & BUG REPORTS", systemImage: "envelope", destination: AppLinks.support)
-                ShareLink(item: AppLinks.appStore) {
+                ShareLink(
+                    item: AppLinks.appStore,
+                    subject: Text(verbatim: "FFMultiplier"),
+                    message: Text("How fast can you multiply in your head? I'm waiting for you in FFMultiplier.")
+                ) {
                     Label("SHARE THIS APP", systemImage: "square.and.arrow.up")
                 }
             } header: {
@@ -28,6 +32,14 @@ struct AboutView: View {
             }
 
             Section {
+                // お知らせを出した版がまだ無いあいだは、行も出さない
+                if !WhatsNew.releases.isEmpty {
+                    NavigationLink {
+                        WhatsNewHistoryView()
+                    } label: {
+                        Label("WHAT'S NEW", systemImage: "sparkles")
+                    }
+                }
                 Button(action: onShowTutorial) {
                     Label("HELP", systemImage: "questionmark.circle")
                 }
@@ -64,14 +76,20 @@ struct AboutView: View {
 
 private struct AboutHeader: View {
     var body: some View {
-        VStack(spacing: 6) {
+        VStack(spacing: 8) {
+            Image("AboutIcon")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 64, height: 64)
+                .clipShape(.rect(cornerRadius: 14, style: .continuous))
+                .accessibilityHidden(true)
             Text(verbatim: "FFMultiplier")
                 .font(.futuraBold(size: 24))
                 .foregroundStyle(FFColor.blackReversible)
             Text("Version \(AppLinks.version)")
                 .font(.futuraMedium(size: 14))
                 .foregroundStyle(FFColor.darkGray)
-            Text("Made by one developer in Japan.")
+            Text("Made in Japan.")
                 .font(.footnote)
                 .foregroundStyle(FFColor.darkGray)
                 .padding(.top, 4)
